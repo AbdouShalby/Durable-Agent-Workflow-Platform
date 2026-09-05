@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "claim",
+    "exitCode": 1,
+    "detectedBy": "eight simultaneous processes claim one logical owner"
+  },
+  {
+    "mode": "fence",
+    "exitCode": 1,
+    "detectedBy": "SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery"
+  },
+  {
+    "mode": "expiry",
+    "exitCode": 1,
+    "detectedBy": "lease checks use database time after waiting for the run lock"
+  },
+  {
+    "mode": "recovery",
+    "exitCode": 1,
+    "detectedBy": "SIGKILL after claim is recovered by restarted scheduler and production workers"
+  },
+  {
+    "mode": "retry-limit",
+    "exitCode": 1,
+    "detectedBy": "retryable failures have durable bounded attempts and backoff"
+  }
+]

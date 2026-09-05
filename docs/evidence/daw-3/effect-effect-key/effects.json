@@ -1,0 +1,329 @@
+{
+  "mutation": "effect-key",
+  "cases": {
+    "eight concurrent external writes converge and reject conflicting payloads": {
+      "run": "8137be97-dc9b-4cfd-86a2-93058d7f195d",
+      "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+      "blockedExternalSessions": [
+        {
+          "pid": 53090,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 53094,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 53095,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 53096,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 53097,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 53098,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 53099,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 53100,
+          "wait_event": "relation"
+        }
+      ],
+      "tools": [
+        {
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "contract": "keyed",
+          "state": "PREPARED",
+          "sends": 0,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "READY",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "23e1755b-aaba-4dd3-8bad-bb19be89af0d",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "23e1755b-aaba-4dd3-8bad-bb19be89af0d",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        },
+        {
+          "id": "2971a719-02cc-4daa-a1b8-81a57b366e07",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "2971a719-02cc-4daa-a1b8-81a57b366e07",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        },
+        {
+          "id": "336b2949-0f41-4e3b-bba3-c99e04cafa06",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "336b2949-0f41-4e3b-bba3-c99e04cafa06",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        },
+        {
+          "id": "39d62da4-ba66-4e56-a56e-1292c0df44e4",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "39d62da4-ba66-4e56-a56e-1292c0df44e4",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        },
+        {
+          "id": "5b303c5c-1248-4b56-a640-f7e9e354ef50",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "5b303c5c-1248-4b56-a640-f7e9e354ef50",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        },
+        {
+          "id": "7c6c45da-eeba-4ba0-8a53-7af9d61dd399",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "7c6c45da-eeba-4ba0-8a53-7af9d61dd399",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        },
+        {
+          "id": "8cbe9f15-8333-4423-a8e8-78e25fdf52c1",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "8cbe9f15-8333-4423-a8e8-78e25fdf52c1",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        },
+        {
+          "id": "8f8c1d75-af3a-4e1f-8cab-53326004f735",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+            "receiptId": "8f8c1d75-af3a-4e1f-8cab-53326004f735",
+            "serviceId": "ad9c0123-010f-4677-a30f-6aa893678825",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        },
+        {
+          "id": "3",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        },
+        {
+          "id": "4",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        },
+        {
+          "id": "5",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        },
+        {
+          "id": "6",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        },
+        {
+          "id": "7",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        },
+        {
+          "id": "8",
+          "effect_key": "5e3c0a4b318a9fa880593a9e5387a73fffe9a4f0cf054d2fa6bc5e35f41ea3d7",
+          "method": "POST"
+        }
+      ]
+    }
+  },
+  "independentClusters": [
+    "/var/tmp/daw3-validation-cNt2VWXn/daw1-pg-oEKYYm",
+    "/var/tmp/daw3-validation-cNt2VWXn/daw1-pg-gkk7l2"
+  ],
+  "postgres": [
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    },
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    }
+  ],
+  "cleanup": [
+    {
+      "role": "postgres",
+      "pid": 53043,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 53067,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 53081,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

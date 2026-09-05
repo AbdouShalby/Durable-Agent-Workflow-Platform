@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "milestone": "DAW-3",
+  "startedAt": "2026-09-05T20:13:34.920Z",
+  "status": "PASSED",
+  "gitBase": "8901a8559fa21a9d545da104d0998539db43b11d",
+  "sourceSha256": {
+    ".github/workflows/ci.yml": "4c8c1313693c9f54115961346b04b335af07306c17ddb9cfb74d11d7573a8923",
+    ".npmrc": "3b88d1057add6f92ec23dc22dd017e312ded13a042deb0ba6f08bad85d936456",
+    ".nvmrc": "5b9d0e73029969ae9000117cb877f17bb9841c1279bfe8024e294acfcf017800",
+    "compose.yml": "a9792f75c572c11ae3050199a862c4129335871a47f8d791cd00ac2a5e368c99",
+    "migrations/001_foundation.sql": "ecfcbd28d813d742deba77d535655ad8e69dd58c68a1666928eff24f9be78f6b",
+    "migrations/002_execution.sql": "ad94887e25279b6e75839c17c360da6030986adf3bd5e523509428016da12dfa",
+    "migrations/003_effects.sql": "4afc5831379163036ec5359359c076aae606107c20e999ce907a530e9fca3dfd",
+    "package-lock.json": "747cfa0cc2f3004849b803f16f0d2e78154ade719b51ee9e935070a0a9e988e4",
+    "package.json": "0919bfd84731cf6c3a8b438e77742a1ac2c3a4edb32d98bdcefee54493eb6f5d",
+    "scripts/check-node.mjs": "16cd1cfabb98a88b15fffb45fe8677656402ec7300fefbd34c90d737dbb369ab",
+    "scripts/effect-negative-controls.mjs": "bf6c284d68506e347f80adfef70e8b822e5d74753599f1f436f0133540d8c476",
+    "scripts/execution-negative-controls.mjs": "b81f44a3dd1af4e1d6077beb51e4e894969558daff56a5bf86c0d306aaa0ec97",
+    "scripts/negative-controls.mjs": "72cebd7ca484e7ce91f28c6c01f7c85e7736f9e8c6bd7c9724670b9aee0a9f89",
+    "scripts/validate.mjs": "454426c2ca5b2ac015870a93300f1c57ef27ca14adc979ccb2996fc1e0d29200",
+    "src/application/effects.ts": "29d1fd0c5ffcef8d5501b729a6c731328abb1cae48c09bc73854d527a584b7d4",
+    "src/application/execution.ts": "53fac1123903fdea589ceb41bd6c7b549707e1352e012506deb5492303e3d74d",
+    "src/application/runs.ts": "bd59d8503978849a81a5ea1492c4e22e37acc34d4efc58e532e84bbbe1f3b3e2",
+    "src/application/worker.ts": "0eb571c379f854125d58f1a066e906fc70517ddadf5285563f8ee1f302358843",
+    "src/config.ts": "f0087fe81f185513a0fed3dc4dac251e265216df91ecc771116cc64fd3d4c3a1",
+    "src/domain/effect.ts": "1981bed2af70feded13ad5d64736df8c17e8ceabaf5a353df321b22db702dd3d",
+    "src/domain/retry.ts": "ba03d2a87e1707ccd9bfd1d8ac1d19e5c665db64d5abd648944b03aa92e07b73",
+    "src/domain/workflow.ts": "059453ca34a14f5cade81bff17fd40ad930dcd12c92b30e01d466feee753736d",
+    "src/entrypoints/api.ts": "cf321435600b847d5066f581a18933e6df7e97ac1167494a2ffae0136152bc4f",
+    "src/entrypoints/execution-loop.ts": "6c4cdc2e1676cc42a38b2e620b3bcd19ece787f25fc42f836bdfc89da16718b0",
+    "src/entrypoints/migrate.ts": "fa86d6ec635582a3ac96c6f584aa45cece4cfacac75f2882224a0b8449922ee1",
+    "src/entrypoints/scheduler.ts": "76773934e62b4ddcc4d7b20f52238a07b0d7e225a7ab8a140419ee30f8cc0393",
+    "src/entrypoints/worker.ts": "af508c87024e1b0f1b91bba65926449164f15bf3148083270af9880676ed860c",
+    "src/http.ts": "94011b804ba214a8c4bca2d4bc0a3c2155140363c14c71cd7db44e82495461d7",
+    "src/persistence/database.ts": "a2b4046d488286f06e4b8e793c2e1a39d5e4f8b2ee03ec3cd673bff21d128da0",
+    "src/persistence/migrations.ts": "9780e5395ee41913e5d68e1e07c9507630a0796b2cc4b7974bae1f787a2f4aca",
+    "src/simulator/server.ts": "e32810b64f1943a7f2cf2574041101b650b0789cef2e54ef78b3aac3818bd39b",
+    "tests/effect-unit.test.ts": "4fc1596135d8d3f7dd80176627c0a25c9efac3a125e3a36a72dae2ac87c093fc",
+    "tests/effects.test.ts": "c1c84c2145b225ca00f21646f138a60000b62f62aedec91c61215a969f020307",
+    "tests/execution-unit.test.ts": "279861a5374b8ac17b902f0d5d8e1a3fa58f0dcf1aa55951ff3710a5b8b6cf44",
+    "tests/execution.test.ts": "b571ddea61f9dc314b5036f453d27b6d0867bc715d746ba2c88feed2368270e6",
+    "tests/fixtures/effect-regression.mjs": "75b8423042a50d9b6f5024bdc999c2729e00b3440c3c74e6ff52c5e49ea6dd00",
+    "tests/fixtures/execution-regression.mjs": "6b0f718b7c29e0a2d119933311370d954896519c4d760321c27ea752966d2f13",
+    "tests/fixtures/regression.mjs": "0f614c9fabbbd55f2b636727ab617d2b1ff56ccc79f3fa8e37b692f7353904a5",
+    "tests/integration.test.ts": "27cfb3f5dca605c3fe26c88d4c8a33af104a472da9c5bfc8d3d70b525c0fa6ca",
+    "tests/support/effect-actor.ts": "aa139a7489a163d1202ba4b08b8ba333510c7416ab45a628eecbc8c47cbdce2c",
+    "tests/support/execution-actor.ts": "2e6e16f7cf3c6f1ee896dc6eb014c3ac05bd71b1aafd7d8d4f295dd2695b505d",
+    "tests/support/lab.ts": "89778a33b87c7b5ded276b5eeabe0f6196952bf0e8d8d4be7212c78491df536d",
+    "tests/unit.test.ts": "47d321d22f9a6fddb4cf3e7d634583b49f4a63759e7e93a75a8e17c23787f5e4",
+    "tsconfig.json": "aef3207e20407a79e48e31722b35d2013222a4c125e0370afee4ec5eeaab5ac8"
+  },
+  "runtime": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "os": "6.18.33.1-microsoft-standard-WSL2",
+    "arch": "x64",
+    "temporaryRoot": "/var/tmp/daw3-validation-cNt2VWXn"
+  },
+  "commands": [
+    [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    [
+      "node",
+      "node_modules/typescript/bin/tsc"
+    ],
+    [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "dist/tests/unit.test.js",
+      "dist/tests/execution-unit.test.js",
+      "dist/tests/effect-unit.test.js",
+      "dist/tests/integration.test.js",
+      "dist/tests/execution.test.js",
+      "dist/tests/effects.test.js"
+    ],
+    [
+      "node",
+      "scripts/negative-controls.mjs"
+    ],
+    [
+      "node",
+      "scripts/execution-negative-controls.mjs"
+    ],
+    [
+      "node",
+      "scripts/effect-negative-controls.mjs"
+    ]
+  ],
+  "failures": [],
+  "totals": {
+    "tests": 48,
+    "pass": 48,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "negativeControls": [
+    {
+      "mode": "status",
+      "exitCode": 1,
+      "detectedBy": "first acceptance 202, reordered exact replay 200, changed parameters 409"
+    },
+    {
+      "mode": "fingerprint",
+      "exitCode": 1,
+      "detectedBy": "two simultaneous different fingerprints produce one acceptance and one conflict"
+    },
+    {
+      "mode": "atomicity",
+      "exitCode": 1,
+      "detectedBy": "database failure at run_events rolls back run, scheduling and event"
+    }
+  ],
+  "executionNegativeControls": [
+    {
+      "mode": "claim",
+      "exitCode": 1,
+      "detectedBy": "eight simultaneous processes claim one logical owner"
+    },
+    {
+      "mode": "fence",
+      "exitCode": 1,
+      "detectedBy": "SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery"
+    },
+    {
+      "mode": "expiry",
+      "exitCode": 1,
+      "detectedBy": "lease checks use database time after waiting for the run lock"
+    },
+    {
+      "mode": "recovery",
+      "exitCode": 1,
+      "detectedBy": "SIGKILL after claim is recovered by restarted scheduler and production workers"
+    },
+    {
+      "mode": "retry-limit",
+      "exitCode": 1,
+      "detectedBy": "retryable failures have durable bounded attempts and backoff"
+    }
+  ],
+  "effectNegativeControls": [
+    {
+      "mode": "effect-key",
+      "exitCode": 1,
+      "detectedBy": "eight concurrent external writes converge and reject conflicting payloads"
+    },
+    {
+      "mode": "timeout",
+      "exitCode": 1,
+      "detectedBy": "timeout remains UNKNOWN and unavailable verification never triggers blind POST"
+    },
+    {
+      "mode": "verification",
+      "exitCode": 1,
+      "detectedBy": "timeout remains UNKNOWN and unavailable verification never triggers blind POST"
+    },
+    {
+      "mode": "unkeyed",
+      "exitCode": 1,
+      "detectedBy": "unkeyed ambiguous write parks and never blindly retries"
+    }
+  ],
+  "sourceChangedDuringRun": false,
+  "integrationSha256": "d60fff51bf7116ad8baab05d97f1fe489ada024f35b0e8e7b08137d789b8d25c",
+  "executionSha256": "d3ef1c25efd0f33eb129d86eab4dc2a5460b7a6c664675607d086d45263b77fa",
+  "effectsSha256": "652ae0552a8c5c030b059e27fc5ccd2bccd443d0d03586024bc0cec7a322df65",
+  "completedAt": "2026-09-05T20:19:26.025Z",
+  "transcriptSha256": "3a0d699681d8306371636a95b6c17a72934394a3d1a5ee8fed2a2d31c9d20746"
+}

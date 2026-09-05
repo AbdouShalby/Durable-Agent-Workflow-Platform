@@ -21,3 +21,13 @@
 **Recovery scheduler**: A separate poller that reconciles expired leases and makes persisted due retries eligible. No in-memory timer owns the work.
 
 **Deterministic recovery policy**: The same run/step/attempt and persisted policy produce the same bounded jitter delay and eligibility decision at a given DB time/state. Process order and elapsed wall time are not deterministic.
+
+**Tool invocation**: Durable external intent bound to one run/step, target identity, contract and exact request fingerprint; not an in-memory call log.
+
+**Effect key**: Stable identity of the intended external write across attempts. Only a provider that honors this identity can deduplicate concurrent or delayed writes.
+
+**Receipt**: Provider result bound to target identity, effect key, fingerprint and expected result. Verification assumes an honest provider; it is not a cryptographic proof.
+
+**UNKNOWN**: The platform cannot safely infer that a possible write failed. Persisted before sending, this state intentionally also covers a crash before any packet leaves.
+
+**Reconciliation required**: Automatic execution is parked because the external outcome or remaining bookkeeping cannot safely be finished under the available contract/budget. No manual resend/override API is supplied by DAW-3.

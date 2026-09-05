@@ -2,7 +2,7 @@
   "name": "durable-agent-workflow-platform",
   "version": "0.1.0",
   "private": true,
-  "description": "Production-inspired durable workflow execution lab; no agents or external effects",
+  "description": "Production-inspired durable workflow execution and external-effect reconciliation lab; no agents",
   "type": "module",
   "engines": { "node": "24.20.0" },
   "scripts": {
@@ -13,8 +13,9 @@
     "start": "node dist/src/entrypoints/api.js",
     "worker": "node dist/src/entrypoints/worker.js",
     "scheduler": "node dist/src/entrypoints/scheduler.js",
-    "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js",
-    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js",
+    "simulator": "node dist/src/simulator/server.js",
+    "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js",
+    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js",
     "validate": "node scripts/validate.mjs"
   },
   "dependencies": { "fastify": "5.12.3", "pg": "8.23.0" },

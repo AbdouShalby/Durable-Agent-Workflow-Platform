@@ -1,0 +1,50 @@
+TAP version 13
+# Subtest: DAW-3 independent external effects and conservative reconciliation
+    # Subtest: timeout remains UNKNOWN and unavailable verification never triggers blind POST
+    not ok 1 - timeout remains UNKNOWN and unavailable verification never triggers blind POST
+      ---
+      duration_ms: 4755.493692
+      type: 'test'
+      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        + actual - expected
+        
+        + 'PREPARED'
+        - 'UNKNOWN'
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 'UNKNOWN'
+      actual: 'PREPARED'
+      operator: 'strictEqual'
+      stack: |-
+        file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:189:20
+        process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:89:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:187:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+    1..1
+not ok 1 - DAW-3 independent external effects and conservative reconciliation
+  ---
+  duration_ms: 6567.007339
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:14:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7130.038956

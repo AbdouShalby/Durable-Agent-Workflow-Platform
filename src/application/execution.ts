@@ -12,22 +12,22 @@ interface Step extends Claim {
   state: string; max_attempts: number; retry_base_ms: number; retry_cap_ms: number;
 }
 
-async function transaction<T>(pool: pg.Pool, operation: (client: pg.PoolClient) => Promise<T>): Promise<T> {
+export async function transaction<T>(pool: pg.Pool, operation: (client: pg.PoolClient) => Promise<T>): Promise<T> {
   const client = await pool.connect();
   try { await client.query('BEGIN'); const result = await operation(client); await client.query('COMMIT'); return result; }
   catch (error) { await client.query('ROLLBACK'); throw error; }
   finally { client.release(); }
 }
 // Every transition locks the run before the step. This also serializes event numbering.
-async function event(client: pg.PoolClient, run: string, type: string, details: unknown): Promise<void> {
+export async function event(client: pg.PoolClient, run: string, type: string, details: unknown): Promise<void> {
   await client.query(`INSERT INTO run_events(run_id,sequence,type,details)
     SELECT $1,COALESCE(MAX(sequence),0)+1,$2,$3 FROM run_events WHERE run_id=$1`, [run, type, details]);
 }
-async function lockStep(client: pg.PoolClient, run: string, step: string): Promise<Step | undefined> {
+export async function lockStep(client: pg.PoolClient, run: string, step: string): Promise<Step | undefined> {
   await client.query('SELECT id FROM workflow_runs WHERE id=$1 FOR UPDATE', [run]);
   return (await client.query<Step>('SELECT * FROM step_runs WHERE run_id=$1 AND step_key=$2 FOR UPDATE', [run, step])).rows[0];
 }
-async function owns(client: pg.PoolClient, claim: Claim): Promise<boolean> {
+export async function owns(client: pg.PoolClient, claim: Claim): Promise<boolean> {
   // Evaluated AFTER lock acquisition. DB time, not the worker clock or transaction start time.
   return (await client.query(`SELECT 1 FROM step_runs WHERE run_id=$1 AND step_key=$2 AND state='RUNNING'
     AND owner=$3 AND fence=$4 AND lease_expires_at>clock_timestamp() AND deadline_at>clock_timestamp()`,
@@ -83,6 +83,8 @@ export async function completeStep(pool: pg.Pool, claim: Claim, result: unknown)
   return transaction(pool, async client => {
     const step = await lockStep(client, claim.run_id, claim.step_key);
     if (!step || !await owns(client, claim)) return false;
+    const tool = (await client.query('SELECT state,receipt=$3::jsonb AS matches FROM tool_invocations WHERE run_id=$1 AND step_key=$2', [claim.run_id, claim.step_key, JSON.stringify(result)])).rows[0];
+    if (tool && (tool.state !== 'VERIFIED' || !tool.matches)) return false;
     await client.query(`UPDATE step_runs SET state='SUCCEEDED',result=$3,owner=NULL,lease_expires_at=NULL,last_error=NULL
       WHERE run_id=$1 AND step_key=$2`, [claim.run_id, claim.step_key, JSON.stringify(result)]);
     await client.query(`UPDATE step_attempts SET outcome='SUCCEEDED',ended_at=clock_timestamp()
@@ -102,6 +104,13 @@ async function retire(client: pg.PoolClient, step: Step, outcome: 'RETRYABLE' | 
   const delay = retryDelay(step.run_id, step.step_key, step.attempt_count, step.retry_base_ms, step.retry_cap_ms);
   const canRetry = outcome !== 'PERMANENT' && step.attempt_count < step.max_attempts &&
     (await client.query('SELECT 1 WHERE $1::timestamptz>clock_timestamp()+$2*interval \'1 millisecond\'', [step.deadline_at, delay])).rowCount === 1;
+  const tool = (await client.query('SELECT state,contract FROM tool_invocations WHERE run_id=$1 AND step_key=$2', [step.run_id, step.step_key])).rows[0];
+  if (tool && tool.state !== 'PREPARED' && (!canRetry || (tool.state === 'UNKNOWN' && tool.contract === 'unkeyed'))) {
+    await client.query(`UPDATE step_attempts SET outcome=$4,ended_at=clock_timestamp(),error_code='EFFECT_UNKNOWN'
+      WHERE run_id=$1 AND step_key=$2 AND attempt=$3`, [step.run_id,step.step_key,step.attempt_count,outcome]);
+    await parkEffect(client, step.run_id, step.step_key);
+    return;
+  }
   await client.query(`UPDATE step_attempts SET outcome=$4,ended_at=clock_timestamp(),error_code=$4,retry_delay_ms=$5
     WHERE run_id=$1 AND step_key=$2 AND attempt=$3`, [step.run_id, step.step_key, step.attempt_count, outcome, canRetry ? delay : null]);
   await client.query(`UPDATE step_runs SET state=$3,owner=NULL,lease_expires_at=NULL,last_error=$4,
@@ -109,6 +118,13 @@ async function retire(client: pg.PoolClient, step: Step, outcome: 'RETRYABLE' | 
     WHERE run_id=$1 AND step_key=$2`, [step.run_id, step.step_key, canRetry ? 'RETRY_WAIT' : 'FAILED', outcome, delay]);
   if (!canRetry) await client.query("UPDATE workflow_runs SET state='FAILED' WHERE id=$1", [step.run_id]);
   await event(client, step.run_id, canRetry ? 'RETRY_SCHEDULED' : 'RUN_FAILED', { step: step.step_key, attempt: step.attempt_count, outcome, delay_ms: canRetry ? delay : null });
+}
+
+async function parkEffect(client: pg.PoolClient, run: string, step: string): Promise<void> {
+  await client.query(`UPDATE step_runs SET state='UNKNOWN',owner=NULL,lease_expires_at=NULL,available_at=NULL,last_error='RECONCILIATION_REQUIRED'
+    WHERE run_id=$1 AND step_key=$2`, [run,step]);
+  await client.query("UPDATE workflow_runs SET state='RECONCILIATION_REQUIRED' WHERE id=$1", [run]);
+  await event(client, run, 'RECONCILIATION_REQUIRED', { step });
 }
 
 /** Explicit execution failures only. Database/unknown-commit errors must be left to lease recovery, not replayed here. */
@@ -140,6 +156,9 @@ export async function recoverOne(pool: pg.Pool): Promise<boolean> {
     if (step.state === 'RUNNING') await retire(client, step, 'EXPIRED');
     else {
       const expired = (await client.query('SELECT 1 WHERE $1::timestamptz<=clock_timestamp()', [step.deadline_at])).rowCount === 1;
+      if (expired && (await client.query("SELECT 1 FROM tool_invocations WHERE run_id=$1 AND step_key=$2 AND state<>'PREPARED'", [run.id,step.step_key])).rowCount) {
+        await parkEffect(client, run.id, step.step_key); return true;
+      }
       await client.query(`UPDATE step_runs SET state=$3,available_at=CASE WHEN $3='READY' THEN clock_timestamp() ELSE NULL END
         WHERE run_id=$1 AND step_key=$2`, [run.id, step.step_key, expired ? 'FAILED' : 'READY']);
       if (expired) await client.query("UPDATE workflow_runs SET state='FAILED' WHERE id=$1", [run.id]);
