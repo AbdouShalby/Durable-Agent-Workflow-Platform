@@ -1,0 +1,182 @@
+{
+  "phase": "SCENARIOS_FINISHED_SEE_TAP_FOR_VERDICT",
+  "testMutation": "status",
+  "postgres": {
+    "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+    "fsync": "on",
+    "synchronous_commit": "on"
+  },
+  "identical-race": {
+    "blockedBackends": [
+      {
+        "pid": 16381,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16390,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16392,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16393,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16394,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16396,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16395,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16397,
+        "wait_event": "relation"
+      }
+    ],
+    "apiPids": [
+      16363,
+      16382
+    ],
+    "statuses": [
+      202,
+      202,
+      202,
+      202,
+      202,
+      202,
+      202,
+      202
+    ],
+    "responses": [
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": true
+      },
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": false
+      },
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": true
+      },
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": true
+      },
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": true
+      },
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": true
+      },
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": true
+      },
+      {
+        "run_id": "98b8f1ec-c5a3-48a2-9acc-a1a2a55847d0",
+        "state": "QUEUED",
+        "replayed": true
+      }
+    ]
+  },
+  "conflict-race": {
+    "blockedBackends": [
+      {
+        "pid": 16396,
+        "wait_event": "relation"
+      },
+      {
+        "pid": 16395,
+        "wait_event": "relation"
+      }
+    ],
+    "apiPids": [
+      16363,
+      16382
+    ],
+    "statuses": [
+      202,
+      409
+    ],
+    "responses": [
+      {
+        "run_id": "f15ee4d6-cdca-4312-b648-2a46ebba7e9c",
+        "state": "QUEUED",
+        "replayed": false
+      },
+      {
+        "error": "idempotency_conflict"
+      }
+    ]
+  },
+  "cleanup": [
+    {
+      "role": "postgres",
+      "pid": 16350,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 16363,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "api",
+      "pid": 16382,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "api",
+      "pid": 16398,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres-restart",
+      "pid": 16417,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 16428,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ],
+  "clusterDirectory": "/tmp/daw1-pg-lVwx75"
+}

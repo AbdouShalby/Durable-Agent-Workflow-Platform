@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "milestone": "DAW-1",
+  "startedAt": "2026-09-05T16:13:47.676Z",
+  "status": "FAILED",
+  "gitBase": null,
+  "sourceSha256": {
+    ".github/workflows/ci.yml": "8b0856ee6267d38e4a41355b77787f23a6fa6260c33743132268a31450d62498",
+    ".npmrc": "3b88d1057add6f92ec23dc22dd017e312ded13a042deb0ba6f08bad85d936456",
+    ".nvmrc": "5b9d0e73029969ae9000117cb877f17bb9841c1279bfe8024e294acfcf017800",
+    "compose.yml": "a9792f75c572c11ae3050199a862c4129335871a47f8d791cd00ac2a5e368c99",
+    "migrations/001_foundation.sql": "ecfcbd28d813d742deba77d535655ad8e69dd58c68a1666928eff24f9be78f6b",
+    "package-lock.json": "747cfa0cc2f3004849b803f16f0d2e78154ade719b51ee9e935070a0a9e988e4",
+    "package.json": "426a1b48aa3207f4b46426507009ec0ac27ffa476f3f2aeabad48724b14b49f5",
+    "scripts/check-node.mjs": "16cd1cfabb98a88b15fffb45fe8677656402ec7300fefbd34c90d737dbb369ab",
+    "scripts/negative-controls.mjs": "72cebd7ca484e7ce91f28c6c01f7c85e7736f9e8c6bd7c9724670b9aee0a9f89",
+    "scripts/validate.mjs": "0599096ab17bd4ba1c9b27b17ff2c8307645de7b9e6fc8fdab9af3f297bbdc81",
+    "src/application/runs.ts": "5aa684c39f690240dbd3dd48f521d31aa8fd03cea9d4847ea38baaf1ade70aab",
+    "src/config.ts": "f0087fe81f185513a0fed3dc4dac251e265216df91ecc771116cc64fd3d4c3a1",
+    "src/domain/workflow.ts": "eb021d24934b0e92778ff157370caa1563693a8b59505eabb0cffe565bdc6229",
+    "src/entrypoints/api.ts": "cf321435600b847d5066f581a18933e6df7e97ac1167494a2ffae0136152bc4f",
+    "src/entrypoints/migrate.ts": "fa86d6ec635582a3ac96c6f584aa45cece4cfacac75f2882224a0b8449922ee1",
+    "src/http.ts": "94011b804ba214a8c4bca2d4bc0a3c2155140363c14c71cd7db44e82495461d7",
+    "src/persistence/database.ts": "a2b4046d488286f06e4b8e793c2e1a39d5e4f8b2ee03ec3cd673bff21d128da0",
+    "src/persistence/migrations.ts": "9780e5395ee41913e5d68e1e07c9507630a0796b2cc4b7974bae1f787a2f4aca",
+    "tests/fixtures/regression.mjs": "0f614c9fabbbd55f2b636727ab617d2b1ff56ccc79f3fa8e37b692f7353904a5",
+    "tests/integration.test.ts": "8f47e715632b48abbeaa0d1781f82e95e8699dfd9166c895daeba42e360a84cb",
+    "tests/support/lab.ts": "6d91503fdfa12e2bb0adbad30ff771ee32bde0ccdacb76d1ea50802995ac6de5",
+    "tests/unit.test.ts": "47d321d22f9a6fddb4cf3e7d634583b49f4a63759e7e93a75a8e17c23787f5e4",
+    "tsconfig.json": "aef3207e20407a79e48e31722b35d2013222a4c125e0370afee4ec5eeaab5ac8"
+  },
+  "runtime": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "os": "6.18.33.1-microsoft-standard-WSL2",
+    "arch": "x64"
+  },
+  "commands": [
+    [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    [
+      "node",
+      "node_modules/typescript/bin/tsc"
+    ],
+    [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "dist/tests/unit.test.js",
+      "dist/tests/integration.test.js"
+    ]
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: command failed: --test --test-reporter=tap dist/tests/unit.test.js dist/tests/integration.test.js\n\n1 !== 0\n\n    at run (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/scripts/validate.mjs:31:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/scripts/validate.mjs:37:15"
+  ],
+  "completedAt": "2026-09-05T16:13:50.240Z",
+  "transcriptSha256": "cf75f656b3d64f9acbaaad7b3ef6400e0797bf64dce0b8f06d8d9935422f2028"
+}

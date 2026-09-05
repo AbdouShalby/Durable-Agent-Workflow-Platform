@@ -1,0 +1,23 @@
+name: DAW-1 validation
+on: [push, pull_request]
+jobs:
+  foundation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Install owned-cluster test binaries
+        run: sudo apt-get update && sudo apt-get install -y postgresql-16
+      - run: npm run validate
+        env:
+          PG_BIN: /usr/lib/postgresql/16/bin
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daw-1-evidence
+          path: .local/results/
+          include-hidden-files: true

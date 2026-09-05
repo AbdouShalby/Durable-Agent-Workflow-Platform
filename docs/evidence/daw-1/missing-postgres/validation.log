@@ -1,0 +1,49 @@
+COMMAND node node_modules/typescript/bin/tsc --noEmit
+COMMAND node node_modules/typescript/bin/tsc
+COMMAND node --test --test-reporter=tap dist/tests/unit.test.js dist/tests/integration.test.js
+TAP version 13
+# Subtest: mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+not ok 1 - mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+  ---
+  duration_ms: 9.722873
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: 'spawnSync /nonexistent/daw1-postgres/initdb ENOENT'
+  code: 'ENOENT'
+  stack: |-
+    Object.spawnSync (node:internal/child_process:1160:20)
+    spawnSync (node:child_process:928:24)
+    execFileSync (node:child_process:971:15)
+    Lab.startPostgres (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:50:9)
+    async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:15:9)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: canonical request ignores object-key order but preserves intended parameter values
+ok 2 - canonical request ignores object-key order but preserves intended parameter values
+  ---
+  duration_ms: 0.811119
+  type: 'test'
+  ...
+# Subtest: versioned deterministic steps are pure and initial scheduling is explicit
+ok 3 - versioned deterministic steps are pure and initial scheduling is explicit
+  ---
+  duration_ms: 1.169453
+  type: 'test'
+  ...
+# Subtest: configuration rejects malformed URLs without exposing credentials and validates ports
+ok 4 - configuration rejects malformed URLs without exposing credentials and validates ports
+  ---
+  duration_ms: 0.517672
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 471.928174

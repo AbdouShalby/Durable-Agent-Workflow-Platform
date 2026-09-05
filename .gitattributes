@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Preserve Node TAP assertion formatting in the three raw negative-control logs.
+docs/evidence/daw-1/status/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-1/fingerprint/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-1/atomicity/tests.log whitespace=-blank-at-eol

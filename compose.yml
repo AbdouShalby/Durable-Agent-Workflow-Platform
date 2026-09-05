@@ -1,0 +1,12 @@
+# Optional local database only; the API runs on the host. No worker is included.
+services:
+  postgres:
+    image: postgres:18.6
+    environment:
+      POSTGRES_USER: daw
+      POSTGRES_DB: daw
+      POSTGRES_PASSWORD: ${DAW_DB_PASSWORD:?Set a local database password}
+    ports: ["127.0.0.1:15432:5432"]
+    volumes: ["daw-data:/var/lib/postgresql"]
+volumes:
+  daw-data:
