@@ -36,8 +36,8 @@ export class Lab {
   readonly pgBin = process.env['PG_BIN'] ?? '/usr/lib/postgresql/18/bin';
   postgres: OwnedProcess | undefined;
 
-  child(role: string, executable: string, args: string[], env = process.env): OwnedProcess {
-    const child = spawn(executable, args, { env, stdio: ['ignore', 'pipe', 'pipe'] });
+  child(role: string, executable: string, args: string[], env = process.env, ipc = false): OwnedProcess {
+    const child = spawn(executable, args, { env, stdio: ipc ? ['ignore', 'pipe', 'pipe', 'ipc'] : ['ignore', 'pipe', 'pipe'] });
     const owned: OwnedProcess = { child, role, output: '' };
     child.stdout?.on('data', (b: Buffer) => { owned.output = (owned.output + b.toString()).slice(-20000); });
     child.stderr?.on('data', (b: Buffer) => { owned.output = (owned.output + b.toString()).slice(-20000); });

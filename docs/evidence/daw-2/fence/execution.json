@@ -1,0 +1,1496 @@
+{
+  "phase": "SCENARIOS_FINISHED_SEE_TAP_FOR_VERDICT",
+  "mutation": "fence",
+  "cases": {
+    "eight simultaneous processes claim one logical owner": {
+      "blockedSessions": [
+        {
+          "pid": 23949,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23950,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23951,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23952,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23953,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23954,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23955,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23956,
+          "query": "\n      SELECT r.id,r.input,r.workflow_name,r.workflow_version,r.definition_hash FROM workflow_runs r\n      WHERE r.state IN ('QUEUED','RUNNING') AND EXISTS (\n        SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND s.state='READY' AND s.available_at<=clock_timestamp()\n        AND s.attempt_count<s.max_attempts AND (s.deadline_at IS NULL OR s.deadline_at>clock_timestamp())\n        AND NOT EXISTS (SELECT 1 FROM step_runs p WHERE p.run_id=r.id AND p.ordinal<s.ordinal AND p.state<>'SUCCEEDED')\n        AND NOT EXISTS (SELECT 1 FROM step_runs active WHERE active.run_id=r.id AND active.state='RUNNING'))\n      ORDER BY r.created_at,r.id FOR UPDATE OF r SKIP LOCKED LIMIT 1",
+          "wait_event": "relation"
+        }
+      ],
+      "processPids": [
+        23885,
+        23886,
+        23887,
+        23893,
+        23913,
+        23917,
+        23918,
+        23926
+      ],
+      "claimResults": [
+        null,
+        null,
+        {
+          "run_id": "dc95529a-aa7d-44cb-9060-943ddfb210ab",
+          "step_key": "normalize-incident",
+          "ordinal": 0,
+          "state": "RUNNING",
+          "available_at": null,
+          "attempt_count": 1,
+          "fence": 1,
+          "owner": "e46d65ce-615a-4f95-a82d-9e9322f74076",
+          "lease_expires_at": "2026-09-05T16:35:39.639Z",
+          "deadline_at": "2026-09-05T16:36:06.639Z",
+          "result": null,
+          "last_error": null,
+          "lease_ms": 3000,
+          "max_attempts": 3,
+          "retry_base_ms": 200,
+          "retry_cap_ms": 2000,
+          "max_elapsed_ms": 30000,
+          "id": "dc95529a-aa7d-44cb-9060-943ddfb210ab",
+          "input": {
+            "title": "  incident  ",
+            "severity": "high"
+          },
+          "workflow_name": "incident-triage",
+          "workflow_version": 1,
+          "definition_hash": "c2fcbf87b2de857549b6c042566013688d8ff35904b2bebda3ff82e0cde3aed8",
+          "previous_result": null
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "READY",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "dc95529a-aa7d-44cb-9060-943ddfb210ab",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "e46d65ce-615a-4f95-a82d-9e9322f74076",
+          "started_at": "2026-09-05T16:35:36.641Z",
+          "ended_at": "2026-09-05T16:35:36.690Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        }
+      ]
+    },
+    "SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery": {
+      "recoveryBlockedSessions": [
+        {
+          "pid": 23988,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 23989,
+          "wait_event": "relation"
+        }
+      ]
+    },
+    "lease checks use database time after waiting for the run lock": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "RUNNING",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "0c934f3d-e09b-4256-8249-c99e71473818",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "9e7bfda5-e92f-4b75-a8a8-1a58770d9b8f",
+          "started_at": "2026-09-05T16:35:40.005Z",
+          "ended_at": null,
+          "outcome": "RUNNING",
+          "error_code": null,
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        }
+      ]
+    },
+    "SIGKILL after claim is recovered by restarted scheduler and production workers": {
+      "persistedScheduleBeforeRestart": {
+        "available_at": "2026-09-05T16:35:42.565Z"
+      },
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "fence": 2,
+          "result": {
+            "title": "incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] incident",
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "29ff89a1-cc73-4142-b7d1-bbd16a131f05",
+          "step_key": "build-summary",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "084abe5b-eee7-405f-9fbf-717972f0a395",
+          "started_at": "2026-09-05T16:35:43.321Z",
+          "ended_at": "2026-09-05T16:35:43.324Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        },
+        {
+          "run_id": "29ff89a1-cc73-4142-b7d1-bbd16a131f05",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "87e4c749-eb58-4b1a-a231-8e5a255ab8e8",
+          "started_at": "2026-09-05T16:35:41.272Z",
+          "ended_at": "2026-09-05T16:35:42.424Z",
+          "outcome": "EXPIRED",
+          "error_code": "EXPIRED",
+          "retry_delay_ms": 140
+        },
+        {
+          "run_id": "29ff89a1-cc73-4142-b7d1-bbd16a131f05",
+          "step_key": "normalize-incident",
+          "attempt": 2,
+          "fence": 2,
+          "owner": "084abe5b-eee7-405f-9fbf-717972f0a395",
+          "started_at": "2026-09-05T16:35:43.313Z",
+          "ended_at": "2026-09-05T16:35:43.318Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 140
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "normalize-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    },
+    "retryable failures have durable bounded attempts and backoff": {
+      "attemptLimit": 3,
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "FAILED",
+          "attempt_count": 3,
+          "fence": 3,
+          "result": null,
+          "last_error": "RETRYABLE"
+        },
+        {
+          "step_key": "build-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "ce457dbc-1ee8-439d-8efd-2290f0b0a4d1",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "3f930a2d-b1c3-42f8-8331-b8ec4ff6b6b7",
+          "started_at": "2026-09-05T16:35:45.128Z",
+          "ended_at": "2026-09-05T16:35:45.133Z",
+          "outcome": "RETRYABLE",
+          "error_code": "RETRYABLE",
+          "retry_delay_ms": 174
+        },
+        {
+          "run_id": "ce457dbc-1ee8-439d-8efd-2290f0b0a4d1",
+          "step_key": "normalize-incident",
+          "attempt": 2,
+          "fence": 2,
+          "owner": "3f930a2d-b1c3-42f8-8331-b8ec4ff6b6b7",
+          "started_at": "2026-09-05T16:35:45.346Z",
+          "ended_at": "2026-09-05T16:35:45.349Z",
+          "outcome": "RETRYABLE",
+          "error_code": "RETRYABLE",
+          "retry_delay_ms": 270
+        },
+        {
+          "run_id": "ce457dbc-1ee8-439d-8efd-2290f0b0a4d1",
+          "step_key": "normalize-incident",
+          "attempt": 3,
+          "fence": 3,
+          "owner": "3f930a2d-b1c3-42f8-8331-b8ec4ff6b6b7",
+          "started_at": "2026-09-05T16:35:45.661Z",
+          "ended_at": "2026-09-05T16:35:45.665Z",
+          "outcome": "RETRYABLE",
+          "error_code": "RETRYABLE",
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 174
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "normalize-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 2,
+            "outcome": "RETRYABLE",
+            "delay_ms": 270
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "normalize-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 3,
+            "attempt": 3
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 3,
+            "outcome": "RETRYABLE",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "repeated hard crashes exhaust the same durable attempt budget": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "FAILED",
+          "attempt_count": 2,
+          "fence": 2,
+          "result": null,
+          "last_error": "EXPIRED"
+        },
+        {
+          "step_key": "build-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "ed81c3bc-fb3d-49ec-8eeb-95f7765cbb34",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "7ea249b6-3ffc-461a-bc50-bc32128f8d5b",
+          "started_at": "2026-09-05T16:35:46.938Z",
+          "ended_at": "2026-09-05T16:35:47.458Z",
+          "outcome": "EXPIRED",
+          "error_code": "EXPIRED",
+          "retry_delay_ms": 172
+        },
+        {
+          "run_id": "ed81c3bc-fb3d-49ec-8eeb-95f7765cbb34",
+          "step_key": "normalize-incident",
+          "attempt": 2,
+          "fence": 2,
+          "owner": "b157c755-4e8c-41a1-8f94-0c3b442d07e0",
+          "started_at": "2026-09-05T16:35:48.210Z",
+          "ended_at": "2026-09-05T16:35:48.715Z",
+          "outcome": "EXPIRED",
+          "error_code": "EXPIRED",
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 172
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "normalize-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 2,
+            "outcome": "EXPIRED",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "heartbeat preserves active ownership but cannot extend the hard deadline": {
+      "initialLease": "2026-09-05T16:35:50.411Z",
+      "renewedLease": {
+        "lease_expires_at": "2026-09-05T16:35:50.584Z",
+        "deadline_at": "2026-09-05T16:35:51.711Z"
+      },
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "EXPIRED"
+        },
+        {
+          "step_key": "build-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "030cba38-a0f2-4415-b305-6ffc962bd450",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "8f19fbc1-f3f2-4299-a609-941818b60865",
+          "started_at": "2026-09-05T16:35:49.912Z",
+          "ended_at": "2026-09-05T16:35:51.729Z",
+          "outcome": "EXPIRED",
+          "error_code": "EXPIRED",
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "result downstream scheduling and events roll back together on database failure": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "READY",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "bdcebe40-4011-440f-bdbc-32b521f3e809",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "edd4ad37-301c-4739-b67b-9f485498e2c6",
+          "started_at": "2026-09-05T16:35:52.469Z",
+          "ended_at": "2026-09-05T16:35:52.519Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        }
+      ]
+    },
+    "locked run does not block another run and committed prior results are reused after worker crash": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "saved result",
+            "severity": "low"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] incident",
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[LOW] saved result",
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "fc5ad900-4fcd-4d28-aaf5-0ac2018361a7",
+          "step_key": "build-summary",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "b72c1594-a927-4482-9456-cd545a14dfb6",
+          "started_at": "2026-09-05T16:35:53.862Z",
+          "ended_at": "2026-09-05T16:35:53.865Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        },
+        {
+          "run_id": "e6a116e9-68aa-4e6a-a7ed-f370c708931d",
+          "step_key": "build-summary",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "b72c1594-a927-4482-9456-cd545a14dfb6",
+          "started_at": "2026-09-05T16:35:53.870Z",
+          "ended_at": "2026-09-05T16:35:53.874Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        },
+        {
+          "run_id": "e6a116e9-68aa-4e6a-a7ed-f370c708931d",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "3e72ef10-d784-405f-b109-78a8ca009ab7",
+          "started_at": "2026-09-05T16:35:53.221Z",
+          "ended_at": "2026-09-05T16:35:53.229Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        },
+        {
+          "run_id": "fc5ad900-4fcd-4d28-aaf5-0ac2018361a7",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "b72c1594-a927-4482-9456-cd545a14dfb6",
+          "started_at": "2026-09-05T16:35:53.853Z",
+          "ended_at": "2026-09-05T16:35:53.859Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        },
+        {
+          "sequence": 6,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    },
+    "deadline expiration while READY becomes terminal without another attempt": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RETRYABLE"
+        },
+        {
+          "step_key": "build-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "c984863e-be4d-447d-a287-97a5613c5438",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "8190ce33-2a4b-4d99-a9dd-331973aea86b",
+          "started_at": "2026-09-05T16:35:54.643Z",
+          "ended_at": "2026-09-05T16:35:54.652Z",
+          "outcome": "RETRYABLE",
+          "error_code": "RETRYABLE",
+          "retry_delay_ms": 159
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 159
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "normalize-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "normalize-incident",
+            "reason": "DEADLINE"
+          }
+        }
+      ]
+    },
+    "deadline expiration while RETRY_WAIT becomes terminal without another attempt": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RETRYABLE"
+        },
+        {
+          "step_key": "build-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "91a2f6b1-70bb-4155-8cc8-b9f04ed76fb9",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "96ba3c10-290c-407b-83d9-4f69c59fbc75",
+          "started_at": "2026-09-05T16:35:56.348Z",
+          "ended_at": "2026-09-05T16:35:56.375Z",
+          "outcome": "RETRYABLE",
+          "error_code": "RETRYABLE",
+          "retry_delay_ms": 103
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 103
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "normalize-incident",
+            "reason": "DEADLINE"
+          }
+        }
+      ]
+    },
+    "DAW-1 queued rows upgrade without invented attempts and execute with their original identity": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] incident",
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "e95a12a9-9bcf-4915-8289-e7af51de9a68",
+          "step_key": "build-summary",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "e665cb79-8c71-46a1-8f9c-3e47e5d37214",
+          "started_at": "2026-09-05T16:35:58.074Z",
+          "ended_at": "2026-09-05T16:35:58.077Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        },
+        {
+          "run_id": "e95a12a9-9bcf-4915-8289-e7af51de9a68",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "e665cb79-8c71-46a1-8f9c-3e47e5d37214",
+          "started_at": "2026-09-05T16:35:58.065Z",
+          "ended_at": "2026-09-05T16:35:58.070Z",
+          "outcome": "SUCCEEDED",
+          "error_code": null,
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    },
+    "unsupported pinned definition fails permanently without releasing downstream": {
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "PERMANENT"
+        },
+        {
+          "step_key": "build-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "attempts": [
+        {
+          "run_id": "7f0fa182-e92a-4fa0-bbb7-c80c205345b2",
+          "step_key": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "owner": "1a56448b-33cd-4646-83db-fe1dde410469",
+          "started_at": "2026-09-05T16:35:58.774Z",
+          "ended_at": "2026-09-05T16:35:58.779Z",
+          "outcome": "PERMANENT",
+          "error_code": "PERMANENT",
+          "retry_delay_ms": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "normalize-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    }
+  },
+  "postgres": {
+    "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+    "fsync": "on",
+    "synchronous_commit": "on"
+  },
+  "cleanup": [
+    {
+      "role": "postgres",
+      "pid": 23872,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23885,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23886,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23887,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23893,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23913,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23917,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23918,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23926,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23958,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23965,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23973,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 23974,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "scheduler",
+      "pid": 23990,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "scheduler",
+      "pid": 23991,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24008,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24018,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24027,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "scheduler",
+      "pid": 24035,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 24043,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 24044,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24060,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24069,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24076,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24086,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24093,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24102,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24112,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24119,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24129,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24138,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 24146,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24155,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "execution-actor",
+      "pid": 24172,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 24181,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 24190,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ],
+  "clusterDirectory": "/tmp/daw1-pg-CMa0bz"
+}

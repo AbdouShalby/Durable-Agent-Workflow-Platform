@@ -6,7 +6,7 @@ import type { CreateRunRequest, IncidentInput } from '../domain/workflow.js';
 export class IdempotencyConflict extends Error {}
 export interface RunRow {
   id: string; workflow_name: string; workflow_version: number; definition_hash: string;
-  input: IncidentInput; state: 'QUEUED'; created_at: Date; request_fingerprint: string;
+  input: IncidentInput; state: 'QUEUED' | 'RUNNING' | 'SUCCEEDED' | 'FAILED'; created_at: Date; request_fingerprint: string;
 }
 const columns = 'id, workflow_name, workflow_version, definition_hash, input, state, created_at, request_fingerprint';
 
@@ -49,7 +49,9 @@ export async function getRun(pool: pg.Pool, caller: string, id: string): Promise
   // One statement gives run and steps one consistent snapshot.
   const result = await pool.query(`SELECT r.id, r.workflow_name AS workflow, r.workflow_version AS version,
     r.definition_hash, r.input, r.state, r.created_at,
-    (SELECT jsonb_agg(jsonb_build_object('key',s.step_key,'state',s.state,'available_at',s.available_at)
+    (SELECT jsonb_agg(jsonb_build_object('key',s.step_key,'state',s.state,'available_at',s.available_at,
+      'attempt_count',s.attempt_count,'fence',s.fence,'lease_expires_at',s.lease_expires_at,
+      'deadline_at',s.deadline_at,'result',s.result,'last_error',s.last_error)
       ORDER BY s.ordinal) FROM step_runs s WHERE s.run_id=r.id) AS steps
     FROM workflow_runs r WHERE r.id=$1 AND r.caller_id=$2`, [id, caller]);
   return result.rows[0] as unknown ?? null;

@@ -11,7 +11,7 @@ export const definition = Object.freeze({
   ]),
 });
 
-// DAW-1 defines/tests these pure steps but does not execute scheduled work.
+// DAW-2 executes these pure steps; the definition and its v1 hash remain unchanged.
 export function normalizeIncident(input: IncidentInput): IncidentInput {
   return { title: input.title.trim(), severity: input.severity };
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "status",
+    "exitCode": 1,
+    "detectedBy": "first acceptance 202, reordered exact replay 200, changed parameters 409"
+  },
+  {
+    "mode": "fingerprint",
+    "exitCode": 1,
+    "detectedBy": "two simultaneous different fingerprints produce one acceptance and one conflict"
+  },
+  {
+    "mode": "atomicity",
+    "exitCode": 1,
+    "detectedBy": "database failure at run_events rolls back run, scheduling and event"
+  }
+]

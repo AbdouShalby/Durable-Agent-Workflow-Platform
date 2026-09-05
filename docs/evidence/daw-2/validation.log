@@ -1,0 +1,205 @@
+COMMAND node node_modules/typescript/bin/tsc --noEmit
+COMMAND node node_modules/typescript/bin/tsc
+COMMAND node --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js
+TAP version 13
+# Subtest: retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+ok 1 - retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+  ---
+  duration_ms: 14.349589
+  type: 'test'
+  ...
+# Subtest: DAW-2 real PostgreSQL execution, process contention and failure windows
+    # Subtest: eight simultaneous processes claim one logical owner
+    ok 1 - eight simultaneous processes claim one logical owner
+      ---
+      duration_ms: 1436.07733
+      type: 'test'
+      ...
+    # Subtest: SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery
+    ok 2 - SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery
+      ---
+      duration_ms: 3150.579242
+      type: 'test'
+      ...
+    # Subtest: lease checks use database time after waiting for the run lock
+    ok 3 - lease checks use database time after waiting for the run lock
+      ---
+      duration_ms: 1236.801325
+      type: 'test'
+      ...
+    # Subtest: SIGKILL after claim is recovered by restarted scheduler and production workers
+    ok 4 - SIGKILL after claim is recovered by restarted scheduler and production workers
+      ---
+      duration_ms: 3181.370493
+      type: 'test'
+      ...
+    # Subtest: retryable failures have durable bounded attempts and backoff
+    ok 5 - retryable failures have durable bounded attempts and backoff
+      ---
+      duration_ms: 1886.745794
+      type: 'test'
+      ...
+    # Subtest: repeated hard crashes exhaust the same durable attempt budget
+    ok 6 - repeated hard crashes exhaust the same durable attempt budget
+      ---
+      duration_ms: 2879.822551
+      type: 'test'
+      ...
+    # Subtest: heartbeat preserves active ownership but cannot extend the hard deadline
+    ok 7 - heartbeat preserves active ownership but cannot extend the hard deadline
+      ---
+      duration_ms: 3079.546855
+      type: 'test'
+      ...
+    # Subtest: result downstream scheduling and events roll back together on database failure
+    ok 8 - result downstream scheduling and events roll back together on database failure
+      ---
+      duration_ms: 649.650965
+      type: 'test'
+      ...
+    # Subtest: locked run does not block another run and committed prior results are reused after worker crash
+    ok 9 - locked run does not block another run and committed prior results are reused after worker crash
+      ---
+      duration_ms: 1262.072377
+      type: 'test'
+      ...
+    # Subtest: deadline expiration while READY becomes terminal without another attempt
+    ok 10 - deadline expiration while READY becomes terminal without another attempt
+      ---
+      duration_ms: 1780.522687
+      type: 'test'
+      ...
+    # Subtest: deadline expiration while RETRY_WAIT becomes terminal without another attempt
+    ok 11 - deadline expiration while RETRY_WAIT becomes terminal without another attempt
+      ---
+      duration_ms: 1705.669334
+      type: 'test'
+      ...
+    # Subtest: DAW-1 queued rows upgrade without invented attempts and execute with their original identity
+    ok 12 - DAW-1 queued rows upgrade without invented attempts and execute with their original identity
+      ---
+      duration_ms: 696.692274
+      type: 'test'
+      ...
+    # Subtest: unsupported pinned definition fails permanently without releasing downstream
+    ok 13 - unsupported pinned definition fails permanently without releasing downstream
+      ---
+      duration_ms: 669.944939
+      type: 'test'
+      ...
+    1..13
+ok 2 - DAW-2 real PostgreSQL execution, process contention and failure windows
+  ---
+  duration_ms: 24493.178101
+  type: 'test'
+  ...
+# Subtest: mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+    # Subtest: concurrent migrations serialize and reruns preserve one checksum record per migration
+    ok 1 - concurrent migrations serialize and reruns preserve one checksum record per migration
+      ---
+      duration_ms: 112.03056
+      type: 'test'
+      ...
+    # Subtest: first acceptance 202, reordered exact replay 200, changed parameters 409
+    ok 2 - first acceptance 202, reordered exact replay 200, changed parameters 409
+      ---
+      duration_ms: 206.578725
+      type: 'test'
+      ...
+    # Subtest: eight simultaneous identical requests converge; exactly one 202 and seven 200
+    ok 3 - eight simultaneous identical requests converge; exactly one 202 and seven 200
+      ---
+      duration_ms: 43.617604
+      type: 'test'
+      ...
+    # Subtest: two simultaneous different fingerprints produce one acceptance and one conflict
+    ok 4 - two simultaneous different fingerprints produce one acceptance and one conflict
+      ---
+      duration_ms: 41.148879
+      type: 'test'
+      ...
+    # Subtest: rejected payloads and missing credentials do not become durable requests
+    ok 5 - rejected payloads and missing credentials do not become durable requests
+      ---
+      duration_ms: 28.633899
+      type: 'test'
+      ...
+    # Subtest: database failure at step_runs rolls back run, scheduling and event
+    ok 6 - database failure at step_runs rolls back run, scheduling and event
+      ---
+      duration_ms: 16.185584
+      type: 'test'
+      ...
+    # Subtest: database failure at run_events rolls back run, scheduling and event
+    ok 7 - database failure at run_events rolls back run, scheduling and event
+      ---
+      duration_ms: 13.358063
+      type: 'test'
+      ...
+    # Subtest: read API and replay survive API process restart; schedule stays unexecuted
+    ok 8 - read API and replay survive API process restart; schedule stays unexecuted
+      ---
+      duration_ms: 4340.131806
+      type: 'test'
+      ...
+    # Subtest: applied migration checksum drift is rejected, not silently accepted
+    ok 9 - applied migration checksum drift is rejected, not silently accepted
+      ---
+      duration_ms: 11.36243
+      type: 'test'
+      ...
+    # Subtest: failing migration is atomic, including its schema history
+    ok 10 - failing migration is atomic, including its schema history
+      ---
+      duration_ms: 82.695392
+      type: 'test'
+      ...
+    # Subtest: committed run and schedule survive PostgreSQL shutdown/restart on the same data directory
+    ok 11 - committed run and schedule survive PostgreSQL shutdown/restart on the same data directory
+      ---
+      duration_ms: 4281.869029
+      type: 'test'
+      ...
+    1..11
+ok 3 - mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+  ---
+  duration_ms: 19226.383959
+  type: 'test'
+  ...
+# Subtest: canonical request ignores object-key order but preserves intended parameter values
+ok 4 - canonical request ignores object-key order but preserves intended parameter values
+  ---
+  duration_ms: 0.886078
+  type: 'test'
+  ...
+# Subtest: versioned deterministic steps are pure and initial scheduling is explicit
+ok 5 - versioned deterministic steps are pure and initial scheduling is explicit
+  ---
+  duration_ms: 24.853892
+  type: 'test'
+  ...
+# Subtest: configuration rejects malformed URLs without exposing credentials and validates ports
+ok 6 - configuration rejects malformed URLs without exposing credentials and validates ports
+  ---
+  duration_ms: 1.080965
+  type: 'test'
+  ...
+1..6
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24949.870908
+COMMAND node scripts/negative-controls.mjs
+NEGATIVE CONTROL status: detected expected regression
+NEGATIVE CONTROL fingerprint: detected expected regression
+NEGATIVE CONTROL atomicity: detected expected regression
+COMMAND node scripts/execution-negative-controls.mjs
+EXECUTION NEGATIVE CONTROL claim: detected expected regression
+EXECUTION NEGATIVE CONTROL fence: detected expected regression
+EXECUTION NEGATIVE CONTROL expiry: detected expected regression
+EXECUTION NEGATIVE CONTROL recovery: detected expected regression
+EXECUTION NEGATIVE CONTROL retry-limit: detected expected regression

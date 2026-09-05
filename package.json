@@ -2,7 +2,7 @@
   "name": "durable-agent-workflow-platform",
   "version": "0.1.0",
   "private": true,
-  "description": "Production-inspired durable workflow foundation; DAW-1 has no execution workers or agents",
+  "description": "Production-inspired durable workflow execution lab; no agents or external effects",
   "type": "module",
   "engines": { "node": "24.20.0" },
   "scripts": {
@@ -11,8 +11,10 @@
     "build": "npm run check:node && tsc",
     "migrate": "node dist/src/entrypoints/migrate.js",
     "start": "node dist/src/entrypoints/api.js",
-    "test:unit": "node --test dist/tests/unit.test.js",
-    "test:integration": "node --test dist/tests/integration.test.js",
+    "worker": "node dist/src/entrypoints/worker.js",
+    "scheduler": "node dist/src/entrypoints/scheduler.js",
+    "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js",
+    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js",
     "validate": "node scripts/validate.mjs"
   },
   "dependencies": { "fastify": "5.12.3", "pg": "8.23.0" },

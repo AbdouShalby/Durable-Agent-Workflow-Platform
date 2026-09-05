@@ -1,7 +1,7 @@
-name: DAW-1 validation
+name: DAW-2 validation
 on: [push, pull_request]
 jobs:
-  foundation:
+  durable-workflow:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -18,6 +18,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: daw-1-evidence
+          name: daw-2-evidence
           path: .local/results/
           include-hidden-files: true

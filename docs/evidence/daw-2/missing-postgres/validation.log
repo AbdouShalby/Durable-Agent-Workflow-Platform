@@ -1,0 +1,73 @@
+COMMAND node node_modules/typescript/bin/tsc --noEmit
+COMMAND node node_modules/typescript/bin/tsc
+COMMAND node --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js
+TAP version 13
+# Subtest: retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+ok 1 - retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+  ---
+  duration_ms: 14.077872
+  type: 'test'
+  ...
+# Subtest: DAW-2 real PostgreSQL execution, process contention and failure windows
+not ok 2 - DAW-2 real PostgreSQL execution, process contention and failure windows
+  ---
+  duration_ms: 11.999457
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:12:1'
+  failureType: 'testCodeFailure'
+  error: 'spawnSync /nonexistent/daw2-postgres/initdb ENOENT'
+  code: 'ENOENT'
+  stack: |-
+    Object.spawnSync (node:internal/child_process:1160:20)
+    spawnSync (node:child_process:928:24)
+    execFileSync (node:child_process:971:15)
+    Lab.startPostgres (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:50:9)
+    async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:97:9)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+not ok 3 - mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+  ---
+  duration_ms: 10.415104
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: 'spawnSync /nonexistent/daw2-postgres/initdb ENOENT'
+  code: 'ENOENT'
+  stack: |-
+    Object.spawnSync (node:internal/child_process:1160:20)
+    spawnSync (node:child_process:928:24)
+    execFileSync (node:child_process:971:15)
+    Lab.startPostgres (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:50:9)
+    async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:15:9)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: canonical request ignores object-key order but preserves intended parameter values
+ok 4 - canonical request ignores object-key order but preserves intended parameter values
+  ---
+  duration_ms: 1.278082
+  type: 'test'
+  ...
+# Subtest: versioned deterministic steps are pure and initial scheduling is explicit
+ok 5 - versioned deterministic steps are pure and initial scheduling is explicit
+  ---
+  duration_ms: 1.222043
+  type: 'test'
+  ...
+# Subtest: configuration rejects malformed URLs without exposing credentials and validates ports
+ok 6 - configuration rejects malformed URLs without exposing credentials and validates ports
+  ---
+  duration_ms: 0.963787
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 4
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 422.877346

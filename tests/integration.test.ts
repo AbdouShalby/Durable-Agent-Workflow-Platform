@@ -18,9 +18,10 @@ test('mandatory real PostgreSQL + independent HTTP processes; no infrastructure 
     pool = createPool(lab.url, 'daw-test-observer');
     const db = pool;
     evidence['postgres'] = (await db.query('SELECT version(), current_setting(\'fsync\') AS fsync, current_setting(\'synchronous_commit\') AS synchronous_commit')).rows[0];
-    await t.test('concurrent migrations serialize and reruns preserve one checksum record', async () => {
+    await t.test('concurrent migrations serialize and reruns preserve one checksum record per migration', async () => {
       await Promise.all([migrate(db), migrate(db)]); await migrate(db);
-      assert.equal((await db.query('SELECT * FROM schema_migrations')).rowCount, 1);
+      assert.deepEqual((await db.query('SELECT name FROM schema_migrations ORDER BY name')).rows,
+        [{ name: '001_foundation.sql' }, { name: '002_execution.sql' }]);
     });
     const a = await lab.startApi(), b = await lab.startApi();
     assert.notEqual(a.process.child.pid, b.process.child.pid);
@@ -119,11 +120,11 @@ test('mandatory real PostgreSQL + independent HTTP processes; no infrastructure 
       await lab.stop(restarted.process);
     });
     await t.test('applied migration checksum drift is rejected, not silently accepted', async () => {
-      const original = (await db.query<{ sha256: string }>('SELECT sha256 FROM schema_migrations')).rows[0]?.sha256;
+      const original = (await db.query<{ sha256: string }>("SELECT sha256 FROM schema_migrations WHERE name='001_foundation.sql'")).rows[0]?.sha256;
       assert.ok(original);
-      await db.query("UPDATE schema_migrations SET sha256='changed-by-test'");
+      await db.query("UPDATE schema_migrations SET sha256='changed-by-test' WHERE name='001_foundation.sql'");
       try { await assert.rejects(migrate(db), /checksum mismatch/); }
-      finally { await db.query('UPDATE schema_migrations SET sha256=$1', [original]); }
+      finally { await db.query("UPDATE schema_migrations SET sha256=$1 WHERE name='001_foundation.sql'", [original]); }
     });
     await t.test('failing migration is atomic, including its schema history', async () => {
       await db.query('CREATE DATABASE migration_failure');

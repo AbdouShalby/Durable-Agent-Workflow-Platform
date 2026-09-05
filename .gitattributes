@@ -3,3 +3,12 @@
 docs/evidence/daw-1/status/tests.log whitespace=-blank-at-eol
 docs/evidence/daw-1/fingerprint/tests.log whitespace=-blank-at-eol
 docs/evidence/daw-1/atomicity/tests.log whitespace=-blank-at-eol
+# Preserve raw assertion formatting for DAW-2's eight explicit negative controls.
+docs/evidence/daw-2/status/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-2/fingerprint/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-2/atomicity/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-2/claim/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-2/fence/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-2/expiry/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-2/recovery/tests.log whitespace=-blank-at-eol
+docs/evidence/daw-2/retry-limit/tests.log whitespace=-blank-at-eol

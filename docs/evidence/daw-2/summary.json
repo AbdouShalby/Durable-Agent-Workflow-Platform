@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "milestone": "DAW-2",
+  "startedAt": "2026-09-05T16:33:24.451Z",
+  "status": "PASSED",
+  "gitBase": "7fd5ff3e60bb4537085f88fe0ed0966dc0f31198",
+  "sourceSha256": {
+    ".github/workflows/ci.yml": "0b353e2f6f19209254fc7f40a41e394e2ec1c5e8288a2be49bbef58c3f7f364d",
+    ".npmrc": "3b88d1057add6f92ec23dc22dd017e312ded13a042deb0ba6f08bad85d936456",
+    ".nvmrc": "5b9d0e73029969ae9000117cb877f17bb9841c1279bfe8024e294acfcf017800",
+    "compose.yml": "a9792f75c572c11ae3050199a862c4129335871a47f8d791cd00ac2a5e368c99",
+    "migrations/001_foundation.sql": "ecfcbd28d813d742deba77d535655ad8e69dd58c68a1666928eff24f9be78f6b",
+    "migrations/002_execution.sql": "ad94887e25279b6e75839c17c360da6030986adf3bd5e523509428016da12dfa",
+    "package-lock.json": "747cfa0cc2f3004849b803f16f0d2e78154ade719b51ee9e935070a0a9e988e4",
+    "package.json": "ff81bd64b8afd192d0a18e86ba3b216e64e90ff910117ac754b93a9d083bfc67",
+    "scripts/check-node.mjs": "16cd1cfabb98a88b15fffb45fe8677656402ec7300fefbd34c90d737dbb369ab",
+    "scripts/execution-negative-controls.mjs": "b81f44a3dd1af4e1d6077beb51e4e894969558daff56a5bf86c0d306aaa0ec97",
+    "scripts/negative-controls.mjs": "72cebd7ca484e7ce91f28c6c01f7c85e7736f9e8c6bd7c9724670b9aee0a9f89",
+    "scripts/validate.mjs": "c9d2de2279445492f4093fc9dd011bb63f8cff179cb88bbc1c0ff3c94d514467",
+    "src/application/execution.ts": "0201eea1d86cc168faa6fbd3135f0d844e6f1ecf8a05b9c228f8a7a83e90d30b",
+    "src/application/runs.ts": "28cc5e19f714e2391408913acd680d2e310546796d34b0a1d8ac787d9d86795a",
+    "src/application/worker.ts": "460d95d5c4c80f918a65dbc19e4ada654268287bdcf52a91c958a2847d84df60",
+    "src/config.ts": "f0087fe81f185513a0fed3dc4dac251e265216df91ecc771116cc64fd3d4c3a1",
+    "src/domain/retry.ts": "ba03d2a87e1707ccd9bfd1d8ac1d19e5c665db64d5abd648944b03aa92e07b73",
+    "src/domain/workflow.ts": "7ed9abf977e5bc34260368d46e304f7c94eceaaf7b5076768d673563e2dc4855",
+    "src/entrypoints/api.ts": "cf321435600b847d5066f581a18933e6df7e97ac1167494a2ffae0136152bc4f",
+    "src/entrypoints/execution-loop.ts": "6c4cdc2e1676cc42a38b2e620b3bcd19ece787f25fc42f836bdfc89da16718b0",
+    "src/entrypoints/migrate.ts": "fa86d6ec635582a3ac96c6f584aa45cece4cfacac75f2882224a0b8449922ee1",
+    "src/entrypoints/scheduler.ts": "76773934e62b4ddcc4d7b20f52238a07b0d7e225a7ab8a140419ee30f8cc0393",
+    "src/entrypoints/worker.ts": "af508c87024e1b0f1b91bba65926449164f15bf3148083270af9880676ed860c",
+    "src/http.ts": "94011b804ba214a8c4bca2d4bc0a3c2155140363c14c71cd7db44e82495461d7",
+    "src/persistence/database.ts": "a2b4046d488286f06e4b8e793c2e1a39d5e4f8b2ee03ec3cd673bff21d128da0",
+    "src/persistence/migrations.ts": "9780e5395ee41913e5d68e1e07c9507630a0796b2cc4b7974bae1f787a2f4aca",
+    "tests/execution-unit.test.ts": "279861a5374b8ac17b902f0d5d8e1a3fa58f0dcf1aa55951ff3710a5b8b6cf44",
+    "tests/execution.test.ts": "b571ddea61f9dc314b5036f453d27b6d0867bc715d746ba2c88feed2368270e6",
+    "tests/fixtures/execution-regression.mjs": "6b0f718b7c29e0a2d119933311370d954896519c4d760321c27ea752966d2f13",
+    "tests/fixtures/regression.mjs": "0f614c9fabbbd55f2b636727ab617d2b1ff56ccc79f3fa8e37b692f7353904a5",
+    "tests/integration.test.ts": "cd15c2d020451a707527b3e3253968815c267b26ee843000ea2c24e76bbcbc85",
+    "tests/support/execution-actor.ts": "2e6e16f7cf3c6f1ee896dc6eb014c3ac05bd71b1aafd7d8d4f295dd2695b505d",
+    "tests/support/lab.ts": "89778a33b87c7b5ded276b5eeabe0f6196952bf0e8d8d4be7212c78491df536d",
+    "tests/unit.test.ts": "47d321d22f9a6fddb4cf3e7d634583b49f4a63759e7e93a75a8e17c23787f5e4",
+    "tsconfig.json": "aef3207e20407a79e48e31722b35d2013222a4c125e0370afee4ec5eeaab5ac8"
+  },
+  "runtime": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "os": "6.18.33.1-microsoft-standard-WSL2",
+    "arch": "x64"
+  },
+  "commands": [
+    [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    [
+      "node",
+      "node_modules/typescript/bin/tsc"
+    ],
+    [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "dist/tests/unit.test.js",
+      "dist/tests/execution-unit.test.js",
+      "dist/tests/integration.test.js",
+      "dist/tests/execution.test.js"
+    ],
+    [
+      "node",
+      "scripts/negative-controls.mjs"
+    ],
+    [
+      "node",
+      "scripts/execution-negative-controls.mjs"
+    ]
+  ],
+  "failures": [],
+  "totals": {
+    "tests": 30,
+    "pass": 30,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "negativeControls": [
+    {
+      "mode": "status",
+      "exitCode": 1,
+      "detectedBy": "first acceptance 202, reordered exact replay 200, changed parameters 409"
+    },
+    {
+      "mode": "fingerprint",
+      "exitCode": 1,
+      "detectedBy": "two simultaneous different fingerprints produce one acceptance and one conflict"
+    },
+    {
+      "mode": "atomicity",
+      "exitCode": 1,
+      "detectedBy": "database failure at run_events rolls back run, scheduling and event"
+    }
+  ],
+  "executionNegativeControls": [
+    {
+      "mode": "claim",
+      "exitCode": 1,
+      "detectedBy": "eight simultaneous processes claim one logical owner"
+    },
+    {
+      "mode": "fence",
+      "exitCode": 1,
+      "detectedBy": "SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery"
+    },
+    {
+      "mode": "expiry",
+      "exitCode": 1,
+      "detectedBy": "lease checks use database time after waiting for the run lock"
+    },
+    {
+      "mode": "recovery",
+      "exitCode": 1,
+      "detectedBy": "SIGKILL after claim is recovered by restarted scheduler and production workers"
+    },
+    {
+      "mode": "retry-limit",
+      "exitCode": 1,
+      "detectedBy": "retryable failures have durable bounded attempts and backoff"
+    }
+  ],
+  "sourceChangedDuringRun": false,
+  "integrationSha256": "0028267f8a4edc61aeff1fcaab5f8db5a6546299717be249a22e5d0260a8afad",
+  "executionSha256": "79dacd775188652c5ad2645f99fb4d0538696e6e0333ebce9f5f5e6351a0c55b",
+  "completedAt": "2026-09-05T16:37:27.998Z",
+  "transcriptSha256": "7cec32eba45a43fed3316a33c1018508087d845654a86514cd9ad539fa28633e"
+}
