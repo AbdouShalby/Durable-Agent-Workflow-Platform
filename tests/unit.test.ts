@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { randomBytes } from 'node:crypto';
 import { canonicalRequest, fingerprint, normalizeIncident, summarizeIncident, definition } from '../src/domain/workflow.js';
 import type { CreateRunRequest } from '../src/domain/workflow.js';
 import { databaseUrl, port } from '../src/config.js';
@@ -22,7 +23,8 @@ test('versioned deterministic steps are pure and initial scheduling is explicit'
 test('configuration rejects malformed URLs without exposing credentials and validates ports', () => {
   const savedUrl = process.env['DATABASE_URL'], savedPort = process.env['PORT'];
   try {
-    process.env['DATABASE_URL'] = 'postgresql://user:private-sentinel@[';
+    const generated = randomBytes(24).toString('hex');
+    process.env['DATABASE_URL'] = `postgresql://fixture:${generated}@[invalid`;
     assert.throws(databaseUrl, { message: 'DATABASE_URL must be a valid PostgreSQL URL' });
     process.env['PORT'] = '1e3'; assert.throws(port);
     process.env['PORT'] = '65536'; assert.throws(port);

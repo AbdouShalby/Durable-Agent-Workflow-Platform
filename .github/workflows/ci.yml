@@ -10,6 +10,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
+      - name: Offline credential hygiene and regression guard
+        run: npm run test:secrets
       - name: Install owned-cluster test binaries
         run: sudo apt-get update && sudo apt-get install -y postgresql-16
       - run: npm run validate

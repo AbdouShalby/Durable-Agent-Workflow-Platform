@@ -14,6 +14,7 @@
     "worker": "node dist/src/entrypoints/worker.js",
     "scheduler": "node dist/src/entrypoints/scheduler.js",
     "simulator": "node dist/src/simulator/server.js",
+    "test:secrets": "node --test tests/secret-guard.test.mjs && node scripts/secret-guard.mjs",
     "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js",
     "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js",
     "validate": "node scripts/validate.mjs"

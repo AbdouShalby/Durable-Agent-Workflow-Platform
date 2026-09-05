@@ -32,6 +32,8 @@ async function run(args) {
   return stdout;
 }
 try {
+  await run(['--test', 'tests/secret-guard.test.mjs']);
+  await run(['scripts/secret-guard.mjs']);
   await run(['node_modules/typescript/bin/tsc', '--noEmit']);
   await run(['node_modules/typescript/bin/tsc']);
   const tap = await run(['--test', '--test-reporter=tap', 'dist/tests/unit.test.js', 'dist/tests/execution-unit.test.js', 'dist/tests/effect-unit.test.js', 'dist/tests/integration.test.js', 'dist/tests/execution.test.js', 'dist/tests/effects.test.js']);
