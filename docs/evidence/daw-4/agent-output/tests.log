@@ -1,0 +1,68 @@
+TAP version 13
+# Subtest: agent schema rejects malformed and policy-changing output
+not ok 1 - agent schema rejects malformed and policy-changing output
+  ---
+  duration_ms: 18.787306
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent-unit.test.js:8:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The error is expected to be an instance of "AgentPolicyError". Received "TypeError"
+    
+    Error message:
+    
+    Cannot read properties of null (reading 'kind')
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent-unit.test.js:11:16)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: agent tool allowlist rejects unregistered and prototype names
+ok 2 - agent tool allowlist rejects unregistered and prototype names
+  ---
+  duration_ms: 0.325305
+  type: 'test'
+  ...
+# Subtest: read-only tool validates its own inputs before invocation
+ok 3 - read-only tool validates its own inputs before invocation
+  ---
+  duration_ms: 0.7549
+  type: 'test'
+  ...
+# Subtest: finish needs observed evidence and cannot smuggle tools or approvals
+ok 4 - finish needs observed evidence and cannot smuggle tools or approvals
+  ---
+  duration_ms: 0.313216
+  type: 'test'
+  ...
+# Subtest: deterministic evaluation repeats exact decisions for a small synthetic dataset
+ok 5 - deterministic evaluation repeats exact decisions for a small synthetic dataset
+  ---
+  duration_ms: 0.824978
+  type: 'test'
+  ...
+# Subtest: OpenAI adapter uses a fixed bounded contract and no hosted tools or redirects
+ok 6 - OpenAI adapter uses a fixed bounded contract and no hosted tools or redirects
+  ---
+  duration_ms: 18.601278
+  type: 'test'
+  ...
+# Subtest: OpenAI adapter rejects refusal incomplete oversized and malformed envelopes without fallback
+ok 7 - OpenAI adapter rejects refusal incomplete oversized and malformed envelopes without fallback
+  ---
+  duration_ms: 2.381916
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1099.068121

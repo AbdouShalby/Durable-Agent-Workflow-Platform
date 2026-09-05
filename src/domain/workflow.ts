@@ -1,8 +1,10 @@
 import { createHash } from 'node:crypto';
+import { agentPolicy } from './agent.js';
 
 export interface IncidentInput { title: string; severity: 'low' | 'high' }
 export type CreateRunRequest = { workflow: 'incident-triage'; version: 1; input: IncidentInput } |
-  { workflow: 'incident-triage'; version: 2; input: IncidentInput; toolContract: 'keyed' | 'unkeyed' };
+  { workflow: 'incident-triage'; version: 2; input: IncidentInput; toolContract: 'keyed' | 'unkeyed' } |
+  { workflow: 'incident-triage'; version: 3; input: IncidentInput };
 
 export const definition = Object.freeze({
   name: 'incident-triage', version: 1,
@@ -16,6 +18,10 @@ export const effectDefinition = Object.freeze({ name: 'incident-triage', version
   steps: Object.freeze([...definition.steps, Object.freeze({ key: 'write-summary', ordinal: 2, state: 'BLOCKED' })]),
 });
 export const effectDefinitionHash = createHash('sha256').update(JSON.stringify(effectDefinition)).digest('hex');
+export const agentDefinition = Object.freeze({ name: 'incident-triage', version: 3, policy: agentPolicy,
+  steps: Object.freeze([...definition.steps, Object.freeze({ key: 'analyze-incident', ordinal: 2, state: 'BLOCKED' })]),
+});
+export const agentDefinitionHash = createHash('sha256').update(JSON.stringify(agentDefinition)).digest('hex');
 
 // DAW-2 executes these pure steps; the definition and its v1 hash remain unchanged.
 export function normalizeIncident(input: IncidentInput): IncidentInput {
@@ -54,4 +60,4 @@ export const createRunSchema = { oneOf: [v1Schema, { ...v1Schema,
   required: [...v1Schema.required, 'toolContract'],
   properties: { ...v1Schema.properties, version: { type: 'integer', const: 2 },
     toolContract: { type: 'string', enum: ['keyed','unkeyed'] } },
-}] } as const;
+}, { ...v1Schema, properties: { ...v1Schema.properties, version: { type: 'integer', const: 3 } } }] } as const;

@@ -1,0 +1,182 @@
+{
+  "mutation": "timeout",
+  "cases": {
+    "timeout remains UNKNOWN and unavailable verification never triggers blind POST": {
+      "run": "c21cd6c0-48ac-4989-b83c-e63cc72faf58",
+      "serviceId": "a81de782-daec-4bc6-a5b7-1b496a9872e1",
+      "tools": [
+        {
+          "effect_key": "29b114206663731100b65032c367e1de8119ec440b9119b3f25e07d3e24d5ef6",
+          "contract": "keyed",
+          "state": "PREPARED",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "RETRY_WAIT",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RETRYABLE"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "29b114206663731100b65032c367e1de8119ec440b9119b3f25e07d3e24d5ef6"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 115
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "b567ee03-6672-40b2-a3cd-d1917d24ee21",
+          "effect_key": "29b114206663731100b65032c367e1de8119ec440b9119b3f25e07d3e24d5ef6",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "29b114206663731100b65032c367e1de8119ec440b9119b3f25e07d3e24d5ef6",
+            "receiptId": "b567ee03-6672-40b2-a3cd-d1917d24ee21",
+            "serviceId": "a81de782-daec-4bc6-a5b7-1b496a9872e1",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "29b114206663731100b65032c367e1de8119ec440b9119b3f25e07d3e24d5ef6",
+          "method": "POST"
+        }
+      ]
+    }
+  },
+  "independentClusters": [
+    "/var/tmp/daw4-validation-vFkGiHGF/daw1-pg-EZHPEe",
+    "/var/tmp/daw4-validation-vFkGiHGF/daw1-pg-1tPhca"
+  ],
+  "postgres": [
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    },
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    }
+  ],
+  "cleanup": [
+    {
+      "role": "postgres",
+      "pid": 71092,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 71130,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 71144,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

@@ -7,7 +7,8 @@ import os from 'node:os';
 import path from 'node:path';
 
 assert.equal(process.argv.length, 2, 'validate accepts no arguments');
-assert.ok(!process.env.NODE_OPTIONS && !process.env.DAW_TEST_MUTATION && !process.env.DAW_EXECUTION_MUTATION && !process.env.DAW_EFFECT_MUTATION && !process.env.DAW_EFFECT_CASE, 'unset test mutations for the positive validation gate');
+assert.ok(!process.env.DAW_AGENT_ADAPTER || process.env.DAW_AGENT_ADAPTER === 'deterministic', 'validation forbids live model adapters');
+assert.ok(!process.env.NODE_OPTIONS && !process.env.DAW_TEST_MUTATION && !process.env.DAW_EXECUTION_MUTATION && !process.env.DAW_EFFECT_MUTATION && !process.env.DAW_EFFECT_CASE && !process.env.DAW_AGENT_MUTATION && !process.env.DAW_AGENT_CASE, 'unset test mutations for the positive validation gate');
 const read = f => readFileSync(f, 'utf8').replace(/\r\n/g, '\n');
 const hash = text => createHash('sha256').update(text).digest('hex');
 const snapshot = () => Object.fromEntries([...new Set(execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], { encoding: 'utf8' }).trim().split('\n'))]
@@ -15,7 +16,7 @@ const snapshot = () => Object.fromEntries([...new Set(execFileSync('git', ['ls-f
   .sort().map(f => [f, hash(read(f))]));
 const directory = path.resolve('.local/results', new Date().toISOString().replace(/[:.]/g, '-') + '-' + randomUUID());
 mkdirSync(directory, { recursive: true });
-const report = { schemaVersion: 1, milestone: 'DAW-3', startedAt: new Date().toISOString(), status: 'FAILED',
+const report = { schemaVersion: 1, milestone: 'DAW-4', startedAt: new Date().toISOString(), status: 'FAILED',
   gitBase: null, sourceSha256: snapshot(), runtime: { node: process.version, platform: process.platform,
     os: os.release(), arch: process.arch, temporaryRoot: os.tmpdir() }, commands: [], failures: [] };
 try { report.gitBase = execFileSync('git', ['rev-parse', '--verify', 'HEAD'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { /* Initial repository: no invented base commit. */ }
@@ -36,7 +37,7 @@ try {
   await run(['scripts/secret-guard.mjs']);
   await run(['node_modules/typescript/bin/tsc', '--noEmit']);
   await run(['node_modules/typescript/bin/tsc']);
-  const tap = await run(['--test', '--test-reporter=tap', 'dist/tests/unit.test.js', 'dist/tests/execution-unit.test.js', 'dist/tests/effect-unit.test.js', 'dist/tests/integration.test.js', 'dist/tests/execution.test.js', 'dist/tests/effects.test.js']);
+  const tap = await run(['--test', '--test-reporter=tap', 'dist/tests/unit.test.js', 'dist/tests/execution-unit.test.js', 'dist/tests/effect-unit.test.js', 'dist/tests/agent-unit.test.js', 'dist/tests/integration.test.js', 'dist/tests/execution.test.js', 'dist/tests/effects.test.js', 'dist/tests/agent.test.js']);
   const totals = {};
   for (const key of ['tests', 'pass', 'fail', 'cancelled', 'skipped', 'todo']) {
     const matches = [...tap.matchAll(new RegExp(`^# ${key} (\\d+)\\r?$`, 'gm'))];
@@ -51,11 +52,14 @@ try {
   report.executionNegativeControls = JSON.parse(read(path.join(directory, 'execution-negative-controls.json')));
   await run(['scripts/effect-negative-controls.mjs']);
   report.effectNegativeControls = JSON.parse(read(path.join(directory, 'effect-negative-controls.json')));
+  await run(['scripts/agent-negative-controls.mjs']);
+  report.agentNegativeControls = JSON.parse(read(path.join(directory, 'agent-negative-controls.json')));
   assert.deepEqual(snapshot(), report.sourceSha256, 'source changed during validation');
   report.sourceChangedDuringRun = false;
   report.integrationSha256 = hash(read(path.join(directory, 'integration.json')));
   report.executionSha256 = hash(read(path.join(directory, 'execution.json')));
   report.effectsSha256 = hash(read(path.join(directory, 'effects.json')));
+  report.agentSha256 = hash(read(path.join(directory, 'agent.json')));
   report.status = 'PASSED';
 } catch (e) { report.failures.push(e.stack || String(e)); process.exitCode = 1; }
 finally {

@@ -85,6 +85,9 @@ export async function completeStep(pool: pg.Pool, claim: Claim, result: unknown)
     if (!step || !await owns(client, claim)) return false;
     const tool = (await client.query('SELECT state,receipt=$3::jsonb AS matches FROM tool_invocations WHERE run_id=$1 AND step_key=$2', [claim.run_id, claim.step_key, JSON.stringify(result)])).rows[0];
     if (tool && (tool.state !== 'VERIFIED' || !tool.matches)) return false;
+    const agent = (await client.query('SELECT 1 FROM agent_sessions WHERE run_id=$1 AND step_key=$2', [claim.run_id,claim.step_key])).rowCount;
+    if (agent && !(await client.query(`SELECT 1 FROM agent_decisions WHERE run_id=$1 AND step_key=$2
+      AND decision->>'kind'='finish' AND jsonb_build_object('summary',decision->'summary','evidence',decision->'evidence')=$3::jsonb`, [claim.run_id,claim.step_key,JSON.stringify(result)])).rowCount) return false;
     await client.query(`UPDATE step_runs SET state='SUCCEEDED',result=$3,owner=NULL,lease_expires_at=NULL,last_error=NULL
       WHERE run_id=$1 AND step_key=$2`, [claim.run_id, claim.step_key, JSON.stringify(result)]);
     await client.query(`UPDATE step_attempts SET outcome='SUCCEEDED',ended_at=clock_timestamp()

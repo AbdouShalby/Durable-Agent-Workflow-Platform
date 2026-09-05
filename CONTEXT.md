@@ -31,3 +31,11 @@
 **UNKNOWN**: The platform cannot safely infer that a possible write failed. Persisted before sending, this state intentionally also covers a crash before any packet leaves.
 
 **Reconciliation required**: Automatic execution is parked because the external outcome or remaining bookkeeping cannot safely be finished under the available contract/budget. No manual resend/override API is supplied by DAW-3.
+
+**Agent proposal**: Untrusted structured model output. Schema validity is necessary but not permission to execute or proof of semantic truth.
+
+**Accepted decision**: A proposal validated by the engine against schema, tool input and evidence-reference rules and durably saved under current ownership before tool dispatch. Resume reuses it.
+
+**Observation checkpoint**: A read-only tool result saved separately from the accepted proposal. Interrupted reads may repeat before this checkpoint; saved observations are reused.
+
+**Agent session budget**: Fixed engine-owned limits for accepted turns, reserved model calls, estimated cost and tool executions; elapsed deadline remains on the step. Lost responses do not refund reservations. The cost ledger is not provider billing enforcement.

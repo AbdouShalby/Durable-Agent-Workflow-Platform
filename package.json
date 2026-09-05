@@ -2,7 +2,7 @@
   "name": "durable-agent-workflow-platform",
   "version": "0.1.0",
   "private": true,
-  "description": "Production-inspired durable workflow execution and external-effect reconciliation lab; no agents",
+  "description": "Production-inspired durable workflows, external-effect reconciliation and bounded read-only agent lab",
   "type": "module",
   "engines": { "node": "24.20.0" },
   "scripts": {
@@ -15,10 +15,10 @@
     "scheduler": "node dist/src/entrypoints/scheduler.js",
     "simulator": "node dist/src/simulator/server.js",
     "test:secrets": "node --test tests/secret-guard.test.mjs && node scripts/secret-guard.mjs",
-    "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js",
-    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js",
+    "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js",
+    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js",
     "validate": "node scripts/validate.mjs"
   },
-  "dependencies": { "fastify": "5.12.3", "pg": "8.23.0" },
+  "dependencies": { "ajv": "8.20.0", "fastify": "5.12.3", "pg": "8.23.0" },
   "devDependencies": { "@types/node": "24.13.3", "@types/pg": "8.23.1", "typescript": "7.0.2" }
 }

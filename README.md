@@ -1,10 +1,10 @@
 # Durable Agent Workflow Platform
 
-A production-inspired architecture lab. **DAW-3 adds durable external-effect intent, receipt verification and conservative uncertainty handling.** Real worker/scheduler processes coordinate through PostgreSQL; an independent HTTP simulator owns its own persistence. There are no LLMs or approval features. The project name describes the broader direction, not agent capabilities already delivered.
+A production-inspired architecture lab. **DAW-4 adds bounded, checkpointed agent execution with read-only tools.** Real worker/scheduler processes coordinate through PostgreSQL. V2 retains the independent external-effect simulator; opt-in v3 uses a deterministic model simulator by default, with an isolated OpenAI adapter available. No approvals, write-capable agent tools or multi-agent runtime are implemented. The real model adapter has offline contract tests, not live-provider evidence.
 
 The foundation accepts a versioned incident-triage request, atomically persists its run, initial step states and creation event, and returns a durable run identity. Concurrent duplicate requests use PostgreSQL uniqueness as the authority, not an in-memory lock or a pre-check. This is showcase evidence, not production usage or exactly-once execution.
 
-See [DAW-3 scope and evidence](docs/daw-3.md), [external-effect decision](docs/adr/0003-external-effect-uncertainty.md), [historical DAW-2 evidence](docs/daw-2.md), [historical DAW-1 evidence](docs/daw-1.md), [admission decision](docs/adr/0001-postgres-admission.md), [execution decision](docs/adr/0002-leased-execution.md), and [domain terms](CONTEXT.md).
+See [DAW-4 contracts and evidence](docs/daw-4.md), [bounded-agent decision](docs/adr/0004-bounded-agent.md), [historical DAW-3 scope and evidence](docs/daw-3.md), [external-effect decision](docs/adr/0003-external-effect-uncertainty.md), [historical DAW-2 evidence](docs/daw-2.md), [historical DAW-1 evidence](docs/daw-1.md), [admission decision](docs/adr/0001-postgres-admission.md), [execution decision](docs/adr/0002-leased-execution.md), and [domain terms](CONTEXT.md).
 
 ## What exists
 
@@ -13,11 +13,14 @@ See [DAW-3 scope and evidence](docs/daw-3.md), [external-effect decision](docs/a
 - Local token-protected HTTP API: create a run and read its persisted schedule.
 - A deterministic `incident-triage` v1 executor: `normalize-incident` then `build-summary`, consuming the saved prior result.
 - Opt-in `incident-triage` v2 adds `write-summary`. Each run binds its `keyed`/`unkeyed` simulator contract, target identity, payload fingerprint and stable effect key durably. V1 semantics and historical hashes are unchanged.
+- Opt-in v3 instead adds `analyze-incident`: accepted model decisions and read-only observations are separately checkpointed. The engine enforces schema/tool/evidence policy and fixed turn, call, estimated-cost and elapsed-time limits. The model cannot approve, change policy or mark the workflow successful.
 - Atomic step claims, persisted attempts, leases, monotonically increasing per-step fencing tokens and a recovery scheduler. Only one step per run can have valid ownership; separate runs can progress independently.
 - Bounded exponential retries with reproducible seeded jitter, persisted due times, a maximum attempt count and a per-step deadline.
 - Real PostgreSQL / independent HTTP-process tests, including database lock barriers, rollback injection, persistence across process/database restart and regression controls.
 
 ## State and consistency contract
+
+V1 admission below; v2 additionally saves its external invocation and v3 its agent session, each with a third initially blocked step in the same transaction.
 
 ```text
 POST /runs
@@ -35,7 +38,7 @@ The unique key is `(caller_id, idempotency_key)`. The API authenticates one conf
 
 The fingerprint is SHA-256 of a fixed-field JSON representation of workflow name, explicit version and validated input. Object-key order is irrelevant. Values are preserved: whitespace changes in a title are a different intended request, even though normalization trims the title. Unknown properties, omitted required fields and type coercion are rejected rather than silently changing identity. Definition metadata/hash is saved with the run; v1 semantics must not be edited into a different workflow under the same version. The metadata hash is not an executable-code hash.
 
-The losing `INSERT ... ON CONFLICT DO NOTHING` reads the committed winner in a **new statement** under explicit READ COMMITTED isolation. It returns replay only when fingerprints match. It never decides creation status from an earlier pre-check. Run, initial steps and event are in the same transaction; v2 also includes its durable invocation. No database/broker dual write exists. The later HTTP effect is explicitly outside that transaction. Raw SQL callers or database administrators can violate higher-level invariants: this is an application transaction contract, not a claim that arbitrary manual writes are safe.
+The losing `INSERT ... ON CONFLICT DO NOTHING` reads the committed winner in a **new statement** under explicit READ COMMITTED isolation. It returns replay only when fingerprints match. It never decides creation status from an earlier pre-check. Run, initial steps and event are in the same transaction; v2 also includes its durable invocation and v3 its agent session/policy. No database/broker dual write exists. Later HTTP effects and model calls are explicitly outside that transaction. Raw SQL callers or database administrators can violate higher-level invariants: this is an application transaction contract, not a claim that arbitrary manual writes are safe.
 
 ## Prerequisites
 
@@ -58,7 +61,7 @@ For another installed PostgreSQL binary directory:
 PG_BIN=/usr/lib/postgresql/16/bin npm run validate
 ```
 
-`validate` checks the pinned Node version, typechecks, builds, runs unit/integration tests, rejects failures/skips/cancellations/todos and executes twelve expected-failure mutation controls (three admission, five execution, four external effects). Output is `.local/results/<timestamp-uuid>/`: source hashes, runtime, exact commands, positive TAP transcript, PostgreSQL backend/process evidence and negative-control logs. Source drift during the gate fails it. Test counts include integration parent tests; see the retained TAP for individual scenarios.
+`validate` checks the pinned Node version and credential guard, typechecks, builds, runs unit/integration/evaluation tests, rejects failures/skips/cancellations/todos and executes sixteen expected-failure mutation controls (three admission, five execution, four external effects, four agent controls). Output is `.local/results/<timestamp-uuid>/`: source hashes, runtime, exact commands, positive TAP transcript, PostgreSQL backend/process evidence and negative-control logs. Source drift during the gate fails it. Test counts include integration parent tests; see the retained TAP for individual scenarios.
 
 Tests start independent API child processes, not Fastify injection. Eight identical requests are held at a real PostgreSQL table lock until all eight backend sessions are observed blocked in INSERT, then released together. Exactly one must return 202 and seven 200, with one logical run. V1 has two initial steps; v2 has three and one durable invocation. Conflicting fingerprints return 409. This proves finite races on one host, not load capacity or strict FIFO fairness.
 
@@ -174,9 +177,9 @@ loopback-only environment. Stable service identity is a binding check, not a sec
 - Duplicate **attempts** are possible; one run identity under the validated key scope is not exactly-once workflow execution.
 - No run deletion/idempotency expiry API exists. Retention and archival policies remain unspecified; manual deletion would change replay behavior.
 - Fencing protects PostgreSQL transitions, not external systems. An old process may still compute after expiry but cannot authorize a new result/downstream transition. The ownership check under locks is the linearization point; physical COMMIT may occur later. No arbitrary-executor preemption, starvation bound or cross-host clock/disaster guarantee is demonstrated.
-- Only the specified summary-writing simulator tool exists; no agent, LLM, approvals, cancellations, dynamic DAG or broker is implemented. DAW-4 through DAW-7 are not started.
+- V2's summary-writing simulator is not accessible to v3 agents. Agent tools are restricted to local synthetic read-only data. No approvals, cancellations, dynamic DAG, broker, arbitrary code execution or multi-agent orchestration exists. DAW-5 through DAW-7 are not started.
 - No HTTP load benchmark, latency SLO, production traffic, provider integration or production AI experience is established.
 
 ## Layout
 
-`src/domain/` holds versioned definitions, fingerprints, receipt rules and retry calculation; `src/application/` admission/execution/effect coordination; `src/persistence/` PostgreSQL and migrations; `src/http.ts` the HTTP boundary; `src/entrypoints/` API/migration/worker/scheduler commands; `src/simulator/` the independently persisted HTTP service. `tests/` contains pure contracts and real infrastructure scenarios; `tests/fixtures/` contains explicit test-only source mutations. `scripts/` drives reproducible validation. `docs/evidence/` retains selected reviewed output; routine artifacts, dependencies and compiled output stay ignored.
+`src/domain/` holds versioned definitions, fingerprints, receipt/agent/tool rules and retry calculation; `src/application/` admission/execution/effect/agent checkpoint coordination; `src/agents/` isolated model adapters; `src/persistence/` PostgreSQL and migrations; `src/http.ts` the HTTP boundary; `src/entrypoints/` API/migration/worker/scheduler commands; `src/simulator/` the independently persisted HTTP effect service. `tests/` contains pure contracts, deterministic evaluations and real infrastructure scenarios; `tests/fixtures/` contains explicit test-only source mutations. `scripts/` drives reproducible validation. `docs/evidence/` retains selected reviewed output; routine artifacts, dependencies and compiled output stay ignored.
