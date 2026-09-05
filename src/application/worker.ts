@@ -5,7 +5,7 @@ import type { Claim } from './execution.js';
 import { definition, definitionHash, effectDefinitionHash, normalizeIncident, summarizeIncident } from '../domain/workflow.js';
 import { executeEffect, EffectUncertainError, LostEffectOwnership, EffectInfrastructureError } from './effects.js';
 import type { IncidentInput } from '../domain/workflow.js';
-import { agentDefinitionHash } from '../domain/workflow.js';
+import { agentDefinitionHash, governedDefinitionHash } from '../domain/workflow.js';
 import { executeAgent, LostAgentOwnership, AgentInfrastructureError } from './agent.js';
 import { ModelUnavailable } from '../agents/adapters.js';
 
@@ -16,7 +16,8 @@ export type Executor = (claim: Claim, signal: AbortSignal) => Promise<unknown>;
 export const executeDeterministic: Executor = async claim => {
   if (claim.workflow_name !== definition.name || !((claim.workflow_version === definition.version && claim.definition_hash === definitionHash) ||
       (claim.workflow_version === 2 && claim.definition_hash === effectDefinitionHash) ||
-      (claim.workflow_version === 3 && claim.definition_hash === agentDefinitionHash))) {
+      (claim.workflow_version === 3 && claim.definition_hash === agentDefinitionHash) ||
+      (claim.workflow_version === 4 && claim.definition_hash === governedDefinitionHash))) {
     throw new Error('unsupported workflow definition');
   }
   if (claim.step_key === 'normalize-incident') return normalizeIncident(claim.input);
@@ -47,9 +48,11 @@ export async function runOne(pool: pg.Pool, owner: string, execute?: Executor): 
   let result: unknown, failure: unknown, failed = false;
   try {
     if (execute) result = await execute(claim, execution.signal);
-    else if (claim.workflow_name === definition.name && claim.workflow_version === 3 && claim.definition_hash === agentDefinitionHash && claim.step_key === 'analyze-incident') {
+    else if (claim.workflow_name === definition.name && ((claim.workflow_version === 3 && claim.definition_hash === agentDefinitionHash) ||
+      (claim.workflow_version === 4 && claim.definition_hash === governedDefinitionHash)) && claim.step_key === 'analyze-incident') {
       result = await executeAgent(pool, claim, execution.signal);
-    } else if (claim.workflow_name === definition.name && claim.workflow_version === 2 && claim.definition_hash === effectDefinitionHash && claim.step_key === 'write-summary') {
+    } else if (claim.workflow_name === definition.name && ((claim.workflow_version === 2 && claim.definition_hash === effectDefinitionHash) ||
+      (claim.workflow_version === 4 && claim.definition_hash === governedDefinitionHash)) && claim.step_key === 'write-summary') {
       result = await executeEffect(pool, claim, execution.signal);
     } else result = await executeDeterministic(claim, execution.signal);
   }

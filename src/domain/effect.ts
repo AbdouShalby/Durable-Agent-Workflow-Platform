@@ -8,7 +8,7 @@ export interface Receipt {
 export const effectFingerprint = (request: EffectRequest): string => createHash('sha256')
   .update(JSON.stringify({ summary: request.summary })).digest('hex');
 // Logical identity, never attempt/owner/fence: a retry must address the same external operation.
-export const effectKey = (run: string): string => createHash('sha256').update(`daw:incident-triage:2:${run}:write-summary`).digest('hex');
+export const effectKey = (run: string, version = 2): string => createHash('sha256').update(`daw:incident-triage:${version}:${run}:write-summary`).digest('hex');
 export function validReceipt(value: unknown, expected: { effect_key: string; service_id: string; request_fingerprint: string; request: EffectRequest }): value is Receipt {
   if (!value || typeof value !== 'object') return false;
   const r = value as Partial<Receipt>;

@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "milestone": "DAW-5",
+  "startedAt": "2026-09-05T21:56:05.440Z",
+  "status": "PASSED",
+  "gitBase": "f1fbf2b3fbd944a38f56b4c77612eb5c03f73bd3",
+  "sourceSha256": {
+    ".github/workflows/ci.yml": "e1685965cb778e4f1520b7f783c7858ee662d56f7fd20baa8354ba872e3a79dc",
+    ".npmrc": "3b88d1057add6f92ec23dc22dd017e312ded13a042deb0ba6f08bad85d936456",
+    ".nvmrc": "5b9d0e73029969ae9000117cb877f17bb9841c1279bfe8024e294acfcf017800",
+    "compose.yml": "a9792f75c572c11ae3050199a862c4129335871a47f8d791cd00ac2a5e368c99",
+    "migrations/001_foundation.sql": "ecfcbd28d813d742deba77d535655ad8e69dd58c68a1666928eff24f9be78f6b",
+    "migrations/002_execution.sql": "ad94887e25279b6e75839c17c360da6030986adf3bd5e523509428016da12dfa",
+    "migrations/003_effects.sql": "4afc5831379163036ec5359359c076aae606107c20e999ce907a530e9fca3dfd",
+    "migrations/004_agent.sql": "0f37086b2607b3a840c3fcb83fd803bf04dc5f9cbd1244d2351dd9e8cd7406e0",
+    "migrations/005_approvals.sql": "9ef543e74d286198ceafb1be79a4d908eeedf9be2e64907ed6e699b90fb453d0",
+    "package-lock.json": "e09b064b4eb688525a030da9d1cd8c9b5b0875689b3b4d2d08236b3dae699441",
+    "package.json": "2c8a51d926d426ef261d56b264b2e58040637d4c90c7a2f6637f5d1fc2beede6",
+    "scripts/agent-negative-controls.mjs": "fdbf1f4d8abc329f6527f4d340d8866925a2714424c54c29d4e5e3509f2e8ef9",
+    "scripts/approval-negative-controls.mjs": "da230171a605d0d78941133ed52fd47c890d2bb8abf57d0a58a5825cab02e7d7",
+    "scripts/check-node.mjs": "16cd1cfabb98a88b15fffb45fe8677656402ec7300fefbd34c90d737dbb369ab",
+    "scripts/effect-negative-controls.mjs": "bf6c284d68506e347f80adfef70e8b822e5d74753599f1f436f0133540d8c476",
+    "scripts/execution-negative-controls.mjs": "b81f44a3dd1af4e1d6077beb51e4e894969558daff56a5bf86c0d306aaa0ec97",
+    "scripts/negative-controls.mjs": "72cebd7ca484e7ce91f28c6c01f7c85e7736f9e8c6bd7c9724670b9aee0a9f89",
+    "scripts/secret-guard.mjs": "27fe0c719bd8284caa3c2e4bb981e18bff703ba66f72b34fd929e97bf66ea097",
+    "scripts/validate.mjs": "3ecf50d16cbe3bcb239dd4bd7f9bcd5f146e83a61b7054135691d0117d3315d6",
+    "src/agents/adapters.ts": "71e3b5d68c946ac403d6f71566d39db4b25910587bb7574bf091d3fbf657dc8f",
+    "src/application/agent.ts": "c12883dc7b9cbb8754efa8199efde885f9c3f4844637f71409920f8a6258fff3",
+    "src/application/approvals.ts": "3c2fa1ea9b2045c8d99c27ded6357f14d0120f0994fd120d1e37e155b8481fde",
+    "src/application/effects.ts": "ae3fa579c2b48607ab2e85cc69c2b5b72bba5fb08b680c4873d1f40f4ab78735",
+    "src/application/execution.ts": "04a36966ef3fef93a116b90b6259311c66e842917982e2b68ee34efa19b60ab6",
+    "src/application/runs.ts": "9d4cfae53bb11ffd683c43ff8724ea8ccda6364f41a94b00ae493c0804ed0713",
+    "src/application/worker.ts": "54e8d44f8ccfa4274792b85c0565297c8ecca48dc15a39a9f5814b27076e6c4c",
+    "src/config.ts": "f0087fe81f185513a0fed3dc4dac251e265216df91ecc771116cc64fd3d4c3a1",
+    "src/domain/agent.ts": "54b8c8c244e70d84b9af7c0978764694176fdff1ba04ef9518c0ffaf027616fa",
+    "src/domain/approval.ts": "5587dcd56e120b382306f8d85aa3fa4b4f64ed6e5483a51d6107ce7ab5e9ba5e",
+    "src/domain/effect.ts": "117536e811011dbac114c7322be011c5290a3c93103d4fe4072363c364fb90af",
+    "src/domain/retry.ts": "ba03d2a87e1707ccd9bfd1d8ac1d19e5c665db64d5abd648944b03aa92e07b73",
+    "src/domain/workflow.ts": "d24c113d62929abe1ef3aac0671481a3fcc487510659b8ab895079e3501537fd",
+    "src/entrypoints/api.ts": "c0b643c99b2bece8cda255db2938aabde87295e72f6b291449ea8c867414b0c5",
+    "src/entrypoints/execution-loop.ts": "6c4cdc2e1676cc42a38b2e620b3bcd19ece787f25fc42f836bdfc89da16718b0",
+    "src/entrypoints/migrate.ts": "fa86d6ec635582a3ac96c6f584aa45cece4cfacac75f2882224a0b8449922ee1",
+    "src/entrypoints/scheduler.ts": "76773934e62b4ddcc4d7b20f52238a07b0d7e225a7ab8a140419ee30f8cc0393",
+    "src/entrypoints/worker.ts": "af508c87024e1b0f1b91bba65926449164f15bf3148083270af9880676ed860c",
+    "src/http.ts": "76515bffa831bd4a40db0e818198b44dd7e95ea83dfa87e29416914be3f36679",
+    "src/persistence/database.ts": "a2b4046d488286f06e4b8e793c2e1a39d5e4f8b2ee03ec3cd673bff21d128da0",
+    "src/persistence/migrations.ts": "9780e5395ee41913e5d68e1e07c9507630a0796b2cc4b7974bae1f787a2f4aca",
+    "src/simulator/server.ts": "e32810b64f1943a7f2cf2574041101b650b0789cef2e54ef78b3aac3818bd39b",
+    "tests/agent-unit.test.ts": "52bc0854e42170fac30adc9a7e70f00773723917d4ae5fe0d7e0207f56bb209a",
+    "tests/agent.test.ts": "6c5d5182db9410921c4c72a9348a7912a6df948fdc849851b4bf34156cab5ab7",
+    "tests/approval-unit.test.ts": "1e9d7e564eefc392972a89311d5c7bc9d3179c17e8a0d807f2c55a7e7d87b455",
+    "tests/approvals.test.ts": "c8e30e78d60aeec8056ee6c26348990d54e4c7a104bcd50618ceabaa3cf69bad",
+    "tests/effect-unit.test.ts": "4fc1596135d8d3f7dd80176627c0a25c9efac3a125e3a36a72dae2ac87c093fc",
+    "tests/effects.test.ts": "c1c84c2145b225ca00f21646f138a60000b62f62aedec91c61215a969f020307",
+    "tests/execution-unit.test.ts": "279861a5374b8ac17b902f0d5d8e1a3fa58f0dcf1aa55951ff3710a5b8b6cf44",
+    "tests/execution.test.ts": "b571ddea61f9dc314b5036f453d27b6d0867bc715d746ba2c88feed2368270e6",
+    "tests/fixtures/agent-regression.mjs": "28a269ad47e59439b416f952703ce459f9c70fbc763e498d8ffd36985e29611e",
+    "tests/fixtures/approval-regression.mjs": "a95f3bfdac94c437c8423eef90856b89bcd7c1798746739e3ac30c4880986016",
+    "tests/fixtures/effect-regression.mjs": "75b8423042a50d9b6f5024bdc999c2729e00b3440c3c74e6ff52c5e49ea6dd00",
+    "tests/fixtures/execution-regression.mjs": "6b0f718b7c29e0a2d119933311370d954896519c4d760321c27ea752966d2f13",
+    "tests/fixtures/regression.mjs": "0f614c9fabbbd55f2b636727ab617d2b1ff56ccc79f3fa8e37b692f7353904a5",
+    "tests/integration.test.ts": "1179bd3f72d6b25e8e35ccd00ff44ea90f6697e5326eacc90b88ca356e8440ab",
+    "tests/secret-guard.test.mjs": "0eb948ee01b606233faff9fb47efbfde5e449730d0465d68ad86cc4252a3dff8",
+    "tests/support/effect-actor.ts": "aa139a7489a163d1202ba4b08b8ba333510c7416ab45a628eecbc8c47cbdce2c",
+    "tests/support/execution-actor.ts": "2e6e16f7cf3c6f1ee896dc6eb014c3ac05bd71b1aafd7d8d4f295dd2695b505d",
+    "tests/support/lab.ts": "cb2b356b4042f2dd577b2229c31533f6c743f4962b5073b8fe846c24ae0f9f1b",
+    "tests/unit.test.ts": "6265d0801dce54bd695eb78f4b132d30e128752cecb60aa40afda0e6377b9b80",
+    "tsconfig.json": "aef3207e20407a79e48e31722b35d2013222a4c125e0370afee4ec5eeaab5ac8"
+  },
+  "runtime": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "os": "6.18.33.1-microsoft-standard-WSL2",
+    "arch": "x64",
+    "temporaryRoot": "/var/tmp/daw5-validation-SWNbzDZM"
+  },
+  "commands": [
+    [
+      "node",
+      "--test",
+      "tests/secret-guard.test.mjs"
+    ],
+    [
+      "node",
+      "scripts/secret-guard.mjs"
+    ],
+    [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    [
+      "node",
+      "node_modules/typescript/bin/tsc"
+    ],
+    [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "dist/tests/unit.test.js",
+      "dist/tests/execution-unit.test.js",
+      "dist/tests/effect-unit.test.js",
+      "dist/tests/agent-unit.test.js",
+      "dist/tests/approval-unit.test.js",
+      "dist/tests/integration.test.js",
+      "dist/tests/execution.test.js",
+      "dist/tests/effects.test.js",
+      "dist/tests/agent.test.js",
+      "dist/tests/approvals.test.js"
+    ],
+    [
+      "node",
+      "scripts/negative-controls.mjs"
+    ],
+    [
+      "node",
+      "scripts/execution-negative-controls.mjs"
+    ],
+    [
+      "node",
+      "scripts/effect-negative-controls.mjs"
+    ],
+    [
+      "node",
+      "scripts/agent-negative-controls.mjs"
+    ],
+    [
+      "node",
+      "scripts/approval-negative-controls.mjs"
+    ]
+  ],
+  "failures": [],
+  "totals": {
+    "tests": 94,
+    "pass": 94,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "negativeControls": [
+    {
+      "mode": "status",
+      "exitCode": 1,
+      "detectedBy": "first acceptance 202, reordered exact replay 200, changed parameters 409"
+    },
+    {
+      "mode": "fingerprint",
+      "exitCode": 1,
+      "detectedBy": "two simultaneous different fingerprints produce one acceptance and one conflict"
+    },
+    {
+      "mode": "atomicity",
+      "exitCode": 1,
+      "detectedBy": "database failure at run_events rolls back run, scheduling and event"
+    }
+  ],
+  "executionNegativeControls": [
+    {
+      "mode": "claim",
+      "exitCode": 1,
+      "detectedBy": "eight simultaneous processes claim one logical owner"
+    },
+    {
+      "mode": "fence",
+      "exitCode": 1,
+      "detectedBy": "SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery"
+    },
+    {
+      "mode": "expiry",
+      "exitCode": 1,
+      "detectedBy": "lease checks use database time after waiting for the run lock"
+    },
+    {
+      "mode": "recovery",
+      "exitCode": 1,
+      "detectedBy": "SIGKILL after claim is recovered by restarted scheduler and production workers"
+    },
+    {
+      "mode": "retry-limit",
+      "exitCode": 1,
+      "detectedBy": "retryable failures have durable bounded attempts and backoff"
+    }
+  ],
+  "effectNegativeControls": [
+    {
+      "mode": "effect-key",
+      "exitCode": 1,
+      "detectedBy": "eight concurrent external writes converge and reject conflicting payloads"
+    },
+    {
+      "mode": "timeout",
+      "exitCode": 1,
+      "detectedBy": "timeout remains UNKNOWN and unavailable verification never triggers blind POST"
+    },
+    {
+      "mode": "verification",
+      "exitCode": 1,
+      "detectedBy": "timeout remains UNKNOWN and unavailable verification never triggers blind POST"
+    },
+    {
+      "mode": "unkeyed",
+      "exitCode": 1,
+      "detectedBy": "unkeyed ambiguous write parks and never blindly retries"
+    }
+  ],
+  "agentNegativeControls": [
+    {
+      "mode": "output",
+      "exitCode": 1,
+      "detectedBy": "agent schema rejects malformed and policy-changing output"
+    },
+    {
+      "mode": "allowlist",
+      "exitCode": 1,
+      "detectedBy": "agent tool allowlist rejects unregistered and prototype names"
+    },
+    {
+      "mode": "checkpoint",
+      "exitCode": 1,
+      "detectedBy": "SIGKILL after accepted decision resumes without regenerating it"
+    },
+    {
+      "mode": "budget",
+      "exitCode": 1,
+      "detectedBy": "turn budget prevents another model decision after the accepted limit"
+    }
+  ],
+  "approvalNegativeControls": [
+    {
+      "mode": "fingerprint",
+      "exitCode": 1,
+      "detectedBy": "changed action fingerprint invalidates an approved grant before dispatch"
+    },
+    {
+      "mode": "expiry",
+      "exitCode": 1,
+      "detectedBy": "approved grant expired before dispatch cannot authorize a POST"
+    },
+    {
+      "mode": "authorization",
+      "exitCode": 1,
+      "detectedBy": "operator and agent cannot grant approval at HTTP or engine boundary"
+    },
+    {
+      "mode": "cancellation",
+      "exitCode": 1,
+      "detectedBy": "cancellation after external authorization requires reconciliation not rollback"
+    }
+  ],
+  "sourceChangedDuringRun": false,
+  "integrationSha256": "c13e727f37a9e14ad921321a9677d424509593f44481ee0c42d1f985119aa110",
+  "executionSha256": "b32b541091a72926d142c849ed074e96d942ab149ddefc88efad039f4ddf6aec",
+  "effectsSha256": "038309e0d5b9f998c55b5b5f9e574ccea5107b84db0caa09dd7e77351dbc8ab9",
+  "agentSha256": "fb2338f6667e2d96821fedba4d62c5e77883583ee6b497c712ab105c0a38d6bb",
+  "approvalsSha256": "f5aa501292c93ee8705dc30b7eeb77a9be127a0777d2b78d9263d05780fc610a",
+  "completedAt": "2026-09-05T22:05:47.190Z",
+  "transcriptSha256": "779b1aadda373582b570bc7d494bfb13236f1d0ac4ba41746d446ad05b0a9790"
+}

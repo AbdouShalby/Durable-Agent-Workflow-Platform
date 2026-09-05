@@ -1,0 +1,316 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "independentClusters": [
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-o05GuB",
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-wzovXb"
+  ],
+  "cases": {
+    "cancellation after external authorization requires reconciliation not rollback": {
+      "run": "19ab4827-648a-49c7-8d74-855a8ee75518",
+      "runs": [
+        {
+          "id": "19ab4827-648a-49c7-8d74-855a8ee75518",
+          "state": "CANCELLED",
+          "cancel_requested_at": "2026-09-05T22:05:45.883Z"
+        }
+      ],
+      "approvals": [
+        {
+          "id": "5db2ea41-8576-43b1-bfcf-e8058f4194e4",
+          "run_id": "19ab4827-648a-49c7-8d74-855a8ee75518",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "5c14cb48a778dee5a5908d803da4bed1483a738b543681ac00dfd905b092cb8a",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "CANCELLED",
+          "created_at": "2026-09-05T22:05:40.796Z",
+          "expires_at": "2026-09-05T22:10:40.796Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-05T22:05:44.323Z",
+          "authorized_at": "2026-09-05T22:05:45.825Z"
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "CANCELLED",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "CANCELLED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "5db2ea41-8576-43b1-bfcf-e8058f4194e4",
+            "action_fingerprint": "5c14cb48a778dee5a5908d803da4bed1483a738b543681ac00dfd905b092cb8a",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "5db2ea41-8576-43b1-bfcf-e8058f4194e4"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_AUTHORIZED",
+          "details": {
+            "approval_id": "5db2ea41-8576-43b1-bfcf-e8058f4194e4",
+            "action_fingerprint": "5c14cb48a778dee5a5908d803da4bed1483a738b543681ac00dfd905b092cb8a"
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "40ad628358c8ee532f256a48123b973fe021744ced9621d413ad1f7e35be6c0b"
+          }
+        },
+        {
+          "sequence": 18,
+          "type": "RUN_CANCELLED",
+          "details": {
+            "actor": "local-operator",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "24ffb77b-30be-49b7-b9a5-c2add944329b",
+          "effect_key": "40ad628358c8ee532f256a48123b973fe021744ced9621d413ad1f7e35be6c0b",
+          "fingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "40ad628358c8ee532f256a48123b973fe021744ced9621d413ad1f7e35be6c0b",
+            "receiptId": "24ffb77b-30be-49b7-b9a5-c2add944329b",
+            "serviceId": "008e0cb4-5cf1-4f57-8d74-4481f5f77420",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "40ad628358c8ee532f256a48123b973fe021744ced9621d413ad1f7e35be6c0b",
+          "method": "POST"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 87475,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 87413,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 87499,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 87437,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 87451,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 87486,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import { acceptDecision, readTool, finalAgentResult, AgentPolicyError, AgentBudg
 import type { Checkpoint, AgentDecision, Observation } from '../domain/agent.js';
 import { configuredAdapter, ModelUnavailable } from '../agents/adapters.js';
 import type { LlmAdapter } from '../agents/adapters.js';
-import { agentDefinitionHash } from '../domain/workflow.js';
+import { agentDefinitionHash, governedDefinitionHash } from '../domain/workflow.js';
 
 export class LostAgentOwnership extends Error {}
 export class AgentInfrastructureError extends Error {}
@@ -66,12 +66,16 @@ async function rejectCall(pool: pg.Pool, claim: Claim, call: number): Promise<vo
 }
 /** Iteration state is durable. An accepted model decision is never generated again on resume. */
 export async function executeAgent(pool: pg.Pool, claim: Claim, signal: AbortSignal, injected?: LlmAdapter): Promise<unknown> {
-  if (claim.workflow_name !== 'incident-triage' || claim.workflow_version !== 3 || claim.definition_hash !== agentDefinitionHash || claim.step_key !== 'analyze-incident') throw new AgentPolicyError('unsupported agent definition');
+  if (claim.workflow_name !== 'incident-triage' || !((claim.workflow_version === 3 && claim.definition_hash === agentDefinitionHash) ||
+      (claim.workflow_version === 4 && claim.definition_hash === governedDefinitionHash)) || claim.step_key !== 'analyze-incident') throw new AgentPolicyError('unsupported agent definition');
   while (true) {
     signal.throwIfAborted();
     const checkpoints = await owned(pool, claim, client => history(client, claim));
     const last = checkpoints.at(-1);
-    if (last?.decision.kind === 'finish') return finalAgentResult(last.decision);
+    if (last?.decision.kind === 'finish') {
+      if (claim.workflow_version === 4 && (last.decision.summary?.length ?? 0) > 300) throw new AgentPolicyError('governed summary exceeds tool contract');
+      return finalAgentResult(last.decision);
+    }
     if (last && last.observation === null) { await observe(pool, claim, last); continue; }
     const reservation = await owned(pool, claim, async (client, row) => {
       const turn = checkpoints.length + 1;

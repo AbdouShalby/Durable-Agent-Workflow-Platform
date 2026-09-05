@@ -21,7 +21,7 @@ test('mandatory real PostgreSQL + independent HTTP processes; no infrastructure 
     await t.test('concurrent migrations serialize and reruns preserve one checksum record per migration', async () => {
       await Promise.all([migrate(db), migrate(db)]); await migrate(db);
       assert.deepEqual((await db.query('SELECT name FROM schema_migrations ORDER BY name')).rows,
-        [{ name: '001_foundation.sql' }, { name: '002_execution.sql' }, { name: '003_effects.sql' }, { name: '004_agent.sql' }]);
+        [{ name: '001_foundation.sql' }, { name: '002_execution.sql' }, { name: '003_effects.sql' }, { name: '004_agent.sql' }, { name: '005_approvals.sql' }]);
     });
     const a = await lab.startApi(), b = await lab.startApi();
     assert.notEqual(a.process.child.pid, b.process.child.pid);

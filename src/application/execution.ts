@@ -1,6 +1,7 @@
 import type pg from 'pg';
 import { retryDelay } from '../domain/retry.js';
 import type { IncidentInput } from '../domain/workflow.js';
+import { scheduleGovernedAction, recoverApprovalOne, guardEffectApproval } from './approvals.js';
 
 export interface Claim {
   run_id: string; step_key: string; ordinal: number; owner: string; fence: number;
@@ -85,6 +86,7 @@ export async function completeStep(pool: pg.Pool, claim: Claim, result: unknown)
     if (!step || !await owns(client, claim)) return false;
     const tool = (await client.query('SELECT state,receipt=$3::jsonb AS matches FROM tool_invocations WHERE run_id=$1 AND step_key=$2', [claim.run_id, claim.step_key, JSON.stringify(result)])).rows[0];
     if (tool && (tool.state !== 'VERIFIED' || !tool.matches)) return false;
+    if (tool && !await guardEffectApproval(client,claim,'verify')) return false;
     const agent = (await client.query('SELECT 1 FROM agent_sessions WHERE run_id=$1 AND step_key=$2', [claim.run_id,claim.step_key])).rowCount;
     if (agent && !(await client.query(`SELECT 1 FROM agent_decisions WHERE run_id=$1 AND step_key=$2
       AND decision->>'kind'='finish' AND jsonb_build_object('summary',decision->'summary','evidence',decision->'evidence')=$3::jsonb`, [claim.run_id,claim.step_key,JSON.stringify(result)])).rowCount) return false;
@@ -93,6 +95,7 @@ export async function completeStep(pool: pg.Pool, claim: Claim, result: unknown)
     await client.query(`UPDATE step_attempts SET outcome='SUCCEEDED',ended_at=clock_timestamp()
       WHERE run_id=$1 AND step_key=$2 AND attempt=$3`, [claim.run_id, claim.step_key, claim.attempt_count]);
     await event(client, claim.run_id, 'STEP_SUCCEEDED', { step: claim.step_key, fence: claim.fence });
+    if (await scheduleGovernedAction(client,claim,result)) return true;
     const next = await client.query(`UPDATE step_runs SET state='READY',available_at=clock_timestamp()
       WHERE run_id=$1 AND ordinal=$2 AND state='BLOCKED' RETURNING step_key`, [claim.run_id, step.ordinal + 1]);
     if (next.rowCount === 0) {
@@ -142,6 +145,7 @@ export async function failStep(pool: pg.Pool, claim: Claim, retryable: boolean):
 
 /** One bounded reconciliation transaction. Safe to call concurrently; false means nothing due now. */
 export async function recoverOne(pool: pg.Pool): Promise<boolean> {
+  if (await recoverApprovalOne(pool)) return true;
   return transaction(pool, async client => {
     const run = (await client.query<{ id: string }>(`SELECT r.id FROM workflow_runs r WHERE r.state IN ('QUEUED','RUNNING')
       AND EXISTS (SELECT 1 FROM step_runs s WHERE s.run_id=r.id AND

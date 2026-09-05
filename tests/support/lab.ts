@@ -69,9 +69,9 @@ export class Lab {
       assert.deepEqual(result.rows[0], { data_directory: data, fsync: 'on', synchronous_commit: 'on' });
     } finally { await pool.end(); }
   }
-  async startApi(): Promise<{ url: string; process: OwnedProcess }> {
+  async startApi(approverToken = ''): Promise<{ url: string; process: OwnedProcess }> {
     const owned = this.child('api', process.execPath, ['dist/src/entrypoints/api.js'], {
-      ...process.env, DATABASE_URL: this.url, PORT: '0', OPERATOR_TOKEN: this.token,
+      ...process.env, DATABASE_URL: this.url, PORT: '0', OPERATOR_TOKEN: this.token, APPROVER_TOKEN: approverToken,
     });
     const url = await waitFor(() => {
       if (owned.failure || owned.exit) throw new Error(`API startup failed: ${owned.failure ?? owned.output}`);

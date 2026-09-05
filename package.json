@@ -2,7 +2,7 @@
   "name": "durable-agent-workflow-platform",
   "version": "0.1.0",
   "private": true,
-  "description": "Production-inspired durable workflows, external-effect reconciliation and bounded read-only agent lab",
+  "description": "Production-inspired durable workflows, bounded agents and governed human approval lab",
   "type": "module",
   "engines": { "node": "24.20.0" },
   "scripts": {
@@ -15,8 +15,8 @@
     "scheduler": "node dist/src/entrypoints/scheduler.js",
     "simulator": "node dist/src/simulator/server.js",
     "test:secrets": "node --test tests/secret-guard.test.mjs && node scripts/secret-guard.mjs",
-    "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js",
-    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js",
+    "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js dist/tests/approval-unit.test.js",
+    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js dist/tests/approvals.test.js",
     "validate": "node scripts/validate.mjs"
   },
   "dependencies": { "ajv": "8.20.0", "fastify": "5.12.3", "pg": "8.23.0" },

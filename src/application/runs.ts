@@ -3,13 +3,14 @@ import type pg from 'pg';
 import { definition, definitionHash, effectDefinition, effectDefinitionHash, fingerprint, normalizeIncident, summarizeIncident } from '../domain/workflow.js';
 import { effectKey, effectFingerprint, effectTarget } from '../domain/effect.js';
 import type { CreateRunRequest, IncidentInput } from '../domain/workflow.js';
-import { agentDefinition, agentDefinitionHash } from '../domain/workflow.js';
+import { agentDefinition, agentDefinitionHash, governedDefinition, governedDefinitionHash } from '../domain/workflow.js';
+import { approvalPolicy, policyFingerprint } from '../domain/approval.js';
 import { agentPolicy, modelSnapshot } from '../domain/agent.js';
 
 export class IdempotencyConflict extends Error {}
 export interface RunRow {
   id: string; workflow_name: string; workflow_version: number; definition_hash: string;
-  input: IncidentInput; state: 'QUEUED' | 'RUNNING' | 'SUCCEEDED' | 'FAILED' | 'RECONCILIATION_REQUIRED'; created_at: Date; request_fingerprint: string;
+  input: IncidentInput; state: 'QUEUED' | 'RUNNING' | 'WAITING_APPROVAL' | 'SUCCEEDED' | 'FAILED' | 'CANCELLED' | 'RECONCILIATION_REQUIRED'; created_at: Date; request_fingerprint: string;
 }
 const columns = 'id, workflow_name, workflow_version, definition_hash, input, state, created_at, request_fingerprint';
 
@@ -20,8 +21,8 @@ export async function createRun(pool: pg.Pool, caller: string, key: string, requ
     // A second statement sees a concurrently committed winner after ON CONFLICT waits.
     await client.query('BEGIN ISOLATION LEVEL READ COMMITTED');
     const hash = fingerprint(request);
-    const selected = request.version === 3 ? agentDefinition : request.version === 2 ? effectDefinition : definition;
-    const selectedHash = request.version === 3 ? agentDefinitionHash : request.version === 2 ? effectDefinitionHash : definitionHash;
+    const selected = request.version === 4 ? governedDefinition : request.version === 3 ? agentDefinition : request.version === 2 ? effectDefinition : definition;
+    const selectedHash = request.version === 4 ? governedDefinitionHash : request.version === 3 ? agentDefinitionHash : request.version === 2 ? effectDefinitionHash : definitionHash;
     const inserted = await client.query<RunRow>(`INSERT INTO workflow_runs
       (id, caller_id, idempotency_key, request_fingerprint, workflow_name, workflow_version, definition_hash, definition, input, state)
       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,'QUEUED')
@@ -42,12 +43,17 @@ export async function createRun(pool: pg.Pool, caller: string, key: string, requ
           VALUES ($1,'write-summary',$2,$3,$4,$5,$6,$7)`,
         [run.id, effectKey(run.id), request.toolContract, target.id, target.url, payload, effectFingerprint(payload)]);
       }
-      if (request.version === 3) {
+      if (request.version === 3 || request.version === 4) {
         const adapter = process.env['DAW_AGENT_ADAPTER'] ?? 'deterministic';
         if (adapter !== 'deterministic' && adapter !== 'openai') throw new Error('unsupported agent adapter');
         await client.query(`INSERT INTO agent_sessions(run_id,step_key,adapter,model,max_turns,max_calls,max_tool_calls,max_cost_micros,call_cost_micros,call_timeout_ms)
           VALUES($1,'analyze-incident',$2,$3,$4,$5,$6,$7,$8,$9)`, [run.id,adapter,modelSnapshot,agentPolicy.maxTurns,agentPolicy.maxCalls,agentPolicy.maxToolCalls,agentPolicy.maxCostMicros,agentPolicy.callCostMicros,agentPolicy.callTimeoutMs]);
         await client.query("UPDATE step_runs SET max_elapsed_ms=$2 WHERE run_id=$1 AND step_key='analyze-incident'", [run.id,agentPolicy.maxElapsedMs]);
+      }
+      if (request.version === 4) {
+        const target = effectTarget();
+        await client.query(`INSERT INTO governed_actions(run_id,step_key,policy_version,policy_fingerprint,requires_approval,service_id,service_url)
+          VALUES($1,'write-summary',$2,$3,$4,$5,$6)`, [run.id,approvalPolicy.version,policyFingerprint,request.input.severity==='high',target.id,target.url]);
       }
       await client.query("INSERT INTO run_events(run_id,sequence,type) VALUES ($1,1,'RUN_CREATED')", [run.id]);
     } else {
@@ -67,7 +73,12 @@ export async function createRun(pool: pg.Pool, caller: string, key: string, requ
 export async function getRun(pool: pg.Pool, caller: string, id: string): Promise<unknown | null> {
   // One statement gives run and steps one consistent snapshot.
   const result = await pool.query(`SELECT r.id, r.workflow_name AS workflow, r.workflow_version AS version,
-    r.definition_hash, r.input, r.state, r.created_at,
+    r.definition_hash, r.input, r.state, r.created_at, r.cancel_requested_at,
+    (SELECT to_jsonb(a) FROM approvals a WHERE a.run_id=r.id) AS approval,
+    (SELECT jsonb_build_object('run_id',i.run_id,'step_key',i.step_key,'tool','write-summary','effect_key',i.effect_key,
+      'contract',i.contract,'service_id',i.service_id,'service_url',i.service_url,'request',i.request,'request_fingerprint',i.request_fingerprint,
+      'policy_version',g.policy_version,'policy_fingerprint',g.policy_fingerprint,'requires_approval',g.requires_approval)
+      FROM governed_actions g JOIN tool_invocations i ON i.run_id=g.run_id AND i.step_key=g.step_key WHERE g.run_id=r.id) AS approval_action,
     (SELECT jsonb_agg(jsonb_build_object('key',s.step_key,'state',s.state,'available_at',s.available_at,
       'attempt_count',s.attempt_count,'fence',s.fence,'lease_expires_at',s.lease_expires_at,
       'deadline_at',s.deadline_at,'result',s.result,'last_error',s.last_error)

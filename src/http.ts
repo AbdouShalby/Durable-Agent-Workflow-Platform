@@ -4,16 +4,26 @@ import type pg from 'pg';
 import { createRun, getRun, IdempotencyConflict } from './application/runs.js';
 import { createRunSchema } from './domain/workflow.js';
 import type { CreateRunRequest } from './domain/workflow.js';
+import { decideApproval, cancelRun } from './application/approvals.js';
+import type { ApprovalDecision } from './application/approvals.js';
+import { ApprovalForbidden, ApprovalConflict, ApprovalNotFound } from './domain/approval.js';
 
-export function buildApi(pool: pg.Pool, token: string) {
+export function buildApi(pool: pg.Pool, token: string, approverToken = '') {
   if (token.length < 32) throw new Error('OPERATOR_TOKEN requires at least 32 characters');
+  if (approverToken && (approverToken.length < 32 || approverToken === token)) throw new Error('distinct APPROVER_TOKEN requires at least 32 characters');
   const expected = createHash('sha256').update(`Bearer ${token}`).digest();
+  const expectedApprover = createHash('sha256').update(`Bearer ${approverToken}`).digest();
   const app = Fastify({ logger: false, bodyLimit: 16384,
     ajv: { customOptions: { coerceTypes: false, removeAdditional: false, useDefaults: false } } });
   app.addHook('onRequest', async (request, reply) => {
     reply.header('Cache-Control', 'no-store');
     if (request.routeOptions.url === '/healthz') return;
     const actual = createHash('sha256').update(request.headers.authorization ?? '').digest();
+    if (request.method === 'GET' && request.routeOptions.url === '/runs/:id' && approverToken && timingSafeEqual(expectedApprover,actual)) return;
+    if (request.routeOptions.url === '/runs/:id/approvals/:approvalId') {
+      if (!approverToken || !timingSafeEqual(expectedApprover,actual)) return reply.code(403).send({ error: 'approval_forbidden' });
+      return;
+    }
     if (!timingSafeEqual(expected, actual)) return reply.code(401).send({ error: 'unauthorized' });
   });
   app.get('/healthz', async () => ({ status: 'alive' }));
@@ -31,7 +41,20 @@ export function buildApi(pool: pg.Pool, token: string) {
     const run = await getRun(pool, 'local-operator', request.params.id);
     return run === null ? reply.code(404).send({ error: 'run_not_found' }) : run;
   });
+  const runParams = { type: 'object', additionalProperties: false, required: ['id'], properties: { id: { type: 'string', format: 'uuid' } } };
+  app.post<{ Params: { id: string; approvalId: string }; Body: ApprovalDecision }>('/runs/:id/approvals/:approvalId', {
+    schema: { params: { ...runParams, required: ['id','approvalId'], properties: { ...runParams.properties, approvalId: { type: 'string', format: 'uuid' } } },
+      body: { type: 'object', additionalProperties: false, required: ['decision','action_fingerprint','policy_fingerprint'], properties: {
+        decision: { enum: ['approve','reject'] }, action_fingerprint: { type: 'string', pattern: '^[a-f0-9]{64}$' }, policy_fingerprint: { type: 'string', pattern: '^[a-f0-9]{64}$' },
+      } } },
+  }, async request => decideApproval(pool,{ role: 'human-approver', id: 'local-approver' },request.params.id,request.params.approvalId,request.body));
+  app.post<{ Params: { id: string } }>('/runs/:id/cancel', { schema: { params: runParams,
+    body: { type: 'object', additionalProperties: false, maxProperties: 0 } } },
+  async request => cancelRun(pool,{ role: 'operator', id: 'local-operator' },request.params.id));
   app.setErrorHandler((error, _request, reply) => {
+    if (error instanceof ApprovalForbidden) return reply.code(403).send({ error: 'approval_forbidden' });
+    if (error instanceof ApprovalNotFound) return reply.code(404).send({ error: 'approval_or_run_not_found' });
+    if (error instanceof ApprovalConflict) return reply.code(409).send({ error: 'approval_or_state_conflict' });
     if (error instanceof IdempotencyConflict) return reply.code(409).send({ error: 'idempotency_conflict' });
     const e = error as { validation?: unknown; statusCode?: number };
     if (e.validation || e.statusCode === 400) return reply.code(400).send({ error: 'invalid_request' });

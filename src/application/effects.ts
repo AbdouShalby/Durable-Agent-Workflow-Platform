@@ -3,6 +3,7 @@ import { transaction, lockStep, owns, event } from './execution.js';
 import type { Claim } from './execution.js';
 import { effectKey, effectFingerprint, validReceipt } from '../domain/effect.js';
 import type { EffectContract, EffectRequest, Receipt } from '../domain/effect.js';
+import { guardEffectApproval } from './approvals.js';
 
 interface Invocation {
   effect_key: string; contract: EffectContract; service_id: string; service_url: string;
@@ -22,8 +23,9 @@ async function infrastructure<T>(operation: () => Promise<T>): Promise<T> {
 }
 const read = async (client: pg.PoolClient, claim: Claim): Promise<Invocation> => {
   const row = (await client.query<Invocation>('SELECT * FROM tool_invocations WHERE run_id=$1 AND step_key=$2', [claim.run_id,claim.step_key])).rows[0];
-  if (!row || row.effect_key !== effectKey(claim.run_id) || row.request_fingerprint !== effectFingerprint(row.request) ||
-      row.request.summary !== claim.previous_result) throw new InvalidEffectIntent('invalid durable effect intent');
+  const previous = claim.workflow_version === 4 ? (claim.previous_result as { summary?: unknown } | null)?.summary : claim.previous_result;
+  if (!row || row.effect_key !== effectKey(claim.run_id,claim.workflow_version) || row.request_fingerprint !== effectFingerprint(row.request) ||
+      row.request.summary !== previous) throw new InvalidEffectIntent('invalid durable effect intent');
   return row;
 };
 
@@ -32,6 +34,7 @@ export async function saveReceipt(pool: pg.Pool, claim: Claim, receipt: unknown)
   return infrastructure(() => transaction(pool, async client => {
     await lockStep(client, claim.run_id, claim.step_key);
     if (!await owns(client, claim)) return false;
+    if (!await guardEffectApproval(client,claim,'verify')) return false;
     const row = await read(client, claim);
     if (row.state === 'PREPARED' || !validReceipt(receipt, row)) return false;
     if (row.state === 'VERIFIED') return true;
@@ -46,6 +49,8 @@ export async function executeEffect(pool: pg.Pool, claim: Claim, signal: AbortSi
   const prepared = await infrastructure(() => transaction(pool, async client => {
     await lockStep(client, claim.run_id, claim.step_key);
     if (!await owns(client, claim)) throw new LostEffectOwnership();
+    const persisted = (await client.query('SELECT state FROM tool_invocations WHERE run_id=$1 AND step_key=$2', [claim.run_id,claim.step_key])).rows[0];
+    if (!await guardEffectApproval(client,claim,persisted?.state === 'PREPARED' ? 'prepare':'verify')) return null;
     const row = await read(client, claim);
     if (row.state === 'VERIFIED') return { row, first: false };
     const first = row.state === 'PREPARED';
@@ -57,6 +62,7 @@ export async function executeEffect(pool: pg.Pool, claim: Claim, signal: AbortSi
     }
     return { row, first };
   }));
+  if (!prepared) throw new LostEffectOwnership();
   const row = prepared.row;
   if (row.state === 'VERIFIED' && row.receipt) return row.receipt;
   const request = async (method: 'GET' | 'POST'): Promise<Response> => {
@@ -67,11 +73,16 @@ export async function executeEffect(pool: pg.Pool, claim: Claim, signal: AbortSi
       ...(method === 'POST' ? { body: JSON.stringify({ effectKey: row.effect_key, request: row.request, requestFingerprint: row.request_fingerprint }) } : {}),
     });
   };
-  const count = async (kind: 'sends' | 'verifications'): Promise<void> => infrastructure(() => transaction(pool, async client => {
+  const count = async (kind: 'sends' | 'verifications'): Promise<void> => {
+    const allowed = await infrastructure(() => transaction(pool, async client => {
     await lockStep(client, claim.run_id, claim.step_key);
     if (!await owns(client, claim)) throw new LostEffectOwnership();
+    if (!await guardEffectApproval(client,claim,kind === 'sends' ? 'send':'verify')) return false;
     await client.query(`UPDATE tool_invocations SET ${kind}=${kind}+1,updated_at=clock_timestamp() WHERE run_id=$1 AND step_key=$2`, [claim.run_id,claim.step_key]);
-  }));
+    return true;
+    }));
+    if (!allowed) throw new LostEffectOwnership();
+  };
   try {
     let receipt: unknown;
     if (!prepared.first) {

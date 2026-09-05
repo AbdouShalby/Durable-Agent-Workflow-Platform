@@ -1,0 +1,193 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "postgresDirectory": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-tyrrM1",
+  "cases": {
+    "SIGKILL after accepted decision resumes without regenerating it": {
+      "state": "FAILED",
+      "session": {
+        "calls": 2,
+        "tool_calls": 1,
+        "reserved_cost_micros": 20000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": null
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 2,
+          "turn": 1,
+          "fence": 2,
+          "state": "REJECTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 157
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "analyze-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "AGENT_OUTPUT_REJECTED",
+          "details": {
+            "call": 2
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 2,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 86867,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "agent-worker",
+      "pid": 86881,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "agent-worker-restart",
+      "pid": 86921,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

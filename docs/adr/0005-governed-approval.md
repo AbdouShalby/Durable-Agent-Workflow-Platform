@@ -1,0 +1,13 @@
+# Engine-owned human authorization
+
+Status: accepted and locally validated for DAW-5 on 2026-09-06, baseline `f1fbf2b`. Approved DAW-0 and the explicit DAW-5 scope are authoritative; [final contracts and evidence](../daw-5.md) record the tested boundaries.
+
+Add opt-in incident-triage v4: the existing bounded read-only agent produces its accepted summary, then the engine prepares the existing keyed write-summary simulator operation. No new external tool or agent write capability. A pinned policy requires human approval for high severity only; low severity proceeds without an approval record. Existing v1/v2/v3 definitions stay unchanged.
+
+Atomically complete the agent step, prepare the action and either schedule it or persist WAITING_APPROVAL. Approval identity binds run, step, tool, full action fingerprint (including effect key, target, contract and parameters), policy version/fingerprint and database-time expiry. The human echoes the displayed fingerprints; the engine independently recomputes them before decisions and dispatch. Accepted records are not silently rebound. Changed action/policy is invalidated, not implicitly reapproved; no edit/reproposal endpoint is needed for this lab.
+
+Use a distinct optional APPROVER_TOKEN at the API boundary, never a model field or worker capability. Operator credentials do not approve; missing approver configuration denies approval. Application approval operations also validate the human principal. This is trusted local capability separation, not multi-tenant identity, hostile-process isolation or proof a human clicked a button. Agents receive neither credential nor database/approval tools.
+
+Approval decisions, scheduling, expiry and cancellation serialize on run-then-step locks. Waiting consumes no worker attempt or active lease; the scheduler expires waiting grants using database time. Before UNKNOWN authorization, cancellation yields CANCELLED with no permitted new effect. After UNKNOWN/VERIFIED, cancellation parks RECONCILIATION_REQUIRED and fences further platform transitions: an already authorized/in-flight HTTP operation may still finish. No external rollback, compensation or manual resend is implied. Receipt verification can continue after grant expiry for already authorized work, but any new POST must pass the unexpired grant check. Expiry after the authorization linearization point cannot retract a request.
+
+Tests must use actual API/worker processes, PostgreSQL barriers, an independently persisted simulator and deterministic models. Preserve all earlier tests and mutations; add approval fingerprint, expiry, principal-boundary and cancellation-race mutations. Review and complete validation precede one local commit; no DAW-6/7 work or publication.

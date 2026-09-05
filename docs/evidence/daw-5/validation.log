@@ -1,0 +1,626 @@
+COMMAND node --test tests/secret-guard.test.mjs
+✔ guard rejects runtime-built literal credentials without disclosing their values (2.295387ms)
+✔ guard preserves required configuration, generated expressions and passwordless local test URLs (0.987476ms)
+✔ guard detects tracked dotenv even when empty (0.184797ms)
+✔ Compose contract fails if the required value, empty-value protection or loopback boundary is removed (0.450703ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 88.118365
+COMMAND node scripts/secret-guard.mjs
+{
+  "mode": "working-tree",
+  "files": 189,
+  "findings": []
+}
+COMMAND node node_modules/typescript/bin/tsc --noEmit
+COMMAND node node_modules/typescript/bin/tsc
+COMMAND node --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js dist/tests/approval-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js dist/tests/approvals.test.js
+TAP version 13
+# Subtest: agent schema rejects malformed and policy-changing output
+ok 1 - agent schema rejects malformed and policy-changing output
+  ---
+  duration_ms: 1.695136
+  type: 'test'
+  ...
+# Subtest: agent tool allowlist rejects unregistered and prototype names
+ok 2 - agent tool allowlist rejects unregistered and prototype names
+  ---
+  duration_ms: 0.346875
+  type: 'test'
+  ...
+# Subtest: read-only tool validates its own inputs before invocation
+ok 3 - read-only tool validates its own inputs before invocation
+  ---
+  duration_ms: 1.030526
+  type: 'test'
+  ...
+# Subtest: finish needs observed evidence and cannot smuggle tools or approvals
+ok 4 - finish needs observed evidence and cannot smuggle tools or approvals
+  ---
+  duration_ms: 0.341455
+  type: 'test'
+  ...
+# Subtest: deterministic evaluation repeats exact decisions for a small synthetic dataset
+ok 5 - deterministic evaluation repeats exact decisions for a small synthetic dataset
+  ---
+  duration_ms: 1.36998
+  type: 'test'
+  ...
+# Subtest: OpenAI adapter uses a fixed bounded contract and no hosted tools or redirects
+ok 6 - OpenAI adapter uses a fixed bounded contract and no hosted tools or redirects
+  ---
+  duration_ms: 44.586575
+  type: 'test'
+  ...
+# Subtest: OpenAI adapter rejects refusal incomplete oversized and malformed envelopes without fallback
+ok 7 - OpenAI adapter rejects refusal incomplete oversized and malformed envelopes without fallback
+  ---
+  duration_ms: 1.945592
+  type: 'test'
+  ...
+# Subtest: DAW-4 real PostgreSQL bounded checkpoint execution
+    # Subtest: valid decisions checkpoint and complete through the engine
+    ok 1 - valid decisions checkpoint and complete through the engine
+      ---
+      duration_ms: 306.955109
+      type: 'test'
+      ...
+    # Subtest: v3 concurrent HTTP admission binds one session and rejects policy inputs
+    ok 2 - v3 concurrent HTTP admission binds one session and rejects policy inputs
+      ---
+      duration_ms: 3604.628541
+      type: 'test'
+      ...
+    # Subtest: malformed and unregistered model proposals cannot execute tools
+    ok 3 - malformed and unregistered model proposals cannot execute tools
+      ---
+      duration_ms: 126.363506
+      type: 'test'
+      ...
+    # Subtest: turn budget prevents another model decision after the accepted limit
+    ok 4 - turn budget prevents another model decision after the accepted limit
+      ---
+      duration_ms: 164.581548
+      type: 'test'
+      ...
+    # Subtest: registered tool invalid arguments are rejected before any tool reservation
+    ok 5 - registered tool invalid arguments are rejected before any tool reservation
+      ---
+      duration_ms: 145.34852
+      type: 'test'
+      ...
+    # Subtest: malformed completed provider response is permanent not a transport retry
+    ok 6 - malformed completed provider response is permanent not a transport retry
+      ---
+      duration_ms: 156.840106
+      type: 'test'
+      ...
+    # Subtest: cost budget is reserved before dispatch and never refunded
+    ok 7 - cost budget is reserved before dispatch and never refunded
+      ---
+      duration_ms: 154.256725
+      type: 'test'
+      ...
+    # Subtest: call and tool execution budgets are independent bounds
+    ok 8 - call and tool execution budgets are independent bounds
+      ---
+      duration_ms: 160.753542
+      type: 'test'
+      ...
+    # Subtest: model timeout keeps its reservation and retry cannot exceed call budget
+    ok 9 - model timeout keeps its reservation and retry cannot exceed call budget
+      ---
+      duration_ms: 350.511988
+      type: 'test'
+      ...
+    # Subtest: database deadline blocks acceptance even when a model returns late
+    ok 10 - database deadline blocks acceptance even when a model returns late
+      ---
+      duration_ms: 685.967537
+      type: 'test'
+      ...
+    # Subtest: SIGKILL after accepted decision resumes without regenerating it
+    ok 11 - SIGKILL after accepted decision resumes without regenerating it
+      ---
+      duration_ms: 2990.855008
+      type: 'test'
+      ...
+    # Subtest: stale worker cannot accept a delayed decision after lease recovery
+    ok 12 - stale worker cannot accept a delayed decision after lease recovery
+      ---
+      duration_ms: 848.734561
+      type: 'test'
+      ...
+    # Subtest: accepted finish checkpoint is reused without any model invocation
+    ok 13 - accepted finish checkpoint is reused without any model invocation
+      ---
+      duration_ms: 146.066506
+      type: 'test'
+      ...
+    # Subtest: decision and acceptance event roll back together on database failure
+    ok 14 - decision and acceptance event roll back together on database failure
+      ---
+      duration_ms: 120.545833
+      type: 'test'
+      ...
+    # Subtest: saved tool observation survives retry without being read again
+    ok 15 - saved tool observation survives retry without being read again
+      ---
+      duration_ms: 284.789163
+      type: 'test'
+      ...
+    1..15
+ok 8 - DAW-4 real PostgreSQL bounded checkpoint execution
+  ---
+  duration_ms: 13225.586757
+  type: 'test'
+  ...
+# Subtest: approval fingerprint binds identity target tool parameters and policy
+ok 9 - approval fingerprint binds identity target tool parameters and policy
+  ---
+  duration_ms: 2.198259
+  type: 'test'
+  ...
+# Subtest: engine approval principal excludes operators and agents
+ok 10 - engine approval principal excludes operators and agents
+  ---
+  duration_ms: 0.374995
+  type: 'test'
+  ...
+# Subtest: agent output cannot express approval cancellation policy or write capabilities
+ok 11 - agent output cannot express approval cancellation policy or write capabilities
+  ---
+  duration_ms: 0.878647
+  type: 'test'
+  ...
+# Subtest: DAW-5 real PostgreSQL governed human control
+    # Subtest: high policy durably waits without attempts or external writes
+    ok 1 - high policy durably waits without attempts or external writes
+      ---
+      duration_ms: 4995.131254
+      type: 'test'
+      ...
+    # Subtest: low policy executes the existing tool without requiring approval
+    ok 2 - low policy executes the existing tool without requiring approval
+      ---
+      duration_ms: 6222.040621
+      type: 'test'
+      ...
+    # Subtest: eight concurrent human approvals serialize and execute one logical action
+    ok 3 - eight concurrent human approvals serialize and execute one logical action
+      ---
+      duration_ms: 7096.452372
+      type: 'test'
+      ...
+    # Subtest: operator and agent cannot grant approval at HTTP or engine boundary
+    ok 4 - operator and agent cannot grant approval at HTTP or engine boundary
+      ---
+      duration_ms: 9319.715901
+      type: 'test'
+      ...
+    # Subtest: API and worker restart preserve waiting approval and accepted decisions
+    ok 5 - API and worker restart preserve waiting approval and accepted decisions
+      ---
+      duration_ms: 10261.920147
+      type: 'test'
+      ...
+    # Subtest: rejected approval is terminal and duplicate rejection is harmless
+    ok 6 - rejected approval is terminal and duplicate rejection is harmless
+      ---
+      duration_ms: 7372.72094
+      type: 'test'
+      ...
+    # Subtest: expired pending approval cannot unblock and scheduler persists expiry
+    ok 7 - expired pending approval cannot unblock and scheduler persists expiry
+      ---
+      duration_ms: 6396.881785
+      type: 'test'
+      ...
+    # Subtest: approved grant expired before dispatch cannot authorize a POST
+    ok 8 - approved grant expired before dispatch cannot authorize a POST
+      ---
+      duration_ms: 5546.478358
+      type: 'test'
+      ...
+    # Subtest: changed action fingerprint invalidates an approved grant before dispatch
+    ok 9 - changed action fingerprint invalidates an approved grant before dispatch
+      ---
+      duration_ms: 6606.23242
+      type: 'test'
+      ...
+    # Subtest: changed policy fingerprint cannot reuse an earlier human approval
+    ok 10 - changed policy fingerprint cannot reuse an earlier human approval
+      ---
+      duration_ms: 6024.863393
+      type: 'test'
+      ...
+    # Subtest: approval endpoints reject stale fingerprints and foreign identities
+    ok 11 - approval endpoints reject stale fingerprints and foreign identities
+      ---
+      duration_ms: 6116.564022
+      type: 'test'
+      ...
+    # Subtest: concurrent cancellation and approval leave no executable cancelled work
+    ok 12 - concurrent cancellation and approval leave no executable cancelled work
+      ---
+      duration_ms: 6013.414259
+      type: 'test'
+      ...
+    # Subtest: cancellation before dispatch fences a claimed worker
+    ok 13 - cancellation before dispatch fences a claimed worker
+      ---
+      duration_ms: 5751.266368
+      type: 'test'
+      ...
+    # Subtest: cancellation after external authorization requires reconciliation not rollback
+    ok 14 - cancellation after external authorization requires reconciliation not rollback
+      ---
+      duration_ms: 9226.659299
+      type: 'test'
+      ...
+    # Subtest: expired authorization permits receipt verification but not another write
+    ok 15 - expired authorization permits receipt verification but not another write
+      ---
+      duration_ms: 15131.913755
+      type: 'test'
+      ...
+    # Subtest: not-found reconciliation cannot resend after approval expiry
+    ok 16 - not-found reconciliation cannot resend after approval expiry
+      ---
+      duration_ms: 15470.633556
+      type: 'test'
+      ...
+    # Subtest: approval insertion failure rolls back agent completion and reuses its checkpoint
+    ok 17 - approval insertion failure rolls back agent completion and reuses its checkpoint
+      ---
+      duration_ms: 8202.864914
+      type: 'test'
+      ...
+    # Subtest: model cannot create approvals from accepted output fields
+    ok 18 - model cannot create approvals from accepted output fields
+      ---
+      duration_ms: 7306.717427
+      type: 'test'
+      ...
+    # Subtest: governed summary must fit the unchanged existing tool contract
+    ok 19 - governed summary must fit the unchanged existing tool contract
+      ---
+      duration_ms: 7212.291698
+      type: 'test'
+      ...
+    1..19
+ok 12 - DAW-5 real PostgreSQL governed human control
+  ---
+  duration_ms: 156109.400537
+  type: 'test'
+  ...
+# Subtest: effect identity is logical and receipts bind service key request and result
+ok 13 - effect identity is logical and receipts bind service key request and result
+  ---
+  duration_ms: 1.774905
+  type: 'test'
+  ...
+# Subtest: DAW-3 independent external effects and conservative reconciliation
+    # Subtest: eight concurrent external writes converge and reject conflicting payloads
+    ok 1 - eight concurrent external writes converge and reject conflicting payloads
+      ---
+      duration_ms: 2008.393706
+      type: 'test'
+      ...
+    # Subtest: SIGKILL after external commit recovers by receipt without another POST
+    ok 2 - SIGKILL after external commit recovers by receipt without another POST
+      ---
+      duration_ms: 8288.703831
+      type: 'test'
+      ...
+    # Subtest: timeout remains UNKNOWN and unavailable verification never triggers blind POST
+    ok 3 - timeout remains UNKNOWN and unavailable verification never triggers blind POST
+      ---
+      duration_ms: 9746.658086
+      type: 'test'
+      ...
+    # Subtest: unkeyed ambiguous write parks and never blindly retries
+    ok 4 - unkeyed ambiguous write parks and never blindly retries
+      ---
+      duration_ms: 6714.270031
+      type: 'test'
+      ...
+    # Subtest: receipt verification rejects mismatched response and later verifies independently
+    ok 5 - receipt verification rejects mismatched response and later verifies independently
+      ---
+      duration_ms: 6224.552115
+      type: 'test'
+      ...
+    # Subtest: independent write survives platform receipt transaction rollback
+    ok 6 - independent write survives platform receipt transaction rollback
+      ---
+      duration_ms: 6111.433861
+      type: 'test'
+      ...
+    # Subtest: preparation database failure leaves lease recovery rather than permanent failure
+    ok 7 - preparation database failure leaves lease recovery rather than permanent failure
+      ---
+      duration_ms: 6992.147018
+      type: 'test'
+      ...
+    # Subtest: SIGKILL after VERIFIED receipt completes offline without another external request
+    ok 8 - SIGKILL after VERIFIED receipt completes offline without another external request
+      ---
+      duration_ms: 5008.416513
+      type: 'test'
+      ...
+    # Subtest: deadline expiry parks UNKNOWN from RETRY_WAIT
+    ok 9 - deadline expiry parks UNKNOWN from RETRY_WAIT
+      ---
+      duration_ms: 3870.791221
+      type: 'test'
+      ...
+    # Subtest: deadline expiry parks UNKNOWN from READY
+    ok 10 - deadline expiry parks UNKNOWN from READY
+      ---
+      duration_ms: 3740.694785
+      type: 'test'
+      ...
+    # Subtest: deadline expiry preserves VERIFIED receipt while parking unfinished bookkeeping
+    ok 11 - deadline expiry preserves VERIFIED receipt while parking unfinished bookkeeping
+      ---
+      duration_ms: 5647.188394
+      type: 'test'
+      ...
+    # Subtest: stale effect worker cannot save receipts or complete results
+    ok 12 - stale effect worker cannot save receipts or complete results
+      ---
+      duration_ms: 7694.686138
+      type: 'test'
+      ...
+    # Subtest: reliable key permits same-key resend only after not-found verification
+    ok 13 - reliable key permits same-key resend only after not-found verification
+      ---
+      duration_ms: 6079.677555
+      type: 'test'
+      ...
+    # Subtest: bounded failed reconciliation parks UNKNOWN rather than inventing failure
+    ok 14 - bounded failed reconciliation parks UNKNOWN rather than inventing failure
+      ---
+      duration_ms: 9696.746578
+      type: 'test'
+      ...
+    # Subtest: v2 admission binds contract and intent atomically with stable replay
+    ok 15 - v2 admission binds contract and intent atomically with stable replay
+      ---
+      duration_ms: 2140.212062
+      type: 'test'
+      ...
+    # Subtest: v2 HTTP admission converges to one durable invocation and exposes reconciliation state
+    ok 16 - v2 HTTP admission converges to one durable invocation and exposes reconciliation state
+      ---
+      duration_ms: 5501.001501
+      type: 'test'
+      ...
+    1..16
+ok 14 - DAW-3 independent external effects and conservative reconciliation
+  ---
+  duration_ms: 101104.687955
+  type: 'test'
+  ...
+# Subtest: retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+ok 15 - retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+  ---
+  duration_ms: 12.82774
+  type: 'test'
+  ...
+# Subtest: DAW-2 real PostgreSQL execution, process contention and failure windows
+    # Subtest: eight simultaneous processes claim one logical owner
+    ok 1 - eight simultaneous processes claim one logical owner
+      ---
+      duration_ms: 1941.805176
+      type: 'test'
+      ...
+    # Subtest: SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery
+    ok 2 - SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery
+      ---
+      duration_ms: 5471.967498
+      type: 'test'
+      ...
+    # Subtest: lease checks use database time after waiting for the run lock
+    ok 3 - lease checks use database time after waiting for the run lock
+      ---
+      duration_ms: 1773.132709
+      type: 'test'
+      ...
+    # Subtest: SIGKILL after claim is recovered by restarted scheduler and production workers
+    ok 4 - SIGKILL after claim is recovered by restarted scheduler and production workers
+      ---
+      duration_ms: 7066.190372
+      type: 'test'
+      ...
+    # Subtest: retryable failures have durable bounded attempts and backoff
+    ok 5 - retryable failures have durable bounded attempts and backoff
+      ---
+      duration_ms: 2967.994152
+      type: 'test'
+      ...
+    # Subtest: repeated hard crashes exhaust the same durable attempt budget
+    ok 6 - repeated hard crashes exhaust the same durable attempt budget
+      ---
+      duration_ms: 4805.243898
+      type: 'test'
+      ...
+    # Subtest: heartbeat preserves active ownership but cannot extend the hard deadline
+    ok 7 - heartbeat preserves active ownership but cannot extend the hard deadline
+      ---
+      duration_ms: 4472.795308
+      type: 'test'
+      ...
+    # Subtest: result downstream scheduling and events roll back together on database failure
+    ok 8 - result downstream scheduling and events roll back together on database failure
+      ---
+      duration_ms: 1458.946854
+      type: 'test'
+      ...
+    # Subtest: locked run does not block another run and committed prior results are reused after worker crash
+    ok 9 - locked run does not block another run and committed prior results are reused after worker crash
+      ---
+      duration_ms: 2774.904895
+      type: 'test'
+      ...
+    # Subtest: deadline expiration while READY becomes terminal without another attempt
+    ok 10 - deadline expiration while READY becomes terminal without another attempt
+      ---
+      duration_ms: 2248.93432
+      type: 'test'
+      ...
+    # Subtest: deadline expiration while RETRY_WAIT becomes terminal without another attempt
+    ok 11 - deadline expiration while RETRY_WAIT becomes terminal without another attempt
+      ---
+      duration_ms: 2342.951273
+      type: 'test'
+      ...
+    # Subtest: DAW-1 queued rows upgrade without invented attempts and execute with their original identity
+    ok 12 - DAW-1 queued rows upgrade without invented attempts and execute with their original identity
+      ---
+      duration_ms: 1360.262921
+      type: 'test'
+      ...
+    # Subtest: unsupported pinned definition fails permanently without releasing downstream
+    ok 13 - unsupported pinned definition fails permanently without releasing downstream
+      ---
+      duration_ms: 1689.525612
+      type: 'test'
+      ...
+    1..13
+ok 16 - DAW-2 real PostgreSQL execution, process contention and failure windows
+  ---
+  duration_ms: 43793.941926
+  type: 'test'
+  ...
+# Subtest: mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+    # Subtest: concurrent migrations serialize and reruns preserve one checksum record per migration
+    ok 1 - concurrent migrations serialize and reruns preserve one checksum record per migration
+      ---
+      duration_ms: 88.728734
+      type: 'test'
+      ...
+    # Subtest: first acceptance 202, reordered exact replay 200, changed parameters 409
+    ok 2 - first acceptance 202, reordered exact replay 200, changed parameters 409
+      ---
+      duration_ms: 89.194828
+      type: 'test'
+      ...
+    # Subtest: eight simultaneous identical requests converge; exactly one 202 and seven 200
+    ok 3 - eight simultaneous identical requests converge; exactly one 202 and seven 200
+      ---
+      duration_ms: 46.238024
+      type: 'test'
+      ...
+    # Subtest: two simultaneous different fingerprints produce one acceptance and one conflict
+    ok 4 - two simultaneous different fingerprints produce one acceptance and one conflict
+      ---
+      duration_ms: 41.563362
+      type: 'test'
+      ...
+    # Subtest: rejected payloads and missing credentials do not become durable requests
+    ok 5 - rejected payloads and missing credentials do not become durable requests
+      ---
+      duration_ms: 24.614304
+      type: 'test'
+      ...
+    # Subtest: database failure at step_runs rolls back run, scheduling and event
+    ok 6 - database failure at step_runs rolls back run, scheduling and event
+      ---
+      duration_ms: 18.953233
+      type: 'test'
+      ...
+    # Subtest: database failure at run_events rolls back run, scheduling and event
+    ok 7 - database failure at run_events rolls back run, scheduling and event
+      ---
+      duration_ms: 18.329328
+      type: 'test'
+      ...
+    # Subtest: read API and replay survive API process restart; schedule stays unexecuted
+    ok 8 - read API and replay survive API process restart; schedule stays unexecuted
+      ---
+      duration_ms: 2730.222172
+      type: 'test'
+      ...
+    # Subtest: applied migration checksum drift is rejected, not silently accepted
+    ok 9 - applied migration checksum drift is rejected, not silently accepted
+      ---
+      duration_ms: 8.685428
+      type: 'test'
+      ...
+    # Subtest: failing migration is atomic, including its schema history
+    ok 10 - failing migration is atomic, including its schema history
+      ---
+      duration_ms: 77.232979
+      type: 'test'
+      ...
+    # Subtest: committed run and schedule survive PostgreSQL shutdown/restart on the same data directory
+    ok 11 - committed run and schedule survive PostgreSQL shutdown/restart on the same data directory
+      ---
+      duration_ms: 3481.746694
+      type: 'test'
+      ...
+    1..11
+ok 17 - mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+  ---
+  duration_ms: 14077.81584
+  type: 'test'
+  ...
+# Subtest: canonical request ignores object-key order but preserves intended parameter values
+ok 18 - canonical request ignores object-key order but preserves intended parameter values
+  ---
+  duration_ms: 0.987446
+  type: 'test'
+  ...
+# Subtest: versioned deterministic steps are pure and initial scheduling is explicit
+ok 19 - versioned deterministic steps are pure and initial scheduling is explicit
+  ---
+  duration_ms: 0.836738
+  type: 'test'
+  ...
+# Subtest: configuration rejects malformed URLs without exposing credentials and validates ports
+ok 20 - configuration rejects malformed URLs without exposing credentials and validates ports
+  ---
+  duration_ms: 0.76565
+  type: 'test'
+  ...
+1..20
+# tests 94
+# suites 0
+# pass 94
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 156972.471621
+COMMAND node scripts/negative-controls.mjs
+NEGATIVE CONTROL status: detected expected regression
+NEGATIVE CONTROL fingerprint: detected expected regression
+NEGATIVE CONTROL atomicity: detected expected regression
+COMMAND node scripts/execution-negative-controls.mjs
+EXECUTION NEGATIVE CONTROL claim: detected expected regression
+EXECUTION NEGATIVE CONTROL fence: detected expected regression
+EXECUTION NEGATIVE CONTROL expiry: detected expected regression
+EXECUTION NEGATIVE CONTROL recovery: detected expected regression
+EXECUTION NEGATIVE CONTROL retry-limit: detected expected regression
+COMMAND node scripts/effect-negative-controls.mjs
+EFFECT NEGATIVE CONTROL effect-key: detected expected regression
+EFFECT NEGATIVE CONTROL timeout: detected expected regression
+EFFECT NEGATIVE CONTROL verification: detected expected regression
+EFFECT NEGATIVE CONTROL unkeyed: detected expected regression
+COMMAND node scripts/agent-negative-controls.mjs
+AGENT NEGATIVE CONTROL output: detected expected regression
+AGENT NEGATIVE CONTROL allowlist: detected expected regression
+AGENT NEGATIVE CONTROL checkpoint: detected expected regression
+AGENT NEGATIVE CONTROL budget: detected expected regression
+COMMAND node scripts/approval-negative-controls.mjs
+APPROVAL NEGATIVE CONTROL fingerprint: detected expected regression
+APPROVAL NEGATIVE CONTROL expiry: detected expected regression
+APPROVAL NEGATIVE CONTROL authorization: detected expected regression
+APPROVAL NEGATIVE CONTROL cancellation: detected expected regression

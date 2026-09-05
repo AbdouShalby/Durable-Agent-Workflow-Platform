@@ -1,10 +1,10 @@
 # Durable Agent Workflow Platform
 
-A production-inspired architecture lab. **DAW-4 adds bounded, checkpointed agent execution with read-only tools.** Real worker/scheduler processes coordinate through PostgreSQL. V2 retains the independent external-effect simulator; opt-in v3 uses a deterministic model simulator by default, with an isolated OpenAI adapter available. No approvals, write-capable agent tools or multi-agent runtime are implemented. The real model adapter has offline contract tests, not live-provider evidence.
+A production-inspired architecture lab. **DAW-5 adds durable, engine-enforced human approvals and conservative cancellation for opt-in v4.** Real worker/scheduler processes coordinate through PostgreSQL. V4 composes the existing bounded read-only agent with the existing keyed external-effect simulator; high-severity actions wait for a separately authenticated approver. No new write-capable agent tool or multi-agent runtime is implemented. The real model adapter has offline contract tests, not live-provider evidence.
 
 The foundation accepts a versioned incident-triage request, atomically persists its run, initial step states and creation event, and returns a durable run identity. Concurrent duplicate requests use PostgreSQL uniqueness as the authority, not an in-memory lock or a pre-check. This is showcase evidence, not production usage or exactly-once execution.
 
-See [DAW-4 contracts and evidence](docs/daw-4.md), [bounded-agent decision](docs/adr/0004-bounded-agent.md), [historical DAW-3 scope and evidence](docs/daw-3.md), [external-effect decision](docs/adr/0003-external-effect-uncertainty.md), [historical DAW-2 evidence](docs/daw-2.md), [historical DAW-1 evidence](docs/daw-1.md), [admission decision](docs/adr/0001-postgres-admission.md), [execution decision](docs/adr/0002-leased-execution.md), and [domain terms](CONTEXT.md).
+See [DAW-5 contracts and evidence](docs/daw-5.md), [governed-approval decision](docs/adr/0005-governed-approval.md), [historical DAW-4 contracts and evidence](docs/daw-4.md), [bounded-agent decision](docs/adr/0004-bounded-agent.md), [historical DAW-3 scope and evidence](docs/daw-3.md), [external-effect decision](docs/adr/0003-external-effect-uncertainty.md), [historical DAW-2 evidence](docs/daw-2.md), [historical DAW-1 evidence](docs/daw-1.md), [admission decision](docs/adr/0001-postgres-admission.md), [execution decision](docs/adr/0002-leased-execution.md), and [domain terms](CONTEXT.md).
 
 ## What exists
 
@@ -14,13 +14,14 @@ See [DAW-4 contracts and evidence](docs/daw-4.md), [bounded-agent decision](docs
 - A deterministic `incident-triage` v1 executor: `normalize-incident` then `build-summary`, consuming the saved prior result.
 - Opt-in `incident-triage` v2 adds `write-summary`. Each run binds its `keyed`/`unkeyed` simulator contract, target identity, payload fingerprint and stable effect key durably. V1 semantics and historical hashes are unchanged.
 - Opt-in v3 instead adds `analyze-incident`: accepted model decisions and read-only observations are separately checkpointed. The engine enforces schema/tool/evidence policy and fixed turn, call, estimated-cost and elapsed-time limits. The model cannot approve, change policy or mark the workflow successful.
+- Opt-in v4 composes that agent with the existing keyed write-summary contract. A pinned policy requires approval for high severity, bound to the exact action, target, run/step/tool, policy and expiry; low severity needs no approval. Pending approvals survive restart. Cancellation prevents new work or conservatively parks an already-authorized effect for reconciliation.
 - Atomic step claims, persisted attempts, leases, monotonically increasing per-step fencing tokens and a recovery scheduler. Only one step per run can have valid ownership; separate runs can progress independently.
 - Bounded exponential retries with reproducible seeded jitter, persisted due times, a maximum attempt count and a per-step deadline.
 - Real PostgreSQL / independent HTTP-process tests, including database lock barriers, rollback injection, persistence across process/database restart and regression controls.
 
 ## State and consistency contract
 
-V1 admission below; v2 additionally saves its external invocation and v3 its agent session, each with a third initially blocked step in the same transaction.
+V1 admission below; v2 additionally saves its external invocation and v3 its agent session, each with a third initially blocked step in the same transaction. V4 atomically saves its agent session, fixed governance policy/target and fourth blocked step. It prepares the exact invocation/approval only when the engine accepts the agent result.
 
 ```text
 POST /runs
@@ -34,7 +35,9 @@ POST /runs
 
 `READY` means durably eligible, not executed. `available_at` is database time, not a JavaScript timer. Without a running worker, runs remain `QUEUED`. Workers move eligible steps through `RUNNING` to `SUCCEEDED`, atomically releasing the next step or completing the run. Retryable failures/expired leases enter `RETRY_WAIT`; the scheduler makes due retries `READY`, or fails exhausted/deadline-expired work. Permanent failures terminate immediately. Downstream steps stay `BLOCKED` on failure.
 
-The unique key is `(caller_id, idempotency_key)`. The API authenticates one configured local operator; caller scope is server-assigned, never taken from a client header. Token rotation does not change that caller identity. This is not multi-user authorization.
+V4 may instead persist `WAITING_APPROVAL` without holding a write-step attempt/lease. Approval, expiry and cancellation use the engine's run-first locks. Previously authorized uncertain work is reconciled conservatively; cancellation does not imply an external rollback. See DAW-5 for the exact state and expiry boundaries.
+
+The unique key is `(caller_id, idempotency_key)`. The API authenticates one configured local operator; caller scope is server-assigned, never taken from a client header. Token rotation does not change that caller identity. V4 adds a distinct optional approver capability for reading and deciding approvals, never model self-approval. This is not multi-user authorization.
 
 The fingerprint is SHA-256 of a fixed-field JSON representation of workflow name, explicit version and validated input. Object-key order is irrelevant. Values are preserved: whitespace changes in a title are a different intended request, even though normalization trims the title. Unknown properties, omitted required fields and type coercion are rejected rather than silently changing identity. Definition metadata/hash is saved with the run; v1 semantics must not be edited into a different workflow under the same version. The metadata hash is not an executable-code hash.
 
@@ -61,7 +64,7 @@ For another installed PostgreSQL binary directory:
 PG_BIN=/usr/lib/postgresql/16/bin npm run validate
 ```
 
-`validate` checks the pinned Node version and credential guard, typechecks, builds, runs unit/integration/evaluation tests, rejects failures/skips/cancellations/todos and executes sixteen expected-failure mutation controls (three admission, five execution, four external effects, four agent controls). Output is `.local/results/<timestamp-uuid>/`: source hashes, runtime, exact commands, positive TAP transcript, PostgreSQL backend/process evidence and negative-control logs. Source drift during the gate fails it. Test counts include integration parent tests; see the retained TAP for individual scenarios.
+`validate` checks the pinned Node version and credential guard, typechecks, builds, runs unit/integration/evaluation tests, rejects failures/skips/cancellations/todos and executes twenty expected-failure mutation controls (three admission, five execution, four external effects, four agent controls, four approval controls). Output is `.local/results/<timestamp-uuid>/`: source hashes, runtime, exact commands, positive TAP transcript, PostgreSQL backend/process evidence and negative-control logs. Source drift during the gate fails it. Test counts include integration parent tests; see the retained TAP for individual scenarios.
 
 Tests start independent API child processes, not Fastify injection. Eight identical requests are held at a real PostgreSQL table lock until all eight backend sessions are observed blocked in INSERT, then released together. Exactly one must return 202 and seven 200, with one logical run. V1 has two initial steps; v2 has three and one durable invocation. Conflicting fingerprints return 409. This proves finite races on one host, not load capacity or strict FIFO fairness.
 
@@ -97,7 +100,7 @@ npm run scheduler
 
 Multiple copies are supported; each worker executes at most one step at a time. Workers/schedulers poll every 100 ms when idle or after an error; a JavaScript poll merely wakes a process, it is not the durable schedule. SIGTERM/SIGINT stops new polls and waits for the current operation; the included pure steps are short. This is not a hard shutdown bound for arbitrary user code. Database failures log a generic `poll_failed` and retry polling; uncertain completion is resolved from durable state/lease expiry, not blindly classified as a step failure. Start migrations before **all** roles. No process supervisor is included.
 
-The API binds **127.0.0.1** only, defaults to port 8080 (`PORT=0` selects an available port), and requires `OPERATOR_TOKEN` of at least 32 characters. Never commit tokens or connection strings. Migrations are explicit, not run automatically by the API. Startup fails if the workflow table is unavailable. `/healthz` is liveness only; it does not promise database readiness during an outage. This configuration is not a public-ready authenticated service; no TLS, tenant management or channel/tool authorization is supplied.
+The API binds **127.0.0.1** only, defaults to port 8080 (`PORT=0` selects an available port), and requires `OPERATOR_TOKEN` of at least 32 characters. Never commit tokens or connection strings. Migrations are explicit, not run automatically by the API. Startup fails if the workflow table is unavailable. `/healthz` is liveness only; it does not promise database readiness during an outage. This configuration is not a public-ready authenticated service: no TLS or tenant management is supplied. V4 adds only the separate local approver capability described in DAW-5, not general-purpose identity management.
 
 From a second terminal with the same private operator token:
 
@@ -115,7 +118,7 @@ First response: HTTP **202**, `{run_id, state:"QUEUED", replayed:false}`, plus `
 
 Execution defaults are persisted per step: 3-second lease, three total attempts, retry base 200 ms/cap 2 seconds, and a 30-second elapsed budget beginning at the first claim. Heartbeats every `floor(lease_ms / 3)` cannot extend that deadline. An expired lease cannot be renewed. Recovery requires a healthy database and a running scheduler; workers alone do not revive expired work. Deadline exhaustion is reconciled when a scheduler gets to it, not a wall-clock response SLO. Policy is not an HTTP input or hot-reload feature.
 
-## External-effect demo (v2 only)
+## External-effect demo (v2; v4 setup also uses this simulator)
 
 Provision a **separate dedicated PostgreSQL database** for the simulator first.
 Set `SIMULATOR_DATABASE_URL` privately to that database; never use the platform's
@@ -162,7 +165,7 @@ Restart it normally at the **same port, service ID and database**. A keyed run
 can reconcile within its existing retry/deadline budget. An ambiguous unkeyed
 run parks its step at `UNKNOWN` and its run at `RECONCILIATION_REQUIRED`, without
 automatic re-execution. Exhausted keyed verification also parks. A human must
-inspect independent evidence; no override/resend/approval endpoint is included.
+inspect independent evidence; no uncertainty override/resend/resolution endpoint is included. V4 approval is pre-dispatch authorization, not an uncertainty override.
 Receipt preservation distinguishes a known completed effect from unfinished
 platform bookkeeping. Do not create a new run/key to bypass this uncertainty.
 
@@ -177,9 +180,9 @@ loopback-only environment. Stable service identity is a binding check, not a sec
 - Duplicate **attempts** are possible; one run identity under the validated key scope is not exactly-once workflow execution.
 - No run deletion/idempotency expiry API exists. Retention and archival policies remain unspecified; manual deletion would change replay behavior.
 - Fencing protects PostgreSQL transitions, not external systems. An old process may still compute after expiry but cannot authorize a new result/downstream transition. The ownership check under locks is the linearization point; physical COMMIT may occur later. No arbitrary-executor preemption, starvation bound or cross-host clock/disaster guarantee is demonstrated.
-- V2's summary-writing simulator is not accessible to v3 agents. Agent tools are restricted to local synthetic read-only data. No approvals, cancellations, dynamic DAG, broker, arbitrary code execution or multi-agent orchestration exists. DAW-5 through DAW-7 are not started.
+- The summary-writing simulator is never an agent tool: v4's engine schedules it under a fixed approval policy. Agent tools remain local synthetic read-only data. V4 approvals/cancellation do not provide compensation, manual reconciliation overrides or multi-tenant identity. No dynamic DAG, broker, arbitrary code execution or multi-agent orchestration exists. DAW-6 and DAW-7 are not started.
 - No HTTP load benchmark, latency SLO, production traffic, provider integration or production AI experience is established.
 
 ## Layout
 
-`src/domain/` holds versioned definitions, fingerprints, receipt/agent/tool rules and retry calculation; `src/application/` admission/execution/effect/agent checkpoint coordination; `src/agents/` isolated model adapters; `src/persistence/` PostgreSQL and migrations; `src/http.ts` the HTTP boundary; `src/entrypoints/` API/migration/worker/scheduler commands; `src/simulator/` the independently persisted HTTP effect service. `tests/` contains pure contracts, deterministic evaluations and real infrastructure scenarios; `tests/fixtures/` contains explicit test-only source mutations. `scripts/` drives reproducible validation. `docs/evidence/` retains selected reviewed output; routine artifacts, dependencies and compiled output stay ignored.
+`src/domain/` holds versioned definitions, fingerprints, receipt/agent/tool/approval rules and retry calculation; `src/application/` admission/execution/effect/agent checkpoint and approval/cancellation coordination; `src/agents/` isolated model adapters; `src/persistence/` PostgreSQL and migrations; `src/http.ts` the HTTP boundary; `src/entrypoints/` API/migration/worker/scheduler commands; `src/simulator/` the independently persisted HTTP effect service. `tests/` contains pure contracts, deterministic evaluations and real infrastructure scenarios; `tests/fixtures/` contains explicit test-only source mutations. `scripts/` drives reproducible validation. `docs/evidence/` retains selected reviewed output; routine artifacts, dependencies and compiled output stay ignored.

@@ -4,7 +4,7 @@ import { buildApi } from '../http.js';
 
 const pool = createPool(databaseUrl());
 try {
-  const app = buildApi(pool, process.env['OPERATOR_TOKEN'] ?? '');
+  const app = buildApi(pool, process.env['OPERATOR_TOKEN'] ?? '', process.env['APPROVER_TOKEN'] ?? '');
   await pool.query('SELECT id FROM workflow_runs LIMIT 0');
   const url = await app.listen({ port: port(), host: '127.0.0.1' });
   console.log(JSON.stringify({ event: 'listening', url, pid: process.pid }));

@@ -39,3 +39,11 @@
 **Observation checkpoint**: A read-only tool result saved separately from the accepted proposal. Interrupted reads may repeat before this checkpoint; saved observations are reused.
 
 **Agent session budget**: Fixed engine-owned limits for accepted turns, reserved model calls, estimated cost and tool executions; elapsed deadline remains on the step. Lost responses do not refund reservations. The cost ledger is not provider billing enforcement.
+
+**Governed action**: V4's engine-owned proposal for the existing keyed simulator write, bound to its exact request, target, effect key and pinned policy. It is not an agent-accessible write tool.
+
+**Approval**: A durable human decision tied to one run, step, tool, exact action/policy fingerprints and expiry. Approval permits the engine to authorize eligible work; it does not execute the action itself or override uncertainty.
+
+**Human capability**: A separately configured local approver credential, mapped by the API to a fixed human principal. Operator/model input cannot choose that principal. This is not multi-tenant identity or hostile-process isolation.
+
+**Cancellation**: V4's atomic run-level control preventing new work and fencing current ownership. Before external authorization it yields CANCELLED; after possible external authorization it preserves intent/receipt and parks RECONCILIATION_REQUIRED, never claims rollback.

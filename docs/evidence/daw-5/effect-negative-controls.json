@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "effect-key",
+    "exitCode": 1,
+    "detectedBy": "eight concurrent external writes converge and reject conflicting payloads"
+  },
+  {
+    "mode": "timeout",
+    "exitCode": 1,
+    "detectedBy": "timeout remains UNKNOWN and unavailable verification never triggers blind POST"
+  },
+  {
+    "mode": "verification",
+    "exitCode": 1,
+    "detectedBy": "timeout remains UNKNOWN and unavailable verification never triggers blind POST"
+  },
+  {
+    "mode": "unkeyed",
+    "exitCode": 1,
+    "detectedBy": "unkeyed ambiguous write parks and never blindly retries"
+  }
+]
