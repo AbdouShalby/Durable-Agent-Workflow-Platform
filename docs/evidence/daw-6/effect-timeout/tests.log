@@ -1,0 +1,56 @@
+TAP version 13
+# {"event":"attempt_span","trace_id":"fd7ee06ef7104cc4ae5ae92fae91793a","span_id":"2f065dd7ec14a315","run_id":"fd7ee06e-f710-4cc4-ae5a-e92fae91793a","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"fd7ee06ef7104cc4ae5ae92fae91793a","span_id":"2f065dd7ec14a315","run_id":"fd7ee06e-f710-4cc4-ae5a-e92fae91793a","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.01080200000024}
+# {"event":"attempt_span","trace_id":"fd7ee06ef7104cc4ae5ae92fae91793a","span_id":"2400e633795c8a57","run_id":"fd7ee06e-f710-4cc4-ae5a-e92fae91793a","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"fd7ee06ef7104cc4ae5ae92fae91793a","span_id":"2400e633795c8a57","run_id":"fd7ee06e-f710-4cc4-ae5a-e92fae91793a","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.393213999999716}
+# {"event":"attempt_span","trace_id":"fd7ee06ef7104cc4ae5ae92fae91793a","span_id":"da88168afa736315","run_id":"fd7ee06e-f710-4cc4-ae5a-e92fae91793a","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"fd7ee06ef7104cc4ae5ae92fae91793a","span_id":"da88168afa736315","run_id":"fd7ee06e-f710-4cc4-ae5a-e92fae91793a","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":722.094987}
+# Subtest: DAW-3 independent external effects and conservative reconciliation
+    # Subtest: timeout remains UNKNOWN and unavailable verification never triggers blind POST
+    not ok 1 - timeout remains UNKNOWN and unavailable verification never triggers blind POST
+      ---
+      duration_ms: 1144.240631
+      type: 'test'
+      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:49:17'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        + actual - expected
+        
+        + 'PREPARED'
+        - 'UNKNOWN'
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 'UNKNOWN'
+      actual: 'PREPARED'
+      operator: 'strictEqual'
+      stack: |-
+        file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:195:20
+        process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:89:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:193:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+    1..1
+not ok 1 - DAW-3 independent external effects and conservative reconciliation
+  ---
+  duration_ms: 2977.299343
+  type: 'test'
+  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:14:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3137.129928

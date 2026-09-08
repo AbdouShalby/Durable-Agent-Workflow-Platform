@@ -1,0 +1,186 @@
+{
+  "mutation": "timeout",
+  "cases": {
+    "timeout remains UNKNOWN and unavailable verification never triggers blind POST": {
+      "run": "fd7ee06e-f710-4cc4-ae5a-e92fae91793a",
+      "serviceId": "9d7e107d-408b-45f7-80f5-a6fb139f15fa",
+      "failure": {
+        "name": "AssertionError",
+        "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'PREPARED'\n- 'UNKNOWN'\n"
+      },
+      "tools": [
+        {
+          "effect_key": "7b0b281f6a7967784da1073ec3b6ccb3fd69b1915ebdb204af5bfe017cc6ab8e",
+          "contract": "keyed",
+          "state": "PREPARED",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "RETRY_WAIT",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RETRYABLE"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "7b0b281f6a7967784da1073ec3b6ccb3fd69b1915ebdb204af5bfe017cc6ab8e"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 138
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "d6ee98b0-79ac-4d49-9cb3-5b7f787a4037",
+          "effect_key": "7b0b281f6a7967784da1073ec3b6ccb3fd69b1915ebdb204af5bfe017cc6ab8e",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "7b0b281f6a7967784da1073ec3b6ccb3fd69b1915ebdb204af5bfe017cc6ab8e",
+            "receiptId": "d6ee98b0-79ac-4d49-9cb3-5b7f787a4037",
+            "serviceId": "9d7e107d-408b-45f7-80f5-a6fb139f15fa",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "7b0b281f6a7967784da1073ec3b6ccb3fd69b1915ebdb204af5bfe017cc6ab8e",
+          "method": "POST"
+        }
+      ]
+    }
+  },
+  "independentClusters": [
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-AXOOyS",
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-UXdvH9"
+  ],
+  "postgres": [
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    },
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    }
+  ],
+  "cleanup": [
+    {
+      "role": "postgres",
+      "pid": 5006,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 5030,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 5044,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

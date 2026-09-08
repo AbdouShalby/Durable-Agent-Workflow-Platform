@@ -78,6 +78,9 @@ test('DAW-5 real PostgreSQL governed human control', { timeout: 300000 }, async 
         const c:Case={db,external,run:created.run.id,api:api.url,operator:apiLab.token,human,apiLab,worker,restartProvider,record};
         record['run']=c.run;
         await body(c);
+      } catch (error) {
+        record['failure'] = error instanceof Error ? { name: error.name, message: error.message } : { name: 'unknown' };
+        throw error;
       } finally {
         const failures:unknown[]=[];
         for (const p of platform.children.slice(start).reverse()) { try { if (!p.exit) p.child.kill('SIGCONT'); await platform.stop(p); } catch(e) { failures.push(e); } }
@@ -92,7 +95,10 @@ test('DAW-5 real PostgreSQL governed human control', { timeout: 300000 }, async 
         } catch(e) { failures.push(e); }
         for (const close of [()=>apiLab.cleanup(),()=>db.end(),()=>external.end(),()=>service ? provider.stop(service):Promise.resolve()]) { try { await close(); } catch(e) { failures.push(e); } }
         record['apiProcesses']=apiLab.children.map(p=>({pid:p.child.pid,exit:p.exit??null}));
-        if (failures.length) throw new AggregateError(failures,'approval case cleanup failed');
+        if (failures.length) {
+          record['cleanupFailures'] = failures.map(e => e instanceof Error ? { name:e.name,message:e.message } : { name:'unknown' });
+          throw new AggregateError(failures,'approval case cleanup failed');
+        }
       }
     });
   };

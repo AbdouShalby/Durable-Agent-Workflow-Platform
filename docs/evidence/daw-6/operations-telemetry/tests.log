@@ -1,0 +1,99 @@
+TAP version 13
+# Subtest: DAW-6 real PostgreSQL operational failure boundaries
+    # Subtest: operational telemetry has bounded fields and exposes durable retry recovery signals
+    not ok 1 - operational telemetry has bounded fields and exposes durable retry recovery signals
+      ---
+      duration_ms: 668.161969
+      type: 'test'
+      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:24:17'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly deep-equal:
+        + actual - expected
+        ... Skipped lines
+        
+          [
+            'api_in_flight',
+            'api_pool_connections',
+            'api_pool_waiting',
+            'cancelled_runs',
+        ...
+            'retryable_attempts',
+        +   'run_id',
+            'schema_version',
+            'succeeded_runs',
+            'unknown_effects',
+            'waiting_approval_runs'
+          ]
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected:
+        0: 'api_in_flight'
+        1: 'api_pool_connections'
+        2: 'api_pool_waiting'
+        3: 'cancelled_runs'
+        4: 'due_retries'
+        5: 'expired_leases'
+        6: 'failed_runs'
+        7: 'live_leases'
+        8: 'oldest_ready_seconds'
+        9: 'ready_steps'
+        10: 'reconciliation_runs'
+        11: 'recovered_attempts'
+        12: 'retry_wait_steps'
+        13: 'retryable_attempts'
+        14: 'schema_version'
+        15: 'succeeded_runs'
+        16: 'unknown_effects'
+        17: 'waiting_approval_runs'
+      actual:
+        0: 'api_in_flight'
+        1: 'api_pool_connections'
+        2: 'api_pool_waiting'
+        3: 'cancelled_runs'
+        4: 'due_retries'
+        5: 'expired_leases'
+        6: 'failed_runs'
+        7: 'live_leases'
+        8: 'oldest_ready_seconds'
+        9: 'ready_steps'
+        10: 'reconciliation_runs'
+        11: 'recovered_attempts'
+        12: 'retry_wait_steps'
+        13: 'retryable_attempts'
+        14: 'run_id'
+        15: 'schema_version'
+        16: 'succeeded_runs'
+        17: 'unknown_effects'
+        18: 'waiting_approval_runs'
+      operator: 'deepStrictEqual'
+      stack: |-
+        file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:272:20
+        process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:37:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:24:9)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:261:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+    1..1
+not ok 1 - DAW-6 real PostgreSQL operational failure boundaries
+  ---
+  duration_ms: 1707.160804
+  type: 'test'
+  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:13:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1842.714703

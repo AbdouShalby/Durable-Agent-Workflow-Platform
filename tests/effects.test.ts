@@ -83,6 +83,9 @@ test('DAW-3 independent external effects and conservative reconciliation', { tim
         evidence['run'] = run.id; evidence['serviceId'] = serviceId;
         await body({ db, external, run: run.id, url: dbUrl.href, serviceId, restart,
           stopService: async () => { if (service) await provider.stop(service); }, record: evidence });
+      } catch (error) {
+        evidence['failure'] = error instanceof Error ? { name:error.name,message:error.message } : { name:'unknown' };
+        throw error;
       } finally {
         const failures: unknown[] = [];
         for (const p of platform.children.slice(start).reverse()) {
@@ -98,7 +101,10 @@ test('DAW-3 independent external effects and conservative reconciliation', { tim
         for (const close of [() => db.end(), () => external.end(), () => service ? provider.stop(service) : Promise.resolve()]) {
           try { await close(); } catch (e) { failures.push(e); }
         }
-        if (failures.length) throw new AggregateError(failures, 'effect case cleanup/evidence failed');
+        if (failures.length) {
+          evidence['cleanupFailures'] = failures.map(e => e instanceof Error ? { name:e.name,message:e.message } : { name:'unknown' });
+          throw new AggregateError(failures, 'effect case cleanup/evidence failed');
+        }
       }
     });
   };

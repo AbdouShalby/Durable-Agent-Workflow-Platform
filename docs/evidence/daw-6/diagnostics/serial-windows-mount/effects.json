@@ -1,0 +1,2528 @@
+{
+  "mutation": null,
+  "cases": {
+    "eight concurrent external writes converge and reject conflicting payloads": {
+      "run": "9b545220-2521-42b9-826e-3687eeb7a939",
+      "serviceId": "21911e6d-0720-44c2-9cb8-ab33a047198c",
+      "blockedExternalSessions": [
+        {
+          "pid": 1717,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 1721,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 1722,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 1723,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 1724,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 1725,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 1726,
+          "wait_event": "relation"
+        },
+        {
+          "pid": 1727,
+          "wait_event": "relation"
+        }
+      ],
+      "tools": [
+        {
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "contract": "keyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+            "receiptId": "96d4118a-fdb4-450b-ac84-30dcbbc8ca82",
+            "serviceId": "21911e6d-0720-44c2-9cb8-ab33a047198c",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+            "receiptId": "96d4118a-fdb4-450b-ac84-30dcbbc8ca82",
+            "serviceId": "21911e6d-0720-44c2-9cb8-ab33a047198c",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+            "receipt_id": "96d4118a-fdb4-450b-ac84-30dcbbc8ca82"
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "96d4118a-fdb4-450b-ac84-30dcbbc8ca82",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+            "receiptId": "96d4118a-fdb4-450b-ac84-30dcbbc8ca82",
+            "serviceId": "21911e6d-0720-44c2-9cb8-ab33a047198c",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "3",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "4",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "5",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "6",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "7",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "8",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "9",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        },
+        {
+          "id": "10",
+          "effect_key": "7fbe7c8c2d6dfd7a5aebd564592b9ddf9551b16834b420c8e73364ea1d720b6c",
+          "method": "POST"
+        }
+      ]
+    },
+    "SIGKILL after external commit recovers by receipt without another POST": {
+      "run": "63900d9a-8252-4cc3-b959-de3bab4cf808",
+      "serviceId": "959ccf5e-6e7e-4b52-b101-4ec4001f0234",
+      "killedPid": 1738,
+      "tools": [
+        {
+          "effect_key": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+          "contract": "keyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 1,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+            "receiptId": "d1cfe864-6f7a-47ae-8237-c26a880a3cb0",
+            "serviceId": "959ccf5e-6e7e-4b52-b101-4ec4001f0234",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "fence": 2,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+            "receiptId": "d1cfe864-6f7a-47ae-8237-c26a880a3cb0",
+            "serviceId": "959ccf5e-6e7e-4b52-b101-4ec4001f0234",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 153
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+            "receipt_id": "d1cfe864-6f7a-47ae-8237-c26a880a3cb0"
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "d1cfe864-6f7a-47ae-8237-c26a880a3cb0",
+          "effect_key": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+            "receiptId": "d1cfe864-6f7a-47ae-8237-c26a880a3cb0",
+            "serviceId": "959ccf5e-6e7e-4b52-b101-4ec4001f0234",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "878e408369bd57c7e637260930518176d4360388b5ffdd6d7eb22a83f283c230",
+          "method": "GET"
+        }
+      ]
+    },
+    "timeout remains UNKNOWN and unavailable verification never triggers blind POST": {
+      "run": "cbe1346e-0138-44ae-91c0-7dcc813e0dbf",
+      "serviceId": "8a4b4865-2484-46cc-ab95-1c3052ad10c3",
+      "tools": [
+        {
+          "effect_key": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+          "contract": "keyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 2,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+            "receiptId": "e2368047-1d36-4350-a6af-c08a50a9ab8e",
+            "serviceId": "8a4b4865-2484-46cc-ab95-1c3052ad10c3",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 3,
+          "fence": 3,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+            "receiptId": "e2368047-1d36-4350-a6af-c08a50a9ab8e",
+            "serviceId": "8a4b4865-2484-46cc-ab95-1c3052ad10c3",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 197
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 2,
+            "outcome": "RETRYABLE",
+            "delay_ms": 397
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 3,
+            "attempt": 3
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+            "receipt_id": "e2368047-1d36-4350-a6af-c08a50a9ab8e"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 3
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "e2368047-1d36-4350-a6af-c08a50a9ab8e",
+          "effect_key": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+            "receiptId": "e2368047-1d36-4350-a6af-c08a50a9ab8e",
+            "serviceId": "8a4b4865-2484-46cc-ab95-1c3052ad10c3",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+          "method": "GET"
+        },
+        {
+          "id": "3",
+          "effect_key": "c8a63181179296ca3aad8963fe12b7f0efc18e17cf7c3d926be21bed90c26ea0",
+          "method": "GET"
+        }
+      ]
+    },
+    "unkeyed ambiguous write parks and never blindly retries": {
+      "run": "205468b8-3421-429f-b8c8-e10a4abc933c",
+      "serviceId": "abbf171f-ceda-4c14-b7b5-204e1d71bbb7",
+      "failure": {
+        "name": "Error",
+        "message": "timeout: independent simulator listening"
+      },
+      "tools": [
+        {
+          "effect_key": "0e711d89bd5aba7d3e93528c0e12d43676b852021f40f4db978ee20420e2707b",
+          "contract": "unkeyed",
+          "state": "UNKNOWN",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "UNKNOWN",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RECONCILIATION_REQUIRED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "0e711d89bd5aba7d3e93528c0e12d43676b852021f40f4db978ee20420e2707b"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RECONCILIATION_REQUIRED",
+          "details": {
+            "step": "write-summary"
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "7ce53ea5-4035-44bb-9d0b-afcf54318992",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "0e711d89bd5aba7d3e93528c0e12d43676b852021f40f4db978ee20420e2707b",
+            "receiptId": "7ce53ea5-4035-44bb-9d0b-afcf54318992",
+            "serviceId": "abbf171f-ceda-4c14-b7b5-204e1d71bbb7",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "0e711d89bd5aba7d3e93528c0e12d43676b852021f40f4db978ee20420e2707b",
+          "method": "POST"
+        }
+      ]
+    },
+    "receipt verification rejects mismatched response and later verifies independently": {
+      "run": "7636a369-f6ab-46ea-a93f-203e8b4ef132",
+      "serviceId": "d8d43b25-3053-46f2-88f3-cfd052e43d4e",
+      "tools": [
+        {
+          "effect_key": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+          "contract": "keyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 1,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+            "receiptId": "368ced41-4b53-4e5c-a366-2684dd58a42c",
+            "serviceId": "d8d43b25-3053-46f2-88f3-cfd052e43d4e",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "fence": 2,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+            "receiptId": "368ced41-4b53-4e5c-a366-2684dd58a42c",
+            "serviceId": "d8d43b25-3053-46f2-88f3-cfd052e43d4e",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 128
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+            "receipt_id": "368ced41-4b53-4e5c-a366-2684dd58a42c"
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "368ced41-4b53-4e5c-a366-2684dd58a42c",
+          "effect_key": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+            "receiptId": "368ced41-4b53-4e5c-a366-2684dd58a42c",
+            "serviceId": "d8d43b25-3053-46f2-88f3-cfd052e43d4e",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "47ccef03a678585c6134304af7430369036e196995402de2ef1d9b10ef4f481d",
+          "method": "GET"
+        }
+      ]
+    },
+    "independent write survives platform receipt transaction rollback": {
+      "run": "6fad1971-43eb-4d76-a0b8-0278070a4dd0",
+      "serviceId": "816f1081-54fb-4bd4-bf33-dfa37a56414c",
+      "tools": [
+        {
+          "effect_key": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+          "contract": "keyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 1,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+            "receiptId": "a24ea5ee-6a91-459a-95a2-94fed9948fe0",
+            "serviceId": "816f1081-54fb-4bd4-bf33-dfa37a56414c",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "fence": 2,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+            "receiptId": "a24ea5ee-6a91-459a-95a2-94fed9948fe0",
+            "serviceId": "816f1081-54fb-4bd4-bf33-dfa37a56414c",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 176
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+            "receipt_id": "a24ea5ee-6a91-459a-95a2-94fed9948fe0"
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "a24ea5ee-6a91-459a-95a2-94fed9948fe0",
+          "effect_key": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+            "receiptId": "a24ea5ee-6a91-459a-95a2-94fed9948fe0",
+            "serviceId": "816f1081-54fb-4bd4-bf33-dfa37a56414c",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "1039244461519a9e9fddf182a06bbbf08149afbe5529acda9b6f5f1d6fd3bea0",
+          "method": "GET"
+        }
+      ]
+    },
+    "preparation database failure leaves lease recovery rather than permanent failure": {
+      "failure": {
+        "name": "Error",
+        "message": "timeout: independent simulator listening"
+      },
+      "tools": [],
+      "steps": [],
+      "events": [],
+      "cleanupFailures": [
+        {
+          "name": "error",
+          "message": "relation \"external_writes\" does not exist"
+        }
+      ]
+    },
+    "SIGKILL after VERIFIED receipt completes offline without another external request": {
+      "run": "cccb1448-2f74-4fbe-b1d2-bc980c87afc8",
+      "serviceId": "b785780a-fa60-48ec-bfd2-4749110ee396",
+      "killedPidAfterReceipt": 1881,
+      "tools": [
+        {
+          "effect_key": "865fe4a10b3b7fd2e52b8d4eb2adab1566fd132e40a6b9f7702a30347fe68ed3",
+          "contract": "unkeyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "865fe4a10b3b7fd2e52b8d4eb2adab1566fd132e40a6b9f7702a30347fe68ed3",
+            "receiptId": "b2f688f5-e1b4-4305-9c22-cbfb1f072a30",
+            "serviceId": "b785780a-fa60-48ec-bfd2-4749110ee396",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "fence": 2,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "865fe4a10b3b7fd2e52b8d4eb2adab1566fd132e40a6b9f7702a30347fe68ed3",
+            "receiptId": "b2f688f5-e1b4-4305-9c22-cbfb1f072a30",
+            "serviceId": "b785780a-fa60-48ec-bfd2-4749110ee396",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "865fe4a10b3b7fd2e52b8d4eb2adab1566fd132e40a6b9f7702a30347fe68ed3"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "865fe4a10b3b7fd2e52b8d4eb2adab1566fd132e40a6b9f7702a30347fe68ed3",
+            "receipt_id": "b2f688f5-e1b4-4305-9c22-cbfb1f072a30"
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 170
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "b2f688f5-e1b4-4305-9c22-cbfb1f072a30",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "865fe4a10b3b7fd2e52b8d4eb2adab1566fd132e40a6b9f7702a30347fe68ed3",
+            "receiptId": "b2f688f5-e1b4-4305-9c22-cbfb1f072a30",
+            "serviceId": "b785780a-fa60-48ec-bfd2-4749110ee396",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "865fe4a10b3b7fd2e52b8d4eb2adab1566fd132e40a6b9f7702a30347fe68ed3",
+          "method": "POST"
+        }
+      ]
+    },
+    "deadline expiry parks UNKNOWN from RETRY_WAIT": {
+      "run": "28d447b2-f041-4ee1-8bb2-960b88d8ce40",
+      "serviceId": "cbc71f82-9cea-4561-bac6-a9b0ee76d3f1",
+      "tools": [
+        {
+          "effect_key": "c56a867f2afd4017cd940dcae3c8a3c7a7153eb0c551914f6e53ea01d587eab4",
+          "contract": "keyed",
+          "state": "UNKNOWN",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "UNKNOWN",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RECONCILIATION_REQUIRED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "c56a867f2afd4017cd940dcae3c8a3c7a7153eb0c551914f6e53ea01d587eab4"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 155
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RECONCILIATION_REQUIRED",
+          "details": {
+            "step": "write-summary"
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "b643f957-97c9-4eea-b786-afe3e2eda169",
+          "effect_key": "c56a867f2afd4017cd940dcae3c8a3c7a7153eb0c551914f6e53ea01d587eab4",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "c56a867f2afd4017cd940dcae3c8a3c7a7153eb0c551914f6e53ea01d587eab4",
+            "receiptId": "b643f957-97c9-4eea-b786-afe3e2eda169",
+            "serviceId": "cbc71f82-9cea-4561-bac6-a9b0ee76d3f1",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "c56a867f2afd4017cd940dcae3c8a3c7a7153eb0c551914f6e53ea01d587eab4",
+          "method": "POST"
+        }
+      ]
+    },
+    "deadline expiry parks UNKNOWN from READY": {
+      "run": "277c30d1-0110-4d4e-81df-e230b77cc04d",
+      "serviceId": "6be14484-4745-415f-96e2-d252c88eb9d3",
+      "tools": [
+        {
+          "effect_key": "8df108184b47da208e8c39157e4f8eb189249287b30c8d2458d9e3febcfe95e3",
+          "contract": "keyed",
+          "state": "UNKNOWN",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "UNKNOWN",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RECONCILIATION_REQUIRED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "8df108184b47da208e8c39157e4f8eb189249287b30c8d2458d9e3febcfe95e3"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 110
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RECONCILIATION_REQUIRED",
+          "details": {
+            "step": "write-summary"
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "675e8bb2-c74b-402b-b317-3c8dc29f8c67",
+          "effect_key": "8df108184b47da208e8c39157e4f8eb189249287b30c8d2458d9e3febcfe95e3",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "8df108184b47da208e8c39157e4f8eb189249287b30c8d2458d9e3febcfe95e3",
+            "receiptId": "675e8bb2-c74b-402b-b317-3c8dc29f8c67",
+            "serviceId": "6be14484-4745-415f-96e2-d252c88eb9d3",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "8df108184b47da208e8c39157e4f8eb189249287b30c8d2458d9e3febcfe95e3",
+          "method": "POST"
+        }
+      ]
+    },
+    "deadline expiry preserves VERIFIED receipt while parking unfinished bookkeeping": {
+      "run": "808c8021-f8a0-439d-bbda-e1d527f0857e",
+      "serviceId": "f525fee3-b738-4abb-94bc-ed4fb267adb8",
+      "tools": [
+        {
+          "effect_key": "48f7fc038086eed8fce95684182a35f74cf6bf333192e1a6bc11dbeac6f8fd38",
+          "contract": "keyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "48f7fc038086eed8fce95684182a35f74cf6bf333192e1a6bc11dbeac6f8fd38",
+            "receiptId": "25e10e1f-f73e-4a42-a716-56e55495bfbc",
+            "serviceId": "f525fee3-b738-4abb-94bc-ed4fb267adb8",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "UNKNOWN",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": "RECONCILIATION_REQUIRED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "48f7fc038086eed8fce95684182a35f74cf6bf333192e1a6bc11dbeac6f8fd38"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "48f7fc038086eed8fce95684182a35f74cf6bf333192e1a6bc11dbeac6f8fd38",
+            "receipt_id": "25e10e1f-f73e-4a42-a716-56e55495bfbc"
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RECONCILIATION_REQUIRED",
+          "details": {
+            "step": "write-summary"
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "25e10e1f-f73e-4a42-a716-56e55495bfbc",
+          "effect_key": "48f7fc038086eed8fce95684182a35f74cf6bf333192e1a6bc11dbeac6f8fd38",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "48f7fc038086eed8fce95684182a35f74cf6bf333192e1a6bc11dbeac6f8fd38",
+            "receiptId": "25e10e1f-f73e-4a42-a716-56e55495bfbc",
+            "serviceId": "f525fee3-b738-4abb-94bc-ed4fb267adb8",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "48f7fc038086eed8fce95684182a35f74cf6bf333192e1a6bc11dbeac6f8fd38",
+          "method": "POST"
+        }
+      ]
+    },
+    "stale effect worker cannot save receipts or complete results": {
+      "run": "9707e551-03f8-4083-9203-f433b202416f",
+      "serviceId": "dc7765c4-2c05-4458-95b8-454c101a2c34",
+      "failure": {
+        "name": "Error",
+        "message": "timeout: independent simulator listening"
+      },
+      "tools": [
+        {
+          "effect_key": "1d71b2adec0202d3ab0484ed328b37a5ccb7baf4f9d23ae2c935316fd19f9d18",
+          "contract": "keyed",
+          "state": "UNKNOWN",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "RUNNING",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "1d71b2adec0202d3ab0484ed328b37a5ccb7baf4f9d23ae2c935316fd19f9d18"
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "4ebf55da-3c8c-4564-a899-66f0cec8444c",
+          "effect_key": "1d71b2adec0202d3ab0484ed328b37a5ccb7baf4f9d23ae2c935316fd19f9d18",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "1d71b2adec0202d3ab0484ed328b37a5ccb7baf4f9d23ae2c935316fd19f9d18",
+            "receiptId": "4ebf55da-3c8c-4564-a899-66f0cec8444c",
+            "serviceId": "dc7765c4-2c05-4458-95b8-454c101a2c34",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "1d71b2adec0202d3ab0484ed328b37a5ccb7baf4f9d23ae2c935316fd19f9d18",
+          "method": "POST"
+        }
+      ]
+    },
+    "reliable key permits same-key resend only after not-found verification": {
+      "failure": {
+        "name": "Error",
+        "message": "timeout: independent simulator listening"
+      },
+      "tools": [],
+      "steps": [],
+      "events": [],
+      "cleanupFailures": [
+        {
+          "name": "error",
+          "message": "relation \"external_writes\" does not exist"
+        }
+      ]
+    },
+    "bounded failed reconciliation parks UNKNOWN rather than inventing failure": {
+      "failure": {
+        "name": "Error",
+        "message": "timeout: independent simulator listening"
+      },
+      "tools": [],
+      "steps": [],
+      "events": [],
+      "cleanupFailures": [
+        {
+          "name": "error",
+          "message": "relation \"external_writes\" does not exist"
+        }
+      ]
+    },
+    "v2 admission binds contract and intent atomically with stable replay": {
+      "run": "132c965c-c281-42ba-a69e-d8adbbbd0e9c",
+      "serviceId": "b110145d-3515-40ea-8162-fcc3fe1333f9",
+      "tools": [
+        {
+          "effect_key": "4281b5f4cc4916ad1b6c157c60364b4af1cc3057832815b4481520793d23ed77",
+          "contract": "unkeyed",
+          "state": "VERIFIED",
+          "sends": 1,
+          "verifications": 0,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "4281b5f4cc4916ad1b6c157c60364b4af1cc3057832815b4481520793d23ed77",
+            "receiptId": "3e9265a4-e67d-4ab8-896f-a50652f73fd4",
+            "serviceId": "b110145d-3515-40ea-8162-fcc3fe1333f9",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "4281b5f4cc4916ad1b6c157c60364b4af1cc3057832815b4481520793d23ed77",
+            "receiptId": "3e9265a4-e67d-4ab8-896f-a50652f73fd4",
+            "serviceId": "b110145d-3515-40ea-8162-fcc3fe1333f9",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "4281b5f4cc4916ad1b6c157c60364b4af1cc3057832815b4481520793d23ed77"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "4281b5f4cc4916ad1b6c157c60364b4af1cc3057832815b4481520793d23ed77",
+            "receipt_id": "3e9265a4-e67d-4ab8-896f-a50652f73fd4"
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "3e9265a4-e67d-4ab8-896f-a50652f73fd4",
+          "effect_key": null,
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "4281b5f4cc4916ad1b6c157c60364b4af1cc3057832815b4481520793d23ed77",
+            "receiptId": "3e9265a4-e67d-4ab8-896f-a50652f73fd4",
+            "serviceId": "b110145d-3515-40ea-8162-fcc3fe1333f9",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "4281b5f4cc4916ad1b6c157c60364b4af1cc3057832815b4481520793d23ed77",
+          "method": "POST"
+        }
+      ]
+    },
+    "v2 HTTP admission converges to one durable invocation and exposes reconciliation state": {
+      "run": "a2219e09-684e-47f6-baa2-fe16596351cc",
+      "serviceId": "18193240-f775-4570-bcb5-2bcff1de488f",
+      "failure": {
+        "name": "Error",
+        "message": "timeout: v2 API listening"
+      },
+      "tools": [
+        {
+          "effect_key": "9d36e9726fe79503621adc1a4d89b66a90e66443933f9f4a1d57cbfe6597418e",
+          "contract": "keyed",
+          "state": "PREPARED",
+          "sends": 0,
+          "verifications": 0,
+          "receipt": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "READY",
+          "attempt_count": 0,
+          "fence": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": []
+    }
+  },
+  "independentClusters": [
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-YDFu1w",
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-58G6SK"
+  ],
+  "postgres": [
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    },
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    }
+  ],
+  "cleanup": [
+    {
+      "role": "postgres",
+      "pid": 1671,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "effect-actor",
+      "pid": 1738,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 1757,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "effect-actor",
+      "pid": 1881,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "effect-actor",
+      "pid": 1931,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "effect-actor",
+      "pid": 1974,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2131,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 1695,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1709,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1729,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1748,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1773,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1782,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1793,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1805,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1814,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1826,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1835,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1846,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1858,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1870,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1892,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1904,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1921,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1946,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 1984,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 2023,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 2052,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 2070,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 2088,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

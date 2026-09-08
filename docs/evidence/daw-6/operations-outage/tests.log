@@ -1,0 +1,91 @@
+TAP version 13
+# {"event":"database-pool-error"}
+# Subtest: DAW-6 real PostgreSQL operational failure boundaries
+    # Subtest: PostgreSQL outage rejects admission and recovers a real workers lost lease
+    not ok 1 - PostgreSQL outage rejects admission and recovers a real workers lost lease
+      ---
+      duration_ms: 1196.232783
+      type: 'test'
+      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:24:17'
+      failureType: 'testCodeFailure'
+      error: |-
+        {"event":"started","role":"worker","owner":"ed847b16-3497-45c8-8e69-baf8666e98c3","pid":5842}
+        {"event":"attempt_span","trace_id":"38212b6feabb4296854976f4102c4997","span_id":"bedab334f3846661","run_id":"38212b6f-eabb-4296-8549-76f4102c4997","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+        node:events:505
+            throw er; // Unhandled 'error' event
+            ^
+        
+        Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:204:73)
+            at Connection.wrapper (node:events:639:12)
+            at Connection.emit (node:events:514:28)
+            at Socket.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/connection.js:64:12)
+            at Socket.emit (node:events:514:28)
+            at TCP.<anonymous> (node:net:362:12)
+        Emitted 'error' event on Client instance at:
+            at Client._handleErrorEvent (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:422:10)
+            at Connection.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:222:16)
+            at Connection.wrapper (node:events:639:12)
+            at Connection.emit (node:events:514:28)
+            at Socket.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/connection.js:64:12)
+            at Socket.emit (node:events:514:28)
+            at TCP.<anonymous> (node:net:362:12)
+        
+        Node.js v24.20.0
+        
+        + actual - expected
+        
+        + {
+        +   code: 1,
+        +   signal: null
+        + }
+        - undefined
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      actual:
+        code: 1
+        signal: ~
+      operator: 'strictEqual'
+      stack: |-
+        Connection.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:204:73)
+        Connection.wrapper (node:events:639:12)
+        Connection.emit (node:events:514:28)
+        Socket.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/connection.js:64:12)
+        Socket.emit (node:events:514:28)
+        TCP.<anonymous> (node:net:362:12)
+        Client._handleErrorEvent (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:422:10)
+        Connection.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:222:16)
+        Connection.wrapper (node:events:639:12)
+        Connection.emit (node:events:514:28)
+        Socket.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/connection.js:64:12)
+        Socket.emit (node:events:514:28)
+        TCP.<anonymous> (node:net:362:12)
+        file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:99:24
+        process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:37:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:24:9)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:86:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+    1..1
+not ok 1 - DAW-6 real PostgreSQL operational failure boundaries
+  ---
+  duration_ms: 2114.803558
+  type: 'test'
+  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:13:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2253.675576

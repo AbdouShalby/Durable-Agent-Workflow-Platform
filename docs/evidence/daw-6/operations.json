@@ -1,0 +1,579 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "cluster": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-0STIca",
+  "cases": {
+    "readiness rejects unavailable database and mismatched schema while liveness stays alive": {
+      "schemaMismatchRejected": true,
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2401,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:36219\",\"pid\":2401}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        }
+      ]
+    },
+    "PostgreSQL outage rejects admission and recovers a real workers lost lease": {
+      "snapshot": {
+        "schema_version": 1,
+        "ready_steps": 0,
+        "oldest_ready_seconds": 0,
+        "live_leases": 0,
+        "expired_leases": 0,
+        "retry_wait_steps": 0,
+        "due_retries": 0,
+        "recovered_attempts": 1,
+        "retryable_attempts": 0,
+        "waiting_approval_runs": 0,
+        "cancelled_runs": 0,
+        "reconciliation_runs": 0,
+        "unknown_effects": 0,
+        "failed_runs": 0,
+        "succeeded_runs": 1
+      },
+      "sameWorkerRecovered": 2432,
+      "staleRejected": true,
+      "attemptSpans": [
+        {
+          "event": "attempt_span",
+          "trace_id": "7636a481661a4b8687ce127e4bf7a8d8",
+          "span_id": "4cdd6074f5c823ab",
+          "run_id": "7636a481-661a-4b86-87ce-127e4bf7a8d8",
+          "step": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "phase": "start"
+        },
+        {
+          "event": "attempt_span",
+          "trace_id": "7636a481661a4b8687ce127e4bf7a8d8",
+          "span_id": "4cdd6074f5c823ab",
+          "run_id": "7636a481-661a-4b86-87ce-127e4bf7a8d8",
+          "step": "normalize-incident",
+          "attempt": 1,
+          "fence": 1,
+          "phase": "end",
+          "outcome": "infrastructure_error",
+          "duration_ms": 22.19216899999998
+        },
+        {
+          "event": "attempt_span",
+          "trace_id": "7636a481661a4b8687ce127e4bf7a8d8",
+          "span_id": "8e4d8d0f2311869b",
+          "run_id": "7636a481-661a-4b86-87ce-127e4bf7a8d8",
+          "step": "normalize-incident",
+          "attempt": 2,
+          "fence": 2,
+          "phase": "start"
+        },
+        {
+          "event": "attempt_span",
+          "trace_id": "7636a481661a4b8687ce127e4bf7a8d8",
+          "span_id": "8e4d8d0f2311869b",
+          "run_id": "7636a481-661a-4b86-87ce-127e4bf7a8d8",
+          "step": "normalize-incident",
+          "attempt": 2,
+          "fence": 2,
+          "phase": "end",
+          "outcome": "accepted",
+          "duration_ms": 5.847545999999966
+        },
+        {
+          "event": "attempt_span",
+          "trace_id": "7636a481661a4b8687ce127e4bf7a8d8",
+          "span_id": "dbdd9b2485ac0a51",
+          "run_id": "7636a481-661a-4b86-87ce-127e4bf7a8d8",
+          "step": "build-summary",
+          "attempt": 1,
+          "fence": 1,
+          "phase": "start"
+        },
+        {
+          "event": "attempt_span",
+          "trace_id": "7636a481661a4b8687ce127e4bf7a8d8",
+          "span_id": "dbdd9b2485ac0a51",
+          "run_id": "7636a481-661a-4b86-87ce-127e4bf7a8d8",
+          "step": "build-summary",
+          "attempt": 1,
+          "fence": 1,
+          "phase": "end",
+          "outcome": "accepted",
+          "duration_ms": 6.278250999999727
+        }
+      ],
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2418,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:38633\",\"pid\":2418}\n{\"event\":\"probe_pool_error\"}\n{\"event\":\"request-failed\"}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        },
+        {
+          "role": "worker",
+          "pid": 2432,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"0ba51f95-32f6-46de-b4be-0b36ba83f9ab\",\"pid\":2432}\n{\"event\":\"attempt_span\",\"trace_id\":\"7636a481661a4b8687ce127e4bf7a8d8\",\"span_id\":\"4cdd6074f5c823ab\",\"run_id\":\"7636a481-661a-4b86-87ce-127e4bf7a8d8\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\n{\"event\":\"database-client-error\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"7636a481661a4b8687ce127e4bf7a8d8\",\"span_id\":\"4cdd6074f5c823ab\",\"run_id\":\"7636a481-661a-4b86-87ce-127e4bf7a8d8\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"end\",\"outcome\":\"infrastructure_error\",\"duration_ms\":22.19216899999998}\n{\"event\":\"poll_failed\",\"role\":\"worker\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"7636a481661a4b8687ce127e4bf7a8d8\",\"span_id\":\"8e4d8d0f2311869b\",\"run_id\":\"7636a481-661a-4b86-87ce-127e4bf7a8d8\",\"step\":\"normalize-incident\",\"attempt\":2,\"fence\":2,\"phase\":\"start\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"7636a481661a4b8687ce127e4bf7a8d8\",\"span_id\":\"8e4d8d0f2311869b\",\"run_id\":\"7636a481-661a-4b86-87ce-127e4bf7a8d8\",\"step\":\"normalize-incident\",\"attempt\":2,\"fence\":2,\"phase\":\"end\",\"outcome\":\"accepted\",\"duration_ms\":5.847545999999966}\n{\"event\":\"poll_progress\",\"role\":\"worker\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"7636a481661a4b8687ce127e4bf7a8d8\",\"span_id\":\"dbdd9b2485ac0a51\",\"run_id\":\"7636a481-661a-4b86-87ce-127e4bf7a8d8\",\"step\":\"build-summary\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"7636a481661a4b8687ce127e4bf7a8d8\",\"span_id\":\"dbdd9b2485ac0a51\",\"run_id\":\"7636a481-661a-4b86-87ce-127e4bf7a8d8\",\"step\":\"build-summary\",\"attempt\":1,\"fence\":1,\"phase\":\"end\",\"outcome\":\"accepted\",\"duration_ms\":6.278250999999727}\n{\"event\":\"poll_progress\",\"role\":\"worker\"}\n{\"event\":\"draining\",\"role\":\"worker\"}\n{\"event\":\"stopped\",\"role\":\"worker\"}\n"
+        },
+        {
+          "role": "scheduler",
+          "pid": 2444,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"scheduler\",\"owner\":\"343296cd-f7ab-4f27-b7c2-5926193f5bfe\",\"pid\":2444}\n{\"event\":\"database-client-error\"}\n{\"event\":\"database-pool-error\"}\n{\"event\":\"poll_failed\",\"role\":\"scheduler\"}\n{\"event\":\"poll_progress\",\"role\":\"scheduler\"}\n{\"event\":\"poll_progress\",\"role\":\"scheduler\"}\n{\"event\":\"draining\",\"role\":\"scheduler\"}\n{\"event\":\"stopped\",\"role\":\"scheduler\"}\n"
+        }
+      ]
+    },
+    "API SIGTERM drains a committed response and restart preserves replay identity": {
+      "run": "f142c0d8-c0c4-471d-8c8f-3b31a6f357a9",
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2473,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:41203\",\"pid\":2473}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        },
+        {
+          "role": "api",
+          "pid": 2488,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:41819\",\"pid\":2488}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        }
+      ]
+    },
+    "API shutdown deadline bounds blocked work without inventing admission": {
+      "retryAdmitted": true,
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2504,
+          "exit": {
+            "code": 1,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:44303\",\"pid\":2504}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"shutdown_deadline\",\"role\":\"api\"}\n"
+        },
+        {
+          "role": "api",
+          "pid": 2519,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:42289\",\"pid\":2519}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        }
+      ]
+    },
+    "worker SIGTERM completes current step without claiming downstream": {
+      "shutdownMs": 42.487936999999874,
+      "snapshot": {
+        "schema_version": 1,
+        "ready_steps": 0,
+        "oldest_ready_seconds": 0,
+        "live_leases": 0,
+        "expired_leases": 0,
+        "retry_wait_steps": 0,
+        "due_retries": 0,
+        "recovered_attempts": 0,
+        "retryable_attempts": 0,
+        "waiting_approval_runs": 0,
+        "cancelled_runs": 0,
+        "reconciliation_runs": 0,
+        "unknown_effects": 0,
+        "failed_runs": 0,
+        "succeeded_runs": 1
+      },
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2535,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:34663\",\"pid\":2535}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        },
+        {
+          "role": "worker",
+          "pid": 2549,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"7aba316e-fff1-4144-940e-68f5447ed62a\",\"pid\":2549}\n{\"event\":\"attempt_span\",\"trace_id\":\"a041ff85a14244489d73f68186f8e93e\",\"span_id\":\"afd28083a496bfb6\",\"run_id\":\"a041ff85-a142-4448-9d73-f68186f8e93e\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\n{\"event\":\"draining\",\"role\":\"worker\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"a041ff85a14244489d73f68186f8e93e\",\"span_id\":\"afd28083a496bfb6\",\"run_id\":\"a041ff85-a142-4448-9d73-f68186f8e93e\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"end\",\"outcome\":\"accepted\",\"duration_ms\":38.650360000000006}\n{\"event\":\"poll_progress\",\"role\":\"worker\"}\n{\"event\":\"stopped\",\"role\":\"worker\"}\n"
+        },
+        {
+          "role": "worker",
+          "pid": 2561,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"d45d1b61-31ad-4cb7-9059-a23b33ddd2c7\",\"pid\":2561}\n{\"event\":\"attempt_span\",\"trace_id\":\"a041ff85a14244489d73f68186f8e93e\",\"span_id\":\"bac4beb334aac9f6\",\"run_id\":\"a041ff85-a142-4448-9d73-f68186f8e93e\",\"step\":\"build-summary\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"a041ff85a14244489d73f68186f8e93e\",\"span_id\":\"bac4beb334aac9f6\",\"run_id\":\"a041ff85-a142-4448-9d73-f68186f8e93e\",\"step\":\"build-summary\",\"attempt\":1,\"fence\":1,\"phase\":\"end\",\"outcome\":\"accepted\",\"duration_ms\":8.252690000000001}\n{\"event\":\"poll_progress\",\"role\":\"worker\"}\n{\"event\":\"draining\",\"role\":\"worker\"}\n{\"event\":\"stopped\",\"role\":\"worker\"}\n"
+        },
+        {
+          "role": "scheduler",
+          "pid": 2573,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"scheduler\",\"owner\":\"a0948b43-c984-4bbe-9e69-6b2132598ba8\",\"pid\":2573}\n{\"event\":\"draining\",\"role\":\"scheduler\"}\n{\"event\":\"stopped\",\"role\":\"scheduler\"}\n"
+        }
+      ]
+    },
+    "worker shutdown deadline forces exit and lease recovery": {
+      "shutdownMs": 5018.407601999999,
+      "snapshot": {
+        "schema_version": 1,
+        "ready_steps": 0,
+        "oldest_ready_seconds": 0,
+        "live_leases": 0,
+        "expired_leases": 0,
+        "retry_wait_steps": 0,
+        "due_retries": 0,
+        "recovered_attempts": 1,
+        "retryable_attempts": 0,
+        "waiting_approval_runs": 0,
+        "cancelled_runs": 0,
+        "reconciliation_runs": 0,
+        "unknown_effects": 0,
+        "failed_runs": 0,
+        "succeeded_runs": 1
+      },
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2587,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:39059\",\"pid\":2587}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        },
+        {
+          "role": "worker",
+          "pid": 2601,
+          "exit": {
+            "code": 1,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"1aa2d2cd-759e-49fd-ac99-78d43ed645d3\",\"pid\":2601}\n{\"event\":\"attempt_span\",\"trace_id\":\"c78d1c8d8f1347ed9dfb471f71961576\",\"span_id\":\"c89c53744b0f42dc\",\"run_id\":\"c78d1c8d-8f13-47ed-9dfb-471f71961576\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\n{\"event\":\"draining\",\"role\":\"worker\"}\n{\"event\":\"shutdown_deadline\",\"role\":\"worker\"}\n"
+        },
+        {
+          "role": "worker",
+          "pid": 2614,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"126d8f0f-109c-4208-9072-c500acd8fa5b\",\"pid\":2614}\n{\"event\":\"attempt_span\",\"trace_id\":\"c78d1c8d8f1347ed9dfb471f71961576\",\"span_id\":\"90b266627f30848d\",\"run_id\":\"c78d1c8d-8f13-47ed-9dfb-471f71961576\",\"step\":\"normalize-incident\",\"attempt\":2,\"fence\":2,\"phase\":\"start\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"c78d1c8d8f1347ed9dfb471f71961576\",\"span_id\":\"90b266627f30848d\",\"run_id\":\"c78d1c8d-8f13-47ed-9dfb-471f71961576\",\"step\":\"normalize-incident\",\"attempt\":2,\"fence\":2,\"phase\":\"end\",\"outcome\":\"accepted\",\"duration_ms\":6.38488899999993}\n{\"event\":\"poll_progress\",\"role\":\"worker\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"c78d1c8d8f1347ed9dfb471f71961576\",\"span_id\":\"aa1b4eaaf3634ca7\",\"run_id\":\"c78d1c8d-8f13-47ed-9dfb-471f71961576\",\"step\":\"build-summary\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"c78d1c8d8f1347ed9dfb471f71961576\",\"span_id\":\"aa1b4eaaf3634ca7\",\"run_id\":\"c78d1c8d-8f13-47ed-9dfb-471f71961576\",\"step\":\"build-summary\",\"attempt\":1,\"fence\":1,\"phase\":\"end\",\"outcome\":\"accepted\",\"duration_ms\":5.489615000000072}\n{\"event\":\"poll_progress\",\"role\":\"worker\"}\n{\"event\":\"draining\",\"role\":\"worker\"}\n{\"event\":\"stopped\",\"role\":\"worker\"}\n"
+        },
+        {
+          "role": "scheduler",
+          "pid": 2626,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"scheduler\",\"owner\":\"f607f7bf-3172-48c3-9911-64c1d0dc4cf9\",\"pid\":2626}\n{\"event\":\"poll_progress\",\"role\":\"scheduler\"}\n{\"event\":\"poll_progress\",\"role\":\"scheduler\"}\n{\"event\":\"draining\",\"role\":\"scheduler\"}\n{\"event\":\"stopped\",\"role\":\"scheduler\"}\n"
+        }
+      ]
+    },
+    "HTTP handler capacity rejects overflow without exceeding the database pool": {
+      "blockedBackends": [
+        {
+          "pid": 2654
+        },
+        {
+          "pid": 2655
+        },
+        {
+          "pid": 2656
+        },
+        {
+          "pid": 2657
+        },
+        {
+          "pid": 2658
+        },
+        {
+          "pid": 2659
+        },
+        {
+          "pid": 2660
+        },
+        {
+          "pid": 2661
+        },
+        {
+          "pid": 2662
+        },
+        {
+          "pid": 2663
+        },
+        {
+          "pid": 2664
+        },
+        {
+          "pid": 2665
+        },
+        {
+          "pid": 2666
+        },
+        {
+          "pid": 2667
+        },
+        {
+          "pid": 2668
+        },
+        {
+          "pid": 2669
+        }
+      ],
+      "snapshot": {
+        "schema_version": 1,
+        "ready_steps": 32,
+        "oldest_ready_seconds": 0.033707,
+        "live_leases": 0,
+        "expired_leases": 0,
+        "retry_wait_steps": 0,
+        "due_retries": 0,
+        "recovered_attempts": 0,
+        "retryable_attempts": 0,
+        "waiting_approval_runs": 0,
+        "cancelled_runs": 0,
+        "reconciliation_runs": 0,
+        "unknown_effects": 0,
+        "failed_runs": 0,
+        "succeeded_runs": 0,
+        "api_in_flight": 1,
+        "api_pool_connections": 16,
+        "api_pool_waiting": 0
+      },
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2640,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:39953\",\"pid\":2640}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        }
+      ]
+    },
+    "operational telemetry has bounded fields and exposes durable retry recovery signals": {
+      "snapshot": {
+        "schema_version": 1,
+        "ready_steps": 1,
+        "oldest_ready_seconds": 0.00673,
+        "live_leases": 0,
+        "expired_leases": 0,
+        "retry_wait_steps": 0,
+        "due_retries": 0,
+        "recovered_attempts": 0,
+        "retryable_attempts": 1,
+        "waiting_approval_runs": 0,
+        "cancelled_runs": 0,
+        "reconciliation_runs": 0,
+        "unknown_effects": 0,
+        "failed_runs": 0,
+        "succeeded_runs": 0,
+        "api_in_flight": 1,
+        "api_pool_connections": 0,
+        "api_pool_waiting": 0
+      },
+      "processes": [
+        {
+          "role": "api",
+          "pid": 2672,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:33671\",\"pid\":2672}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 2388,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2401,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2418,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 2432,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "scheduler",
+      "pid": 2444,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres-restart",
+      "pid": 2457,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2473,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2488,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2504,
+      "exit": {
+        "code": 1,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2519,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2535,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 2549,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 2561,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "scheduler",
+      "pid": 2573,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2587,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 2601,
+      "exit": {
+        "code": 1,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 2614,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "scheduler",
+      "pid": 2626,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2640,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 2672,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

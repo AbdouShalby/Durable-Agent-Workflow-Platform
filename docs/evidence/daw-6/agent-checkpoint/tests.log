@@ -1,0 +1,54 @@
+TAP version 13
+# {"event":"attempt_span","trace_id":"a8169b4e8b254eadafe5d6b06726ef51","span_id":"4687f53092780fb2","run_id":"a8169b4e-8b25-4ead-afe5-d6b06726ef51","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"a8169b4e8b254eadafe5d6b06726ef51","span_id":"4687f53092780fb2","run_id":"a8169b4e-8b25-4ead-afe5-d6b06726ef51","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.685793000000103}
+# {"event":"attempt_span","trace_id":"a8169b4e8b254eadafe5d6b06726ef51","span_id":"81035136eeda0b1f","run_id":"a8169b4e-8b25-4ead-afe5-d6b06726ef51","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"a8169b4e8b254eadafe5d6b06726ef51","span_id":"81035136eeda0b1f","run_id":"a8169b4e-8b25-4ead-afe5-d6b06726ef51","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.045104999999921}
+# Subtest: DAW-4 real PostgreSQL bounded checkpoint execution
+    # Subtest: SIGKILL after accepted decision resumes without regenerating it
+    not ok 1 - SIGKILL after accepted decision resumes without regenerating it
+      ---
+      duration_ms: 1222.94931
+      type: 'test'
+      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent.test.js:30:17'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        + actual - expected
+        
+        + 'FAILED'
+        - 'SUCCEEDED'
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 'SUCCEEDED'
+      actual: 'FAILED'
+      operator: 'strictEqual'
+      stack: |-
+        file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent.test.js:203:24
+        process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent.test.js:42:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent.test.js:30:9)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent.test.js:184:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+    1..1
+not ok 1 - DAW-4 real PostgreSQL bounded checkpoint execution
+  ---
+  duration_ms: 2207.661897
+  type: 'test'
+  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent.test.js:17:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2343.731311

@@ -7,17 +7,32 @@ import type { CreateRunRequest } from './domain/workflow.js';
 import { decideApproval, cancelRun } from './application/approvals.js';
 import type { ApprovalDecision } from './application/approvals.js';
 import { ApprovalForbidden, ApprovalConflict, ApprovalNotFound } from './domain/approval.js';
+import { operationalPolicy, operationalSnapshot, ready } from './operations.js';
 
-export function buildApi(pool: pg.Pool, token: string, approverToken = '') {
+export function buildApi(pool: pg.Pool, token: string, approverToken = '', operationsPool = pool, draining = () => false) {
   if (token.length < 32) throw new Error('OPERATOR_TOKEN requires at least 32 characters');
   if (approverToken && (approverToken.length < 32 || approverToken === token)) throw new Error('distinct APPROVER_TOKEN requires at least 32 characters');
   const expected = createHash('sha256').update(`Bearer ${token}`).digest();
   const expectedApprover = createHash('sha256').update(`Bearer ${approverToken}`).digest();
-  const app = Fastify({ logger: false, bodyLimit: 16384,
+  const app = Fastify({ logger: false, bodyLimit: 16384, connectionTimeout: 5000, requestTimeout: 5000,
+    keepAliveTimeout: 5000, forceCloseConnections: 'idle', return503OnClosing: true,
     ajv: { customOptions: { coerceTypes: false, removeAdditional: false, useDefaults: false } } });
+  let inFlight = 0;
+  app.addHook('onRoute', route => {
+    const handler = route.handler;
+    route.handler = async function(request, reply) {
+      if (route.url === '/healthz') return handler.call(this,request,reply);
+      if (draining()) return reply.code(503).send({ error: 'draining' });
+      if (inFlight >= operationalPolicy.maxInFlight) return reply.code(503).send({ error: 'overloaded' });
+      inFlight++;
+      try { return await handler.call(this,request,reply); } finally { inFlight--; }
+    };
+  });
   app.addHook('onRequest', async (request, reply) => {
     reply.header('Cache-Control', 'no-store');
     if (request.routeOptions.url === '/healthz') return;
+    if (draining()) return reply.code(503).send({ error: 'draining' });
+    if (request.routeOptions.url === '/readyz') return;
     const actual = createHash('sha256').update(request.headers.authorization ?? '').digest();
     if (request.method === 'GET' && request.routeOptions.url === '/runs/:id' && approverToken && timingSafeEqual(expectedApprover,actual)) return;
     if (request.routeOptions.url === '/runs/:id/approvals/:approvalId') {
@@ -27,6 +42,12 @@ export function buildApi(pool: pg.Pool, token: string, approverToken = '') {
     if (!timingSafeEqual(expected, actual)) return reply.code(401).send({ error: 'unauthorized' });
   });
   app.get('/healthz', async () => ({ status: 'alive' }));
+  app.get('/readyz', async (_request, reply) => {
+    try { if (await ready(operationsPool)) return { status: 'ready' }; } catch { /* coarse dependency status only */ }
+    return reply.code(503).send({ status: 'not_ready' });
+  });
+  app.get('/operations', async () => ({ ...await operationalSnapshot(operationsPool),
+    api_in_flight: inFlight, api_pool_connections: pool.totalCount, api_pool_waiting: pool.waitingCount }));
   app.post<{ Body: CreateRunRequest; Headers: { 'idempotency-key': string } }>('/runs', {
     schema: { body: createRunSchema, headers: { type: 'object', required: ['idempotency-key'],
       properties: { 'idempotency-key': { type: 'string', pattern: '^[A-Za-z0-9._:-]{1,128}$' } } } },

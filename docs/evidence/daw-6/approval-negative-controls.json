@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "fingerprint",
+    "exitCode": 1,
+    "detectedBy": "changed action fingerprint invalidates an approved grant before dispatch"
+  },
+  {
+    "mode": "expiry",
+    "exitCode": 1,
+    "detectedBy": "approved grant expired before dispatch cannot authorize a POST"
+  },
+  {
+    "mode": "authorization",
+    "exitCode": 1,
+    "detectedBy": "operator and agent cannot grant approval at HTTP or engine boundary"
+  },
+  {
+    "mode": "cancellation",
+    "exitCode": 1,
+    "detectedBy": "cancellation after external authorization requires reconciliation not rollback"
+  }
+]

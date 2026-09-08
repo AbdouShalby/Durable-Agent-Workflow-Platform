@@ -1,0 +1,55 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "cluster": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-5CdQcR",
+  "cases": {
+    "worker shutdown deadline forces exit and lease recovery": {
+      "processes": [
+        {
+          "role": "api",
+          "pid": 5978,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:39063\",\"pid\":5978}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        },
+        {
+          "role": "worker",
+          "pid": 5992,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"217b91ee-3fc0-49e4-a565-18b3e9277825\",\"pid\":5992}\n{\"event\":\"attempt_span\",\"trace_id\":\"b502a0f13aab4ecea2e33d28d730e114\",\"span_id\":\"f0e54d3bdc548c4a\",\"run_id\":\"b502a0f1-3aab-4ece-a2e3-3d28d730e114\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\n{\"event\":\"draining\",\"role\":\"worker\"}\n{\"event\":\"shutdown_deadline\",\"role\":\"worker\"}\n{\"event\":\"attempt_span\",\"trace_id\":\"b502a0f13aab4ecea2e33d28d730e114\",\"span_id\":\"f0e54d3bdc548c4a\",\"run_id\":\"b502a0f1-3aab-4ece-a2e3-3d28d730e114\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"end\",\"outcome\":\"accepted\",\"duration_ms\":7560.344586}\n{\"event\":\"poll_progress\",\"role\":\"worker\"}\n{\"event\":\"stopped\",\"role\":\"worker\"}\n"
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 5965,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 5978,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "worker",
+      "pid": 5992,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

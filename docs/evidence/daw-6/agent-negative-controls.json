@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "output",
+    "exitCode": 1,
+    "detectedBy": "agent schema rejects malformed and policy-changing output"
+  },
+  {
+    "mode": "allowlist",
+    "exitCode": 1,
+    "detectedBy": "agent tool allowlist rejects unregistered and prototype names"
+  },
+  {
+    "mode": "checkpoint",
+    "exitCode": 1,
+    "detectedBy": "SIGKILL after accepted decision resumes without regenerating it"
+  },
+  {
+    "mode": "budget",
+    "exitCode": 1,
+    "detectedBy": "turn budget prevents another model decision after the accepted limit"
+  }
+]

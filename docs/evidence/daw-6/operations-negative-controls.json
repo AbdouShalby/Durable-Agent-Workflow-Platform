@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "outage",
+    "exitCode": 1,
+    "detectedBy": "PostgreSQL outage rejects admission and recovers a real workers lost lease"
+  },
+  {
+    "mode": "readiness",
+    "exitCode": 1,
+    "detectedBy": "readiness rejects unavailable database and mismatched schema while liveness stays alive"
+  },
+  {
+    "mode": "shutdown",
+    "exitCode": 1,
+    "detectedBy": "worker shutdown deadline forces exit and lease recovery"
+  },
+  {
+    "mode": "capacity",
+    "exitCode": 1,
+    "detectedBy": "HTTP handler capacity rejects overflow without exceeding the database pool"
+  },
+  {
+    "mode": "telemetry",
+    "exitCode": 1,
+    "detectedBy": "operational telemetry has bounded fields and exposes durable retry recovery signals"
+  }
+]

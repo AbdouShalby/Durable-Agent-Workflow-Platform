@@ -1,0 +1,4661 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "independentClusters": [
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-gtkKBv",
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-plx9qx"
+  ],
+  "cases": {
+    "high policy durably waits without attempts or external writes": {
+      "run": "6d08e17e-a4e3-42eb-a568-8996ca25b895",
+      "runs": [
+        {
+          "id": "6d08e17e-a4e3-42eb-a568-8996ca25b895",
+          "state": "WAITING_APPROVAL",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "a592fd2b-432b-466f-a5d9-7ac9b86f2a66",
+          "run_id": "6d08e17e-a4e3-42eb-a568-8996ca25b895",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "c460e79cc941357953028943a9e072cc3c1be564e5782bc3ba7bba1188ec9427",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "PENDING",
+          "created_at": "2026-09-08T03:42:54.919Z",
+          "expires_at": "2026-09-08T03:47:54.919Z",
+          "decision": null,
+          "decided_by": null,
+          "decided_at": null,
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "WAITING_APPROVAL",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "a592fd2b-432b-466f-a5d9-7ac9b86f2a66",
+            "action_fingerprint": "c460e79cc941357953028943a9e072cc3c1be564e5782bc3ba7bba1188ec9427",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 851,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "low policy executes the existing tool without requiring approval": {
+      "run": "6692cb4b-235e-46bd-a245-632ffb03d1ad",
+      "runs": [
+        {
+          "id": "6692cb4b-235e-46bd-a245-632ffb03d1ad",
+          "state": "SUCCEEDED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "low"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[LOW] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[LOW] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "result": {
+              "summary": "[LOW] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "d013f4ea22f5b13a84c6f358fed1ec697567bec4131543821c63bf4c1567af8d",
+            "receiptId": "001a15af-2445-4f4a-81a8-71d8fde5915b",
+            "serviceId": "f337038c-7ff4-4967-84b6-991aa110ddff",
+            "requestFingerprint": "1e85d015f48ceaf8b53e3ead74b549d429eb1a211430f13a4e80586994b33e70"
+          },
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "d013f4ea22f5b13a84c6f358fed1ec697567bec4131543821c63bf4c1567af8d"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "d013f4ea22f5b13a84c6f358fed1ec697567bec4131543821c63bf4c1567af8d",
+            "receipt_id": "001a15af-2445-4f4a-81a8-71d8fde5915b"
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "001a15af-2445-4f4a-81a8-71d8fde5915b",
+          "effect_key": "d013f4ea22f5b13a84c6f358fed1ec697567bec4131543821c63bf4c1567af8d",
+          "fingerprint": "1e85d015f48ceaf8b53e3ead74b549d429eb1a211430f13a4e80586994b33e70",
+          "receipt": {
+            "result": {
+              "summary": "[LOW] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "d013f4ea22f5b13a84c6f358fed1ec697567bec4131543821c63bf4c1567af8d",
+            "receiptId": "001a15af-2445-4f4a-81a8-71d8fde5915b",
+            "serviceId": "f337038c-7ff4-4967-84b6-991aa110ddff",
+            "requestFingerprint": "1e85d015f48ceaf8b53e3ead74b549d429eb1a211430f13a4e80586994b33e70"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "d013f4ea22f5b13a84c6f358fed1ec697567bec4131543821c63bf4c1567af8d",
+          "method": "POST"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 877,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "eight concurrent human approvals serialize and execute one logical action": {
+      "run": "5b421566-82ce-497e-894c-e9e8b5706da3",
+      "blockedApprovalBackends": [
+        {
+          "pid": 915
+        },
+        {
+          "pid": 916
+        },
+        {
+          "pid": 917
+        },
+        {
+          "pid": 918
+        },
+        {
+          "pid": 919
+        },
+        {
+          "pid": 920
+        },
+        {
+          "pid": 921
+        },
+        {
+          "pid": 922
+        }
+      ],
+      "runs": [
+        {
+          "id": "5b421566-82ce-497e-894c-e9e8b5706da3",
+          "state": "SUCCEEDED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "616b72a5-cb8e-4e6f-b4ad-493bb69bc3d2",
+          "run_id": "5b421566-82ce-497e-894c-e9e8b5706da3",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "96f0160fb64771c0d6ebffaec877e34979d189e2caff9db6b70b5892f72826d2",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "APPROVED",
+          "created_at": "2026-09-08T03:42:56.742Z",
+          "expires_at": "2026-09-08T03:47:56.742Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:42:56.786Z",
+          "authorized_at": "2026-09-08T03:42:56.994Z"
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "29c286ebcffda2af3fad0e8e13a09fc72b3c663c625945c11fb78d2ce715dee7",
+            "receiptId": "e0ffd58f-808c-4e1f-988f-2bc875751298",
+            "serviceId": "2e498f73-45f7-48f4-a18d-13f970149bb4",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          },
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "616b72a5-cb8e-4e6f-b4ad-493bb69bc3d2",
+            "action_fingerprint": "96f0160fb64771c0d6ebffaec877e34979d189e2caff9db6b70b5892f72826d2",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "616b72a5-cb8e-4e6f-b4ad-493bb69bc3d2"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_AUTHORIZED",
+          "details": {
+            "approval_id": "616b72a5-cb8e-4e6f-b4ad-493bb69bc3d2",
+            "action_fingerprint": "96f0160fb64771c0d6ebffaec877e34979d189e2caff9db6b70b5892f72826d2"
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "29c286ebcffda2af3fad0e8e13a09fc72b3c663c625945c11fb78d2ce715dee7"
+          }
+        },
+        {
+          "sequence": 18,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "29c286ebcffda2af3fad0e8e13a09fc72b3c663c625945c11fb78d2ce715dee7",
+            "receipt_id": "e0ffd58f-808c-4e1f-988f-2bc875751298"
+          }
+        },
+        {
+          "sequence": 19,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "e0ffd58f-808c-4e1f-988f-2bc875751298",
+          "effect_key": "29c286ebcffda2af3fad0e8e13a09fc72b3c663c625945c11fb78d2ce715dee7",
+          "fingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "29c286ebcffda2af3fad0e8e13a09fc72b3c663c625945c11fb78d2ce715dee7",
+            "receiptId": "e0ffd58f-808c-4e1f-988f-2bc875751298",
+            "serviceId": "2e498f73-45f7-48f4-a18d-13f970149bb4",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "29c286ebcffda2af3fad0e8e13a09fc72b3c663c625945c11fb78d2ce715dee7",
+          "method": "POST"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 901,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "operator and agent cannot grant approval at HTTP or engine boundary": {
+      "run": "71471565-898c-4051-bc15-f5c480660db0",
+      "runs": [
+        {
+          "id": "71471565-898c-4051-bc15-f5c480660db0",
+          "state": "WAITING_APPROVAL",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "58a95e54-9288-4b9a-9c28-9e8b27117fd7",
+          "run_id": "71471565-898c-4051-bc15-f5c480660db0",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "b02691fcf8467ebdf4abde89b887d67d7a203453eb46d1f6246771749dc8696e",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "PENDING",
+          "created_at": "2026-09-08T03:42:57.843Z",
+          "expires_at": "2026-09-08T03:47:57.843Z",
+          "decision": null,
+          "decided_by": null,
+          "decided_at": null,
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "WAITING_APPROVAL",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "58a95e54-9288-4b9a-9c28-9e8b27117fd7",
+            "action_fingerprint": "b02691fcf8467ebdf4abde89b887d67d7a203453eb46d1f6246771749dc8696e",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 983,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        },
+        {
+          "pid": 997,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "API and worker restart preserve waiting approval and accepted decisions": {
+      "run": "d4a858b6-7f59-470a-8296-d2e60caeb809",
+      "runs": [
+        {
+          "id": "d4a858b6-7f59-470a-8296-d2e60caeb809",
+          "state": "SUCCEEDED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "659019bf-ffaa-411f-a487-1cbfd8f9f034",
+          "run_id": "d4a858b6-7f59-470a-8296-d2e60caeb809",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "32bedeeefae2322b50319c36c655037cfa1df1db2c1bbf6f7be81b01862fc528",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "APPROVED",
+          "created_at": "2026-09-08T03:42:58.783Z",
+          "expires_at": "2026-09-08T03:47:58.783Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:42:59.091Z",
+          "authorized_at": "2026-09-08T03:42:59.229Z"
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "cf8abd0651bf91096c5fbbb093ab9ddfc544ed8aa42731bf6dcbdfa192988cd7",
+            "receiptId": "ea550a69-d92d-47de-95f9-395eed476ef1",
+            "serviceId": "fe37523a-accc-430a-b1a0-91897a3b0d5b",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          },
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "659019bf-ffaa-411f-a487-1cbfd8f9f034",
+            "action_fingerprint": "32bedeeefae2322b50319c36c655037cfa1df1db2c1bbf6f7be81b01862fc528",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "659019bf-ffaa-411f-a487-1cbfd8f9f034"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_AUTHORIZED",
+          "details": {
+            "approval_id": "659019bf-ffaa-411f-a487-1cbfd8f9f034",
+            "action_fingerprint": "32bedeeefae2322b50319c36c655037cfa1df1db2c1bbf6f7be81b01862fc528"
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "cf8abd0651bf91096c5fbbb093ab9ddfc544ed8aa42731bf6dcbdfa192988cd7"
+          }
+        },
+        {
+          "sequence": 18,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "cf8abd0651bf91096c5fbbb093ab9ddfc544ed8aa42731bf6dcbdfa192988cd7",
+            "receipt_id": "ea550a69-d92d-47de-95f9-395eed476ef1"
+          }
+        },
+        {
+          "sequence": 19,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "ea550a69-d92d-47de-95f9-395eed476ef1",
+          "effect_key": "cf8abd0651bf91096c5fbbb093ab9ddfc544ed8aa42731bf6dcbdfa192988cd7",
+          "fingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "cf8abd0651bf91096c5fbbb093ab9ddfc544ed8aa42731bf6dcbdfa192988cd7",
+            "receiptId": "ea550a69-d92d-47de-95f9-395eed476ef1",
+            "serviceId": "fe37523a-accc-430a-b1a0-91897a3b0d5b",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "cf8abd0651bf91096c5fbbb093ab9ddfc544ed8aa42731bf6dcbdfa192988cd7",
+          "method": "POST"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 1020,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        },
+        {
+          "pid": 1034,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "rejected approval is terminal and duplicate rejection is harmless": {
+      "run": "ba707b0b-1ccd-4e44-8c26-87b2000a9ee2",
+      "runs": [
+        {
+          "id": "ba707b0b-1ccd-4e44-8c26-87b2000a9ee2",
+          "state": "FAILED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "7016ed6d-92f6-48f9-9519-18e0b052dd6e",
+          "run_id": "ba707b0b-1ccd-4e44-8c26-87b2000a9ee2",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "89e6c713d0866e75f12817e69862664749c8daa1cb223503d384a75b6e084514",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "REJECTED",
+          "created_at": "2026-09-08T03:43:00.057Z",
+          "expires_at": "2026-09-08T03:48:00.057Z",
+          "decision": "reject",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:00.076Z",
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "FAILED",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": "APPROVAL_REJECTED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "7016ed6d-92f6-48f9-9519-18e0b052dd6e",
+            "action_fingerprint": "89e6c713d0866e75f12817e69862664749c8daa1cb223503d384a75b6e084514",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "state": "REJECTED",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1072,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "expired pending approval cannot unblock and scheduler persists expiry": {
+      "run": "5f3ae9d8-bd6a-4f7f-bdda-8284c3300bef",
+      "runs": [
+        {
+          "id": "5f3ae9d8-bd6a-4f7f-bdda-8284c3300bef",
+          "state": "FAILED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "328ebe55-d0fd-44f6-a892-96abea250d0c",
+          "run_id": "5f3ae9d8-bd6a-4f7f-bdda-8284c3300bef",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "6f9282dbdbc5f98906880ddea04a977986049a5b8ba03b6296f2b655220148a6",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "EXPIRED",
+          "created_at": "2026-09-06T03:43:00.739Z",
+          "expires_at": "2026-09-08T03:42:59.739Z",
+          "decision": null,
+          "decided_by": null,
+          "decided_at": null,
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "FAILED",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": "APPROVAL_EXPIRED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "328ebe55-d0fd-44f6-a892-96abea250d0c",
+            "action_fingerprint": "6f9282dbdbc5f98906880ddea04a977986049a5b8ba03b6296f2b655220148a6",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_EXPIRED",
+          "details": {
+            "state": "EXPIRED",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1097,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "approved grant expired before dispatch cannot authorize a POST": {
+      "run": "5bfc8f95-c5a6-47df-ae77-75d38241f374",
+      "runs": [
+        {
+          "id": "5bfc8f95-c5a6-47df-ae77-75d38241f374",
+          "state": "FAILED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "fe32e89a-8a5b-4c76-a0ee-ff25843e7c23",
+          "run_id": "5bfc8f95-c5a6-47df-ae77-75d38241f374",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "e8e5c1a1f7241cb4af9f592f5e558ae08caa2277e9a842b5f77402e2a7c66c06",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "EXPIRED",
+          "created_at": "2026-09-06T03:43:01.662Z",
+          "expires_at": "2026-09-08T03:43:00.662Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:01.653Z",
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "APPROVAL_EXPIRED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "fe32e89a-8a5b-4c76-a0ee-ff25843e7c23",
+            "action_fingerprint": "e8e5c1a1f7241cb4af9f592f5e558ae08caa2277e9a842b5f77402e2a7c66c06",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "fe32e89a-8a5b-4c76-a0ee-ff25843e7c23"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_EXPIRED",
+          "details": {
+            "state": "EXPIRED",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1122,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "changed action fingerprint invalidates an approved grant before dispatch": {
+      "run": "87f7633c-0e5b-4c9f-b184-24299abc1d4d",
+      "runs": [
+        {
+          "id": "87f7633c-0e5b-4c9f-b184-24299abc1d4d",
+          "state": "FAILED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "db24bb5b-c4e1-4342-a848-04d8fe76637b",
+          "run_id": "87f7633c-0e5b-4c9f-b184-24299abc1d4d",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "08f13f98fadb0542952f2b366a774d87d517f170988a1131ffae05b43908792b",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "INVALIDATED",
+          "created_at": "2026-09-08T03:43:02.533Z",
+          "expires_at": "2026-09-08T03:48:02.533Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:02.557Z",
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "Changed proposed transaction",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "APPROVAL_INVALIDATED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "db24bb5b-c4e1-4342-a848-04d8fe76637b",
+            "action_fingerprint": "08f13f98fadb0542952f2b366a774d87d517f170988a1131ffae05b43908792b",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "db24bb5b-c4e1-4342-a848-04d8fe76637b"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_INVALIDATED",
+          "details": {
+            "state": "INVALIDATED",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1147,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "changed policy fingerprint cannot reuse an earlier human approval": {
+      "run": "3ae288ff-1fb5-4aee-8c6e-3054988a13fa",
+      "runs": [
+        {
+          "id": "3ae288ff-1fb5-4aee-8c6e-3054988a13fa",
+          "state": "FAILED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "1b0f1a0c-5680-48d5-87ad-d4e78065051c",
+          "run_id": "3ae288ff-1fb5-4aee-8c6e-3054988a13fa",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "40d663f4dc0bc1d22d2709496d08d11adcddf9ef6c1ccfa2d5a1a47665501f0f",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "INVALIDATED",
+          "created_at": "2026-09-08T03:43:03.319Z",
+          "expires_at": "2026-09-08T03:48:03.319Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:03.339Z",
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "APPROVAL_INVALIDATED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "1b0f1a0c-5680-48d5-87ad-d4e78065051c",
+            "action_fingerprint": "40d663f4dc0bc1d22d2709496d08d11adcddf9ef6c1ccfa2d5a1a47665501f0f",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "1b0f1a0c-5680-48d5-87ad-d4e78065051c"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_INVALIDATED",
+          "details": {
+            "state": "INVALIDATED",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1172,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "approval endpoints reject stale fingerprints and foreign identities": {
+      "run": "267b860f-db48-40e7-b937-db2b68373809",
+      "runs": [
+        {
+          "id": "267b860f-db48-40e7-b937-db2b68373809",
+          "state": "WAITING_APPROVAL",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "b0f8764f-58f4-4ccd-ae2d-05a3903f89c6",
+          "run_id": "267b860f-db48-40e7-b937-db2b68373809",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "c058536829b896f6c96f8e44585a18fccb4324d932fe9ea726e5d9672a240cef",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "PENDING",
+          "created_at": "2026-09-08T03:43:04.029Z",
+          "expires_at": "2026-09-08T03:48:04.029Z",
+          "decision": null,
+          "decided_by": null,
+          "decided_at": null,
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "WAITING_APPROVAL",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "b0f8764f-58f4-4ccd-ae2d-05a3903f89c6",
+            "action_fingerprint": "c058536829b896f6c96f8e44585a18fccb4324d932fe9ea726e5d9672a240cef",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1197,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "concurrent cancellation and approval leave no executable cancelled work": {
+      "run": "2afee5cb-b3fb-4cae-859a-3a9655f030b3",
+      "runs": [
+        {
+          "id": "2afee5cb-b3fb-4cae-859a-3a9655f030b3",
+          "state": "CANCELLED",
+          "cancel_requested_at": "2026-09-08T03:43:04.848Z"
+        }
+      ],
+      "approvals": [
+        {
+          "id": "23559e16-cd84-466c-8a2b-86d38dea61a8",
+          "run_id": "2afee5cb-b3fb-4cae-859a-3a9655f030b3",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "5cc39cdb76b6a14ee9e8bc88ee4d32b280f5a43086e0c3ffe248fc258d06f142",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "CANCELLED",
+          "created_at": "2026-09-08T03:43:04.811Z",
+          "expires_at": "2026-09-08T03:48:04.811Z",
+          "decision": null,
+          "decided_by": null,
+          "decided_at": null,
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "CANCELLED",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": "CANCELLED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "23559e16-cd84-466c-8a2b-86d38dea61a8",
+            "action_fingerprint": "5cc39cdb76b6a14ee9e8bc88ee4d32b280f5a43086e0c3ffe248fc258d06f142",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "RUN_CANCELLED",
+          "details": {
+            "actor": "local-operator",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1222,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "cancellation before dispatch fences a claimed worker": {
+      "run": "bff08d49-49fe-49d7-8ccf-401cee831527",
+      "runs": [
+        {
+          "id": "bff08d49-49fe-49d7-8ccf-401cee831527",
+          "state": "CANCELLED",
+          "cancel_requested_at": "2026-09-08T03:43:05.622Z"
+        }
+      ],
+      "approvals": [
+        {
+          "id": "4ba24b49-f09e-49a9-a962-1c8caf6417cc",
+          "run_id": "bff08d49-49fe-49d7-8ccf-401cee831527",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "441b96b7084ee1467fb6aa2933bdbc53742bcfbfad91fcc23629751feff2b70f",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "CANCELLED",
+          "created_at": "2026-09-08T03:43:05.587Z",
+          "expires_at": "2026-09-08T03:48:05.587Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:05.607Z",
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "CANCELLED",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "CANCELLED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "4ba24b49-f09e-49a9-a962-1c8caf6417cc",
+            "action_fingerprint": "441b96b7084ee1467fb6aa2933bdbc53742bcfbfad91fcc23629751feff2b70f",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "4ba24b49-f09e-49a9-a962-1c8caf6417cc"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "RUN_CANCELLED",
+          "details": {
+            "actor": "local-operator",
+            "reconciliation_required": false
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1250,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "cancellation after external authorization requires reconciliation not rollback": {
+      "run": "1f4ab793-d229-4b84-a518-39feb4e51b64",
+      "runs": [
+        {
+          "id": "1f4ab793-d229-4b84-a518-39feb4e51b64",
+          "state": "RECONCILIATION_REQUIRED",
+          "cancel_requested_at": "2026-09-08T03:43:06.738Z"
+        }
+      ],
+      "approvals": [
+        {
+          "id": "95ad7a03-59b0-4770-b853-5adcd99f4a5b",
+          "run_id": "1f4ab793-d229-4b84-a518-39feb4e51b64",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "edb934b871d703f8342693d9c18a8edec43d5d4ef340e51b10080d562fd67f38",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "CANCELLED",
+          "created_at": "2026-09-08T03:43:06.309Z",
+          "expires_at": "2026-09-08T03:48:06.309Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:06.553Z",
+          "authorized_at": "2026-09-08T03:43:06.691Z"
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "UNKNOWN",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "CANCELLED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "95ad7a03-59b0-4770-b853-5adcd99f4a5b",
+            "action_fingerprint": "edb934b871d703f8342693d9c18a8edec43d5d4ef340e51b10080d562fd67f38",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "95ad7a03-59b0-4770-b853-5adcd99f4a5b"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_AUTHORIZED",
+          "details": {
+            "approval_id": "95ad7a03-59b0-4770-b853-5adcd99f4a5b",
+            "action_fingerprint": "edb934b871d703f8342693d9c18a8edec43d5d4ef340e51b10080d562fd67f38"
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "c37317dd5d63c118eb9bd4e60bbabc8e3c8a3abf48aeb0e8b277bbfe0beb0acd"
+          }
+        },
+        {
+          "sequence": 18,
+          "type": "CANCEL_REQUESTED",
+          "details": {
+            "actor": "local-operator",
+            "reconciliation_required": true
+          }
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "b46da8d4-66e3-46ec-ac03-d16ce71bf8d5",
+          "effect_key": "c37317dd5d63c118eb9bd4e60bbabc8e3c8a3abf48aeb0e8b277bbfe0beb0acd",
+          "fingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "c37317dd5d63c118eb9bd4e60bbabc8e3c8a3abf48aeb0e8b277bbfe0beb0acd",
+            "receiptId": "b46da8d4-66e3-46ec-ac03-d16ce71bf8d5",
+            "serviceId": "e84fcd5d-7b5a-4be4-bc03-84c440420763",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "c37317dd5d63c118eb9bd4e60bbabc8e3c8a3abf48aeb0e8b277bbfe0beb0acd",
+          "method": "POST"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 1275,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "expired authorization permits receipt verification but not another write": {
+      "run": "85e7066a-3e8a-469f-8291-e426201e5c8f",
+      "runs": [
+        {
+          "id": "85e7066a-3e8a-469f-8291-e426201e5c8f",
+          "state": "SUCCEEDED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "68b62768-0987-49f4-90f3-ec41964491f7",
+          "run_id": "85e7066a-3e8a-469f-8291-e426201e5c8f",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "807c8f6e778206514b854a2a0ea0de710705427cb286fbd394b8a928afd01d8f",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "APPROVED",
+          "created_at": "2026-09-06T03:43:08.398Z",
+          "expires_at": "2026-09-08T03:43:07.398Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:07.672Z",
+          "authorized_at": "2026-09-08T03:43:07.684Z"
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "result": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "f0a921e26f99e8a607e11bf2ad3e93bdd818a397dc50c0a08e1a248bf561f69f",
+            "receiptId": "f6d1dde8-ac4b-44bc-aa4d-ec4e4ca97320",
+            "serviceId": "bd6895a8-ff56-4880-afc6-7cd44e765bb4",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          },
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "68b62768-0987-49f4-90f3-ec41964491f7",
+            "action_fingerprint": "807c8f6e778206514b854a2a0ea0de710705427cb286fbd394b8a928afd01d8f",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "68b62768-0987-49f4-90f3-ec41964491f7"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_AUTHORIZED",
+          "details": {
+            "approval_id": "68b62768-0987-49f4-90f3-ec41964491f7",
+            "action_fingerprint": "807c8f6e778206514b854a2a0ea0de710705427cb286fbd394b8a928afd01d8f"
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "f0a921e26f99e8a607e11bf2ad3e93bdd818a397dc50c0a08e1a248bf561f69f"
+          }
+        },
+        {
+          "sequence": 18,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 105
+          }
+        },
+        {
+          "sequence": 19,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 20,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 21,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "f0a921e26f99e8a607e11bf2ad3e93bdd818a397dc50c0a08e1a248bf561f69f",
+            "receipt_id": "f6d1dde8-ac4b-44bc-aa4d-ec4e4ca97320"
+          }
+        },
+        {
+          "sequence": 22,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 23,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "f6d1dde8-ac4b-44bc-aa4d-ec4e4ca97320",
+          "effect_key": "f0a921e26f99e8a607e11bf2ad3e93bdd818a397dc50c0a08e1a248bf561f69f",
+          "fingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] Synthetic governed incident",
+              "accepted": true
+            },
+            "effectKey": "f0a921e26f99e8a607e11bf2ad3e93bdd818a397dc50c0a08e1a248bf561f69f",
+            "receiptId": "f6d1dde8-ac4b-44bc-aa4d-ec4e4ca97320",
+            "serviceId": "bd6895a8-ff56-4880-afc6-7cd44e765bb4",
+            "requestFingerprint": "1fee7ef194434d33c8308af12c233f8e3cc6ac4236779c0621a357c5ba875d8c"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "f0a921e26f99e8a607e11bf2ad3e93bdd818a397dc50c0a08e1a248bf561f69f",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "f0a921e26f99e8a607e11bf2ad3e93bdd818a397dc50c0a08e1a248bf561f69f",
+          "method": "GET"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 1322,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "not-found reconciliation cannot resend after approval expiry": {
+      "run": "1a1423d4-a6fa-4be9-8a5c-bfd801440ff7",
+      "runs": [
+        {
+          "id": "1a1423d4-a6fa-4be9-8a5c-bfd801440ff7",
+          "state": "RECONCILIATION_REQUIRED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "f5147bd6-a23a-49a9-8ea3-021d5df0afbc",
+          "run_id": "1a1423d4-a6fa-4be9-8a5c-bfd801440ff7",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "36f97c1edc4c55bdf76e60e2d54c6bfa3e269506e7df0e31a77892c20bb1262b",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "EXPIRED",
+          "created_at": "2026-09-06T03:43:09.613Z",
+          "expires_at": "2026-09-08T03:43:08.613Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:43:09.582Z",
+          "authorized_at": "2026-09-08T03:43:09.594Z"
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "UNKNOWN",
+          "attempt_count": 2,
+          "result": null,
+          "last_error": "APPROVAL_EXPIRED"
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "f5147bd6-a23a-49a9-8ea3-021d5df0afbc",
+            "action_fingerprint": "36f97c1edc4c55bdf76e60e2d54c6bfa3e269506e7df0e31a77892c20bb1262b",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "f5147bd6-a23a-49a9-8ea3-021d5df0afbc"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_AUTHORIZED",
+          "details": {
+            "approval_id": "f5147bd6-a23a-49a9-8ea3-021d5df0afbc",
+            "action_fingerprint": "36f97c1edc4c55bdf76e60e2d54c6bfa3e269506e7df0e31a77892c20bb1262b"
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "1943a51a17936b8d922c735460a523f4313678944284c37b7ee436aafa48e42d"
+          }
+        },
+        {
+          "sequence": 18,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 171
+          }
+        },
+        {
+          "sequence": 19,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 20,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 21,
+          "type": "APPROVAL_EXPIRED",
+          "details": {
+            "state": "EXPIRED",
+            "reconciliation_required": true
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "1943a51a17936b8d922c735460a523f4313678944284c37b7ee436aafa48e42d",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "1943a51a17936b8d922c735460a523f4313678944284c37b7ee436aafa48e42d",
+          "method": "GET"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 1369,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "approval insertion failure rolls back agent completion and reuses its checkpoint": {
+      "run": "e78d5eea-f198-4e88-b9c7-f35d7a9d2e3e",
+      "runs": [
+        {
+          "id": "e78d5eea-f198-4e88-b9c7-f35d7a9d2e3e",
+          "state": "WAITING_APPROVAL",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "b0d8045d-650d-43a8-80ab-af4b97e89e5a",
+          "run_id": "e78d5eea-f198-4e88-b9c7-f35d7a9d2e3e",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "14a0f2e6c4bfbd5b2355e9ba4ed9241bf1eccd4cafd686fde7cc74f1b854ab36",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "PENDING",
+          "created_at": "2026-09-08T03:43:11.299Z",
+          "expires_at": "2026-09-08T03:48:11.299Z",
+          "decision": null,
+          "decided_by": null,
+          "decided_at": null,
+          "authorized_at": null
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "result": {
+            "summary": "[HIGH] Synthetic governed incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "WAITING_APPROVAL",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 128
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "analyze-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "b0d8045d-650d-43a8-80ab-af4b97e89e5a",
+            "action_fingerprint": "14a0f2e6c4bfbd5b2355e9ba4ed9241bf1eccd4cafd686fde7cc74f1b854ab36",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1412,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "model cannot create approvals from accepted output fields": {
+      "run": "e8ed974b-0fd8-437f-b841-e2bf310f8bec",
+      "runs": [
+        {
+          "id": "e8ed974b-0fd8-437f-b841-e2bf310f8bec",
+          "state": "FAILED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "PERMANENT"
+        },
+        {
+          "step_key": "write-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "REJECTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_OUTPUT_REJECTED",
+          "details": {
+            "call": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1436,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    },
+    "governed summary must fit the unchanged existing tool contract": {
+      "run": "efb80f5b-5c7f-42e8-849e-6696fe89a644",
+      "runs": [
+        {
+          "id": "efb80f5b-5c7f-42e8-849e-6696fe89a644",
+          "state": "FAILED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "FAILED",
+          "attempt_count": 1,
+          "result": null,
+          "last_error": "PERMANENT"
+        },
+        {
+          "step_key": "write-summary",
+          "state": "BLOCKED",
+          "attempt_count": 0,
+          "result": null,
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ],
+      "externalWrites": [],
+      "externalRequests": [],
+      "apiProcesses": [
+        {
+          "pid": 1460,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 804,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 923,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 924,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 925,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 931,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 1033,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 1048,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "governed-worker",
+      "pid": 1298,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 828,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 842,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 868,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 892,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 974,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1011,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1063,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1088,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1113,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1138,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1163,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1188,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1213,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1241,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1266,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1288,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1313,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1335,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1349,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1360,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1382,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1392,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1403,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1427,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 1451,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

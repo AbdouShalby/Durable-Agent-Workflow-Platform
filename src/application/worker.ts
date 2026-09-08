@@ -8,6 +8,7 @@ import type { IncidentInput } from '../domain/workflow.js';
 import { agentDefinitionHash, governedDefinitionHash } from '../domain/workflow.js';
 import { executeAgent, LostAgentOwnership, AgentInfrastructureError } from './agent.js';
 import { ModelUnavailable } from '../agents/adapters.js';
+import { attemptSpan } from '../operations.js';
 
 export class RetryableStepError extends Error {}
 export type Executor = (claim: Claim, signal: AbortSignal) => Promise<unknown>;
@@ -33,6 +34,7 @@ export const executeDeterministic: Executor = async claim => {
 export async function runOne(pool: pg.Pool, owner: string, execute?: Executor): Promise<boolean> {
   const claim = await claimStep(pool, owner);
   if (!claim) return false;
+  const endSpan = attemptSpan(claim);
   const execution = new AbortController(), heartbeat = new AbortController();
   let lost = false;
   const renewal = (async () => {
@@ -58,10 +60,12 @@ export async function runOne(pool: pg.Pool, owner: string, execute?: Executor): 
   }
   catch (error) { failed = true; failure = error; }
   finally { heartbeat.abort(); await renewal; }
-  if (!lost) {
-    if (failure instanceof LostEffectOwnership || failure instanceof EffectInfrastructureError || failure instanceof LostAgentOwnership || failure instanceof AgentInfrastructureError) return true;
-    if (failed) await failStep(pool, claim, failure instanceof RetryableStepError || failure instanceof EffectUncertainError || failure instanceof ModelUnavailable);
-    else await completeStep(pool, claim, result);
-  }
+  try {
+    if (lost) endSpan('ownership_lost');
+    else if (failure instanceof LostEffectOwnership || failure instanceof LostAgentOwnership) endSpan('ownership_lost');
+    else if (failure instanceof EffectInfrastructureError || failure instanceof AgentInfrastructureError) endSpan('deferred');
+    else if (failed) endSpan(await failStep(pool, claim, failure instanceof RetryableStepError || failure instanceof EffectUncertainError || failure instanceof ModelUnavailable) ? 'retired' : 'ownership_lost');
+    else endSpan(await completeStep(pool, claim, result) ? 'accepted' : 'ownership_lost');
+  } catch (error) { endSpan('infrastructure_error'); throw error; }
   return true;
 }

@@ -1,0 +1,261 @@
+{
+  "mutation": "verification",
+  "cases": {
+    "timeout remains UNKNOWN and unavailable verification never triggers blind POST": {
+      "run": "09d144e9-9f82-4be3-9294-401bd1bf9441",
+      "serviceId": "79f5fd30-32e3-4349-ba40-a016b1dd2a03",
+      "failure": {
+        "name": "AssertionError",
+        "message": "Expected values to be strictly equal:\n\n2 !== 1\n"
+      },
+      "tools": [
+        {
+          "effect_key": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+          "contract": "keyed",
+          "state": "VERIFIED",
+          "sends": 2,
+          "verifications": 1,
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+            "receiptId": "12e1090a-a001-4ea6-aeaf-c13fce620063",
+            "serviceId": "79f5fd30-32e3-4349-ba40-a016b1dd2a03",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": {
+            "title": "representative incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "fence": 1,
+          "result": "[HIGH] representative incident",
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 2,
+          "fence": 2,
+          "result": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+            "receiptId": "12e1090a-a001-4ea6-aeaf-c13fce620063",
+            "serviceId": "79f5fd30-32e3-4349-ba40-a016b1dd2a03",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          },
+          "last_error": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987"
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "write-summary",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 198
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "write-summary",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+            "receipt_id": "12e1090a-a001-4ea6-aeaf-c13fce620063"
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "12e1090a-a001-4ea6-aeaf-c13fce620063",
+          "effect_key": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+          "fingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520",
+          "receipt": {
+            "result": {
+              "summary": "[HIGH] representative incident",
+              "accepted": true
+            },
+            "effectKey": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+            "receiptId": "12e1090a-a001-4ea6-aeaf-c13fce620063",
+            "serviceId": "79f5fd30-32e3-4349-ba40-a016b1dd2a03",
+            "requestFingerprint": "1702e80e8205707d2b57e1b70ee4b663d886b91d71f20fef149d4394bb2d5520"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+          "method": "POST"
+        },
+        {
+          "id": "2",
+          "effect_key": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+          "method": "GET"
+        },
+        {
+          "id": "3",
+          "effect_key": "b2d828dd77b48937671747ee517940a771199afcc5c65e1e48289a3e0fc94987",
+          "method": "POST"
+        }
+      ]
+    }
+  },
+  "independentClusters": [
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-NhuRY2",
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-SB2s9S"
+  ],
+  "postgres": [
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    },
+    {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "fsync": "on",
+      "synchronous_commit": "on"
+    }
+  ],
+  "cleanup": [
+    {
+      "role": "postgres",
+      "pid": 5085,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 5109,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 5123,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "external-http",
+      "pid": 5134,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

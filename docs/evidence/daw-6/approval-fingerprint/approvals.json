@@ -1,0 +1,327 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "independentClusters": [
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-uCOcoR",
+    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-Hrn3s3"
+  ],
+  "cases": {
+    "changed action fingerprint invalidates an approved grant before dispatch": {
+      "run": "6a827f86-7a01-4afa-bb6d-82a93839e3ab",
+      "failure": {
+        "name": "AssertionError",
+        "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'APPROVED'\n- 'INVALIDATED'\n"
+      },
+      "runs": [
+        {
+          "id": "6a827f86-7a01-4afa-bb6d-82a93839e3ab",
+          "state": "SUCCEEDED",
+          "cancel_requested_at": null
+        }
+      ],
+      "approvals": [
+        {
+          "id": "0eea75b5-11d4-4e8b-a2f6-26109ea8109f",
+          "run_id": "6a827f86-7a01-4afa-bb6d-82a93839e3ab",
+          "step_key": "write-summary",
+          "tool": "write-summary",
+          "action_fingerprint": "974931cdbcde33af50b9b6d55c5441c63e3f83556cd4ee9c5b8f3f86dcb5b2af",
+          "policy_version": "summary-review-v1",
+          "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259",
+          "state": "APPROVED",
+          "created_at": "2026-09-08T03:46:48.769Z",
+          "expires_at": "2026-09-08T03:51:48.769Z",
+          "decision": "approve",
+          "decided_by": "local-approver",
+          "decided_at": "2026-09-08T03:46:48.810Z",
+          "authorized_at": "2026-09-08T03:46:48.830Z"
+        }
+      ],
+      "steps": [
+        {
+          "step_key": "normalize-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "title": "Synthetic governed incident",
+            "severity": "high"
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "build-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": "[HIGH] Synthetic governed incident",
+          "last_error": null
+        },
+        {
+          "step_key": "analyze-incident",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "summary": "Changed proposed transaction",
+            "evidence": [
+              "turn:1:incident-context"
+            ]
+          },
+          "last_error": null
+        },
+        {
+          "step_key": "write-summary",
+          "state": "SUCCEEDED",
+          "attempt_count": 1,
+          "result": {
+            "result": {
+              "summary": "Changed proposed transaction",
+              "accepted": true
+            },
+            "effectKey": "f288b23f4f49d2d7458c6a9d4649c1002908aefd1ace24c95308e1a5d14030cc",
+            "receiptId": "e8988ad2-d9eb-4c2c-b925-15330ba4ea2c",
+            "serviceId": "b9613c6a-d29b-48d6-9697-40ac1a367f55",
+            "requestFingerprint": "c25a4e1b8262b43aa923e2a7c840cadce907a249fd0e01afcc3c0308d180f336"
+          },
+          "last_error": null
+        }
+      ],
+      "agentCalls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "state": "ACCEPTED"
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "state": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "APPROVAL_REQUESTED",
+          "details": {
+            "approval_id": "0eea75b5-11d4-4e8b-a2f6-26109ea8109f",
+            "action_fingerprint": "974931cdbcde33af50b9b6d55c5441c63e3f83556cd4ee9c5b8f3f86dcb5b2af",
+            "policy_fingerprint": "db8f4849f2f958ff3b487942c0532956d43c2d59bf2f755facde019738617259"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "APPROVAL_DECIDED",
+          "details": {
+            "actor": "local-approver",
+            "decision": "approve",
+            "approval_id": "0eea75b5-11d4-4e8b-a2f6-26109ea8109f"
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "APPROVAL_AUTHORIZED",
+          "details": {
+            "approval_id": "0eea75b5-11d4-4e8b-a2f6-26109ea8109f",
+            "action_fingerprint": "974931cdbcde33af50b9b6d55c5441c63e3f83556cd4ee9c5b8f3f86dcb5b2af"
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "EFFECT_UNKNOWN",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "f288b23f4f49d2d7458c6a9d4649c1002908aefd1ace24c95308e1a5d14030cc"
+          }
+        },
+        {
+          "sequence": 18,
+          "type": "EFFECT_VERIFIED",
+          "details": {
+            "step": "write-summary",
+            "effect_key": "f288b23f4f49d2d7458c6a9d4649c1002908aefd1ace24c95308e1a5d14030cc",
+            "receipt_id": "e8988ad2-d9eb-4c2c-b925-15330ba4ea2c"
+          }
+        },
+        {
+          "sequence": 19,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "write-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ],
+      "externalWrites": [
+        {
+          "id": "e8988ad2-d9eb-4c2c-b925-15330ba4ea2c",
+          "effect_key": "f288b23f4f49d2d7458c6a9d4649c1002908aefd1ace24c95308e1a5d14030cc",
+          "fingerprint": "c25a4e1b8262b43aa923e2a7c840cadce907a249fd0e01afcc3c0308d180f336",
+          "receipt": {
+            "result": {
+              "summary": "Changed proposed transaction",
+              "accepted": true
+            },
+            "effectKey": "f288b23f4f49d2d7458c6a9d4649c1002908aefd1ace24c95308e1a5d14030cc",
+            "receiptId": "e8988ad2-d9eb-4c2c-b925-15330ba4ea2c",
+            "serviceId": "b9613c6a-d29b-48d6-9697-40ac1a367f55",
+            "requestFingerprint": "c25a4e1b8262b43aa923e2a7c840cadce907a249fd0e01afcc3c0308d180f336"
+          }
+        }
+      ],
+      "externalRequests": [
+        {
+          "id": "1",
+          "effect_key": "f288b23f4f49d2d7458c6a9d4649c1002908aefd1ace24c95308e1a5d14030cc",
+          "method": "POST"
+        }
+      ],
+      "apiProcesses": [
+        {
+          "pid": 5462,
+          "exit": {
+            "code": 0,
+            "signal": null
+          }
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 5415,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "postgres",
+      "pid": 5439,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "approval-external-http",
+      "pid": 5453,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,983 @@
+COMMAND node --test tests/secret-guard.test.mjs
+✔ guard rejects runtime-built literal credentials without disclosing their values (2.107694ms)
+✔ guard preserves required configuration, generated expressions and passwordless local test URLs (1.394593ms)
+✔ guard detects tracked dotenv even when empty (0.175708ms)
+✔ Compose contract fails if the required value, empty-value protection or loopback boundary is removed (0.466525ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 533.52879
+COMMAND node scripts/secret-guard.mjs
+{
+  "mode": "working-tree",
+  "files": 246,
+  "findings": []
+}
+COMMAND node node_modules/typescript/bin/tsc --noEmit
+COMMAND node node_modules/typescript/bin/tsc
+COMMAND node --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js dist/tests/approval-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js dist/tests/approvals.test.js dist/tests/operations.test.js
+TAP version 13
+# Subtest: agent schema rejects malformed and policy-changing output
+ok 1 - agent schema rejects malformed and policy-changing output
+  ---
+  duration_ms: 2.455559
+  type: 'test'
+  ...
+# Subtest: agent tool allowlist rejects unregistered and prototype names
+ok 2 - agent tool allowlist rejects unregistered and prototype names
+  ---
+  duration_ms: 0.526943
+  type: 'test'
+  ...
+# Subtest: read-only tool validates its own inputs before invocation
+ok 3 - read-only tool validates its own inputs before invocation
+  ---
+  duration_ms: 1.257364
+  type: 'test'
+  ...
+# Subtest: finish needs observed evidence and cannot smuggle tools or approvals
+ok 4 - finish needs observed evidence and cannot smuggle tools or approvals
+  ---
+  duration_ms: 0.419694
+  type: 'test'
+  ...
+# Subtest: deterministic evaluation repeats exact decisions for a small synthetic dataset
+ok 5 - deterministic evaluation repeats exact decisions for a small synthetic dataset
+  ---
+  duration_ms: 7.49439
+  type: 'test'
+  ...
+# Subtest: OpenAI adapter uses a fixed bounded contract and no hosted tools or redirects
+ok 6 - OpenAI adapter uses a fixed bounded contract and no hosted tools or redirects
+  ---
+  duration_ms: 1419.285534
+  type: 'test'
+  ...
+# Subtest: OpenAI adapter rejects refusal incomplete oversized and malformed envelopes without fallback
+ok 7 - OpenAI adapter rejects refusal incomplete oversized and malformed envelopes without fallback
+  ---
+  duration_ms: 2.788694
+  type: 'test'
+  ...
+# {"event":"attempt_span","trace_id":"a6c30d19751c4b5ca120c2ef116086d4","span_id":"063e2057543a9bd6","run_id":"a6c30d19-751c-4b5c-a120-c2ef116086d4","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"a6c30d19751c4b5ca120c2ef116086d4","span_id":"063e2057543a9bd6","run_id":"a6c30d19-751c-4b5c-a120-c2ef116086d4","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":7.066295000000537}
+# {"event":"attempt_span","trace_id":"a6c30d19751c4b5ca120c2ef116086d4","span_id":"235a05a76e962587","run_id":"a6c30d19-751c-4b5c-a120-c2ef116086d4","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"a6c30d19751c4b5ca120c2ef116086d4","span_id":"235a05a76e962587","run_id":"a6c30d19-751c-4b5c-a120-c2ef116086d4","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.63014800000019}
+# Subtest: DAW-4 real PostgreSQL bounded checkpoint execution
+    # Subtest: valid decisions checkpoint and complete through the engine
+    ok 1 - valid decisions checkpoint and complete through the engine
+      ---
+      duration_ms: 283.839095
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"adf3a68e2a0b46a485c45619aab7a82d","span_id":"5ec20eee8252f178","run_id":"adf3a68e-2a0b-46a4-85c4-5619aab7a82d","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"adf3a68e2a0b46a485c45619aab7a82d","span_id":"5ec20eee8252f178","run_id":"adf3a68e-2a0b-46a4-85c4-5619aab7a82d","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.3358919999991485}
+# {"event":"attempt_span","trace_id":"adf3a68e2a0b46a485c45619aab7a82d","span_id":"229a6d9adb657d8c","run_id":"adf3a68e-2a0b-46a4-85c4-5619aab7a82d","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"adf3a68e2a0b46a485c45619aab7a82d","span_id":"229a6d9adb657d8c","run_id":"adf3a68e-2a0b-46a4-85c4-5619aab7a82d","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.4176059999990684}
+    # Subtest: v3 concurrent HTTP admission binds one session and rejects policy inputs
+    not ok 2 - v3 concurrent HTTP admission binds one session and rejects policy inputs
+      ---
+      duration_ms: 7234.705641
+      type: 'test'
+      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent.test.js:30:17'
+      failureType: 'testCodeFailure'
+      error: 'timeout: API listening'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
+        async Lab.startApi (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:75:21)
+        async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent.test.js:95:29
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent.test.js:42:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent.test.js:30:9)
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent.test.js:91:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+# {"event":"attempt_span","trace_id":"ae32d2990d49431a84aa2db3ec25e3c9","span_id":"1b1a6643ba66b34a","run_id":"ae32d299-0d49-431a-84aa-2db3ec25e3c9","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ae32d2990d49431a84aa2db3ec25e3c9","span_id":"1b1a6643ba66b34a","run_id":"ae32d299-0d49-431a-84aa-2db3ec25e3c9","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.4016389999997045}
+# {"event":"attempt_span","trace_id":"ae32d2990d49431a84aa2db3ec25e3c9","span_id":"639f55bfbb57859c","run_id":"ae32d299-0d49-431a-84aa-2db3ec25e3c9","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ae32d2990d49431a84aa2db3ec25e3c9","span_id":"639f55bfbb57859c","run_id":"ae32d299-0d49-431a-84aa-2db3ec25e3c9","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.105537999999797}
+# {"event":"attempt_span","trace_id":"ae32d2990d49431a84aa2db3ec25e3c9","span_id":"d09ed546c62d8a3b","run_id":"ae32d299-0d49-431a-84aa-2db3ec25e3c9","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ae32d2990d49431a84aa2db3ec25e3c9","span_id":"d09ed546c62d8a3b","run_id":"ae32d299-0d49-431a-84aa-2db3ec25e3c9","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":48.18414000000121}
+    # Subtest: malformed and unregistered model proposals cannot execute tools
+    ok 3 - malformed and unregistered model proposals cannot execute tools
+      ---
+      duration_ms: 203.224763
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"d9ac6442bd754176b8cf22cbb9d10795","span_id":"3100cb91f5d6bbac","run_id":"d9ac6442-bd75-4176-b8cf-22cbb9d10795","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"d9ac6442bd754176b8cf22cbb9d10795","span_id":"3100cb91f5d6bbac","run_id":"d9ac6442-bd75-4176-b8cf-22cbb9d10795","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.197130999997171}
+# {"event":"attempt_span","trace_id":"d9ac6442bd754176b8cf22cbb9d10795","span_id":"418e96b3a72518e4","run_id":"d9ac6442-bd75-4176-b8cf-22cbb9d10795","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"d9ac6442bd754176b8cf22cbb9d10795","span_id":"418e96b3a72518e4","run_id":"d9ac6442-bd75-4176-b8cf-22cbb9d10795","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.8277559999987716}
+# {"event":"attempt_span","trace_id":"d9ac6442bd754176b8cf22cbb9d10795","span_id":"ab682b3454eb2ac7","run_id":"d9ac6442-bd75-4176-b8cf-22cbb9d10795","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"d9ac6442bd754176b8cf22cbb9d10795","span_id":"ab682b3454eb2ac7","run_id":"d9ac6442-bd75-4176-b8cf-22cbb9d10795","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":25.618916999999783}
+    # Subtest: turn budget prevents another model decision after the accepted limit
+    ok 4 - turn budget prevents another model decision after the accepted limit
+      ---
+      duration_ms: 160.994576
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"f5f0846e7ca041718a3cadee926da843","span_id":"8732584c9b8eebe1","run_id":"f5f0846e-7ca0-4171-8a3c-adee926da843","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f5f0846e7ca041718a3cadee926da843","span_id":"8732584c9b8eebe1","run_id":"f5f0846e-7ca0-4171-8a3c-adee926da843","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.0935389999976906}
+# {"event":"attempt_span","trace_id":"f5f0846e7ca041718a3cadee926da843","span_id":"cbff6ac0f6e3697d","run_id":"f5f0846e-7ca0-4171-8a3c-adee926da843","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f5f0846e7ca041718a3cadee926da843","span_id":"cbff6ac0f6e3697d","run_id":"f5f0846e-7ca0-4171-8a3c-adee926da843","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.524964000000182}
+# {"event":"attempt_span","trace_id":"f5f0846e7ca041718a3cadee926da843","span_id":"bc9efe85a9003675","run_id":"f5f0846e-7ca0-4171-8a3c-adee926da843","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f5f0846e7ca041718a3cadee926da843","span_id":"bc9efe85a9003675","run_id":"f5f0846e-7ca0-4171-8a3c-adee926da843","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":14.010222000000795}
+    # Subtest: registered tool invalid arguments are rejected before any tool reservation
+    ok 5 - registered tool invalid arguments are rejected before any tool reservation
+      ---
+      duration_ms: 131.357559
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"cb6dba3dec1f4e438261713342342d1b","span_id":"e50a08bd57306ece","run_id":"cb6dba3d-ec1f-4e43-8261-713342342d1b","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cb6dba3dec1f4e438261713342342d1b","span_id":"e50a08bd57306ece","run_id":"cb6dba3d-ec1f-4e43-8261-713342342d1b","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.376704000002064}
+# {"event":"attempt_span","trace_id":"cb6dba3dec1f4e438261713342342d1b","span_id":"49c2efbc1ecbbdeb","run_id":"cb6dba3d-ec1f-4e43-8261-713342342d1b","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cb6dba3dec1f4e438261713342342d1b","span_id":"49c2efbc1ecbbdeb","run_id":"cb6dba3d-ec1f-4e43-8261-713342342d1b","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.602319000001444}
+# {"event":"attempt_span","trace_id":"cb6dba3dec1f4e438261713342342d1b","span_id":"2e5ba4703f464f0f","run_id":"cb6dba3d-ec1f-4e43-8261-713342342d1b","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cb6dba3dec1f4e438261713342342d1b","span_id":"2e5ba4703f464f0f","run_id":"cb6dba3d-ec1f-4e43-8261-713342342d1b","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":386.1610269999983}
+    # Subtest: malformed completed provider response is permanent not a transport retry
+    ok 6 - malformed completed provider response is permanent not a transport retry
+      ---
+      duration_ms: 523.410142
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"92591cc2483b4a7a82d5feb5c788a6d0","span_id":"65936e9b1ca5a938","run_id":"92591cc2-483b-4a7a-82d5-feb5c788a6d0","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"92591cc2483b4a7a82d5feb5c788a6d0","span_id":"65936e9b1ca5a938","run_id":"92591cc2-483b-4a7a-82d5-feb5c788a6d0","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.264874999997119}
+# {"event":"attempt_span","trace_id":"92591cc2483b4a7a82d5feb5c788a6d0","span_id":"550746d63d223b7c","run_id":"92591cc2-483b-4a7a-82d5-feb5c788a6d0","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"92591cc2483b4a7a82d5feb5c788a6d0","span_id":"550746d63d223b7c","run_id":"92591cc2-483b-4a7a-82d5-feb5c788a6d0","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.002363999999943}
+# {"event":"attempt_span","trace_id":"92591cc2483b4a7a82d5feb5c788a6d0","span_id":"13966bccae8ebcca","run_id":"92591cc2-483b-4a7a-82d5-feb5c788a6d0","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"92591cc2483b4a7a82d5feb5c788a6d0","span_id":"13966bccae8ebcca","run_id":"92591cc2-483b-4a7a-82d5-feb5c788a6d0","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":22.72984400000132}
+    # Subtest: cost budget is reserved before dispatch and never refunded
+    ok 7 - cost budget is reserved before dispatch and never refunded
+      ---
+      duration_ms: 138.36431
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"1e642373654d476f8a5ce2dfe2197358","span_id":"090ef943ff6b5d62","run_id":"1e642373-654d-476f-8a5c-e2dfe2197358","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"1e642373654d476f8a5ce2dfe2197358","span_id":"090ef943ff6b5d62","run_id":"1e642373-654d-476f-8a5c-e2dfe2197358","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.8604750000013155}
+# {"event":"attempt_span","trace_id":"1e642373654d476f8a5ce2dfe2197358","span_id":"f0ce16c01690043a","run_id":"1e642373-654d-476f-8a5c-e2dfe2197358","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"1e642373654d476f8a5ce2dfe2197358","span_id":"f0ce16c01690043a","run_id":"1e642373-654d-476f-8a5c-e2dfe2197358","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.991558999998233}
+# {"event":"attempt_span","trace_id":"1e642373654d476f8a5ce2dfe2197358","span_id":"c946530efbdf060a","run_id":"1e642373-654d-476f-8a5c-e2dfe2197358","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"1e642373654d476f8a5ce2dfe2197358","span_id":"c946530efbdf060a","run_id":"1e642373-654d-476f-8a5c-e2dfe2197358","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":58.82281499999954}
+    # Subtest: call and tool execution budgets are independent bounds
+    ok 8 - call and tool execution budgets are independent bounds
+      ---
+      duration_ms: 169.057128
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"59ea851d2fc91880","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"59ea851d2fc91880","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.9928690000015195}
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"e36a46483685461d","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"e36a46483685461d","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.194161999999778}
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"3d5a9114a25d755a","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"3d5a9114a25d755a","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":72.42654000000039}
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"a21093aa98801788","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"analyze-incident","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"48b920e7fdca4f5db45bfb3c5375f699","span_id":"a21093aa98801788","run_id":"48b920e7-fdca-4f5d-b45b-fb3c5375f699","step":"analyze-incident","attempt":2,"fence":2,"phase":"end","outcome":"retired","duration_ms":7.935953000000154}
+    # Subtest: model timeout keeps its reservation and retry cannot exceed call budget
+    ok 9 - model timeout keeps its reservation and retry cannot exceed call budget
+      ---
+      duration_ms: 380.582799
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"28bfe532e1e643a590a0a4852174b778","span_id":"f16b04251295c168","run_id":"28bfe532-e1e6-43a5-90a0-a4852174b778","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"28bfe532e1e643a590a0a4852174b778","span_id":"f16b04251295c168","run_id":"28bfe532-e1e6-43a5-90a0-a4852174b778","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.036479000002146}
+# {"event":"attempt_span","trace_id":"28bfe532e1e643a590a0a4852174b778","span_id":"737dde27c1d4eb95","run_id":"28bfe532-e1e6-43a5-90a0-a4852174b778","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"28bfe532e1e643a590a0a4852174b778","span_id":"737dde27c1d4eb95","run_id":"28bfe532-e1e6-43a5-90a0-a4852174b778","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.7810869999993884}
+    # Subtest: database deadline blocks acceptance even when a model returns late
+    ok 10 - database deadline blocks acceptance even when a model returns late
+      ---
+      duration_ms: 688.332487
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"9a1c9481cdd441e19140d6713bc8f508","span_id":"cce761473b408390","run_id":"9a1c9481-cdd4-41e1-9140-d6713bc8f508","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9a1c9481cdd441e19140d6713bc8f508","span_id":"cce761473b408390","run_id":"9a1c9481-cdd4-41e1-9140-d6713bc8f508","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.9974589999983436}
+# {"event":"attempt_span","trace_id":"9a1c9481cdd441e19140d6713bc8f508","span_id":"4258fb5c1485fcc3","run_id":"9a1c9481-cdd4-41e1-9140-d6713bc8f508","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9a1c9481cdd441e19140d6713bc8f508","span_id":"4258fb5c1485fcc3","run_id":"9a1c9481-cdd4-41e1-9140-d6713bc8f508","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.8131419999990612}
+    # Subtest: SIGKILL after accepted decision resumes without regenerating it
+    ok 11 - SIGKILL after accepted decision resumes without regenerating it
+      ---
+      duration_ms: 2558.641724
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"dc7207a6936e417489cacc15662a47c7","span_id":"1e1e964944514486","run_id":"dc7207a6-936e-4174-89ca-cc15662a47c7","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"dc7207a6936e417489cacc15662a47c7","span_id":"1e1e964944514486","run_id":"dc7207a6-936e-4174-89ca-cc15662a47c7","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.527387999998609}
+# {"event":"attempt_span","trace_id":"dc7207a6936e417489cacc15662a47c7","span_id":"f937202c7c318e0c","run_id":"dc7207a6-936e-4174-89ca-cc15662a47c7","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"dc7207a6936e417489cacc15662a47c7","span_id":"f937202c7c318e0c","run_id":"dc7207a6-936e-4174-89ca-cc15662a47c7","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.338067000000592}
+# {"event":"attempt_span","trace_id":"dc7207a6936e417489cacc15662a47c7","span_id":"58dae1ce4bb04983","run_id":"dc7207a6-936e-4174-89ca-cc15662a47c7","step":"analyze-incident","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"dc7207a6936e417489cacc15662a47c7","span_id":"58dae1ce4bb04983","run_id":"dc7207a6-936e-4174-89ca-cc15662a47c7","step":"analyze-incident","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":30.423627000000124}
+    # Subtest: stale worker cannot accept a delayed decision after lease recovery
+    ok 12 - stale worker cannot accept a delayed decision after lease recovery
+      ---
+      duration_ms: 958.5337
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"6c2f75203f154b4cb4ed0f6b44db48f1","span_id":"7e736f29431a0bae","run_id":"6c2f7520-3f15-4b4c-b4ed-0f6b44db48f1","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"6c2f75203f154b4cb4ed0f6b44db48f1","span_id":"7e736f29431a0bae","run_id":"6c2f7520-3f15-4b4c-b4ed-0f6b44db48f1","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.7040369999995164}
+# {"event":"attempt_span","trace_id":"6c2f75203f154b4cb4ed0f6b44db48f1","span_id":"24c3852ec2e08868","run_id":"6c2f7520-3f15-4b4c-b4ed-0f6b44db48f1","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"6c2f75203f154b4cb4ed0f6b44db48f1","span_id":"24c3852ec2e08868","run_id":"6c2f7520-3f15-4b4c-b4ed-0f6b44db48f1","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.112387000001036}
+    # Subtest: accepted finish checkpoint is reused without any model invocation
+    ok 13 - accepted finish checkpoint is reused without any model invocation
+      ---
+      duration_ms: 160.253045
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"241bc6c9858646d7bc939aadd3326bce","span_id":"03cd19dc0e4a9d6f","run_id":"241bc6c9-8586-46d7-bc93-9aadd3326bce","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"241bc6c9858646d7bc939aadd3326bce","span_id":"03cd19dc0e4a9d6f","run_id":"241bc6c9-8586-46d7-bc93-9aadd3326bce","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.217361999999412}
+# {"event":"attempt_span","trace_id":"241bc6c9858646d7bc939aadd3326bce","span_id":"ac0de268240e7b8e","run_id":"241bc6c9-8586-46d7-bc93-9aadd3326bce","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"241bc6c9858646d7bc939aadd3326bce","span_id":"ac0de268240e7b8e","run_id":"241bc6c9-8586-46d7-bc93-9aadd3326bce","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.8081510000010894}
+    # Subtest: decision and acceptance event roll back together on database failure
+    ok 14 - decision and acceptance event roll back together on database failure
+      ---
+      duration_ms: 133.596625
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"a17c25a12f5c96b7","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"a17c25a12f5c96b7","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.8440710000031686}
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"d767c8d13564e751","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"d767c8d13564e751","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.058818000001338}
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"7392fb995803e4f6","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"7392fb995803e4f6","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":27.95105799999874}
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"1e672dd3f965fd80","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"analyze-incident","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"94ca28b7bd0444c9bba0be3bce04609f","span_id":"1e672dd3f965fd80","run_id":"94ca28b7-bd04-44c9-bba0-be3bce04609f","step":"analyze-incident","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":15.242061000000831}
+    # Subtest: saved tool observation survives retry without being read again
+    ok 15 - saved tool observation survives retry without being read again
+      ---
+      duration_ms: 324.436555
+      type: 'test'
+      ...
+    1..15
+not ok 8 - DAW-4 real PostgreSQL bounded checkpoint execution
+  ---
+  duration_ms: 19159.866006
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent.test.js:17:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: approval fingerprint binds identity target tool parameters and policy
+ok 9 - approval fingerprint binds identity target tool parameters and policy
+  ---
+  duration_ms: 20.85962
+  type: 'test'
+  ...
+# Subtest: engine approval principal excludes operators and agents
+ok 10 - engine approval principal excludes operators and agents
+  ---
+  duration_ms: 0.583982
+  type: 'test'
+  ...
+# Subtest: agent output cannot express approval cancellation policy or write capabilities
+ok 11 - agent output cannot express approval cancellation policy or write capabilities
+  ---
+  duration_ms: 0.960188
+  type: 'test'
+  ...
+# Subtest: DAW-5 real PostgreSQL governed human control
+    # Subtest: high policy durably waits without attempts or external writes
+    not ok 1 - high policy durably waits without attempts or external writes
+      ---
+      duration_ms: 7354.72303
+      type: 'test'
+      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:43:17'
+      failureType: 'testCodeFailure'
+      error: 'approval case cleanup failed'
+      code: 'ERR_TEST_FAILURE'
+      name: 'AggregateError'
+      stack: |-
+        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:127:27)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:43:9)
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:138:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"7b279a4025fab394","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"7b279a4025fab394","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":6.913316999998642}
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"f8b760c87465b974","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"f8b760c87465b974","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.613872999998421}
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"da705fc2a6781c83","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"da705fc2a6781c83","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":57.138958999999886}
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"5421f16546642651","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0f777b6a1ac4417d97fa7497f1136cb2","span_id":"5421f16546642651","run_id":"0f777b6a-1ac4-417d-97fa-7497f1136cb2","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":118.9782460000024}
+    # Subtest: low policy executes the existing tool without requiring approval
+    ok 2 - low policy executes the existing tool without requiring approval
+      ---
+      duration_ms: 6758.633871
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"299755ac65be40b1ab5b47c47c8d1154","span_id":"2e923833a3547b9a","run_id":"299755ac-65be-40b1-ab5b-47c47c8d1154","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"299755ac65be40b1ab5b47c47c8d1154","span_id":"2e923833a3547b9a","run_id":"299755ac-65be-40b1-ab5b-47c47c8d1154","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.582440999998653}
+# {"event":"attempt_span","trace_id":"299755ac65be40b1ab5b47c47c8d1154","span_id":"ce6ed9ffcfe540e4","run_id":"299755ac-65be-40b1-ab5b-47c47c8d1154","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"299755ac65be40b1ab5b47c47c8d1154","span_id":"ce6ed9ffcfe540e4","run_id":"299755ac-65be-40b1-ab5b-47c47c8d1154","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.9516899999980524}
+# {"event":"attempt_span","trace_id":"299755ac65be40b1ab5b47c47c8d1154","span_id":"db824607e2eb7fc7","run_id":"299755ac-65be-40b1-ab5b-47c47c8d1154","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"299755ac65be40b1ab5b47c47c8d1154","span_id":"db824607e2eb7fc7","run_id":"299755ac-65be-40b1-ab5b-47c47c8d1154","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":36.73360899999898}
+    # Subtest: eight concurrent human approvals serialize and execute one logical action
+    ok 3 - eight concurrent human approvals serialize and execute one logical action
+      ---
+      duration_ms: 6899.610864
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"ff29410bbd36470caf171435a9c4bbed","span_id":"99d497e6e9ecc752","run_id":"ff29410b-bd36-470c-af17-1435a9c4bbed","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ff29410bbd36470caf171435a9c4bbed","span_id":"99d497e6e9ecc752","run_id":"ff29410b-bd36-470c-af17-1435a9c4bbed","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.237156000002869}
+# {"event":"attempt_span","trace_id":"ff29410bbd36470caf171435a9c4bbed","span_id":"45e76d8eb78ff04c","run_id":"ff29410b-bd36-470c-af17-1435a9c4bbed","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ff29410bbd36470caf171435a9c4bbed","span_id":"45e76d8eb78ff04c","run_id":"ff29410b-bd36-470c-af17-1435a9c4bbed","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.6774680000016815}
+# {"event":"attempt_span","trace_id":"ff29410bbd36470caf171435a9c4bbed","span_id":"03b7d8279f1477bb","run_id":"ff29410b-bd36-470c-af17-1435a9c4bbed","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ff29410bbd36470caf171435a9c4bbed","span_id":"03b7d8279f1477bb","run_id":"ff29410b-bd36-470c-af17-1435a9c4bbed","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":35.093738999996276}
+    # Subtest: operator and agent cannot grant approval at HTTP or engine boundary
+    ok 4 - operator and agent cannot grant approval at HTTP or engine boundary
+      ---
+      duration_ms: 8689.903659
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"c4a9609f4f464e24a1258e62e94b5eae","span_id":"b187c4c0396f3459","run_id":"c4a9609f-4f46-4e24-a125-8e62e94b5eae","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c4a9609f4f464e24a1258e62e94b5eae","span_id":"b187c4c0396f3459","run_id":"c4a9609f-4f46-4e24-a125-8e62e94b5eae","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.596299999997427}
+# {"event":"attempt_span","trace_id":"c4a9609f4f464e24a1258e62e94b5eae","span_id":"a0641d069e81ba9b","run_id":"c4a9609f-4f46-4e24-a125-8e62e94b5eae","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c4a9609f4f464e24a1258e62e94b5eae","span_id":"a0641d069e81ba9b","run_id":"c4a9609f-4f46-4e24-a125-8e62e94b5eae","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.178177000001597}
+# {"event":"attempt_span","trace_id":"c4a9609f4f464e24a1258e62e94b5eae","span_id":"d5ed241b0f4a3db6","run_id":"c4a9609f-4f46-4e24-a125-8e62e94b5eae","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c4a9609f4f464e24a1258e62e94b5eae","span_id":"d5ed241b0f4a3db6","run_id":"c4a9609f-4f46-4e24-a125-8e62e94b5eae","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":32.35720199999923}
+    # Subtest: API and worker restart preserve waiting approval and accepted decisions
+    ok 5 - API and worker restart preserve waiting approval and accepted decisions
+      ---
+      duration_ms: 11069.731972
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"0e63b1c7b1ea4324901c5410ed0a1d2f","span_id":"cf39e9f701475b52","run_id":"0e63b1c7-b1ea-4324-901c-5410ed0a1d2f","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0e63b1c7b1ea4324901c5410ed0a1d2f","span_id":"cf39e9f701475b52","run_id":"0e63b1c7-b1ea-4324-901c-5410ed0a1d2f","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.085378000003402}
+# {"event":"attempt_span","trace_id":"0e63b1c7b1ea4324901c5410ed0a1d2f","span_id":"e52d7f37e98c733c","run_id":"0e63b1c7-b1ea-4324-901c-5410ed0a1d2f","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0e63b1c7b1ea4324901c5410ed0a1d2f","span_id":"e52d7f37e98c733c","run_id":"0e63b1c7-b1ea-4324-901c-5410ed0a1d2f","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.4146420000033686}
+# {"event":"attempt_span","trace_id":"0e63b1c7b1ea4324901c5410ed0a1d2f","span_id":"0f9e316d46347e09","run_id":"0e63b1c7-b1ea-4324-901c-5410ed0a1d2f","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0e63b1c7b1ea4324901c5410ed0a1d2f","span_id":"0f9e316d46347e09","run_id":"0e63b1c7-b1ea-4324-901c-5410ed0a1d2f","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":32.55780000000232}
+    # Subtest: rejected approval is terminal and duplicate rejection is harmless
+    ok 6 - rejected approval is terminal and duplicate rejection is harmless
+      ---
+      duration_ms: 6364.198521
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"9d17ee22e6394b459054079993e0aa20","span_id":"f6b5d0d922203ac7","run_id":"9d17ee22-e639-4b45-9054-079993e0aa20","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9d17ee22e6394b459054079993e0aa20","span_id":"f6b5d0d922203ac7","run_id":"9d17ee22-e639-4b45-9054-079993e0aa20","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.811899000000267}
+# {"event":"attempt_span","trace_id":"9d17ee22e6394b459054079993e0aa20","span_id":"df41b0adba422846","run_id":"9d17ee22-e639-4b45-9054-079993e0aa20","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9d17ee22e6394b459054079993e0aa20","span_id":"df41b0adba422846","run_id":"9d17ee22-e639-4b45-9054-079993e0aa20","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.60526899999968}
+# {"event":"attempt_span","trace_id":"9d17ee22e6394b459054079993e0aa20","span_id":"ab9aecf4bdfada07","run_id":"9d17ee22-e639-4b45-9054-079993e0aa20","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9d17ee22e6394b459054079993e0aa20","span_id":"ab9aecf4bdfada07","run_id":"9d17ee22-e639-4b45-9054-079993e0aa20","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":31.635711999995692}
+    # Subtest: expired pending approval cannot unblock and scheduler persists expiry
+    ok 7 - expired pending approval cannot unblock and scheduler persists expiry
+      ---
+      duration_ms: 6720.763103
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"76e146446c908c33","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"76e146446c908c33","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.253546000007191}
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"527656d35c8ec836","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"527656d35c8ec836","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.960659000003943}
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"a001d284d21e7181","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"a001d284d21e7181","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":31.92195800000627}
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"e3ec4631407e5548","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f9368386904c4f17804ccd5f63d1c21b","span_id":"e3ec4631407e5548","run_id":"f9368386-904c-4f17-804c-cd5f63d1c21b","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"ownership_lost","duration_ms":6.459333999999217}
+    # Subtest: approved grant expired before dispatch cannot authorize a POST
+    ok 8 - approved grant expired before dispatch cannot authorize a POST
+      ---
+      duration_ms: 5942.236018
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"7cdbdb9fc5f63528","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"7cdbdb9fc5f63528","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.113826999993762}
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"31a326562f5136b5","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"31a326562f5136b5","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.48194300000614}
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"798d7b234d54d309","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"798d7b234d54d309","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":33.78534299999592}
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"d2dcf92332ee4c60","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"235d44fa004c4053a61a833e3aea2b37","span_id":"d2dcf92332ee4c60","run_id":"235d44fa-004c-4053-a61a-833e3aea2b37","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"ownership_lost","duration_ms":5.316066999992472}
+    # Subtest: changed action fingerprint invalidates an approved grant before dispatch
+    ok 9 - changed action fingerprint invalidates an approved grant before dispatch
+      ---
+      duration_ms: 5795.910723
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"47b6c47a28c7c0c8","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"47b6c47a28c7c0c8","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.4511360000033164}
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"99f5cec97e34af81","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"99f5cec97e34af81","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.0810360000032233}
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"7f7a771624185f1e","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"7f7a771624185f1e","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":29.998552000004565}
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"93d207eb87bb1613","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"39781ada4005402bbb3942f41f3270b3","span_id":"93d207eb87bb1613","run_id":"39781ada-4005-402b-bb39-42f41f3270b3","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"ownership_lost","duration_ms":4.383954000004451}
+    # Subtest: changed policy fingerprint cannot reuse an earlier human approval
+    ok 10 - changed policy fingerprint cannot reuse an earlier human approval
+      ---
+      duration_ms: 6439.941707
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"9c89e26f1cc04d66a217d6310553b4bc","span_id":"146db9a1b6764d95","run_id":"9c89e26f-1cc0-4d66-a217-d6310553b4bc","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9c89e26f1cc04d66a217d6310553b4bc","span_id":"146db9a1b6764d95","run_id":"9c89e26f-1cc0-4d66-a217-d6310553b4bc","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.7557979999983218}
+# {"event":"attempt_span","trace_id":"9c89e26f1cc04d66a217d6310553b4bc","span_id":"4056af8662fff94c","run_id":"9c89e26f-1cc0-4d66-a217-d6310553b4bc","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9c89e26f1cc04d66a217d6310553b4bc","span_id":"4056af8662fff94c","run_id":"9c89e26f-1cc0-4d66-a217-d6310553b4bc","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.235069999995176}
+# {"event":"attempt_span","trace_id":"9c89e26f1cc04d66a217d6310553b4bc","span_id":"d7f4070a7167a03a","run_id":"9c89e26f-1cc0-4d66-a217-d6310553b4bc","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"9c89e26f1cc04d66a217d6310553b4bc","span_id":"d7f4070a7167a03a","run_id":"9c89e26f-1cc0-4d66-a217-d6310553b4bc","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":31.06550799999968}
+    # Subtest: approval endpoints reject stale fingerprints and foreign identities
+    ok 11 - approval endpoints reject stale fingerprints and foreign identities
+      ---
+      duration_ms: 5965.323216
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"93bd2922073d47aba38fc634c622289d","span_id":"b8e8a8c71aeec8dc","run_id":"93bd2922-073d-47ab-a38f-c634c622289d","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"93bd2922073d47aba38fc634c622289d","span_id":"b8e8a8c71aeec8dc","run_id":"93bd2922-073d-47ab-a38f-c634c622289d","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.657435000000987}
+# {"event":"attempt_span","trace_id":"93bd2922073d47aba38fc634c622289d","span_id":"658bb0a229447721","run_id":"93bd2922-073d-47ab-a38f-c634c622289d","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"93bd2922073d47aba38fc634c622289d","span_id":"658bb0a229447721","run_id":"93bd2922-073d-47ab-a38f-c634c622289d","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.7440570000035223}
+# {"event":"attempt_span","trace_id":"93bd2922073d47aba38fc634c622289d","span_id":"4ddf77a05cd9277b","run_id":"93bd2922-073d-47ab-a38f-c634c622289d","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"93bd2922073d47aba38fc634c622289d","span_id":"4ddf77a05cd9277b","run_id":"93bd2922-073d-47ab-a38f-c634c622289d","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":31.58373300000676}
+    # Subtest: concurrent cancellation and approval leave no executable cancelled work
+    ok 12 - concurrent cancellation and approval leave no executable cancelled work
+      ---
+      duration_ms: 6677.84048
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"2d70f6bbee164bd3a37df323f44a965c","span_id":"5e018b8915e27aaa","run_id":"2d70f6bb-ee16-4bd3-a37d-f323f44a965c","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"2d70f6bbee164bd3a37df323f44a965c","span_id":"5e018b8915e27aaa","run_id":"2d70f6bb-ee16-4bd3-a37d-f323f44a965c","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.808801000006497}
+# {"event":"attempt_span","trace_id":"2d70f6bbee164bd3a37df323f44a965c","span_id":"a661ef259945052f","run_id":"2d70f6bb-ee16-4bd3-a37d-f323f44a965c","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"2d70f6bbee164bd3a37df323f44a965c","span_id":"a661ef259945052f","run_id":"2d70f6bb-ee16-4bd3-a37d-f323f44a965c","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.5033350000012433}
+# {"event":"attempt_span","trace_id":"2d70f6bbee164bd3a37df323f44a965c","span_id":"db52aaeef4d64f05","run_id":"2d70f6bb-ee16-4bd3-a37d-f323f44a965c","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"2d70f6bbee164bd3a37df323f44a965c","span_id":"db52aaeef4d64f05","run_id":"2d70f6bb-ee16-4bd3-a37d-f323f44a965c","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":33.58855200000107}
+    # Subtest: cancellation before dispatch fences a claimed worker
+    ok 13 - cancellation before dispatch fences a claimed worker
+      ---
+      duration_ms: 6722.928188
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"f3a90adca5d545239c47660c46f7c4c7","span_id":"db0b06dc52efe087","run_id":"f3a90adc-a5d5-4523-9c47-660c46f7c4c7","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f3a90adca5d545239c47660c46f7c4c7","span_id":"db0b06dc52efe087","run_id":"f3a90adc-a5d5-4523-9c47-660c46f7c4c7","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.915854999999283}
+# {"event":"attempt_span","trace_id":"f3a90adca5d545239c47660c46f7c4c7","span_id":"557e2040458c7038","run_id":"f3a90adc-a5d5-4523-9c47-660c46f7c4c7","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f3a90adca5d545239c47660c46f7c4c7","span_id":"557e2040458c7038","run_id":"f3a90adc-a5d5-4523-9c47-660c46f7c4c7","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.741991999995662}
+# {"event":"attempt_span","trace_id":"f3a90adca5d545239c47660c46f7c4c7","span_id":"ab0a3944ec4ee374","run_id":"f3a90adc-a5d5-4523-9c47-660c46f7c4c7","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f3a90adca5d545239c47660c46f7c4c7","span_id":"ab0a3944ec4ee374","run_id":"f3a90adc-a5d5-4523-9c47-660c46f7c4c7","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":32.96790000000328}
+    # Subtest: cancellation after external authorization requires reconciliation not rollback
+    ok 14 - cancellation after external authorization requires reconciliation not rollback
+      ---
+      duration_ms: 9994.066688
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"807aab9748a2ff89","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"807aab9748a2ff89","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.317582000003313}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"288cf28b0e56de93","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"288cf28b0e56de93","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.889577000009012}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"2f2f44f6f861cf64","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"2f2f44f6f861cf64","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":41.35472099999606}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"754647afe81109a4","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"754647afe81109a4","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":714.0544809999992}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"a2f9da15ef229c28","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"64a5fe82e2a34a7d838863cd8096d621","span_id":"a2f9da15ef229c28","run_id":"64a5fe82-e2a3-4a7d-8388-63cd8096d621","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":23.607308999999077}
+    # Subtest: expired authorization permits receipt verification but not another write
+    ok 15 - expired authorization permits receipt verification but not another write
+      ---
+      duration_ms: 15304.220188
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"df4cac163c1d5cd8","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"df4cac163c1d5cd8","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.972594000020763}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"aafc57ace3b573d0","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"aafc57ace3b573d0","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.6594619999814313}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"8cb52a3281678e7b","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"8cb52a3281678e7b","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":33.153289000008954}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"633a814bab3ca7a5","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"633a814bab3ca7a5","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":22.204626999999164}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"c50846245a2f88c5","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"deb3b7a2fe934a9e8ded457ee2edf50d","span_id":"c50846245a2f88c5","run_id":"deb3b7a2-fe93-4a9e-8ded-457ee2edf50d","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"ownership_lost","duration_ms":18.265247000003}
+    # Subtest: not-found reconciliation cannot resend after approval expiry
+    ok 16 - not-found reconciliation cannot resend after approval expiry
+      ---
+      duration_ms: 15298.949535
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"973d36b80b3a786f","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"973d36b80b3a786f","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.9101660000160336}
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"d742aaa20a397040","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"d742aaa20a397040","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.89067300001625}
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"cc41e102a5dc70d1","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"cc41e102a5dc70d1","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"infrastructure_error","duration_ms":30.815497000003234}
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"1f740e6c26109de8","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"analyze-incident","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ce200eafecc04f4ebfaffd7ad48ccc99","span_id":"1f740e6c26109de8","run_id":"ce200eaf-ecc0-4f4e-bfaf-fd7ad48ccc99","step":"analyze-incident","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":8.15717599997879}
+    # Subtest: approval insertion failure rolls back agent completion and reuses its checkpoint
+    ok 17 - approval insertion failure rolls back agent completion and reuses its checkpoint
+      ---
+      duration_ms: 8373.616916
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"f8b6d3cee6604742aa674a999b54d4be","span_id":"4835cdbaf5fc916c","run_id":"f8b6d3ce-e660-4742-aa67-4a999b54d4be","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f8b6d3cee6604742aa674a999b54d4be","span_id":"4835cdbaf5fc916c","run_id":"f8b6d3ce-e660-4742-aa67-4a999b54d4be","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.3636370000022}
+# {"event":"attempt_span","trace_id":"f8b6d3cee6604742aa674a999b54d4be","span_id":"9af75d2d858364b3","run_id":"f8b6d3ce-e660-4742-aa67-4a999b54d4be","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f8b6d3cee6604742aa674a999b54d4be","span_id":"9af75d2d858364b3","run_id":"f8b6d3ce-e660-4742-aa67-4a999b54d4be","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.293357999995351}
+# {"event":"attempt_span","trace_id":"f8b6d3cee6604742aa674a999b54d4be","span_id":"486a2c8d0513e00b","run_id":"f8b6d3ce-e660-4742-aa67-4a999b54d4be","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"f8b6d3cee6604742aa674a999b54d4be","span_id":"486a2c8d0513e00b","run_id":"f8b6d3ce-e660-4742-aa67-4a999b54d4be","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":13.75622999999905}
+    # Subtest: model cannot create approvals from accepted output fields
+    ok 18 - model cannot create approvals from accepted output fields
+      ---
+      duration_ms: 7372.840411
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"0ac750e606d04e0383a2bc27892e7fe6","span_id":"805e230f9d01056d","run_id":"0ac750e6-06d0-4e03-83a2-bc27892e7fe6","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0ac750e606d04e0383a2bc27892e7fe6","span_id":"805e230f9d01056d","run_id":"0ac750e6-06d0-4e03-83a2-bc27892e7fe6","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.5829040000098757}
+# {"event":"attempt_span","trace_id":"0ac750e606d04e0383a2bc27892e7fe6","span_id":"8a3a36370887a201","run_id":"0ac750e6-06d0-4e03-83a2-bc27892e7fe6","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0ac750e606d04e0383a2bc27892e7fe6","span_id":"8a3a36370887a201","run_id":"0ac750e6-06d0-4e03-83a2-bc27892e7fe6","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.1640389999956824}
+# {"event":"attempt_span","trace_id":"0ac750e606d04e0383a2bc27892e7fe6","span_id":"4d90a26143b1bcc4","run_id":"0ac750e6-06d0-4e03-83a2-bc27892e7fe6","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"0ac750e606d04e0383a2bc27892e7fe6","span_id":"4d90a26143b1bcc4","run_id":"0ac750e6-06d0-4e03-83a2-bc27892e7fe6","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":28.593090000009397}
+    # Subtest: governed summary must fit the unchanged existing tool contract
+    ok 19 - governed summary must fit the unchanged existing tool contract
+      ---
+      duration_ms: 7475.407525
+      type: 'test'
+      ...
+    1..19
+not ok 12 - DAW-5 real PostgreSQL governed human control
+  ---
+  duration_ms: 162873.124442
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:18:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: effect identity is logical and receipts bind service key request and result
+ok 13 - effect identity is logical and receipts bind service key request and result
+  ---
+  duration_ms: 2.042524
+  type: 'test'
+  ...
+# Subtest: DAW-3 independent external effects and conservative reconciliation
+    # Subtest: eight concurrent external writes converge and reject conflicting payloads
+    not ok 1 - eight concurrent external writes converge and reject conflicting payloads
+      ---
+      duration_ms: 7364.274369
+      type: 'test'
+      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      failureType: 'testCodeFailure'
+      error: 'effect case cleanup/evidence failed'
+      code: 'ERR_TEST_FAILURE'
+      name: 'AggregateError'
+      stack: |-
+        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:124:27)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:137:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+# {"event":"attempt_span","trace_id":"5ec6c48f11c44ed08213c8f17751e8b5","span_id":"f9ff7ec479bc0954","run_id":"5ec6c48f-11c4-4ed0-8213-c8f17751e8b5","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"5ec6c48f11c44ed08213c8f17751e8b5","span_id":"f9ff7ec479bc0954","run_id":"5ec6c48f-11c4-4ed0-8213-c8f17751e8b5","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":6.033412000000681}
+# {"event":"attempt_span","trace_id":"5ec6c48f11c44ed08213c8f17751e8b5","span_id":"7773a21ecaffe738","run_id":"5ec6c48f-11c4-4ed0-8213-c8f17751e8b5","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"5ec6c48f11c44ed08213c8f17751e8b5","span_id":"7773a21ecaffe738","run_id":"5ec6c48f-11c4-4ed0-8213-c8f17751e8b5","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":22.953953000000183}
+    # Subtest: SIGKILL after external commit recovers by receipt without another POST
+    ok 2 - SIGKILL after external commit recovers by receipt without another POST
+      ---
+      duration_ms: 10167.272589
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"631493c8e1598780","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"631493c8e1598780","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.650841999999102}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"92a683d3f7dd8626","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"92a683d3f7dd8626","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.26310999999987}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"a7a31aba27818a0a","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"a7a31aba27818a0a","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":718.3273230000013}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"04a7a7c214cefba1","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"04a7a7c214cefba1","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"retired","duration_ms":20.766052999999374}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"9e5cdf9cf4c8b1b3","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"write-summary","attempt":3,"fence":3,"phase":"start"}
+# {"event":"attempt_span","trace_id":"3ca088c632114c4faf3ec5ec245878e3","span_id":"9e5cdf9cf4c8b1b3","run_id":"3ca088c6-3211-4c4f-af3e-c5ec245878e3","step":"write-summary","attempt":3,"fence":3,"phase":"end","outcome":"accepted","duration_ms":20.88211699999374}
+    # Subtest: timeout remains UNKNOWN and unavailable verification never triggers blind POST
+    ok 3 - timeout remains UNKNOWN and unavailable verification never triggers blind POST
+      ---
+      duration_ms: 9353.985137
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"c221bfc6dac3416cb61632f8b2cb861a","span_id":"7e6fb0747696b50c","run_id":"c221bfc6-dac3-416c-b616-32f8b2cb861a","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c221bfc6dac3416cb61632f8b2cb861a","span_id":"7e6fb0747696b50c","run_id":"c221bfc6-dac3-416c-b616-32f8b2cb861a","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.16112200000498}
+# {"event":"attempt_span","trace_id":"c221bfc6dac3416cb61632f8b2cb861a","span_id":"ea85f126a763b21a","run_id":"c221bfc6-dac3-416c-b616-32f8b2cb861a","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c221bfc6dac3416cb61632f8b2cb861a","span_id":"ea85f126a763b21a","run_id":"c221bfc6-dac3-416c-b616-32f8b2cb861a","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.6896790000027977}
+# {"event":"attempt_span","trace_id":"c221bfc6dac3416cb61632f8b2cb861a","span_id":"79c3c9962e245ea4","run_id":"c221bfc6-dac3-416c-b616-32f8b2cb861a","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c221bfc6dac3416cb61632f8b2cb861a","span_id":"79c3c9962e245ea4","run_id":"c221bfc6-dac3-416c-b616-32f8b2cb861a","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":712.199106}
+    # Subtest: unkeyed ambiguous write parks and never blindly retries
+    ok 4 - unkeyed ambiguous write parks and never blindly retries
+      ---
+      duration_ms: 6748.652039
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"df8effa50eef4faa","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"df8effa50eef4faa","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.309873999998672}
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"312cfb7bc42dc9c7","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"312cfb7bc42dc9c7","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.690592999999353}
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"f96265bcbac3664b","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"f96265bcbac3664b","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":21.031380999993416}
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"05bff140553187ca","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"e9c09002893846998a3b04ec424a108b","span_id":"05bff140553187ca","run_id":"e9c09002-8938-4699-8a3b-04ec424a108b","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":82.54082200000266}
+    # Subtest: receipt verification rejects mismatched response and later verifies independently
+    ok 5 - receipt verification rejects mismatched response and later verifies independently
+      ---
+      duration_ms: 6393.814044
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"868c47e040135278","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"868c47e040135278","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.247766000000411}
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"c61fc21ac7ee8416","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"c61fc21ac7ee8416","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.9460350000008475}
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"803c72e3a08016ce","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"803c72e3a08016ce","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"deferred","duration_ms":19.80220100000588}
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"622c8e2c35290aff","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"ba1e9acd24ef4c628e4f07e386d5c606","span_id":"622c8e2c35290aff","run_id":"ba1e9acd-24ef-4c62-8e4f-07e386d5c606","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":15.104416000001947}
+    # Subtest: independent write survives platform receipt transaction rollback
+    ok 6 - independent write survives platform receipt transaction rollback
+      ---
+      duration_ms: 6547.902436
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"8e68804cd3a2cf01","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"8e68804cd3a2cf01","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.8644100000019534}
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"e661d2a814a2a252","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"e661d2a814a2a252","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.473570000001928}
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"39f3ec4a5838ddb3","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"39f3ec4a5838ddb3","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"deferred","duration_ms":2.5518129999982193}
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"e8e0054aaf42c5d0","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"c976852c951144c2a2fb6a2cc5f83661","span_id":"e8e0054aaf42c5d0","run_id":"c976852c-9511-44c2-a2fb-6a2cc5f83661","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":23.656597000001057}
+    # Subtest: preparation database failure leaves lease recovery rather than permanent failure
+    ok 7 - preparation database failure leaves lease recovery rather than permanent failure
+      ---
+      duration_ms: 6295.266916
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"7d6c6b17cb134ca8a595c6a6a72ada31","span_id":"747feb8de157ecb3","run_id":"7d6c6b17-cb13-4ca8-a595-c6a6a72ada31","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"7d6c6b17cb134ca8a595c6a6a72ada31","span_id":"747feb8de157ecb3","run_id":"7d6c6b17-cb13-4ca8-a595-c6a6a72ada31","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.348982999988948}
+# {"event":"attempt_span","trace_id":"7d6c6b17cb134ca8a595c6a6a72ada31","span_id":"cc3a2eb481436a2e","run_id":"7d6c6b17-cb13-4ca8-a595-c6a6a72ada31","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"7d6c6b17cb134ca8a595c6a6a72ada31","span_id":"cc3a2eb481436a2e","run_id":"7d6c6b17-cb13-4ca8-a595-c6a6a72ada31","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.210384999998496}
+# {"event":"attempt_span","trace_id":"7d6c6b17cb134ca8a595c6a6a72ada31","span_id":"ea348954b5ce0987","run_id":"7d6c6b17-cb13-4ca8-a595-c6a6a72ada31","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"7d6c6b17cb134ca8a595c6a6a72ada31","span_id":"ea348954b5ce0987","run_id":"7d6c6b17-cb13-4ca8-a595-c6a6a72ada31","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":6.724663999993936}
+    # Subtest: SIGKILL after VERIFIED receipt completes offline without another external request
+    ok 8 - SIGKILL after VERIFIED receipt completes offline without another external request
+      ---
+      duration_ms: 5426.360228
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"b7a997cb530543a6b275f0c99be086b1","span_id":"ecbb1d740c37bb31","run_id":"b7a997cb-5305-43a6-b275-f0c99be086b1","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"b7a997cb530543a6b275f0c99be086b1","span_id":"ecbb1d740c37bb31","run_id":"b7a997cb-5305-43a6-b275-f0c99be086b1","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.021539000008488}
+# {"event":"attempt_span","trace_id":"b7a997cb530543a6b275f0c99be086b1","span_id":"e2da74ee3169ef30","run_id":"b7a997cb-5305-43a6-b275-f0c99be086b1","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"b7a997cb530543a6b275f0c99be086b1","span_id":"e2da74ee3169ef30","run_id":"b7a997cb-5305-43a6-b275-f0c99be086b1","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.419716000003973}
+# {"event":"attempt_span","trace_id":"b7a997cb530543a6b275f0c99be086b1","span_id":"4aed12eae357b59d","run_id":"b7a997cb-5305-43a6-b275-f0c99be086b1","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"b7a997cb530543a6b275f0c99be086b1","span_id":"4aed12eae357b59d","run_id":"b7a997cb-5305-43a6-b275-f0c99be086b1","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":708.8737510000065}
+    # Subtest: deadline expiry parks UNKNOWN from RETRY_WAIT
+    ok 9 - deadline expiry parks UNKNOWN from RETRY_WAIT
+      ---
+      duration_ms: 4539.557771
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"cfe321aed45a4b45941d13948844eb55","span_id":"a253c871b61b7898","run_id":"cfe321ae-d45a-4b45-941d-13948844eb55","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cfe321aed45a4b45941d13948844eb55","span_id":"a253c871b61b7898","run_id":"cfe321ae-d45a-4b45-941d-13948844eb55","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.9397750000061933}
+# {"event":"attempt_span","trace_id":"cfe321aed45a4b45941d13948844eb55","span_id":"385e8e218fa71c05","run_id":"cfe321ae-d45a-4b45-941d-13948844eb55","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cfe321aed45a4b45941d13948844eb55","span_id":"385e8e218fa71c05","run_id":"cfe321ae-d45a-4b45-941d-13948844eb55","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.637404000008246}
+# {"event":"attempt_span","trace_id":"cfe321aed45a4b45941d13948844eb55","span_id":"a50126e2ceb31403","run_id":"cfe321ae-d45a-4b45-941d-13948844eb55","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cfe321aed45a4b45941d13948844eb55","span_id":"a50126e2ceb31403","run_id":"cfe321ae-d45a-4b45-941d-13948844eb55","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":710.695928000001}
+    # Subtest: deadline expiry parks UNKNOWN from READY
+    ok 10 - deadline expiry parks UNKNOWN from READY
+      ---
+      duration_ms: 3811.932027
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"934d9dd0cd194951bc8abe42363aa847","span_id":"de2a5ee4f34cff35","run_id":"934d9dd0-cd19-4951-bc8a-be42363aa847","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"934d9dd0cd194951bc8abe42363aa847","span_id":"de2a5ee4f34cff35","run_id":"934d9dd0-cd19-4951-bc8a-be42363aa847","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.026443000009749}
+# {"event":"attempt_span","trace_id":"934d9dd0cd194951bc8abe42363aa847","span_id":"f3ed4a4b7cfbde4c","run_id":"934d9dd0-cd19-4951-bc8a-be42363aa847","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"934d9dd0cd194951bc8abe42363aa847","span_id":"f3ed4a4b7cfbde4c","run_id":"934d9dd0-cd19-4951-bc8a-be42363aa847","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.513294999997015}
+    # Subtest: deadline expiry preserves VERIFIED receipt while parking unfinished bookkeeping
+    ok 11 - deadline expiry preserves VERIFIED receipt while parking unfinished bookkeeping
+      ---
+      duration_ms: 5562.847489
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"75ede14e4b504aad817de00fbde15154","span_id":"a9a7167d31834308","run_id":"75ede14e-4b50-4aad-817d-e00fbde15154","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"75ede14e4b504aad817de00fbde15154","span_id":"a9a7167d31834308","run_id":"75ede14e-4b50-4aad-817d-e00fbde15154","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.94618499999342}
+# {"event":"attempt_span","trace_id":"75ede14e4b504aad817de00fbde15154","span_id":"703f0562c0c63fc9","run_id":"75ede14e-4b50-4aad-817d-e00fbde15154","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"75ede14e4b504aad817de00fbde15154","span_id":"703f0562c0c63fc9","run_id":"75ede14e-4b50-4aad-817d-e00fbde15154","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.5823489999893354}
+    # Subtest: stale effect worker cannot save receipts or complete results
+    ok 12 - stale effect worker cannot save receipts or complete results
+      ---
+      duration_ms: 7719.049332
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"18345cc4fcde3eee","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"18345cc4fcde3eee","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.499280000003637}
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"ed4fcc24a98190d8","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"ed4fcc24a98190d8","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.3553010000032373}
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"f0b1e5ec94bba799","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"f0b1e5ec94bba799","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":18.081703999996535}
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"4ee4651ffbb8b1dd","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"5077da33260f43129dbb25b3f3c22f6e","span_id":"4ee4651ffbb8b1dd","run_id":"5077da33-260f-4312-9dbb-25b3f3c22f6e","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"accepted","duration_ms":29.70372600000701}
+    # Subtest: reliable key permits same-key resend only after not-found verification
+    ok 13 - reliable key permits same-key resend only after not-found verification
+      ---
+      duration_ms: 6694.607694
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"86d96165b2275acd","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"86d96165b2275acd","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.65228899999056}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"bba73576b7b73433","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"bba73576b7b73433","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.5643249999993714}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"f77c64e1405451bc","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"f77c64e1405451bc","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"retired","duration_ms":710.851256000009}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"5a2aca94dc77e49c","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"write-summary","attempt":2,"fence":2,"phase":"start"}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"5a2aca94dc77e49c","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"write-summary","attempt":2,"fence":2,"phase":"end","outcome":"retired","duration_ms":17.044781999997213}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"97993b0fc5b73f35","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"write-summary","attempt":3,"fence":3,"phase":"start"}
+# {"event":"attempt_span","trace_id":"893394c487cd4e42ad29e065abb3eafb","span_id":"97993b0fc5b73f35","run_id":"893394c4-87cd-4e42-ad29-e065abb3eafb","step":"write-summary","attempt":3,"fence":3,"phase":"end","outcome":"retired","duration_ms":10.993335000006482}
+    # Subtest: bounded failed reconciliation parks UNKNOWN rather than inventing failure
+    ok 14 - bounded failed reconciliation parks UNKNOWN rather than inventing failure
+      ---
+      duration_ms: 10861.848396
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"2cb74056f2634a97b3e2c423102999f6","span_id":"f226707a15112b4d","run_id":"2cb74056-f263-4a97-b3e2-c423102999f6","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"2cb74056f2634a97b3e2c423102999f6","span_id":"f226707a15112b4d","run_id":"2cb74056-f263-4a97-b3e2-c423102999f6","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.882660000002943}
+# {"event":"attempt_span","trace_id":"2cb74056f2634a97b3e2c423102999f6","span_id":"b6f612425a7d09e9","run_id":"2cb74056-f263-4a97-b3e2-c423102999f6","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"2cb74056f2634a97b3e2c423102999f6","span_id":"b6f612425a7d09e9","run_id":"2cb74056-f263-4a97-b3e2-c423102999f6","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.5668940000032308}
+# {"event":"attempt_span","trace_id":"2cb74056f2634a97b3e2c423102999f6","span_id":"a63ccfa8e40fbb1b","run_id":"2cb74056-f263-4a97-b3e2-c423102999f6","step":"write-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"2cb74056f2634a97b3e2c423102999f6","span_id":"a63ccfa8e40fbb1b","run_id":"2cb74056-f263-4a97-b3e2-c423102999f6","step":"write-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":23.623919000005117}
+    # Subtest: v2 admission binds contract and intent atomically with stable replay
+    ok 15 - v2 admission binds contract and intent atomically with stable replay
+      ---
+      duration_ms: 2372.614614
+      type: 'test'
+      ...
+# {"event":"attempt_span","trace_id":"cd65c1c6bb774332b4a4d87e80702ef0","span_id":"6e1151f9824ed9e0","run_id":"cd65c1c6-bb77-4332-b4a4-d87e80702ef0","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cd65c1c6bb774332b4a4d87e80702ef0","span_id":"6e1151f9824ed9e0","run_id":"cd65c1c6-bb77-4332-b4a4-d87e80702ef0","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.5979910000023665}
+# {"event":"attempt_span","trace_id":"cd65c1c6bb774332b4a4d87e80702ef0","span_id":"e86dc39cb19ae786","run_id":"cd65c1c6-bb77-4332-b4a4-d87e80702ef0","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cd65c1c6bb774332b4a4d87e80702ef0","span_id":"e86dc39cb19ae786","run_id":"cd65c1c6-bb77-4332-b4a4-d87e80702ef0","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":3.3089529999997467}
+    # Subtest: v2 HTTP admission converges to one durable invocation and exposes reconciliation state
+    ok 16 - v2 HTTP admission converges to one durable invocation and exposes reconciliation state
+      ---
+      duration_ms: 6710.673687
+      type: 'test'
+      ...
+    1..16
+not ok 14 - DAW-3 independent external effects and conservative reconciliation
+  ---
+  duration_ms: 114225.388549
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:14:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+ok 15 - retry policy has deterministic seeded jitter, exponential bounds and a hard cap
+  ---
+  duration_ms: 9.047925
+  type: 'test'
+  ...
+# Subtest: DAW-2 real PostgreSQL execution, process contention and failure windows
+    # Subtest: eight simultaneous processes claim one logical owner
+    ok 1 - eight simultaneous processes claim one logical owner
+      ---
+      duration_ms: 1608.34013
+      type: 'test'
+      ...
+    # Subtest: SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery
+    ok 2 - SIGSTOP stale worker cannot renew fail commit or schedule downstream after lease recovery
+      ---
+      duration_ms: 4979.217777
+      type: 'test'
+      ...
+    # Subtest: lease checks use database time after waiting for the run lock
+    ok 3 - lease checks use database time after waiting for the run lock
+      ---
+      duration_ms: 2184.103885
+      type: 'test'
+      ...
+    # Subtest: SIGKILL after claim is recovered by restarted scheduler and production workers
+    ok 4 - SIGKILL after claim is recovered by restarted scheduler and production workers
+      ---
+      duration_ms: 7092.717912
+      type: 'test'
+      ...
+    # Subtest: retryable failures have durable bounded attempts and backoff
+    ok 5 - retryable failures have durable bounded attempts and backoff
+      ---
+      duration_ms: 3046.340503
+      type: 'test'
+      ...
+    # Subtest: repeated hard crashes exhaust the same durable attempt budget
+    ok 6 - repeated hard crashes exhaust the same durable attempt budget
+      ---
+      duration_ms: 5529.565063
+      type: 'test'
+      ...
+    # Subtest: heartbeat preserves active ownership but cannot extend the hard deadline
+    ok 7 - heartbeat preserves active ownership but cannot extend the hard deadline
+      ---
+      duration_ms: 4707.91443
+      type: 'test'
+      ...
+    # Subtest: result downstream scheduling and events roll back together on database failure
+    ok 8 - result downstream scheduling and events roll back together on database failure
+      ---
+      duration_ms: 1384.75258
+      type: 'test'
+      ...
+    # Subtest: locked run does not block another run and committed prior results are reused after worker crash
+    ok 9 - locked run does not block another run and committed prior results are reused after worker crash
+      ---
+      duration_ms: 2986.440922
+      type: 'test'
+      ...
+    # Subtest: deadline expiration while READY becomes terminal without another attempt
+    ok 10 - deadline expiration while READY becomes terminal without another attempt
+      ---
+      duration_ms: 2267.142983
+      type: 'test'
+      ...
+    # Subtest: deadline expiration while RETRY_WAIT becomes terminal without another attempt
+    ok 11 - deadline expiration while RETRY_WAIT becomes terminal without another attempt
+      ---
+      duration_ms: 2369.030542
+      type: 'test'
+      ...
+    # Subtest: DAW-1 queued rows upgrade without invented attempts and execute with their original identity
+    ok 12 - DAW-1 queued rows upgrade without invented attempts and execute with their original identity
+      ---
+      duration_ms: 1632.768491
+      type: 'test'
+      ...
+    # Subtest: unsupported pinned definition fails permanently without releasing downstream
+    ok 13 - unsupported pinned definition fails permanently without releasing downstream
+      ---
+      duration_ms: 1420.932807
+      type: 'test'
+      ...
+    1..13
+ok 16 - DAW-2 real PostgreSQL execution, process contention and failure windows
+  ---
+  duration_ms: 45561.624021
+  type: 'test'
+  ...
+# Subtest: mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+    # Subtest: concurrent migrations serialize and reruns preserve one checksum record per migration
+    ok 1 - concurrent migrations serialize and reruns preserve one checksum record per migration
+      ---
+      duration_ms: 98.639926
+      type: 'test'
+      ...
+    1..1
+not ok 17 - mandatory real PostgreSQL + independent HTTP processes; no infrastructure fallback
+  ---
+  duration_ms: 9670.978189
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: 'timeout: API listening'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
+    async Lab.startApi (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:75:21)
+    async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:24:19)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: DAW-6 real PostgreSQL operational failure boundaries
+    # Subtest: readiness rejects unavailable database and mismatched schema while liveness stays alive
+    not ok 1 - readiness rejects unavailable database and mismatched schema while liveness stays alive
+      ---
+      duration_ms: 7237.5285
+      type: 'test'
+      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/operations.test.js:24:17'
+      failureType: 'testCodeFailure'
+      error: 'timeout: API listening'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
+        async Lab.startApi (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:75:21)
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/operations.test.js:36:29)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/operations.test.js:24:9)
+        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/operations.test.js:73:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+# {"event":"database-client-error"}
+# {"event":"database-pool-error"}
+# {"event":"database-client-error"}
+# {"event":"database-client-error"}
+    # Subtest: PostgreSQL outage rejects admission and recovers a real workers lost lease
+    ok 2 - PostgreSQL outage rejects admission and recovers a real workers lost lease
+      ---
+      duration_ms: 10922.292743
+      type: 'test'
+      ...
+    # Subtest: API SIGTERM drains a committed response and restart preserves replay identity
+    ok 3 - API SIGTERM drains a committed response and restart preserves replay identity
+      ---
+      duration_ms: 9399.310834
+      type: 'test'
+      ...
+    # Subtest: API shutdown deadline bounds blocked work without inventing admission
+    ok 4 - API shutdown deadline bounds blocked work without inventing admission
+      ---
+      duration_ms: 11375.832113
+      type: 'test'
+      ...
+    # Subtest: worker SIGTERM completes current step without claiming downstream
+    ok 5 - worker SIGTERM completes current step without claiming downstream
+      ---
+      duration_ms: 7547.685602
+      type: 'test'
+      ...
+    # Subtest: worker shutdown deadline forces exit and lease recovery
+    ok 6 - worker shutdown deadline forces exit and lease recovery
+      ---
+      duration_ms: 12088.116524
+      type: 'test'
+      ...
+    # Subtest: HTTP handler capacity rejects overflow without exceeding the database pool
+    ok 7 - HTTP handler capacity rejects overflow without exceeding the database pool
+      ---
+      duration_ms: 3134.292055
+      type: 'test'
+      ...
+    # Subtest: operational telemetry has bounded fields and exposes durable retry recovery signals
+    ok 8 - operational telemetry has bounded fields and exposes durable retry recovery signals
+      ---
+      duration_ms: 3677.063739
+      type: 'test'
+      ...
+    1..8
+not ok 18 - DAW-6 real PostgreSQL operational failure boundaries
+  ---
+  duration_ms: 68591.279294
+  type: 'test'
+  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/operations.test.js:13:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: canonical request ignores object-key order but preserves intended parameter values
+ok 19 - canonical request ignores object-key order but preserves intended parameter values
+  ---
+  duration_ms: 1.505521
+  type: 'test'
+  ...
+# Subtest: versioned deterministic steps are pure and initial scheduling is explicit
+ok 20 - versioned deterministic steps are pure and initial scheduling is explicit
+  ---
+  duration_ms: 13.837145
+  type: 'test'
+  ...
+# Subtest: configuration rejects malformed URLs without exposing credentials and validates ports
+ok 21 - configuration rejects malformed URLs without exposing credentials and validates ports
+  ---
+  duration_ms: 1.257094
+  type: 'test'
+  ...
+1..21
+# tests 93
+# suites 0
+# pass 84
+# fail 9
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 169171.952975

@@ -16,7 +16,7 @@
     "simulator": "node dist/src/simulator/server.js",
     "test:secrets": "node --test tests/secret-guard.test.mjs && node scripts/secret-guard.mjs",
     "test:unit": "node --test dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js dist/tests/approval-unit.test.js",
-    "test:integration": "node --test dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js dist/tests/approvals.test.js",
+    "test:integration": "node --test --test-concurrency=1 dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js dist/tests/approvals.test.js dist/tests/operations.test.js",
     "validate": "node scripts/validate.mjs"
   },
   "dependencies": { "ajv": "8.20.0", "fastify": "5.12.3", "pg": "8.23.0" },

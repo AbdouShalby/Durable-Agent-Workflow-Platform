@@ -47,3 +47,11 @@
 **Human capability**: A separately configured local approver credential, mapped by the API to a fixed human principal. Operator/model input cannot choose that principal. This is not multi-tenant identity or hostile-process isolation.
 
 **Cancellation**: V4's atomic run-level control preventing new work and fencing current ownership. Before external authorization it yields CANCELLED; after possible external authorization it preserves intent/receipt and parks RECONCILIATION_REQUIRED, never claims rollback.
+
+**Liveness / readiness**: Liveness means the HTTP process can answer; readiness additionally probes database connectivity, readable schema capabilities and this checkout's exact migration identity. Neither proves workers, providers, write-primary status or future availability.
+
+**Operational snapshot**: Operator-only finite-name aggregate gauges over retained durable rows plus bounded pool/handler counts. No run IDs become labels; full-table aggregation cost and retention are not a production-scale monitoring guarantee.
+
+**Attempt span**: Local JSON start/end correlation with a run-derived trace ID, random span ID, attempt and fence. It contains no workflow payload or credential. It is neither a durable journal nor propagated OpenTelemetry tracing; a killed process can lose its end log.
+
+**Bounded drain**: A signal stops new admission/polls and allows current work to finish; an event-loop timer exits nonzero after five seconds if needed. Durable recovery still requires a healthy database and scheduler. The timer cannot preempt a blocked event loop.

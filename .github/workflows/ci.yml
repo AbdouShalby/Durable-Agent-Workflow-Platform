@@ -1,4 +1,4 @@
-name: DAW-5 validation
+name: DAW-6 validation
 on: [push, pull_request]
 jobs:
   durable-workflow:
@@ -20,6 +20,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: daw-5-evidence
+          name: daw-6-evidence
           path: .local/results/
           include-hidden-files: true

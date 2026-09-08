@@ -1,0 +1,48 @@
+TAP version 13
+# Subtest: DAW-6 real PostgreSQL operational failure boundaries
+    # Subtest: readiness rejects unavailable database and mismatched schema while liveness stays alive
+    not ok 1 - readiness rejects unavailable database and mismatched schema while liveness stays alive
+      ---
+      duration_ms: 494.503218
+      type: 'test'
+      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:24:17'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        
+        200 !== 503
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 503
+      actual: 200
+      operator: 'strictEqual'
+      stack: |-
+        file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:77:20
+        process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:37:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:24:9)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:73:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+    1..1
+not ok 1 - DAW-6 real PostgreSQL operational failure boundaries
+  ---
+  duration_ms: 1604.52017
+  type: 'test'
+  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/operations.test.js:13:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1778.522946

@@ -1,0 +1,38 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "cluster": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-A7HC65",
+  "cases": {
+    "operational telemetry has bounded fields and exposes durable retry recovery signals": {
+      "processes": [
+        {
+          "role": "api",
+          "pid": 6122,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "logs": "{\"event\":\"listening\",\"url\":\"http://127.0.0.1:39635\",\"pid\":6122}\n{\"event\":\"draining\",\"role\":\"api\"}\n{\"event\":\"stopped\",\"role\":\"api\"}\n"
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 6109,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "api",
+      "pid": 6122,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}

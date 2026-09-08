@@ -6,5 +6,8 @@ export function createPool(connectionString: string, applicationName = 'daw-api'
     statement_timeout: 10000, idle_in_transaction_session_timeout: 15000 });
   // Do not log SQL, connection URLs, credentials or request contents.
   pool.on('error', () => console.error(JSON.stringify({ event: 'database-pool-error' })));
+  // Checked-out clients can emit separately from idle pool errors. Queries still reject;
+  // only the unhandled EventEmitter crash is prevented, never a successful DB result invented.
+  pool.on('connect', client => client.on('error', () => console.error(JSON.stringify({ event: 'database-client-error' }))));
   return pool;
 }

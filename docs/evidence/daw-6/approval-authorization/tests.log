@@ -1,0 +1,47 @@
+TAP version 13
+# {"event":"attempt_span","trace_id":"cf0b8e92ab2e46e6bb8a397dcae61357","span_id":"427fa7b08a43563b","run_id":"cf0b8e92-ab2e-46e6-bb8a-397dcae61357","step":"normalize-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cf0b8e92ab2e46e6bb8a397dcae61357","span_id":"427fa7b08a43563b","run_id":"cf0b8e92-ab2e-46e6-bb8a-397dcae61357","step":"normalize-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":5.1791440000001785}
+# {"event":"attempt_span","trace_id":"cf0b8e92ab2e46e6bb8a397dcae61357","span_id":"8466723989fd531d","run_id":"cf0b8e92-ab2e-46e6-bb8a-397dcae61357","step":"build-summary","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cf0b8e92ab2e46e6bb8a397dcae61357","span_id":"8466723989fd531d","run_id":"cf0b8e92-ab2e-46e6-bb8a-397dcae61357","step":"build-summary","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":4.960901000000376}
+# {"event":"attempt_span","trace_id":"cf0b8e92ab2e46e6bb8a397dcae61357","span_id":"53a01b5b60580da9","run_id":"cf0b8e92-ab2e-46e6-bb8a-397dcae61357","step":"analyze-incident","attempt":1,"fence":1,"phase":"start"}
+# {"event":"attempt_span","trace_id":"cf0b8e92ab2e46e6bb8a397dcae61357","span_id":"53a01b5b60580da9","run_id":"cf0b8e92-ab2e-46e6-bb8a-397dcae61357","step":"analyze-incident","attempt":1,"fence":1,"phase":"end","outcome":"accepted","duration_ms":46.25781300000017}
+# Subtest: DAW-5 real PostgreSQL governed human control
+    # Subtest: operator and agent cannot grant approval at HTTP or engine boundary
+    not ok 1 - operator and agent cannot grant approval at HTTP or engine boundary
+      ---
+      duration_ms: 853.948614
+      type: 'test'
+      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/approvals.test.js:43:17'
+      failureType: 'testCodeFailure'
+      error: 'Missing expected rejection (ApprovalForbidden).'
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      stack: |-
+        process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        async file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/approvals.test.js:202:13
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/approvals.test.js:91:17)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/approvals.test.js:43:9)
+        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/approvals.test.js:199:9)
+        async Test.run (node:internal/test_runner/test:1404:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+      ...
+    1..1
+not ok 1 - DAW-5 real PostgreSQL governed human control
+  ---
+  duration_ms: 2731.630659
+  type: 'test'
+  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/approvals.test.js:18:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2870.428512

@@ -1,0 +1,1989 @@
+{
+  "node": "v24.20.0",
+  "pgBin": "/usr/lib/postgresql/18/bin",
+  "postgresDirectory": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-oqGOaC",
+  "cases": {
+    "valid decisions checkpoint and complete through the engine": {
+      "state": "SUCCEEDED",
+      "session": {
+        "calls": 2,
+        "tool_calls": 1,
+        "reserved_cost_micros": 20000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        },
+        {
+          "turn": 2,
+          "decision": {
+            "kind": "finish",
+            "tool": null,
+            "summary": "[HIGH] representative agent incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ],
+            "arguments": null
+          },
+          "observation": null
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    },
+    "v3 concurrent HTTP admission binds one session and rejects policy inputs": {
+      "state": "RUNNING",
+      "session": {
+        "calls": 0,
+        "tool_calls": 0,
+        "reserved_cost_micros": 0
+      },
+      "decisions": [],
+      "calls": [],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        }
+      ]
+    },
+    "malformed and unregistered model proposals cannot execute tools": {
+      "state": "FAILED",
+      "session": {
+        "calls": 1,
+        "tool_calls": 0,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "REJECTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_OUTPUT_REJECTED",
+          "details": {
+            "call": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "turn budget prevents another model decision after the accepted limit": {
+      "state": "FAILED",
+      "session": {
+        "calls": 1,
+        "tool_calls": 1,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "registered tool invalid arguments are rejected before any tool reservation": {
+      "state": "FAILED",
+      "session": {
+        "calls": 1,
+        "tool_calls": 0,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "REJECTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_OUTPUT_REJECTED",
+          "details": {
+            "call": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "malformed completed provider response is permanent not a transport retry": {
+      "state": "FAILED",
+      "session": {
+        "calls": 1,
+        "tool_calls": 0,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "REJECTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_OUTPUT_REJECTED",
+          "details": {
+            "call": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "cost budget is reserved before dispatch and never refunded": {
+      "state": "FAILED",
+      "session": {
+        "calls": 1,
+        "tool_calls": 1,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "call and tool execution budgets are independent bounds": {
+      "state": "FAILED",
+      "session": {
+        "calls": 2,
+        "tool_calls": 1,
+        "reserved_cost_micros": 20000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        },
+        {
+          "turn": 2,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": null
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "read",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "model timeout keeps its reservation and retry cannot exceed call budget": {
+      "state": "FAILED",
+      "session": {
+        "calls": 1,
+        "tool_calls": 0,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "RESERVED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 125
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "analyze-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 2,
+            "outcome": "PERMANENT",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "database deadline blocks acceptance even when a model returns late": {
+      "state": "FAILED",
+      "session": {
+        "calls": 1,
+        "tool_calls": 0,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "RESERVED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RUN_FAILED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": null
+          }
+        }
+      ]
+    },
+    "SIGKILL after accepted decision resumes without regenerating it": {
+      "state": "SUCCEEDED",
+      "session": {
+        "calls": 2,
+        "tool_calls": 2,
+        "reserved_cost_micros": 20000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        },
+        {
+          "turn": 2,
+          "decision": {
+            "kind": "finish",
+            "tool": null,
+            "summary": "[HIGH] representative agent incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ],
+            "arguments": null
+          },
+          "observation": null
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "fence": 2,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 159
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "analyze-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    },
+    "stale worker cannot accept a delayed decision after lease recovery": {
+      "state": "SUCCEEDED",
+      "session": {
+        "calls": 3,
+        "tool_calls": 1,
+        "reserved_cost_micros": 30000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        },
+        {
+          "turn": 2,
+          "decision": {
+            "kind": "finish",
+            "tool": null,
+            "summary": "[HIGH] representative agent incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ],
+            "arguments": null
+          },
+          "observation": null
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "RESERVED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 2,
+          "turn": 1,
+          "fence": 2,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 3,
+          "turn": 2,
+          "fence": 2,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "EXPIRED",
+            "delay_ms": 124
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "analyze-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 3,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 3,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    },
+    "accepted finish checkpoint is reused without any model invocation": {
+      "state": "SUCCEEDED",
+      "session": {
+        "calls": 2,
+        "tool_calls": 1,
+        "reserved_cost_micros": 20000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        },
+        {
+          "turn": 2,
+          "decision": {
+            "kind": "finish",
+            "tool": null,
+            "summary": "[HIGH] representative agent incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ],
+            "arguments": null
+          },
+          "observation": null
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 2,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    },
+    "decision and acceptance event roll back together on database failure": {
+      "state": "RUNNING",
+      "session": {
+        "calls": 1,
+        "tool_calls": 0,
+        "reserved_cost_micros": 10000
+      },
+      "decisions": [],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "RESERVED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        }
+      ]
+    },
+    "saved tool observation survives retry without being read again": {
+      "state": "SUCCEEDED",
+      "session": {
+        "calls": 3,
+        "tool_calls": 1,
+        "reserved_cost_micros": 30000
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "decision": {
+            "kind": "read",
+            "tool": "incident-context",
+            "summary": null,
+            "evidence": [],
+            "arguments": {
+              "topic": "summary"
+            }
+          },
+          "observation": {
+            "id": "turn:1:incident-context",
+            "data": {
+              "text": "[HIGH] representative agent incident"
+            }
+          }
+        },
+        {
+          "turn": 2,
+          "decision": {
+            "kind": "finish",
+            "tool": null,
+            "summary": "[HIGH] representative agent incident",
+            "evidence": [
+              "turn:1:incident-context"
+            ],
+            "arguments": null
+          },
+          "observation": null
+        }
+      ],
+      "calls": [
+        {
+          "call_no": 1,
+          "turn": 1,
+          "fence": 1,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 2,
+          "turn": 2,
+          "fence": 1,
+          "state": "RESERVED",
+          "reserved_cost_micros": 10000
+        },
+        {
+          "call_no": 3,
+          "turn": 2,
+          "fence": 2,
+          "state": "ACCEPTED",
+          "reserved_cost_micros": 10000
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "type": "RUN_CREATED",
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "normalize-incident",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "build-summary",
+            "fence": 1
+          }
+        },
+        {
+          "sequence": 6,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 1,
+            "attempt": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 1,
+            "turn": 1,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 8,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 1,
+            "kind": "read",
+            "turn": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "type": "AGENT_OBSERVATION_SAVED",
+          "details": {
+            "turn": 1,
+            "observation": "turn:1:incident-context"
+          }
+        },
+        {
+          "sequence": 10,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 2,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 11,
+          "type": "RETRY_SCHEDULED",
+          "details": {
+            "step": "analyze-incident",
+            "attempt": 1,
+            "outcome": "RETRYABLE",
+            "delay_ms": 115
+          }
+        },
+        {
+          "sequence": 12,
+          "type": "RETRY_READY",
+          "details": {
+            "step": "analyze-incident",
+            "reason": "RETRY_DUE"
+          }
+        },
+        {
+          "sequence": 13,
+          "type": "STEP_CLAIMED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2,
+            "attempt": 2
+          }
+        },
+        {
+          "sequence": 14,
+          "type": "AGENT_CALL_RESERVED",
+          "details": {
+            "call": 3,
+            "turn": 2,
+            "reserved_cost_micros": 10000
+          }
+        },
+        {
+          "sequence": 15,
+          "type": "AGENT_DECISION_ACCEPTED",
+          "details": {
+            "call": 3,
+            "kind": "finish",
+            "turn": 2
+          }
+        },
+        {
+          "sequence": 16,
+          "type": "STEP_SUCCEEDED",
+          "details": {
+            "step": "analyze-incident",
+            "fence": 2
+          }
+        },
+        {
+          "sequence": 17,
+          "type": "RUN_SUCCEEDED",
+          "details": {}
+        }
+      ]
+    }
+  },
+  "processes": [
+    {
+      "role": "postgres",
+      "pid": 696,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    {
+      "role": "agent-worker",
+      "pid": 745,
+      "exit": {
+        "code": null,
+        "signal": "SIGKILL"
+      }
+    },
+    {
+      "role": "agent-worker-restart",
+      "pid": 757,
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    }
+  ]
+}
