@@ -2,8 +2,8 @@
   "node": "v24.20.0",
   "pgBin": "/usr/lib/postgresql/18/bin",
   "independentClusters": [
-    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-gNDmnK",
-    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-NsMul3"
+    "REDACTED_LOCAL_ROOT_021/daw1-pg-gNDmnK",
+    "REDACTED_LOCAL_ROOT_021/daw1-pg-NsMul3"
   ],
   "cases": {
     "changed action fingerprint invalidates an approved grant before dispatch": {

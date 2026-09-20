@@ -1,0 +1,1957 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "93cf93ea60ed069b726086765a5eb98fbbd4ca28",
+  "scope": "Path-only public presentations; original manifests retain hashes of the original artifacts, not these redacted bytes.",
+  "integrity": "SHA-256 fields below distinguish preserved original bytes and public copies; normalized hashes use UTF-8 with CRLF converted to LF.",
+  "replacements": [
+    {
+      "placeholder": "REDACTED_REPOSITORY_ROOT",
+      "meaning": "developer repository checkout path omitted"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_001",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_002",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_003",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_004",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_005",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_006",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_007",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_008",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_009",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_010",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_011",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_012",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_013",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_014",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_015",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_016",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_017",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_018",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_019",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_020",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_021",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    },
+    {
+      "placeholder": "REDACTED_LOCAL_ROOT_022",
+      "meaning": "owned local evidence or cluster root omitted; distinct roots have distinct tokens"
+    }
+  ],
+  "pathOccurrences": 1041,
+  "files": [
+    {
+      "path": "docs/daw-4.md",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "6c81907b34c1145967effeb46514f9b17089af5d67c381080029323f912f7c15",
+      "publicSha256": "bf0ef33ce499bcab2ca1a1bd992d915ebef01c31a60f7303dd78c179c1f04884",
+      "originalNormalizedSha256": "6c81907b34c1145967effeb46514f9b17089af5d67c381080029323f912f7c15",
+      "publicNormalizedSha256": "bf0ef33ce499bcab2ca1a1bd992d915ebef01c31a60f7303dd78c179c1f04884"
+    },
+    {
+      "path": "docs/daw-5.md",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "3dc0a9a826e3f35a0809a09787304b01ed0a84aedf78601e33cf8a51e0b1054b",
+      "publicSha256": "9fdeace4430b703aca17cc49213734a03218a653ddb35c506701ed55eb4f5fe1",
+      "originalNormalizedSha256": "3dc0a9a826e3f35a0809a09787304b01ed0a84aedf78601e33cf8a51e0b1054b",
+      "publicNormalizedSha256": "9fdeace4430b703aca17cc49213734a03218a653ddb35c506701ed55eb4f5fe1"
+    },
+    {
+      "path": "docs/daw-6.md",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "6f3f869d1d43a70c917e484acdb648336574a54e8e11f32118fa3ddbcbe4b44c",
+      "publicSha256": "19921257688406fe8d6f89d7564058e0bcf82a1d60f4e8c1dda8e2d7535b0c37",
+      "originalNormalizedSha256": "6f3f869d1d43a70c917e484acdb648336574a54e8e11f32118fa3ddbcbe4b44c",
+      "publicNormalizedSha256": "19921257688406fe8d6f89d7564058e0bcf82a1d60f4e8c1dda8e2d7535b0c37"
+    },
+    {
+      "path": "docs/evidence/daw-1/atomicity/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "2edd7fd88d2c73fe8939bd8bc51669aeaa245e88f138155921c628b069905bf9",
+      "publicSha256": "74ae157d00fb8f7ec0a05f7413a6853788c4096b6a4e09374fe4ae66a44d820b",
+      "originalNormalizedSha256": "2edd7fd88d2c73fe8939bd8bc51669aeaa245e88f138155921c628b069905bf9",
+      "publicNormalizedSha256": "74ae157d00fb8f7ec0a05f7413a6853788c4096b6a4e09374fe4ae66a44d820b"
+    },
+    {
+      "path": "docs/evidence/daw-1/atomicity/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "4e0059af45f47221a3a42cdd28345cac3bf506978e1a7d5f3ffc407ef9deefff",
+      "publicSha256": "b0feddf122c77a548bf801a51f67b0c35afaa74ec075a8985560ff561c91e05d",
+      "originalNormalizedSha256": "4e0059af45f47221a3a42cdd28345cac3bf506978e1a7d5f3ffc407ef9deefff",
+      "publicNormalizedSha256": "b0feddf122c77a548bf801a51f67b0c35afaa74ec075a8985560ff561c91e05d"
+    },
+    {
+      "path": "docs/evidence/daw-1/fingerprint/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "60bc215bdfc85f5f22ab171671c666de599a5a5b0bdf72b679eff75f56fa5ed6",
+      "publicSha256": "c3ba0c42126213abe489d331d5cce128c0099fa59b791896eea1bb6aa9dcf189",
+      "originalNormalizedSha256": "60bc215bdfc85f5f22ab171671c666de599a5a5b0bdf72b679eff75f56fa5ed6",
+      "publicNormalizedSha256": "c3ba0c42126213abe489d331d5cce128c0099fa59b791896eea1bb6aa9dcf189"
+    },
+    {
+      "path": "docs/evidence/daw-1/fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "42f690af62a9a53ef8f5fc111880d1840078e4ab6f6a660573099572b2ea17b9",
+      "publicSha256": "ba27e5c228d63f115622b80e6e0b50b9e141a9fb6171573fe5e14ef9a83b5b04",
+      "originalNormalizedSha256": "42f690af62a9a53ef8f5fc111880d1840078e4ab6f6a660573099572b2ea17b9",
+      "publicNormalizedSha256": "ba27e5c228d63f115622b80e6e0b50b9e141a9fb6171573fe5e14ef9a83b5b04"
+    },
+    {
+      "path": "docs/evidence/daw-1/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "2465a150fd7c707d190c52d75abd3b4040e0911a95b64febbd6135f91f9e20ae",
+      "publicSha256": "0ccde2ee9f23ddf912248ef024b787b5d40a6001c45b5becd2f58ffaa4b41b3e",
+      "originalNormalizedSha256": "2465a150fd7c707d190c52d75abd3b4040e0911a95b64febbd6135f91f9e20ae",
+      "publicNormalizedSha256": "0ccde2ee9f23ddf912248ef024b787b5d40a6001c45b5becd2f58ffaa4b41b3e"
+    },
+    {
+      "path": "docs/evidence/daw-1/missing-postgres/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "68774e8cb8480a2f1443392a7efac1fc56112130930204b5e2946f7c2d0932a9",
+      "publicSha256": "a2e01d0b1ebaaf1250e4b6eb023ca76fa5ce2a3c7775e072ba6334df6acd7eaa",
+      "originalNormalizedSha256": "68774e8cb8480a2f1443392a7efac1fc56112130930204b5e2946f7c2d0932a9",
+      "publicNormalizedSha256": "a2e01d0b1ebaaf1250e4b6eb023ca76fa5ce2a3c7775e072ba6334df6acd7eaa"
+    },
+    {
+      "path": "docs/evidence/daw-1/missing-postgres/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "0f1cb175bd0fe9cf5f081ca1a0ee337c3e3b3e19dbf4c8211ab9c828e6a1c734",
+      "publicSha256": "335240c2df4a4b32aae4f63648170e7733aae8be23fea601788cf515925bf735",
+      "originalNormalizedSha256": "0f1cb175bd0fe9cf5f081ca1a0ee337c3e3b3e19dbf4c8211ab9c828e6a1c734",
+      "publicNormalizedSha256": "335240c2df4a4b32aae4f63648170e7733aae8be23fea601788cf515925bf735"
+    },
+    {
+      "path": "docs/evidence/daw-1/missing-postgres/validation.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 3,
+      "originalSha256": "cf75f656b3d64f9acbaaad7b3ef6400e0797bf64dce0b8f06d8d9935422f2028",
+      "publicSha256": "b78cdb50ae9493e5c8b13b2767b0ecd7077591f16d5b39af6fcf9deabf5970d2",
+      "originalNormalizedSha256": "cf75f656b3d64f9acbaaad7b3ef6400e0797bf64dce0b8f06d8d9935422f2028",
+      "publicNormalizedSha256": "b78cdb50ae9493e5c8b13b2767b0ecd7077591f16d5b39af6fcf9deabf5970d2"
+    },
+    {
+      "path": "docs/evidence/daw-1/status/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "d7509d63884c063796dcdb3a9a66da50ec0b93e300b04ad7765d8e161c23a600",
+      "publicSha256": "d84480520ce0cfbc39989e2833b0d7fb9b918e13fb466de3d6c75e2343699981",
+      "originalNormalizedSha256": "d7509d63884c063796dcdb3a9a66da50ec0b93e300b04ad7765d8e161c23a600",
+      "publicNormalizedSha256": "d84480520ce0cfbc39989e2833b0d7fb9b918e13fb466de3d6c75e2343699981"
+    },
+    {
+      "path": "docs/evidence/daw-1/status/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 16,
+      "originalSha256": "737929424270a91ee6ad0a0f88358cc49f103d031bf030cf02cb8eeefbdfdb34",
+      "publicSha256": "2643d9dc72ada2445a25114f4fdd4dd5d88e57b3ec76fcc95dd731124c000c0b",
+      "originalNormalizedSha256": "737929424270a91ee6ad0a0f88358cc49f103d031bf030cf02cb8eeefbdfdb34",
+      "publicNormalizedSha256": "2643d9dc72ada2445a25114f4fdd4dd5d88e57b3ec76fcc95dd731124c000c0b"
+    },
+    {
+      "path": "docs/evidence/daw-2/atomicity/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "cb922489e16803892501576ba8dac912931ca557679c96bd4162f39fe313b36a",
+      "publicSha256": "05b0ed498682e0bc327f285914d8190cd4dfce68c3d6e1b04d8d5a555ba98ff5",
+      "originalNormalizedSha256": "cb922489e16803892501576ba8dac912931ca557679c96bd4162f39fe313b36a",
+      "publicNormalizedSha256": "05b0ed498682e0bc327f285914d8190cd4dfce68c3d6e1b04d8d5a555ba98ff5"
+    },
+    {
+      "path": "docs/evidence/daw-2/atomicity/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "b8ab5006c68b85ac580ba69f04a91874acd8c8fcf238411d9216bca10f05fd64",
+      "publicSha256": "bc7b721ed42b1a1a75208876ebb1fbb38ed320d491ca9c339aee63fd35c4ae34",
+      "originalNormalizedSha256": "b8ab5006c68b85ac580ba69f04a91874acd8c8fcf238411d9216bca10f05fd64",
+      "publicNormalizedSha256": "bc7b721ed42b1a1a75208876ebb1fbb38ed320d491ca9c339aee63fd35c4ae34"
+    },
+    {
+      "path": "docs/evidence/daw-2/claim/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "4d9b8581250811c91b588c7bedbdbb422f93654e2dd2f987593d14c6b8235245",
+      "publicSha256": "77b8757f934b3aacd1a9a6c3e4936f078aa5f2550039161152cab11570f346a0",
+      "originalNormalizedSha256": "4d9b8581250811c91b588c7bedbdbb422f93654e2dd2f987593d14c6b8235245",
+      "publicNormalizedSha256": "77b8757f934b3aacd1a9a6c3e4936f078aa5f2550039161152cab11570f346a0"
+    },
+    {
+      "path": "docs/evidence/daw-2/claim/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 18,
+      "originalSha256": "fb912c5e5a3104b4dcb5007d465ab0abff4042470851206cd41b0ad899dcd6fb",
+      "publicSha256": "9a62273afe2687e42e9e2c9c4513ac0bff8e1c9b0ddf97f00276dead688ee716",
+      "originalNormalizedSha256": "fb912c5e5a3104b4dcb5007d465ab0abff4042470851206cd41b0ad899dcd6fb",
+      "publicNormalizedSha256": "9a62273afe2687e42e9e2c9c4513ac0bff8e1c9b0ddf97f00276dead688ee716"
+    },
+    {
+      "path": "docs/evidence/daw-2/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "79dacd775188652c5ad2645f99fb4d0538696e6e0333ebce9f5f5e6351a0c55b",
+      "publicSha256": "6e3930f576ed9d017bf07a6a97a547257d841c7153a391ba600f260ed2251355",
+      "originalNormalizedSha256": "79dacd775188652c5ad2645f99fb4d0538696e6e0333ebce9f5f5e6351a0c55b",
+      "publicNormalizedSha256": "6e3930f576ed9d017bf07a6a97a547257d841c7153a391ba600f260ed2251355"
+    },
+    {
+      "path": "docs/evidence/daw-2/expiry/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "27c30e26311b30272f54ce28407cfd759dd2250a30b066e703cbad6db1181809",
+      "publicSha256": "bb2be3550da3c32ede104bee16cfe8d8e4cebd87f12794a2b2d2a3534fb7500c",
+      "originalNormalizedSha256": "27c30e26311b30272f54ce28407cfd759dd2250a30b066e703cbad6db1181809",
+      "publicNormalizedSha256": "bb2be3550da3c32ede104bee16cfe8d8e4cebd87f12794a2b2d2a3534fb7500c"
+    },
+    {
+      "path": "docs/evidence/daw-2/expiry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "40d9cebfb19e50913779f8096a6db4c963067ac30b1d71ffcce3de437f572838",
+      "publicSha256": "4d58159096f224175012d49b0cfd277ed70c17a8e971164e4ca269da70374114",
+      "originalNormalizedSha256": "40d9cebfb19e50913779f8096a6db4c963067ac30b1d71ffcce3de437f572838",
+      "publicNormalizedSha256": "4d58159096f224175012d49b0cfd277ed70c17a8e971164e4ca269da70374114"
+    },
+    {
+      "path": "docs/evidence/daw-2/fence/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "2321e60dbfc5d1ccea4b7e40b0a6b839a79e035e9a44692efce0de3d53e55c89",
+      "publicSha256": "f347421c14fa40f6687cfb1ea244165745d826a47bcfa560bd79e599735d06c9",
+      "originalNormalizedSha256": "2321e60dbfc5d1ccea4b7e40b0a6b839a79e035e9a44692efce0de3d53e55c89",
+      "publicNormalizedSha256": "f347421c14fa40f6687cfb1ea244165745d826a47bcfa560bd79e599735d06c9"
+    },
+    {
+      "path": "docs/evidence/daw-2/fence/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "9337290e62a29c34e5b0593eaf03cbe3346e069ccb58253a23e429a1a40e9c5a",
+      "publicSha256": "6032a1081eeefd480f9ee61ac7d351e3e3c320452e051880bd14d9159b630d71",
+      "originalNormalizedSha256": "9337290e62a29c34e5b0593eaf03cbe3346e069ccb58253a23e429a1a40e9c5a",
+      "publicNormalizedSha256": "6032a1081eeefd480f9ee61ac7d351e3e3c320452e051880bd14d9159b630d71"
+    },
+    {
+      "path": "docs/evidence/daw-2/fingerprint/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "f7ed00003bc6c71c8100cf1860fe49e420aba0d7a9506dde5908ff89d4dbc721",
+      "publicSha256": "4d3634dadc09c5e4c714e83cca171708a44c6e0bfa6e79585681cae4c87279f6",
+      "originalNormalizedSha256": "f7ed00003bc6c71c8100cf1860fe49e420aba0d7a9506dde5908ff89d4dbc721",
+      "publicNormalizedSha256": "4d3634dadc09c5e4c714e83cca171708a44c6e0bfa6e79585681cae4c87279f6"
+    },
+    {
+      "path": "docs/evidence/daw-2/fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "d0163cae58ae64cd7ca636eb2b05367513ae8c5acda20f4fcdd2274318839502",
+      "publicSha256": "f8e3c13164323454f269565625473cff91642188931ccfc2d4d7c9191f81d07a",
+      "originalNormalizedSha256": "d0163cae58ae64cd7ca636eb2b05367513ae8c5acda20f4fcdd2274318839502",
+      "publicNormalizedSha256": "f8e3c13164323454f269565625473cff91642188931ccfc2d4d7c9191f81d07a"
+    },
+    {
+      "path": "docs/evidence/daw-2/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "0028267f8a4edc61aeff1fcaab5f8db5a6546299717be249a22e5d0260a8afad",
+      "publicSha256": "3e201e78043caed472a59d9fc7224f762aaacb2eefddfb86b70c9d07d0ab8970",
+      "originalNormalizedSha256": "0028267f8a4edc61aeff1fcaab5f8db5a6546299717be249a22e5d0260a8afad",
+      "publicNormalizedSha256": "3e201e78043caed472a59d9fc7224f762aaacb2eefddfb86b70c9d07d0ab8970"
+    },
+    {
+      "path": "docs/evidence/daw-2/missing-postgres/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "84b496e54b189c8e1037fc8a4a09e393f154134933d5b791ad5dd66c600097f4",
+      "publicSha256": "cf1f6223a5b2a490253e3d9be76d5904a782d2c1ca99492dbd28408745c6ba04",
+      "originalNormalizedSha256": "84b496e54b189c8e1037fc8a4a09e393f154134933d5b791ad5dd66c600097f4",
+      "publicNormalizedSha256": "cf1f6223a5b2a490253e3d9be76d5904a782d2c1ca99492dbd28408745c6ba04"
+    },
+    {
+      "path": "docs/evidence/daw-2/missing-postgres/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "8356fcb00a0da12c089e8766a03d4388981753303f6a455a9500ec8bff2f2a72",
+      "publicSha256": "53872bd18034f709d2951f2d39d2b6358dec22abd0ccd8a68db2f044c53369f1",
+      "originalNormalizedSha256": "8356fcb00a0da12c089e8766a03d4388981753303f6a455a9500ec8bff2f2a72",
+      "publicNormalizedSha256": "53872bd18034f709d2951f2d39d2b6358dec22abd0ccd8a68db2f044c53369f1"
+    },
+    {
+      "path": "docs/evidence/daw-2/missing-postgres/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "81625e38f5a968517c7483272646b569ad1cabbffaa71a2dc1e89f299afeaf58",
+      "publicSha256": "a27f04d2188097e667a09ea40b8f9cc31040049e97393844d9e3f415aef39241",
+      "originalNormalizedSha256": "81625e38f5a968517c7483272646b569ad1cabbffaa71a2dc1e89f299afeaf58",
+      "publicNormalizedSha256": "a27f04d2188097e667a09ea40b8f9cc31040049e97393844d9e3f415aef39241"
+    },
+    {
+      "path": "docs/evidence/daw-2/missing-postgres/validation.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "d52d3715a9817e16c8f76272464061c6075a1f4dfbaddec81445271ab59e3830",
+      "publicSha256": "9d3e71352cac147a5172a6cf07d32e1cc6c0e27de881e561abeca041697f37b8",
+      "originalNormalizedSha256": "d52d3715a9817e16c8f76272464061c6075a1f4dfbaddec81445271ab59e3830",
+      "publicNormalizedSha256": "9d3e71352cac147a5172a6cf07d32e1cc6c0e27de881e561abeca041697f37b8"
+    },
+    {
+      "path": "docs/evidence/daw-2/recovery/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "db4ec4e6f2ba1b99da8cf186811a092685d50fa97ec1f8c3ebcbc12ceafeeea8",
+      "publicSha256": "6788f06f8f9522c73fb124f376a44a01add5e406a13644189ce2f383d988e5cb",
+      "originalNormalizedSha256": "db4ec4e6f2ba1b99da8cf186811a092685d50fa97ec1f8c3ebcbc12ceafeeea8",
+      "publicNormalizedSha256": "6788f06f8f9522c73fb124f376a44a01add5e406a13644189ce2f383d988e5cb"
+    },
+    {
+      "path": "docs/evidence/daw-2/recovery/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 37,
+      "originalSha256": "88bafb785e806da419f0878945fd55d3670ce1a8eab553b8860f216caebe327b",
+      "publicSha256": "f0ea8289d4f21040c754ec6efe46946b9724b08e223860d76b06f0baea3a5d5f",
+      "originalNormalizedSha256": "88bafb785e806da419f0878945fd55d3670ce1a8eab553b8860f216caebe327b",
+      "publicNormalizedSha256": "f0ea8289d4f21040c754ec6efe46946b9724b08e223860d76b06f0baea3a5d5f"
+    },
+    {
+      "path": "docs/evidence/daw-2/retry-limit/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "a11398df0cc79370dbf7048761581d02871c65761bb7d42cb62d97e4e88f2fdf",
+      "publicSha256": "459c1815f7b897ba0da915a7093c9758e72a2a78fb6bbbaa8d8d326425c88b02",
+      "originalNormalizedSha256": "a11398df0cc79370dbf7048761581d02871c65761bb7d42cb62d97e4e88f2fdf",
+      "publicNormalizedSha256": "459c1815f7b897ba0da915a7093c9758e72a2a78fb6bbbaa8d8d326425c88b02"
+    },
+    {
+      "path": "docs/evidence/daw-2/retry-limit/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 11,
+      "originalSha256": "0b236b60b0a28f53fcfd736c0e5085cb47ec99de81b46a24cfbcf081853b01e2",
+      "publicSha256": "b7f1679c1a51c24d37542ab91757bd99df1dfdd5be40b4f9e0466f208dd58b82",
+      "originalNormalizedSha256": "0b236b60b0a28f53fcfd736c0e5085cb47ec99de81b46a24cfbcf081853b01e2",
+      "publicNormalizedSha256": "b7f1679c1a51c24d37542ab91757bd99df1dfdd5be40b4f9e0466f208dd58b82"
+    },
+    {
+      "path": "docs/evidence/daw-2/status/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "2ebed2aaff2cfaf6dd590e299921a3e0ccd1a6b10d3dc8cda82d7756d5743f55",
+      "publicSha256": "636604584a6187f39402a8aa73e4eab4642d0fabf1ff4559b6ef3f43ad0e50a4",
+      "originalNormalizedSha256": "2ebed2aaff2cfaf6dd590e299921a3e0ccd1a6b10d3dc8cda82d7756d5743f55",
+      "publicNormalizedSha256": "636604584a6187f39402a8aa73e4eab4642d0fabf1ff4559b6ef3f43ad0e50a4"
+    },
+    {
+      "path": "docs/evidence/daw-2/status/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 16,
+      "originalSha256": "d48bb01cbe134c2d9d8654434e4f59276bcc7c396f6d9128f276f66abd0bebc2",
+      "publicSha256": "9a3af9b0d70311cf496b76ff847b8bc61434abd76ead2c0608d2a0ed766ce496",
+      "originalNormalizedSha256": "d48bb01cbe134c2d9d8654434e4f59276bcc7c396f6d9128f276f66abd0bebc2",
+      "publicNormalizedSha256": "9a3af9b0d70311cf496b76ff847b8bc61434abd76ead2c0608d2a0ed766ce496"
+    },
+    {
+      "path": "docs/evidence/daw-3/atomicity/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "4c935cfa00bbb0ec21bac1e558feefed796d2e454d5c0f35a4bb6286ac0b20f0",
+      "publicSha256": "0f53897162571e9dcdd7aa0afe06318000a49e194c9356b2431495e09f980a78",
+      "originalNormalizedSha256": "4c935cfa00bbb0ec21bac1e558feefed796d2e454d5c0f35a4bb6286ac0b20f0",
+      "publicNormalizedSha256": "0f53897162571e9dcdd7aa0afe06318000a49e194c9356b2431495e09f980a78"
+    },
+    {
+      "path": "docs/evidence/daw-3/atomicity/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "47f261e4145be1e886a89f6c51dd56b6b39426e0f7ba75347eff0146cc74779f",
+      "publicSha256": "ff23955e08a03b5127a45591b1898faa35184eb10b5d5b45602d07f7a1990763",
+      "originalNormalizedSha256": "47f261e4145be1e886a89f6c51dd56b6b39426e0f7ba75347eff0146cc74779f",
+      "publicNormalizedSha256": "ff23955e08a03b5127a45591b1898faa35184eb10b5d5b45602d07f7a1990763"
+    },
+    {
+      "path": "docs/evidence/daw-3/claim/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "0085f84a9b104af42fd1758faa016976823f489365518e9be5d01a112e730fac",
+      "publicSha256": "9a73b063cc3818c06e7f759270560bd554fe50927b9784a06569b2c36ac86444",
+      "originalNormalizedSha256": "0085f84a9b104af42fd1758faa016976823f489365518e9be5d01a112e730fac",
+      "publicNormalizedSha256": "9a73b063cc3818c06e7f759270560bd554fe50927b9784a06569b2c36ac86444"
+    },
+    {
+      "path": "docs/evidence/daw-3/claim/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 18,
+      "originalSha256": "fa9ca793f310d6ecb4cb5f6256c630ab4beff013cbaf8451affdace82f6e7d36",
+      "publicSha256": "69ef2e5d329ec605da78205047fdf6f7827ad825e6924617c5a4ca4e72ff8c45",
+      "originalNormalizedSha256": "fa9ca793f310d6ecb4cb5f6256c630ab4beff013cbaf8451affdace82f6e7d36",
+      "publicNormalizedSha256": "69ef2e5d329ec605da78205047fdf6f7827ad825e6924617c5a4ca4e72ff8c45"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-effect-key/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "dc52420f072f46989c42199ad8b374d91fee929df990ea87d08d84140c5d1465",
+      "publicSha256": "9649a70067c65ef72b01a0d6d2415fd67a63df6ae06a3468e49c1e68112c852d",
+      "originalNormalizedSha256": "dc52420f072f46989c42199ad8b374d91fee929df990ea87d08d84140c5d1465",
+      "publicNormalizedSha256": "9649a70067c65ef72b01a0d6d2415fd67a63df6ae06a3468e49c1e68112c852d"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-effect-key/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "ec9aebe8dc816b1108342365966e3b4c03c52519382858a60fb12306576c00bb",
+      "publicSha256": "fd06f0ae16a0ecfcd00682027d6c1d43f5f83cf148b093d228e2138590fa7428",
+      "originalNormalizedSha256": "ec9aebe8dc816b1108342365966e3b4c03c52519382858a60fb12306576c00bb",
+      "publicNormalizedSha256": "fd06f0ae16a0ecfcd00682027d6c1d43f5f83cf148b093d228e2138590fa7428"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-timeout/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "f0885eba1661988c2800b83ccec5e5de67b02fe5fd0d443f817edbd8afd3dd84",
+      "publicSha256": "ba2ee6c5ccf51aeae646bcf3913c3546daf3fbc82bb2302f7400c77250515645",
+      "originalNormalizedSha256": "f0885eba1661988c2800b83ccec5e5de67b02fe5fd0d443f817edbd8afd3dd84",
+      "publicNormalizedSha256": "ba2ee6c5ccf51aeae646bcf3913c3546daf3fbc82bb2302f7400c77250515645"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-timeout/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "5b58866f438e779b977fccd206ad9ba3c8628f577e8a5b72cc3dce437a432062",
+      "publicSha256": "af6ee461eb25fee8674c56efe63bac95402308aac65f40c5ac638d85e7a620db",
+      "originalNormalizedSha256": "5b58866f438e779b977fccd206ad9ba3c8628f577e8a5b72cc3dce437a432062",
+      "publicNormalizedSha256": "af6ee461eb25fee8674c56efe63bac95402308aac65f40c5ac638d85e7a620db"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-unkeyed/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "1f412eed6ab0762964675fdf149a2ad4bc40cb85a28a20e195ee23986487f23e",
+      "publicSha256": "15a78aaa583800e93573f47f575e62bcf5e97b13801c029cf695df54bbc94cf8",
+      "originalNormalizedSha256": "1f412eed6ab0762964675fdf149a2ad4bc40cb85a28a20e195ee23986487f23e",
+      "publicNormalizedSha256": "15a78aaa583800e93573f47f575e62bcf5e97b13801c029cf695df54bbc94cf8"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-unkeyed/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "af4c9714bb378a6092bd2f3e43bbaccfeb614121ba321bd57a8b7d83497f0b99",
+      "publicSha256": "e8581968171f60ec46951f314689827d13f4345705be0550bcf4742c4acbbc25",
+      "originalNormalizedSha256": "af4c9714bb378a6092bd2f3e43bbaccfeb614121ba321bd57a8b7d83497f0b99",
+      "publicNormalizedSha256": "e8581968171f60ec46951f314689827d13f4345705be0550bcf4742c4acbbc25"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-verification/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "1287e39d5a01dc4bef166fb4b6b3ba195f8bcf36c050e419f9ff7a52d74582d6",
+      "publicSha256": "96b6959b086208156080fc85dd5e5b299322315ca173e50ca07d22f4568860fc",
+      "originalNormalizedSha256": "1287e39d5a01dc4bef166fb4b6b3ba195f8bcf36c050e419f9ff7a52d74582d6",
+      "publicNormalizedSha256": "96b6959b086208156080fc85dd5e5b299322315ca173e50ca07d22f4568860fc"
+    },
+    {
+      "path": "docs/evidence/daw-3/effect-verification/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "99d97d9a3676668fb98d0cfaf2a7520dd440c6c450e2f6946bf48cd20ff6598c",
+      "publicSha256": "5f993cc19bd32c1ee8ceb30a819c3024d3132a52dcd62a1a56f242c1a5eef91d",
+      "originalNormalizedSha256": "99d97d9a3676668fb98d0cfaf2a7520dd440c6c450e2f6946bf48cd20ff6598c",
+      "publicNormalizedSha256": "5f993cc19bd32c1ee8ceb30a819c3024d3132a52dcd62a1a56f242c1a5eef91d"
+    },
+    {
+      "path": "docs/evidence/daw-3/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "652ae0552a8c5c030b059e27fc5ccd2bccd443d0d03586024bc0cec7a322df65",
+      "publicSha256": "b912da1f6eba33ce4bae867013029bc360f31754396575b3996863723c5a55da",
+      "originalNormalizedSha256": "652ae0552a8c5c030b059e27fc5ccd2bccd443d0d03586024bc0cec7a322df65",
+      "publicNormalizedSha256": "b912da1f6eba33ce4bae867013029bc360f31754396575b3996863723c5a55da"
+    },
+    {
+      "path": "docs/evidence/daw-3/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "d3ef1c25efd0f33eb129d86eab4dc2a5460b7a6c664675607d086d45263b77fa",
+      "publicSha256": "311e48920173cf73f0a9a36601503e3a7a12e8f145fb911f4e6647cacb0cac5f",
+      "originalNormalizedSha256": "d3ef1c25efd0f33eb129d86eab4dc2a5460b7a6c664675607d086d45263b77fa",
+      "publicNormalizedSha256": "311e48920173cf73f0a9a36601503e3a7a12e8f145fb911f4e6647cacb0cac5f"
+    },
+    {
+      "path": "docs/evidence/daw-3/expiry/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "f197910fb457b2afcde8abad750e949e410717a4f3b6ff542813374636c8c50a",
+      "publicSha256": "59fbcdaa79896647441221207a2c42614de434a58f3a6d3be0e74da0bf4506cf",
+      "originalNormalizedSha256": "f197910fb457b2afcde8abad750e949e410717a4f3b6ff542813374636c8c50a",
+      "publicNormalizedSha256": "59fbcdaa79896647441221207a2c42614de434a58f3a6d3be0e74da0bf4506cf"
+    },
+    {
+      "path": "docs/evidence/daw-3/expiry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "fdf87fb1a14a20890d0a099e5c8efefba9a569e9580156b99772683f0daa6832",
+      "publicSha256": "c3f3fa05bff16c61d673d40ac06852c5e52af5b7dbbf1137f5f27a15ceba2f06",
+      "originalNormalizedSha256": "fdf87fb1a14a20890d0a099e5c8efefba9a569e9580156b99772683f0daa6832",
+      "publicNormalizedSha256": "c3f3fa05bff16c61d673d40ac06852c5e52af5b7dbbf1137f5f27a15ceba2f06"
+    },
+    {
+      "path": "docs/evidence/daw-3/fence/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "9404ad7be1506c555a78176856bd949160097eb17437b51664192770489ee322",
+      "publicSha256": "6100537365204c2df0724e97d16de56c642b1188348009daf73661030549dc26",
+      "originalNormalizedSha256": "9404ad7be1506c555a78176856bd949160097eb17437b51664192770489ee322",
+      "publicNormalizedSha256": "6100537365204c2df0724e97d16de56c642b1188348009daf73661030549dc26"
+    },
+    {
+      "path": "docs/evidence/daw-3/fence/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "6f6fff787d10751fe2db8d70a6f1da0529d375f245df7e72dc8702c1641a7aeb",
+      "publicSha256": "702c2389a6fd42e7797bb7a45ba62972772d51b58f32c981f3932bc7f4e3fd18",
+      "originalNormalizedSha256": "6f6fff787d10751fe2db8d70a6f1da0529d375f245df7e72dc8702c1641a7aeb",
+      "publicNormalizedSha256": "702c2389a6fd42e7797bb7a45ba62972772d51b58f32c981f3932bc7f4e3fd18"
+    },
+    {
+      "path": "docs/evidence/daw-3/fingerprint/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "79f9e130f18058d724b1b106b79fcfcba799696afa21ae72a0e41fcc9a586e5d",
+      "publicSha256": "7f6886b85b4600a5035193a62f00f155a592eb0cd9c147c35a7f0d4073cbfb01",
+      "originalNormalizedSha256": "79f9e130f18058d724b1b106b79fcfcba799696afa21ae72a0e41fcc9a586e5d",
+      "publicNormalizedSha256": "7f6886b85b4600a5035193a62f00f155a592eb0cd9c147c35a7f0d4073cbfb01"
+    },
+    {
+      "path": "docs/evidence/daw-3/fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "ee8c222a5caa71a78e593eccbcee64177fb719564763a79c4a5709a597842b56",
+      "publicSha256": "55268606d0729a3782fa5d5d2fcc0e74d0da425861680245a18607c38ddab6d6",
+      "originalNormalizedSha256": "ee8c222a5caa71a78e593eccbcee64177fb719564763a79c4a5709a597842b56",
+      "publicNormalizedSha256": "55268606d0729a3782fa5d5d2fcc0e74d0da425861680245a18607c38ddab6d6"
+    },
+    {
+      "path": "docs/evidence/daw-3/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "d60fff51bf7116ad8baab05d97f1fe489ada024f35b0e8e7b08137d789b8d25c",
+      "publicSha256": "9764e93078bfe0d39862a3c721f2a70318293f00ae63df8f8fe7e2d5e30137fa",
+      "originalNormalizedSha256": "d60fff51bf7116ad8baab05d97f1fe489ada024f35b0e8e7b08137d789b8d25c",
+      "publicNormalizedSha256": "9764e93078bfe0d39862a3c721f2a70318293f00ae63df8f8fe7e2d5e30137fa"
+    },
+    {
+      "path": "docs/evidence/daw-3/recovery/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "30e1a45a1a129c620e3915a9506fb886af8059491e7a716cc47dd3823804b106",
+      "publicSha256": "b9e80fb88c970554aeb472b3a61bcd2d914e23e1d44cdc57cfa501d524f0593a",
+      "originalNormalizedSha256": "30e1a45a1a129c620e3915a9506fb886af8059491e7a716cc47dd3823804b106",
+      "publicNormalizedSha256": "b9e80fb88c970554aeb472b3a61bcd2d914e23e1d44cdc57cfa501d524f0593a"
+    },
+    {
+      "path": "docs/evidence/daw-3/recovery/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 37,
+      "originalSha256": "96e053c169f1fcb19feae052cb8c1ce629f9b5f0be4cc2294362e73bcfa8b915",
+      "publicSha256": "3215786620a85f005b9e7187b2f6fc0bc19920e52f91dd86895449226a710aac",
+      "originalNormalizedSha256": "96e053c169f1fcb19feae052cb8c1ce629f9b5f0be4cc2294362e73bcfa8b915",
+      "publicNormalizedSha256": "3215786620a85f005b9e7187b2f6fc0bc19920e52f91dd86895449226a710aac"
+    },
+    {
+      "path": "docs/evidence/daw-3/retry-limit/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "a1eebb893e816a72b881a4f65cb30061b028e574475f52b2ac896c2b9181a45a",
+      "publicSha256": "a83eb4bd38b7cf61073f92fe1fbd11143b3a9a21d5dcc784704bf740a7b21187",
+      "originalNormalizedSha256": "a1eebb893e816a72b881a4f65cb30061b028e574475f52b2ac896c2b9181a45a",
+      "publicNormalizedSha256": "a83eb4bd38b7cf61073f92fe1fbd11143b3a9a21d5dcc784704bf740a7b21187"
+    },
+    {
+      "path": "docs/evidence/daw-3/retry-limit/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 11,
+      "originalSha256": "208a8789a550b51382e12675274b649a4da16ed623098d77b455dc09cdec8cd7",
+      "publicSha256": "c3119667d1b43ec9280bea38fd7ea5f32baf739a31d38d40006436765d8624dc",
+      "originalNormalizedSha256": "208a8789a550b51382e12675274b649a4da16ed623098d77b455dc09cdec8cd7",
+      "publicNormalizedSha256": "c3119667d1b43ec9280bea38fd7ea5f32baf739a31d38d40006436765d8624dc"
+    },
+    {
+      "path": "docs/evidence/daw-3/status/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "b93b1ce0e5805a53528b58a547f1d9be0b025d3d79c22354db435bbe48444d6a",
+      "publicSha256": "bc098eb6fbb63476891f3543bfbe6b4265410f1d64a8010c546b21cf33e0b4ab",
+      "originalNormalizedSha256": "b93b1ce0e5805a53528b58a547f1d9be0b025d3d79c22354db435bbe48444d6a",
+      "publicNormalizedSha256": "bc098eb6fbb63476891f3543bfbe6b4265410f1d64a8010c546b21cf33e0b4ab"
+    },
+    {
+      "path": "docs/evidence/daw-3/status/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 16,
+      "originalSha256": "cebe328f419aa01a728d9a1cdfd32acb1db34136efa21cb3714700cd1ed88777",
+      "publicSha256": "a33517924ab7b560c5177289b0d0fe5b8bd25b7cb7896e5211e8d03079c8fa66",
+      "originalNormalizedSha256": "cebe328f419aa01a728d9a1cdfd32acb1db34136efa21cb3714700cd1ed88777",
+      "publicNormalizedSha256": "a33517924ab7b560c5177289b0d0fe5b8bd25b7cb7896e5211e8d03079c8fa66"
+    },
+    {
+      "path": "docs/evidence/daw-3/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "f8a5fdae836604c117306067fe9a9a22881cddf97ccf50678ed0836318003eb6",
+      "publicSha256": "9f67a9e8c3c0ae4b85f0448253360ebc41cbc89480e61d14269b1a150aad0aaa",
+      "originalNormalizedSha256": "f8a5fdae836604c117306067fe9a9a22881cddf97ccf50678ed0836318003eb6",
+      "publicNormalizedSha256": "9f67a9e8c3c0ae4b85f0448253360ebc41cbc89480e61d14269b1a150aad0aaa"
+    },
+    {
+      "path": "docs/evidence/daw-4/agent-allowlist/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "89692a0c67e586f0da303ea4f568790805805fd636e8e97e650985732c40f7e8",
+      "publicSha256": "6d576b4f15ed4bea436795a273db9d53a3160c4befa49aad9783447a2548a3f3",
+      "originalNormalizedSha256": "89692a0c67e586f0da303ea4f568790805805fd636e8e97e650985732c40f7e8",
+      "publicNormalizedSha256": "6d576b4f15ed4bea436795a273db9d53a3160c4befa49aad9783447a2548a3f3"
+    },
+    {
+      "path": "docs/evidence/daw-4/agent-budget/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "9b9f76c77297ab2cf6a6373f128cf5f0fc7bdc43f626b99d5c455d39c7f9d606",
+      "publicSha256": "01e7b31177c1b71178154905ca26efd5bf82ea00b869900c86ed74008e7caae4",
+      "originalNormalizedSha256": "9b9f76c77297ab2cf6a6373f128cf5f0fc7bdc43f626b99d5c455d39c7f9d606",
+      "publicNormalizedSha256": "01e7b31177c1b71178154905ca26efd5bf82ea00b869900c86ed74008e7caae4"
+    },
+    {
+      "path": "docs/evidence/daw-4/agent-budget/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "8b5bee04070c59cb6aee76ce30460b262c4634e15b9071927d9d35945ae009af",
+      "publicSha256": "a9744f3ebec34ce003f77f43bed88cb4146d5220dab61a8e64be9af093ac3d03",
+      "originalNormalizedSha256": "8b5bee04070c59cb6aee76ce30460b262c4634e15b9071927d9d35945ae009af",
+      "publicNormalizedSha256": "a9744f3ebec34ce003f77f43bed88cb4146d5220dab61a8e64be9af093ac3d03"
+    },
+    {
+      "path": "docs/evidence/daw-4/agent-checkpoint/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "4b3a9a8b77110f6fe6800aac6d6e156bf9f675b414fe660a7bba3148591d4b5e",
+      "publicSha256": "36982d875e880398f62011a0c23c969d8a9198cf4d7c33b35380dda2cdaf97fa",
+      "originalNormalizedSha256": "4b3a9a8b77110f6fe6800aac6d6e156bf9f675b414fe660a7bba3148591d4b5e",
+      "publicNormalizedSha256": "36982d875e880398f62011a0c23c969d8a9198cf4d7c33b35380dda2cdaf97fa"
+    },
+    {
+      "path": "docs/evidence/daw-4/agent-checkpoint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "208c6dc06422aa247785076b28fd1775286eb38d7405b56a6b711aa3ddd17600",
+      "publicSha256": "fee6412d85be949bdbbc2cac79355f6cb311c5f10337a674f6fa8f66fd145a48",
+      "originalNormalizedSha256": "208c6dc06422aa247785076b28fd1775286eb38d7405b56a6b711aa3ddd17600",
+      "publicNormalizedSha256": "fee6412d85be949bdbbc2cac79355f6cb311c5f10337a674f6fa8f66fd145a48"
+    },
+    {
+      "path": "docs/evidence/daw-4/agent-output/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "a11cbb8ee1053ef76ac846c7e1eb2fb3b3cdd3fc52bf260a2b886de28feb4047",
+      "publicSha256": "d377affb2f6ffe944cbd0a193bf044a679bfbcd41fba00c08a4211c5be05f379",
+      "originalNormalizedSha256": "a11cbb8ee1053ef76ac846c7e1eb2fb3b3cdd3fc52bf260a2b886de28feb4047",
+      "publicNormalizedSha256": "d377affb2f6ffe944cbd0a193bf044a679bfbcd41fba00c08a4211c5be05f379"
+    },
+    {
+      "path": "docs/evidence/daw-4/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "61142330af757c76c6aa778a2340a91355ee3c077b85fd38fd8ca71b0e41b516",
+      "publicSha256": "9fbe2d97930e3939f7eca453ffd16bb0b88efd2322b8054b969f14dc89a4ad50",
+      "originalNormalizedSha256": "61142330af757c76c6aa778a2340a91355ee3c077b85fd38fd8ca71b0e41b516",
+      "publicNormalizedSha256": "9fbe2d97930e3939f7eca453ffd16bb0b88efd2322b8054b969f14dc89a4ad50"
+    },
+    {
+      "path": "docs/evidence/daw-4/atomicity/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "6bebd438e349d2d56ae2e096a0357b0727ef30ab106c8792fe0a180ea101014c",
+      "publicSha256": "f6bb2bd941c75a8c274660a8f853fd02294bd516702ecbbf6926468850c3f641",
+      "originalNormalizedSha256": "6bebd438e349d2d56ae2e096a0357b0727ef30ab106c8792fe0a180ea101014c",
+      "publicNormalizedSha256": "f6bb2bd941c75a8c274660a8f853fd02294bd516702ecbbf6926468850c3f641"
+    },
+    {
+      "path": "docs/evidence/daw-4/atomicity/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "b4e4bf0a9093f848cd9c01ea278afa1516e3759444128892e23c666c300ec4c2",
+      "publicSha256": "2644225c4ed6baaa57d8222f1276f5e00d3ec3777ac383fb189e68ec1549d848",
+      "originalNormalizedSha256": "b4e4bf0a9093f848cd9c01ea278afa1516e3759444128892e23c666c300ec4c2",
+      "publicNormalizedSha256": "2644225c4ed6baaa57d8222f1276f5e00d3ec3777ac383fb189e68ec1549d848"
+    },
+    {
+      "path": "docs/evidence/daw-4/claim/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "3236edaa06864cca2c2260839347894b9af7feb0ecf5dbc8c87ed95cd74dbc04",
+      "publicSha256": "1877aca2038e34ae6c08088a18fe014bdca553ef429f9306b9015a4a85fb62df",
+      "originalNormalizedSha256": "3236edaa06864cca2c2260839347894b9af7feb0ecf5dbc8c87ed95cd74dbc04",
+      "publicNormalizedSha256": "1877aca2038e34ae6c08088a18fe014bdca553ef429f9306b9015a4a85fb62df"
+    },
+    {
+      "path": "docs/evidence/daw-4/claim/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 17,
+      "originalSha256": "0e16ef3728cc62a4e448814c4936cf422616cb3aec3de9589927050d7b4ebcc0",
+      "publicSha256": "cecb9536c237e383e97bf20b740943487b2116f0bc8228e385af49c0cf51435e",
+      "originalNormalizedSha256": "0e16ef3728cc62a4e448814c4936cf422616cb3aec3de9589927050d7b4ebcc0",
+      "publicNormalizedSha256": "cecb9536c237e383e97bf20b740943487b2116f0bc8228e385af49c0cf51435e"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-effect-key/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "27c722c5fcfb26c55269d3f80fbc286241f574075d64e67fcc83a7551d04148a",
+      "publicSha256": "c70ade55ebf1baa0d3ed7a189bcb18c4b30d2be96efc4cb080f771aee88e9ab2",
+      "originalNormalizedSha256": "27c722c5fcfb26c55269d3f80fbc286241f574075d64e67fcc83a7551d04148a",
+      "publicNormalizedSha256": "c70ade55ebf1baa0d3ed7a189bcb18c4b30d2be96efc4cb080f771aee88e9ab2"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-effect-key/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "a53f4e8e12c51d1b5d9a99812a511614a1538102f24d89ca0597e91fabcd9aca",
+      "publicSha256": "6f44a3bdb9789d74b004dd5983a06c06f728b3c1e652a7882aaad59b90ee75f4",
+      "originalNormalizedSha256": "a53f4e8e12c51d1b5d9a99812a511614a1538102f24d89ca0597e91fabcd9aca",
+      "publicNormalizedSha256": "6f44a3bdb9789d74b004dd5983a06c06f728b3c1e652a7882aaad59b90ee75f4"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-timeout/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "7f1fb7eb56acc05684ac4ac5d98e90f5de30b9427fb12dfab80756d701ac09ac",
+      "publicSha256": "9c8d259e4f82b4739cf2856bb3fbd9a2ab6f36b43b2911f50ce06df23c6c70fe",
+      "originalNormalizedSha256": "7f1fb7eb56acc05684ac4ac5d98e90f5de30b9427fb12dfab80756d701ac09ac",
+      "publicNormalizedSha256": "9c8d259e4f82b4739cf2856bb3fbd9a2ab6f36b43b2911f50ce06df23c6c70fe"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-timeout/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "5b131d68e63219419f33809199433194a203f92acad8f01df57235f8286e00f0",
+      "publicSha256": "7202c5b7dcd3c62259499c0e0b2ecd900fda8ec78d05fb12b5ff35e37fcbae0a",
+      "originalNormalizedSha256": "5b131d68e63219419f33809199433194a203f92acad8f01df57235f8286e00f0",
+      "publicNormalizedSha256": "7202c5b7dcd3c62259499c0e0b2ecd900fda8ec78d05fb12b5ff35e37fcbae0a"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-unkeyed/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "78ef1ee38f55e276252ec4f98522662a44cfb30e58b6c875a8e68e65f55e5316",
+      "publicSha256": "af14e68485a7c67c32850fadd593c91e9608a196dcfe7607d280274814c93955",
+      "originalNormalizedSha256": "78ef1ee38f55e276252ec4f98522662a44cfb30e58b6c875a8e68e65f55e5316",
+      "publicNormalizedSha256": "af14e68485a7c67c32850fadd593c91e9608a196dcfe7607d280274814c93955"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-unkeyed/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "079618917730e283febc00d8727ce1d3327c04f1315004b61b7f4b5940f9ab65",
+      "publicSha256": "732fda89b34f6fc93dbcb642af1aa3cdf43263c89bde7755ac37a80dda789b92",
+      "originalNormalizedSha256": "079618917730e283febc00d8727ce1d3327c04f1315004b61b7f4b5940f9ab65",
+      "publicNormalizedSha256": "732fda89b34f6fc93dbcb642af1aa3cdf43263c89bde7755ac37a80dda789b92"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-verification/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "f7e3bdc830bc887323edc6581d1c0b1f26f56442606bb3f7b707baa904489b44",
+      "publicSha256": "53cf972275a8c4ca7063ccfe0d77644c99b4407da146f08a29eb723b896084b0",
+      "originalNormalizedSha256": "f7e3bdc830bc887323edc6581d1c0b1f26f56442606bb3f7b707baa904489b44",
+      "publicNormalizedSha256": "53cf972275a8c4ca7063ccfe0d77644c99b4407da146f08a29eb723b896084b0"
+    },
+    {
+      "path": "docs/evidence/daw-4/effect-verification/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "e5f01debc50e889972bedd11e478ee6f1be92d6fad4009e8140a2efc77f4c1ee",
+      "publicSha256": "cd0fea7b49f54d963c6e40ab0e98a23f4f77a3ecad43cff0529ef5bd7f4f08fe",
+      "originalNormalizedSha256": "e5f01debc50e889972bedd11e478ee6f1be92d6fad4009e8140a2efc77f4c1ee",
+      "publicNormalizedSha256": "cd0fea7b49f54d963c6e40ab0e98a23f4f77a3ecad43cff0529ef5bd7f4f08fe"
+    },
+    {
+      "path": "docs/evidence/daw-4/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "f4a34b664ca7a6ef5e110cfa19fb4887cbc607163b0658c003a665ee0d3a711c",
+      "publicSha256": "c4c801206a240330adc53253f57a63bd62571633fe0dff40534d1fa8a3a23274",
+      "originalNormalizedSha256": "f4a34b664ca7a6ef5e110cfa19fb4887cbc607163b0658c003a665ee0d3a711c",
+      "publicNormalizedSha256": "c4c801206a240330adc53253f57a63bd62571633fe0dff40534d1fa8a3a23274"
+    },
+    {
+      "path": "docs/evidence/daw-4/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "f84f18f501e206c33492fe9f3cfb259ee30ae253a1f1c8245a750297376e5f15",
+      "publicSha256": "de56a9149aba2c097e1074e5e3597a52de2dc0aecaeb13b3b9bd151305258f4d",
+      "originalNormalizedSha256": "f84f18f501e206c33492fe9f3cfb259ee30ae253a1f1c8245a750297376e5f15",
+      "publicNormalizedSha256": "de56a9149aba2c097e1074e5e3597a52de2dc0aecaeb13b3b9bd151305258f4d"
+    },
+    {
+      "path": "docs/evidence/daw-4/expiry/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "10d7a635bd9892f5ff5b8338a6ec6189aece834ecbc37d16ca7a14bd927add36",
+      "publicSha256": "051a4df212b94a7892cbcd01b4c3e98732bb358a2d40a1023339b85136dc842b",
+      "originalNormalizedSha256": "10d7a635bd9892f5ff5b8338a6ec6189aece834ecbc37d16ca7a14bd927add36",
+      "publicNormalizedSha256": "051a4df212b94a7892cbcd01b4c3e98732bb358a2d40a1023339b85136dc842b"
+    },
+    {
+      "path": "docs/evidence/daw-4/expiry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "0984e52907d50ba723e296682b3b8de5482f5fc6381bb13cc2ae35b6be8d95ff",
+      "publicSha256": "347286923a8c4e0017a5ad0e4f9817fa47a297a869185f00aaceaad4bf1e9dfe",
+      "originalNormalizedSha256": "0984e52907d50ba723e296682b3b8de5482f5fc6381bb13cc2ae35b6be8d95ff",
+      "publicNormalizedSha256": "347286923a8c4e0017a5ad0e4f9817fa47a297a869185f00aaceaad4bf1e9dfe"
+    },
+    {
+      "path": "docs/evidence/daw-4/fence/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "f1307c5383c388abe75060c7c90d066976b0931e55152c94c656a67938e26748",
+      "publicSha256": "fe5372f4925c329d4e246296c283d674a907f8721141559e0e7d222d9e8e3b33",
+      "originalNormalizedSha256": "f1307c5383c388abe75060c7c90d066976b0931e55152c94c656a67938e26748",
+      "publicNormalizedSha256": "fe5372f4925c329d4e246296c283d674a907f8721141559e0e7d222d9e8e3b33"
+    },
+    {
+      "path": "docs/evidence/daw-4/fence/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "49bfd181826f230db6fac6b6858796a56870b7e1c080f6a867e0542564126406",
+      "publicSha256": "c8f76e60334e2475ffe9c3b8461caee76efdeb679ddb5c027cb0a1d908bbb1cd",
+      "originalNormalizedSha256": "49bfd181826f230db6fac6b6858796a56870b7e1c080f6a867e0542564126406",
+      "publicNormalizedSha256": "c8f76e60334e2475ffe9c3b8461caee76efdeb679ddb5c027cb0a1d908bbb1cd"
+    },
+    {
+      "path": "docs/evidence/daw-4/fingerprint/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "aa9953d06fd69b37b347580d19cca69452cc98dc6dcd353892ed319159b5d330",
+      "publicSha256": "ffc3c3d2cd205947214d8edb552fcc424d535a655407b73f502e87d3cde7eeb5",
+      "originalNormalizedSha256": "aa9953d06fd69b37b347580d19cca69452cc98dc6dcd353892ed319159b5d330",
+      "publicNormalizedSha256": "ffc3c3d2cd205947214d8edb552fcc424d535a655407b73f502e87d3cde7eeb5"
+    },
+    {
+      "path": "docs/evidence/daw-4/fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "4a0400f933c59e5fdc9be964d7527c92ea66b4158ba83fde543930eed6d576f3",
+      "publicSha256": "0059f29a59cc054ef69b5428c43e8c0d23dff7ace0ca42b3851c51098bde93d6",
+      "originalNormalizedSha256": "4a0400f933c59e5fdc9be964d7527c92ea66b4158ba83fde543930eed6d576f3",
+      "publicNormalizedSha256": "0059f29a59cc054ef69b5428c43e8c0d23dff7ace0ca42b3851c51098bde93d6"
+    },
+    {
+      "path": "docs/evidence/daw-4/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "e11c760c2011e80cb5e7430cbde06266c5e7b37ccdbb70287fb28b0820b8a85d",
+      "publicSha256": "217b65c5b1db29f3e1111dab63aaf8906cb8561301cb32d0410da0f63753c0e5",
+      "originalNormalizedSha256": "e11c760c2011e80cb5e7430cbde06266c5e7b37ccdbb70287fb28b0820b8a85d",
+      "publicNormalizedSha256": "217b65c5b1db29f3e1111dab63aaf8906cb8561301cb32d0410da0f63753c0e5"
+    },
+    {
+      "path": "docs/evidence/daw-4/recovery/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "256a2901a04876f1b0ffd5f6541edb9e54376d5cfc7442b2c770b7dbd29a1fc8",
+      "publicSha256": "9f97771286bf064baf0e8c05926359e9fdcb9fa98e5f3baf04cf296c67a97bad",
+      "originalNormalizedSha256": "256a2901a04876f1b0ffd5f6541edb9e54376d5cfc7442b2c770b7dbd29a1fc8",
+      "publicNormalizedSha256": "9f97771286bf064baf0e8c05926359e9fdcb9fa98e5f3baf04cf296c67a97bad"
+    },
+    {
+      "path": "docs/evidence/daw-4/recovery/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 37,
+      "originalSha256": "5f22cc7e232b3c8c0a6eb0995f9c16e8ce2704605334a8cbcfe5b998759a4c9a",
+      "publicSha256": "1db092d2132fe7a731e9f5a69a2fa775113e59f426614729d5517e6b6158c852",
+      "originalNormalizedSha256": "5f22cc7e232b3c8c0a6eb0995f9c16e8ce2704605334a8cbcfe5b998759a4c9a",
+      "publicNormalizedSha256": "1db092d2132fe7a731e9f5a69a2fa775113e59f426614729d5517e6b6158c852"
+    },
+    {
+      "path": "docs/evidence/daw-4/retry-limit/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "c5d6cd6be1b3bb55131f459be45d44367f539c1c3e998158abab7317163c21d2",
+      "publicSha256": "7abb0e7ecd2e38a317762ad0ae4da8f7e5f246289a11fac73f21815089707a3c",
+      "originalNormalizedSha256": "c5d6cd6be1b3bb55131f459be45d44367f539c1c3e998158abab7317163c21d2",
+      "publicNormalizedSha256": "7abb0e7ecd2e38a317762ad0ae4da8f7e5f246289a11fac73f21815089707a3c"
+    },
+    {
+      "path": "docs/evidence/daw-4/retry-limit/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 11,
+      "originalSha256": "59770629ab150a0dff30ac36bdbb6e03842a217ba399208002592b0205d21d2d",
+      "publicSha256": "558e07244cf0ffe679d6abcb45fc3ee8c3af2ffe5dbd85629e4b677e042ada47",
+      "originalNormalizedSha256": "59770629ab150a0dff30ac36bdbb6e03842a217ba399208002592b0205d21d2d",
+      "publicNormalizedSha256": "558e07244cf0ffe679d6abcb45fc3ee8c3af2ffe5dbd85629e4b677e042ada47"
+    },
+    {
+      "path": "docs/evidence/daw-4/status/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "78c85bc31350f8aa0bc0562222b705a4d227fcd377f404a23af3fab2d5f23b85",
+      "publicSha256": "d80b19ab8c553fe3dd6ee02a5113405cd46542ce7df04e92717d21dea80c1834",
+      "originalNormalizedSha256": "78c85bc31350f8aa0bc0562222b705a4d227fcd377f404a23af3fab2d5f23b85",
+      "publicNormalizedSha256": "d80b19ab8c553fe3dd6ee02a5113405cd46542ce7df04e92717d21dea80c1834"
+    },
+    {
+      "path": "docs/evidence/daw-4/status/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 16,
+      "originalSha256": "8e2717ec6288a6915f8b28c64f50f56f16d523d692f169ba007e79e7f4939318",
+      "publicSha256": "e084b6d7cf2b78c4156caf80d55a47a86ba0fc9abcc1457059a677e5788758b2",
+      "originalNormalizedSha256": "8e2717ec6288a6915f8b28c64f50f56f16d523d692f169ba007e79e7f4939318",
+      "publicNormalizedSha256": "e084b6d7cf2b78c4156caf80d55a47a86ba0fc9abcc1457059a677e5788758b2"
+    },
+    {
+      "path": "docs/evidence/daw-4/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "4cf39a8b9f67f8c11dccf6ad686f861d631b8239f18e1369929a2ca2dc012d4a",
+      "publicSha256": "f1812da096185756afb1db2b57ee3a98bc4fe2ec930ea5e71b6d846f95d6aa57",
+      "originalNormalizedSha256": "4cf39a8b9f67f8c11dccf6ad686f861d631b8239f18e1369929a2ca2dc012d4a",
+      "publicNormalizedSha256": "f1812da096185756afb1db2b57ee3a98bc4fe2ec930ea5e71b6d846f95d6aa57"
+    },
+    {
+      "path": "docs/evidence/daw-5/agent-allowlist/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "e2c3dc8655174d275fd1111c46177ea89d23ed4a9c0cd6b1a5f56572ba9acb6d",
+      "publicSha256": "1789d93b7f1553a044390f3c00497055da1bcdde0a22b68f10332074447cb900",
+      "originalNormalizedSha256": "e2c3dc8655174d275fd1111c46177ea89d23ed4a9c0cd6b1a5f56572ba9acb6d",
+      "publicNormalizedSha256": "1789d93b7f1553a044390f3c00497055da1bcdde0a22b68f10332074447cb900"
+    },
+    {
+      "path": "docs/evidence/daw-5/agent-budget/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "65d41b1b6ee0b2c11f9857f922db59905c50383271bdd5dd08b4411511a39ede",
+      "publicSha256": "1f0aa726a49dce8f26dde7142f2773037509a46ee809de561057b03fb3d0c6f1",
+      "originalNormalizedSha256": "65d41b1b6ee0b2c11f9857f922db59905c50383271bdd5dd08b4411511a39ede",
+      "publicNormalizedSha256": "1f0aa726a49dce8f26dde7142f2773037509a46ee809de561057b03fb3d0c6f1"
+    },
+    {
+      "path": "docs/evidence/daw-5/agent-budget/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "18b4be19f48ca24f9efebc740a4fcae6e85975f3db874621998d82cb629c6c32",
+      "publicSha256": "91d1994d777ef14f0f920af5236c98086a80bf40b39adc5e9f954936e3937915",
+      "originalNormalizedSha256": "18b4be19f48ca24f9efebc740a4fcae6e85975f3db874621998d82cb629c6c32",
+      "publicNormalizedSha256": "91d1994d777ef14f0f920af5236c98086a80bf40b39adc5e9f954936e3937915"
+    },
+    {
+      "path": "docs/evidence/daw-5/agent-checkpoint/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "5d7db0d3eb9bad2dccca4f6fd77e672143ca93aae5c283e87f23f748fdd04f91",
+      "publicSha256": "5e0400eb9883df9639ff1b624f9f93df85bd37b0db4de9f9c5de9f92734d7bca",
+      "originalNormalizedSha256": "5d7db0d3eb9bad2dccca4f6fd77e672143ca93aae5c283e87f23f748fdd04f91",
+      "publicNormalizedSha256": "5e0400eb9883df9639ff1b624f9f93df85bd37b0db4de9f9c5de9f92734d7bca"
+    },
+    {
+      "path": "docs/evidence/daw-5/agent-checkpoint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "9acb10da2592516325492bc4c19833e4dffec82e07a6a5f19002eaf332f9d567",
+      "publicSha256": "66f6945bf277f7e22b8505f27a05375aaa525eda869b88c8dfc8c689bf458a0b",
+      "originalNormalizedSha256": "9acb10da2592516325492bc4c19833e4dffec82e07a6a5f19002eaf332f9d567",
+      "publicNormalizedSha256": "66f6945bf277f7e22b8505f27a05375aaa525eda869b88c8dfc8c689bf458a0b"
+    },
+    {
+      "path": "docs/evidence/daw-5/agent-output/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "20d32aa4537116794cc0a1e74c736ede8626f7708eb8ee26e24badd40548351c",
+      "publicSha256": "87f70ffb8d4db91ac779bd86e92d9877088285932e0b789c3542fbb18cc77e3e",
+      "originalNormalizedSha256": "20d32aa4537116794cc0a1e74c736ede8626f7708eb8ee26e24badd40548351c",
+      "publicNormalizedSha256": "87f70ffb8d4db91ac779bd86e92d9877088285932e0b789c3542fbb18cc77e3e"
+    },
+    {
+      "path": "docs/evidence/daw-5/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "fb2338f6667e2d96821fedba4d62c5e77883583ee6b497c712ab105c0a38d6bb",
+      "publicSha256": "9a9c5b25a51f03ebea776d18265f4ea42d2d372d2073e4b361ffb10471e175dd",
+      "originalNormalizedSha256": "fb2338f6667e2d96821fedba4d62c5e77883583ee6b497c712ab105c0a38d6bb",
+      "publicNormalizedSha256": "9a9c5b25a51f03ebea776d18265f4ea42d2d372d2073e4b361ffb10471e175dd"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-authorization/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "639612a880b4e53da0b1c9679d8b99921b0601a69de0e61e0201a5169eb77727",
+      "publicSha256": "a445846e266b96c92bc6345493e738a7758913b71c1854dc2c8525f968e668bd",
+      "originalNormalizedSha256": "639612a880b4e53da0b1c9679d8b99921b0601a69de0e61e0201a5169eb77727",
+      "publicNormalizedSha256": "a445846e266b96c92bc6345493e738a7758913b71c1854dc2c8525f968e668bd"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-authorization/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "4daa167d602f850670cdd191c8d867d631dfc220b010b3b9c80dc7ba9b86856f",
+      "publicSha256": "81b033620f53ac7e2f7a70d95d4e0e4a30d1c29e4c9fdead5158409a6292079d",
+      "originalNormalizedSha256": "4daa167d602f850670cdd191c8d867d631dfc220b010b3b9c80dc7ba9b86856f",
+      "publicNormalizedSha256": "81b033620f53ac7e2f7a70d95d4e0e4a30d1c29e4c9fdead5158409a6292079d"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-cancellation/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "97edbb5ea833b934685d045e84b74113812af6e0dfabbce0756f9ed5827006f9",
+      "publicSha256": "56fc30560adffad52af7557c1b24465fd26a4983749e968c82ba2a7c4b0602d7",
+      "originalNormalizedSha256": "97edbb5ea833b934685d045e84b74113812af6e0dfabbce0756f9ed5827006f9",
+      "publicNormalizedSha256": "56fc30560adffad52af7557c1b24465fd26a4983749e968c82ba2a7c4b0602d7"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-cancellation/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "5e4789b40c7d7246c7d6fa36bb7ddc2ef3f4b82de5ae6a244a0472af6ab40aa8",
+      "publicSha256": "c653692345b3378106024536546303c4049a2068c85d471c54edf667b204fd47",
+      "originalNormalizedSha256": "5e4789b40c7d7246c7d6fa36bb7ddc2ef3f4b82de5ae6a244a0472af6ab40aa8",
+      "publicNormalizedSha256": "c653692345b3378106024536546303c4049a2068c85d471c54edf667b204fd47"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-expiry/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "04760a6f4fae8ae930b53bddf0d6870fc0bebf63875a5d1443f244d89e4282c9",
+      "publicSha256": "8cad453755cefdb0b88de19701289ba9cf8828dd9f6c59971e939811ff903bc2",
+      "originalNormalizedSha256": "04760a6f4fae8ae930b53bddf0d6870fc0bebf63875a5d1443f244d89e4282c9",
+      "publicNormalizedSha256": "8cad453755cefdb0b88de19701289ba9cf8828dd9f6c59971e939811ff903bc2"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-expiry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "0c6d4b0b1c4d83d6e0e7408fe8ab3032dce3641031de4c109bdaf42a64d5d027",
+      "publicSha256": "643ec698d8325895ef27b185e9782ec4e767c1689b0517e1b3682b8c59be1053",
+      "originalNormalizedSha256": "0c6d4b0b1c4d83d6e0e7408fe8ab3032dce3641031de4c109bdaf42a64d5d027",
+      "publicNormalizedSha256": "643ec698d8325895ef27b185e9782ec4e767c1689b0517e1b3682b8c59be1053"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-fingerprint/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "bce04763c9521dcc768ebb52e44844fd509020a5b3a8c499acf0515b3f84a2f2",
+      "publicSha256": "4dfe3713ad5034d0fcdaeb7ae803f48bd8816b4520ff107f74728966ddbe2790",
+      "originalNormalizedSha256": "bce04763c9521dcc768ebb52e44844fd509020a5b3a8c499acf0515b3f84a2f2",
+      "publicNormalizedSha256": "4dfe3713ad5034d0fcdaeb7ae803f48bd8816b4520ff107f74728966ddbe2790"
+    },
+    {
+      "path": "docs/evidence/daw-5/approval-fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "7de7c9967481bc2add389a23fda78c250769a36e2d91d7838d4c77aaf5f50429",
+      "publicSha256": "cabb41fe7c4d3a81269f6d9607f55fed43914e35bc6efdafb62e4cb11b684508",
+      "originalNormalizedSha256": "7de7c9967481bc2add389a23fda78c250769a36e2d91d7838d4c77aaf5f50429",
+      "publicNormalizedSha256": "cabb41fe7c4d3a81269f6d9607f55fed43914e35bc6efdafb62e4cb11b684508"
+    },
+    {
+      "path": "docs/evidence/daw-5/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "f5aa501292c93ee8705dc30b7eeb77a9be127a0777d2b78d9263d05780fc610a",
+      "publicSha256": "b6903e38d969e92e7804b3ccac7ae8569d0b0b51ab0b9ebdbdbc29f82c38c0de",
+      "originalNormalizedSha256": "f5aa501292c93ee8705dc30b7eeb77a9be127a0777d2b78d9263d05780fc610a",
+      "publicNormalizedSha256": "b6903e38d969e92e7804b3ccac7ae8569d0b0b51ab0b9ebdbdbc29f82c38c0de"
+    },
+    {
+      "path": "docs/evidence/daw-5/atomicity/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "2f4c3f1e5bfaba6f4a93a8a595f0500c2fe9be7cd11eef0586f809e74f649ccf",
+      "publicSha256": "056ff677e2aa7ef470937c5446c7ab984c206a478c7e785e03a1248f9edde6e3",
+      "originalNormalizedSha256": "2f4c3f1e5bfaba6f4a93a8a595f0500c2fe9be7cd11eef0586f809e74f649ccf",
+      "publicNormalizedSha256": "056ff677e2aa7ef470937c5446c7ab984c206a478c7e785e03a1248f9edde6e3"
+    },
+    {
+      "path": "docs/evidence/daw-5/atomicity/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "19e2b328631666cc936ec1286d52d606e7c1f3655b6accf99696bbe2b2664556",
+      "publicSha256": "eb46fd57b9165b578bedfb62012993b2ffb90276c9f4dd2227c2818b4c0e56eb",
+      "originalNormalizedSha256": "19e2b328631666cc936ec1286d52d606e7c1f3655b6accf99696bbe2b2664556",
+      "publicNormalizedSha256": "eb46fd57b9165b578bedfb62012993b2ffb90276c9f4dd2227c2818b4c0e56eb"
+    },
+    {
+      "path": "docs/evidence/daw-5/claim/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "abb215f01fa73614305a33a5e8f283e248fdc5699eb0965e009e9c8ed5ccda50",
+      "publicSha256": "f42e6bdb03ec46efffff4a7994caf12b0f48b668480516afc500a480547f10c4",
+      "originalNormalizedSha256": "abb215f01fa73614305a33a5e8f283e248fdc5699eb0965e009e9c8ed5ccda50",
+      "publicNormalizedSha256": "f42e6bdb03ec46efffff4a7994caf12b0f48b668480516afc500a480547f10c4"
+    },
+    {
+      "path": "docs/evidence/daw-5/claim/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 17,
+      "originalSha256": "f46dc31a107c3f90b6065e138347ea5c3bb11314dce3e044a6b6cbc62600d373",
+      "publicSha256": "44855f8ebb5a70de79a95b12c8300d9fbc8a4f08f01cdbbd7b3183774dd5327e",
+      "originalNormalizedSha256": "f46dc31a107c3f90b6065e138347ea5c3bb11314dce3e044a6b6cbc62600d373",
+      "publicNormalizedSha256": "44855f8ebb5a70de79a95b12c8300d9fbc8a4f08f01cdbbd7b3183774dd5327e"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-effect-key/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "7d2dfacc9db921d5ba0ffb449c7127f281efae6dde3b164940092c768c9aa75c",
+      "publicSha256": "730fd231cc5cec31383f8c71bea87ac63588ccbe991529185faea136e2775c18",
+      "originalNormalizedSha256": "7d2dfacc9db921d5ba0ffb449c7127f281efae6dde3b164940092c768c9aa75c",
+      "publicNormalizedSha256": "730fd231cc5cec31383f8c71bea87ac63588ccbe991529185faea136e2775c18"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-effect-key/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "ca3ec8a1b82fbd746483ef21d1cb2c463b0ef3cda91322913490fceebf8da81d",
+      "publicSha256": "15efbedf4031a2c5606df4aff427a036911b2ee5ce25f5f6766dde6d15ba53f6",
+      "originalNormalizedSha256": "ca3ec8a1b82fbd746483ef21d1cb2c463b0ef3cda91322913490fceebf8da81d",
+      "publicNormalizedSha256": "15efbedf4031a2c5606df4aff427a036911b2ee5ce25f5f6766dde6d15ba53f6"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-timeout/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "70a2831600c29abb42057ec3f27e0bfd337687b66f86e152993668212bd6611c",
+      "publicSha256": "c9cfdf8e6a96ae8d460a0500a538e9bbd78fcf087fb9c76e182de42d2b11ca0f",
+      "originalNormalizedSha256": "70a2831600c29abb42057ec3f27e0bfd337687b66f86e152993668212bd6611c",
+      "publicNormalizedSha256": "c9cfdf8e6a96ae8d460a0500a538e9bbd78fcf087fb9c76e182de42d2b11ca0f"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-timeout/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "2c75b946d6df07188185271fdc268f940f8da05a6493a70b3eee60d339471a4a",
+      "publicSha256": "b0ca575854a5f9ac5e63dce76278ee1856c1d2a7b2838d9862a579e6e6d4b1b2",
+      "originalNormalizedSha256": "2c75b946d6df07188185271fdc268f940f8da05a6493a70b3eee60d339471a4a",
+      "publicNormalizedSha256": "b0ca575854a5f9ac5e63dce76278ee1856c1d2a7b2838d9862a579e6e6d4b1b2"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-unkeyed/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "0b67db68a9c284f7450fbf8579e7d1f77a1ab226f2a6d1f53c85248c470f0ab2",
+      "publicSha256": "1b3c603eb789ca48b7f105f14c89397075fcab2bd967ca622bcd8acc02068521",
+      "originalNormalizedSha256": "0b67db68a9c284f7450fbf8579e7d1f77a1ab226f2a6d1f53c85248c470f0ab2",
+      "publicNormalizedSha256": "1b3c603eb789ca48b7f105f14c89397075fcab2bd967ca622bcd8acc02068521"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-unkeyed/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "9f3bde1a472e991620c2e941d1bc003bdd901d3215ce6f009d7cf33a01452154",
+      "publicSha256": "7cd90b2f9f06731d45ded4e6e6a1d878392d7a6b0c6a801e0d442a93447ed21e",
+      "originalNormalizedSha256": "9f3bde1a472e991620c2e941d1bc003bdd901d3215ce6f009d7cf33a01452154",
+      "publicNormalizedSha256": "7cd90b2f9f06731d45ded4e6e6a1d878392d7a6b0c6a801e0d442a93447ed21e"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-verification/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "622a6832a76b690cf20cd5fa1fd0b0a6032f3a3246422e0b768250450c54c254",
+      "publicSha256": "ebe327bdf4f58a3eac4a4f8fe7bfc75f9f537179744ae703c39c75394b2b3da1",
+      "originalNormalizedSha256": "622a6832a76b690cf20cd5fa1fd0b0a6032f3a3246422e0b768250450c54c254",
+      "publicNormalizedSha256": "ebe327bdf4f58a3eac4a4f8fe7bfc75f9f537179744ae703c39c75394b2b3da1"
+    },
+    {
+      "path": "docs/evidence/daw-5/effect-verification/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "4dd39127289b4b8c856f603c4864db2f7fb379586b13463f0fc105a519f2c864",
+      "publicSha256": "d73d6eb31ae13211c6f93c5e72a10f4ae3492a63a6b1f08b7697a4e555702325",
+      "originalNormalizedSha256": "4dd39127289b4b8c856f603c4864db2f7fb379586b13463f0fc105a519f2c864",
+      "publicNormalizedSha256": "d73d6eb31ae13211c6f93c5e72a10f4ae3492a63a6b1f08b7697a4e555702325"
+    },
+    {
+      "path": "docs/evidence/daw-5/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "038309e0d5b9f998c55b5b5f9e574ccea5107b84db0caa09dd7e77351dbc8ab9",
+      "publicSha256": "b4c24e01a24f72015ecc74004cf82377da757b2f2b044d409cd74d9938262bad",
+      "originalNormalizedSha256": "038309e0d5b9f998c55b5b5f9e574ccea5107b84db0caa09dd7e77351dbc8ab9",
+      "publicNormalizedSha256": "b4c24e01a24f72015ecc74004cf82377da757b2f2b044d409cd74d9938262bad"
+    },
+    {
+      "path": "docs/evidence/daw-5/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "b32b541091a72926d142c849ed074e96d942ab149ddefc88efad039f4ddf6aec",
+      "publicSha256": "8bbf4a710c2abfd1a06577a136507a5efbb6365e1f109c344c702e08569cb2a1",
+      "originalNormalizedSha256": "b32b541091a72926d142c849ed074e96d942ab149ddefc88efad039f4ddf6aec",
+      "publicNormalizedSha256": "8bbf4a710c2abfd1a06577a136507a5efbb6365e1f109c344c702e08569cb2a1"
+    },
+    {
+      "path": "docs/evidence/daw-5/expiry/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "2bf76729bc04134824506fd50a1af737ba3bab70e2bd9cf75071509133ada7ef",
+      "publicSha256": "bf28d4deaf42656c72bfa096fd42b1744b1e15f9a4b1f4d90874ac97282e3cf0",
+      "originalNormalizedSha256": "2bf76729bc04134824506fd50a1af737ba3bab70e2bd9cf75071509133ada7ef",
+      "publicNormalizedSha256": "bf28d4deaf42656c72bfa096fd42b1744b1e15f9a4b1f4d90874ac97282e3cf0"
+    },
+    {
+      "path": "docs/evidence/daw-5/expiry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "d140083d27d267f1fcd9e453c48ae668134b1de731d92e2720ae0c0e9faa45ef",
+      "publicSha256": "45ca06c8f6a7365476d4449b190132732a41e5fb047f9792ebf4f74825fea55a",
+      "originalNormalizedSha256": "d140083d27d267f1fcd9e453c48ae668134b1de731d92e2720ae0c0e9faa45ef",
+      "publicNormalizedSha256": "45ca06c8f6a7365476d4449b190132732a41e5fb047f9792ebf4f74825fea55a"
+    },
+    {
+      "path": "docs/evidence/daw-5/fence/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "bf74a46ecc20a499b10f2dfbca24c5f455fba6f995b5c7ed2e6ff04ff4b90925",
+      "publicSha256": "2d6d0dd65ee54feb76b83db55369fd94933e24c2764cbdeecc40489ddf5ab4fb",
+      "originalNormalizedSha256": "bf74a46ecc20a499b10f2dfbca24c5f455fba6f995b5c7ed2e6ff04ff4b90925",
+      "publicNormalizedSha256": "2d6d0dd65ee54feb76b83db55369fd94933e24c2764cbdeecc40489ddf5ab4fb"
+    },
+    {
+      "path": "docs/evidence/daw-5/fence/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "06469f3a166d0be0a87f77d3134dc43f3d70435284af82fdc4dde76fe68f512e",
+      "publicSha256": "c3036091b0d6ffb8874d8af511119f3cad005c1885893dd88ff6d56cc6cdf717",
+      "originalNormalizedSha256": "06469f3a166d0be0a87f77d3134dc43f3d70435284af82fdc4dde76fe68f512e",
+      "publicNormalizedSha256": "c3036091b0d6ffb8874d8af511119f3cad005c1885893dd88ff6d56cc6cdf717"
+    },
+    {
+      "path": "docs/evidence/daw-5/fingerprint/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "77bc3301eaea4f1a4dc1e9d60dc2b8fd19b4b5c72fe525f4b3c26ab297eea367",
+      "publicSha256": "47b87c96934206343d9b3cd718b834ad338fa72f122a4cb35fd74d18c8f58097",
+      "originalNormalizedSha256": "77bc3301eaea4f1a4dc1e9d60dc2b8fd19b4b5c72fe525f4b3c26ab297eea367",
+      "publicNormalizedSha256": "47b87c96934206343d9b3cd718b834ad338fa72f122a4cb35fd74d18c8f58097"
+    },
+    {
+      "path": "docs/evidence/daw-5/fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "eea19138cfe77cc92d852e5b018e54bac65e18a9bab50a3124683e4428ba3f10",
+      "publicSha256": "f4f1ddfa784f4368291e6ac380989865c7cc89eb6f1d9e5e32834d30c3604452",
+      "originalNormalizedSha256": "eea19138cfe77cc92d852e5b018e54bac65e18a9bab50a3124683e4428ba3f10",
+      "publicNormalizedSha256": "f4f1ddfa784f4368291e6ac380989865c7cc89eb6f1d9e5e32834d30c3604452"
+    },
+    {
+      "path": "docs/evidence/daw-5/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "c13e727f37a9e14ad921321a9677d424509593f44481ee0c42d1f985119aa110",
+      "publicSha256": "1b7bf39d8acfff96e78bbaebb3bcc97c33db323ae72ccc0732267ddd2d8ced9a",
+      "originalNormalizedSha256": "c13e727f37a9e14ad921321a9677d424509593f44481ee0c42d1f985119aa110",
+      "publicNormalizedSha256": "1b7bf39d8acfff96e78bbaebb3bcc97c33db323ae72ccc0732267ddd2d8ced9a"
+    },
+    {
+      "path": "docs/evidence/daw-5/recovery/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "fb2555d4671f7390f9b29e260e89178b66464077fb4ede6151881ec490638ec2",
+      "publicSha256": "84ef22f88a1cac4fb8f84b442e92fc3b3f958996919742469c1d1cb6a6af3f36",
+      "originalNormalizedSha256": "fb2555d4671f7390f9b29e260e89178b66464077fb4ede6151881ec490638ec2",
+      "publicNormalizedSha256": "84ef22f88a1cac4fb8f84b442e92fc3b3f958996919742469c1d1cb6a6af3f36"
+    },
+    {
+      "path": "docs/evidence/daw-5/recovery/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 37,
+      "originalSha256": "2d6204087f9dec1a9d527610e73753ea3f0eedfba4d72bc2bd860fd12ba915f2",
+      "publicSha256": "7b727806d6329e7c5eb7790e350c09ead3289073dbdd16a2596eea819cc07dd0",
+      "originalNormalizedSha256": "2d6204087f9dec1a9d527610e73753ea3f0eedfba4d72bc2bd860fd12ba915f2",
+      "publicNormalizedSha256": "7b727806d6329e7c5eb7790e350c09ead3289073dbdd16a2596eea819cc07dd0"
+    },
+    {
+      "path": "docs/evidence/daw-5/retry-limit/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "5454792a9192aeb1a040a2b003ab819fa49a451027fcdf713332d524d48bdc42",
+      "publicSha256": "ea75d6d277e461a1ed042386ce0d5cc9d1fe65e910ff6411810749127c7e4824",
+      "originalNormalizedSha256": "5454792a9192aeb1a040a2b003ab819fa49a451027fcdf713332d524d48bdc42",
+      "publicNormalizedSha256": "ea75d6d277e461a1ed042386ce0d5cc9d1fe65e910ff6411810749127c7e4824"
+    },
+    {
+      "path": "docs/evidence/daw-5/retry-limit/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 11,
+      "originalSha256": "99c44c3e0fc17dad3d196434989a6f1b56f316aa51b30a1cf6123ea2aa941d86",
+      "publicSha256": "04e2a5d51aa23f9ea782441be85d9b4377d94ec7e72d9914a6fa3cc209640194",
+      "originalNormalizedSha256": "99c44c3e0fc17dad3d196434989a6f1b56f316aa51b30a1cf6123ea2aa941d86",
+      "publicNormalizedSha256": "04e2a5d51aa23f9ea782441be85d9b4377d94ec7e72d9914a6fa3cc209640194"
+    },
+    {
+      "path": "docs/evidence/daw-5/status/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "c8dc5d97b9032e653e3d1194d475733b215b70064edfafddd656e748ef475a51",
+      "publicSha256": "09375e5a758cbf56461d0267736b99a0c1a6f8f47326b838aafc2f8e5996faee",
+      "originalNormalizedSha256": "c8dc5d97b9032e653e3d1194d475733b215b70064edfafddd656e748ef475a51",
+      "publicNormalizedSha256": "09375e5a758cbf56461d0267736b99a0c1a6f8f47326b838aafc2f8e5996faee"
+    },
+    {
+      "path": "docs/evidence/daw-5/status/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 16,
+      "originalSha256": "b89d5ef04d340e8674accfa8b7c8d30824e4fb71d19be6583fd007ef70ea719a",
+      "publicSha256": "c0129f7f67cb4e745a8260ce40d0d528566df19ecbfd51a0aa870de3cafaf963",
+      "originalNormalizedSha256": "b89d5ef04d340e8674accfa8b7c8d30824e4fb71d19be6583fd007ef70ea719a",
+      "publicNormalizedSha256": "c0129f7f67cb4e745a8260ce40d0d528566df19ecbfd51a0aa870de3cafaf963"
+    },
+    {
+      "path": "docs/evidence/daw-5/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "1b6094bd1bcc45d9c2822fdfd8628a19c2790b8983390e6892f80e914ab34fce",
+      "publicSha256": "140809b5e3037874bff0deccc60e438c88e2f8369a47eb18c1d4dffc5b3454ac",
+      "originalNormalizedSha256": "1b6094bd1bcc45d9c2822fdfd8628a19c2790b8983390e6892f80e914ab34fce",
+      "publicNormalizedSha256": "140809b5e3037874bff0deccc60e438c88e2f8369a47eb18c1d4dffc5b3454ac"
+    },
+    {
+      "path": "docs/evidence/daw-6/agent-allowlist/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "569bd57a0fbc07a7d96872d945a1f35d898e66aa7ab896f4de0d4555f2991a43",
+      "publicSha256": "adda1b46e7e8b0c5d7a30e391018c2e2de7638f773d95ace07e65496a27da37b",
+      "originalNormalizedSha256": "569bd57a0fbc07a7d96872d945a1f35d898e66aa7ab896f4de0d4555f2991a43",
+      "publicNormalizedSha256": "adda1b46e7e8b0c5d7a30e391018c2e2de7638f773d95ace07e65496a27da37b"
+    },
+    {
+      "path": "docs/evidence/daw-6/agent-budget/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "53529ce7103c6de4a5fe8b5fb35d4fabfd945e6aaf8077426e0bff2e6ece9b64",
+      "publicSha256": "3299cdea4c6f09480b590fdc8a8be6252821f458276b7baff85b004362ddfa25",
+      "originalNormalizedSha256": "53529ce7103c6de4a5fe8b5fb35d4fabfd945e6aaf8077426e0bff2e6ece9b64",
+      "publicNormalizedSha256": "3299cdea4c6f09480b590fdc8a8be6252821f458276b7baff85b004362ddfa25"
+    },
+    {
+      "path": "docs/evidence/daw-6/agent-budget/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "49b290b1ddb0aa1a2b03e42ba87bc965c8da361437dca49ea42d3c700e87b452",
+      "publicSha256": "ec45f829e8dfef94c0cc19a67289dd490382b2a3051c0e4b575a905e967d3b59",
+      "originalNormalizedSha256": "49b290b1ddb0aa1a2b03e42ba87bc965c8da361437dca49ea42d3c700e87b452",
+      "publicNormalizedSha256": "ec45f829e8dfef94c0cc19a67289dd490382b2a3051c0e4b575a905e967d3b59"
+    },
+    {
+      "path": "docs/evidence/daw-6/agent-checkpoint/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "3a10286d0069260a61e41ad01f3a66c3ac099705d469b7daf5048eb01ae63ed8",
+      "publicSha256": "4c4cc0027161d49b6c7d9d23d875efe639979199861d98ce41ff7c3b21dd1317",
+      "originalNormalizedSha256": "3a10286d0069260a61e41ad01f3a66c3ac099705d469b7daf5048eb01ae63ed8",
+      "publicNormalizedSha256": "4c4cc0027161d49b6c7d9d23d875efe639979199861d98ce41ff7c3b21dd1317"
+    },
+    {
+      "path": "docs/evidence/daw-6/agent-checkpoint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "ebe90d095ffaf942ab765960ba17bd1bb2d2ab18ee97e2cabd2d2d7c47cae561",
+      "publicSha256": "c0689f31443c20e2a7d92ea6f1f27d81763a881def368b2d30b1e11577ad65e1",
+      "originalNormalizedSha256": "ebe90d095ffaf942ab765960ba17bd1bb2d2ab18ee97e2cabd2d2d7c47cae561",
+      "publicNormalizedSha256": "c0689f31443c20e2a7d92ea6f1f27d81763a881def368b2d30b1e11577ad65e1"
+    },
+    {
+      "path": "docs/evidence/daw-6/agent-output/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "84323ffdc100118dd4b2de2a3114b760df7880e7bfc401129f78c867cb947008",
+      "publicSha256": "53932396626a9c1b277bb17070bbc1e02b869cbe406825e44ff1d0f844f69b33",
+      "originalNormalizedSha256": "84323ffdc100118dd4b2de2a3114b760df7880e7bfc401129f78c867cb947008",
+      "publicNormalizedSha256": "53932396626a9c1b277bb17070bbc1e02b869cbe406825e44ff1d0f844f69b33"
+    },
+    {
+      "path": "docs/evidence/daw-6/agent.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "a58b6863d3d47b9805bdbb562d46d937f410213ce8b6bfd85b1bf957eac570ed",
+      "publicSha256": "e6dbd10f27348973a1614d8d27b9d916daaab76b669995bb6c70d1a62a30c202",
+      "originalNormalizedSha256": "a58b6863d3d47b9805bdbb562d46d937f410213ce8b6bfd85b1bf957eac570ed",
+      "publicNormalizedSha256": "e6dbd10f27348973a1614d8d27b9d916daaab76b669995bb6c70d1a62a30c202"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-authorization/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "95cf6d7fa095a0c62b78eac7cbcdee925376330d422c48092cdbe54520231c3f",
+      "publicSha256": "f341c52deb3556faf918bac367923222b2ae166b83a969dcd316c12c055173ca",
+      "originalNormalizedSha256": "95cf6d7fa095a0c62b78eac7cbcdee925376330d422c48092cdbe54520231c3f",
+      "publicNormalizedSha256": "f341c52deb3556faf918bac367923222b2ae166b83a969dcd316c12c055173ca"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-authorization/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "6e1c9323a3256cdff3641564ef355fbbceb42d0389a489eea17aec15056192d0",
+      "publicSha256": "5c6cba224b1449991784ca3eb3eee3ab7249561ff8981b0287189cff6a87f3b7",
+      "originalNormalizedSha256": "6e1c9323a3256cdff3641564ef355fbbceb42d0389a489eea17aec15056192d0",
+      "publicNormalizedSha256": "5c6cba224b1449991784ca3eb3eee3ab7249561ff8981b0287189cff6a87f3b7"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-cancellation/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "6209b5959792e1ae5ff4642c9932a4917d372a52e0535f8179464b39e9fd1c38",
+      "publicSha256": "425c945060a79665d35603fb1cb291ad774259702ea46949db19e9f11cdd9e81",
+      "originalNormalizedSha256": "6209b5959792e1ae5ff4642c9932a4917d372a52e0535f8179464b39e9fd1c38",
+      "publicNormalizedSha256": "425c945060a79665d35603fb1cb291ad774259702ea46949db19e9f11cdd9e81"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-cancellation/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "e669f7812a3dfcad568f30e2fac92630ba0499b202af2b8d60956bb91409dd88",
+      "publicSha256": "2669a64536226d1cf4fc2609cb32c459e9eb9d4fb7597562a75d5ee8fecf39b2",
+      "originalNormalizedSha256": "e669f7812a3dfcad568f30e2fac92630ba0499b202af2b8d60956bb91409dd88",
+      "publicNormalizedSha256": "2669a64536226d1cf4fc2609cb32c459e9eb9d4fb7597562a75d5ee8fecf39b2"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-expiry/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "e657b0dc19e5bf6a9c292412bfa45c5ab2adbaf3f5581f8f9d7a328835c57e02",
+      "publicSha256": "4680aa928ae73dfeae01cfee16926afba663d3a8c2d34a6567918be5632167f9",
+      "originalNormalizedSha256": "e657b0dc19e5bf6a9c292412bfa45c5ab2adbaf3f5581f8f9d7a328835c57e02",
+      "publicNormalizedSha256": "4680aa928ae73dfeae01cfee16926afba663d3a8c2d34a6567918be5632167f9"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-expiry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "abc2b1948b7c6a0f99e09f7752dbaeedf350c4780658fcbab236e9910e1f6b2e",
+      "publicSha256": "d2f2be97980ab63d9254806b79ca9df8c48365e7da5ffddeb98726e2db3d93c0",
+      "originalNormalizedSha256": "abc2b1948b7c6a0f99e09f7752dbaeedf350c4780658fcbab236e9910e1f6b2e",
+      "publicNormalizedSha256": "d2f2be97980ab63d9254806b79ca9df8c48365e7da5ffddeb98726e2db3d93c0"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-fingerprint/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "a1b6bfce5b89e7334d5bc63dcd8fdf27c6fe7792da0757c78b37d581a579c743",
+      "publicSha256": "4cf7df2d169b89e969d7d4c189972dc224fedbbe55ddbccaf1fc381646c739a9",
+      "originalNormalizedSha256": "a1b6bfce5b89e7334d5bc63dcd8fdf27c6fe7792da0757c78b37d581a579c743",
+      "publicNormalizedSha256": "4cf7df2d169b89e969d7d4c189972dc224fedbbe55ddbccaf1fc381646c739a9"
+    },
+    {
+      "path": "docs/evidence/daw-6/approval-fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "0ecf6b941f4fc67407fdccd7c49dcf101635e7a6f78baee77897ab9fc11c34b9",
+      "publicSha256": "81ddd03870ef07b8739ebcd090b6ba2e96069535d1a368a53b9205c7f365376c",
+      "originalNormalizedSha256": "0ecf6b941f4fc67407fdccd7c49dcf101635e7a6f78baee77897ab9fc11c34b9",
+      "publicNormalizedSha256": "81ddd03870ef07b8739ebcd090b6ba2e96069535d1a368a53b9205c7f365376c"
+    },
+    {
+      "path": "docs/evidence/daw-6/approvals.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "49e50e08a60c27b4bdb187f64fe07c7be161ccaa2f417c55d10f9d57f6fb57ec",
+      "publicSha256": "b0f6bb0e2d0e06ba0b30f41015793173e08f81f1fbabd75671ef066cd0b4aaf6",
+      "originalNormalizedSha256": "49e50e08a60c27b4bdb187f64fe07c7be161ccaa2f417c55d10f9d57f6fb57ec",
+      "publicNormalizedSha256": "b0f6bb0e2d0e06ba0b30f41015793173e08f81f1fbabd75671ef066cd0b4aaf6"
+    },
+    {
+      "path": "docs/evidence/daw-6/atomicity/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "62d911feb60ec2e2b30ea1f87cc9d46a01c01544bbb8a0ece083d91303242585",
+      "publicSha256": "39666b34b0eaeea52b3da4110d55ac668c52671068b4eb1a5f81deec7a09b4e9",
+      "originalNormalizedSha256": "62d911feb60ec2e2b30ea1f87cc9d46a01c01544bbb8a0ece083d91303242585",
+      "publicNormalizedSha256": "39666b34b0eaeea52b3da4110d55ac668c52671068b4eb1a5f81deec7a09b4e9"
+    },
+    {
+      "path": "docs/evidence/daw-6/atomicity/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "005db3f9b97e7a5f7893de429435a39430e38fb72bba7c120cd785a8252c1856",
+      "publicSha256": "9c4b4148988d8c0edfea87026fe15b08a574815dcf9fd7cb3cb1d6868cf49269",
+      "originalNormalizedSha256": "005db3f9b97e7a5f7893de429435a39430e38fb72bba7c120cd785a8252c1856",
+      "publicNormalizedSha256": "9c4b4148988d8c0edfea87026fe15b08a574815dcf9fd7cb3cb1d6868cf49269"
+    },
+    {
+      "path": "docs/evidence/daw-6/claim/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "d04ecd52df833e207e4c221f42025e750b51bf84275ca6a3aa95d92a908b48e6",
+      "publicSha256": "bd615aaa9697974beb98d5820be24a15b649455c29eec6b63e9849dc1edd04f5",
+      "originalNormalizedSha256": "d04ecd52df833e207e4c221f42025e750b51bf84275ca6a3aa95d92a908b48e6",
+      "publicNormalizedSha256": "bd615aaa9697974beb98d5820be24a15b649455c29eec6b63e9849dc1edd04f5"
+    },
+    {
+      "path": "docs/evidence/daw-6/claim/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 17,
+      "originalSha256": "ff649b95bdd21b409e154fd1c880cf3297ddc7f8d11699355ffefd42c27e90ea",
+      "publicSha256": "96a56f46395ebba7ff73978cbb97280e5c13c8cedff9316708b1f080a4304a04",
+      "originalNormalizedSha256": "ff649b95bdd21b409e154fd1c880cf3297ddc7f8d11699355ffefd42c27e90ea",
+      "publicNormalizedSha256": "96a56f46395ebba7ff73978cbb97280e5c13c8cedff9316708b1f080a4304a04"
+    },
+    {
+      "path": "docs/evidence/daw-6/diagnostics/parallel-2026-09-06/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 3,
+      "originalSha256": "4656236a886296ca27102cea2abf545cdb574dc49723a850a0e0fc3d0aac8e29",
+      "publicSha256": "ce7725b94a5e0d6c48861f5a19248b2605952bd5c1530b6d3a869a9876c2cf0a",
+      "originalNormalizedSha256": "4656236a886296ca27102cea2abf545cdb574dc49723a850a0e0fc3d0aac8e29",
+      "publicNormalizedSha256": "ce7725b94a5e0d6c48861f5a19248b2605952bd5c1530b6d3a869a9876c2cf0a"
+    },
+    {
+      "path": "docs/evidence/daw-6/diagnostics/parallel-2026-09-06/validation.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 10,
+      "originalSha256": "fb3d8c954cb3f8625f16eae22f4de66c760f92a4b4363a051317a5ddebac31dc",
+      "publicSha256": "58490b21f6b304b287448fe3d88ed53f38e53802f973d005965456b56781580c",
+      "originalNormalizedSha256": "fb3d8c954cb3f8625f16eae22f4de66c760f92a4b4363a051317a5ddebac31dc",
+      "publicNormalizedSha256": "58490b21f6b304b287448fe3d88ed53f38e53802f973d005965456b56781580c"
+    },
+    {
+      "path": "docs/evidence/daw-6/diagnostics/parallel-2026-09-08/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 3,
+      "originalSha256": "74ffafa8cbc91296768372570012ce4ce480301d0a46883f0951429aa21d127f",
+      "publicSha256": "f702646abaab281c19cbeb9f0fb1be1f1b0b538fefca8168416d2af1fa71ff43",
+      "originalNormalizedSha256": "74ffafa8cbc91296768372570012ce4ce480301d0a46883f0951429aa21d127f",
+      "publicNormalizedSha256": "f702646abaab281c19cbeb9f0fb1be1f1b0b538fefca8168416d2af1fa71ff43"
+    },
+    {
+      "path": "docs/evidence/daw-6/diagnostics/parallel-2026-09-08/validation.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 29,
+      "originalSha256": "5509af7f5e75772b3a24d027d33d21ed4cb2ebed27bcc3b31fc247e8582df732",
+      "publicSha256": "3c5c5fe5d655a58b89cd9d4807389080329569740d76ecfac0c280ccd851e891",
+      "originalNormalizedSha256": "5509af7f5e75772b3a24d027d33d21ed4cb2ebed27bcc3b31fc247e8582df732",
+      "publicNormalizedSha256": "3c5c5fe5d655a58b89cd9d4807389080329569740d76ecfac0c280ccd851e891"
+    },
+    {
+      "path": "docs/evidence/daw-6/diagnostics/serial-windows-mount/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "aca1efbecdc12cbcf1c4d881664ce969767e21733b451dce83ac42e48fb536a1",
+      "publicSha256": "11c90ddb7b9aa31707d78cf8c8897a3f5073b8f82da259a45ea6cfc6a96e26dd",
+      "originalNormalizedSha256": "aca1efbecdc12cbcf1c4d881664ce969767e21733b451dce83ac42e48fb536a1",
+      "publicNormalizedSha256": "11c90ddb7b9aa31707d78cf8c8897a3f5073b8f82da259a45ea6cfc6a96e26dd"
+    },
+    {
+      "path": "docs/evidence/daw-6/diagnostics/serial-windows-mount/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 3,
+      "originalSha256": "1fe485bf532d6ceea06de600880def6fdb8d9e97a8826d1b001bcae91c3e69df",
+      "publicSha256": "f376625cefd9fea1959d9d959ff5c6c094258cefe97514ac944200bce356610a",
+      "originalNormalizedSha256": "1fe485bf532d6ceea06de600880def6fdb8d9e97a8826d1b001bcae91c3e69df",
+      "publicNormalizedSha256": "f376625cefd9fea1959d9d959ff5c6c094258cefe97514ac944200bce356610a"
+    },
+    {
+      "path": "docs/evidence/daw-6/diagnostics/serial-windows-mount/validation.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 33,
+      "originalSha256": "580768bb8c188186ad920b950cbee7fcbd15517f8bf5348b3aae96648ae76af3",
+      "publicSha256": "682a5ac356e4252c687d0e8cb9f998403f21e8739bfad79d595ba43f9a52e208",
+      "originalNormalizedSha256": "580768bb8c188186ad920b950cbee7fcbd15517f8bf5348b3aae96648ae76af3",
+      "publicNormalizedSha256": "682a5ac356e4252c687d0e8cb9f998403f21e8739bfad79d595ba43f9a52e208"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-effect-key/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "ef491f39745bad94456fdea6c5f331f9d56f510594b4c7d641b52626fb07df8b",
+      "publicSha256": "d3d87c542f85664baff20fe28ec576edde73d4312f56061df29569d739944c64",
+      "originalNormalizedSha256": "ef491f39745bad94456fdea6c5f331f9d56f510594b4c7d641b52626fb07df8b",
+      "publicNormalizedSha256": "d3d87c542f85664baff20fe28ec576edde73d4312f56061df29569d739944c64"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-effect-key/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "35534c5158e0fe9fe1c5a16a3822cca81e79c75db5c18b036ce4aa55047cfef0",
+      "publicSha256": "b3b06005255f6ba14fa8bff473c26d7dcbb7bd3a3af4da33ebdfbd6d4e375cc4",
+      "originalNormalizedSha256": "35534c5158e0fe9fe1c5a16a3822cca81e79c75db5c18b036ce4aa55047cfef0",
+      "publicNormalizedSha256": "b3b06005255f6ba14fa8bff473c26d7dcbb7bd3a3af4da33ebdfbd6d4e375cc4"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-timeout/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "cfe90972fe99ed9fc956655d4734c5ad2fa47da0ea6635554e7dfc900d599b96",
+      "publicSha256": "d12737b16e80b1d0bab50d3a449021e6385cf327569199603dcaeb5d78e6106e",
+      "originalNormalizedSha256": "cfe90972fe99ed9fc956655d4734c5ad2fa47da0ea6635554e7dfc900d599b96",
+      "publicNormalizedSha256": "d12737b16e80b1d0bab50d3a449021e6385cf327569199603dcaeb5d78e6106e"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-timeout/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "c0da6185cf4b9253c707d1d603350e4692992f5a9017d7ed57d2fce1cfe7c9fb",
+      "publicSha256": "3efbffcda18a332eb10a9407cf90cf5688a910086f91fa0312ab63ead78f4fbe",
+      "originalNormalizedSha256": "c0da6185cf4b9253c707d1d603350e4692992f5a9017d7ed57d2fce1cfe7c9fb",
+      "publicNormalizedSha256": "3efbffcda18a332eb10a9407cf90cf5688a910086f91fa0312ab63ead78f4fbe"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-unkeyed/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "838f2da30d274284aa3adabcd459a87ebea038d4e95986adafef29189eec499e",
+      "publicSha256": "d866a9108f1c85233b4cfc8d093886b22c8a960f64193cf07bea9e839055e758",
+      "originalNormalizedSha256": "838f2da30d274284aa3adabcd459a87ebea038d4e95986adafef29189eec499e",
+      "publicNormalizedSha256": "d866a9108f1c85233b4cfc8d093886b22c8a960f64193cf07bea9e839055e758"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-unkeyed/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "697cfed64bd1f4da11546f136055e47d3dc686fceff3623305c5db54c14fa56e",
+      "publicSha256": "71aba730bb3377ab9953b4d2d2901cb294bd9335895831734199abaf2b06c2af",
+      "originalNormalizedSha256": "697cfed64bd1f4da11546f136055e47d3dc686fceff3623305c5db54c14fa56e",
+      "publicNormalizedSha256": "71aba730bb3377ab9953b4d2d2901cb294bd9335895831734199abaf2b06c2af"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-verification/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "7155af3213d9dfae08cc3f7cc0c3029546f6c358ecf62ea3921b1a196a1b5009",
+      "publicSha256": "d6d29978f1132b50178c8c9d3a5a6feac24d5cf8356af711f5290bfa146fc5ef",
+      "originalNormalizedSha256": "7155af3213d9dfae08cc3f7cc0c3029546f6c358ecf62ea3921b1a196a1b5009",
+      "publicNormalizedSha256": "d6d29978f1132b50178c8c9d3a5a6feac24d5cf8356af711f5290bfa146fc5ef"
+    },
+    {
+      "path": "docs/evidence/daw-6/effect-verification/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "9b7a49cf30650a01ac5c7f5eb89e441b56c10f45fe5334bca6e07080227d50a4",
+      "publicSha256": "e46aa9a3ba3df0962e27cdbb8af7f61bf0110f0663c2ed7394f094a706c8ea11",
+      "originalNormalizedSha256": "9b7a49cf30650a01ac5c7f5eb89e441b56c10f45fe5334bca6e07080227d50a4",
+      "publicNormalizedSha256": "e46aa9a3ba3df0962e27cdbb8af7f61bf0110f0663c2ed7394f094a706c8ea11"
+    },
+    {
+      "path": "docs/evidence/daw-6/effects.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "ade7f531c7d9df3dceef9d66162122a38f30a682914fb7709e2f52a8695bcdca",
+      "publicSha256": "9ee37a442cf00d54a0584fa42a5786a35933573b878329ac11a0e2ba45916234",
+      "originalNormalizedSha256": "ade7f531c7d9df3dceef9d66162122a38f30a682914fb7709e2f52a8695bcdca",
+      "publicNormalizedSha256": "9ee37a442cf00d54a0584fa42a5786a35933573b878329ac11a0e2ba45916234"
+    },
+    {
+      "path": "docs/evidence/daw-6/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "2f9b5e76b2ce439937783eea4357d6f7b5bde31be3bd485fda242efc437559b7",
+      "publicSha256": "89d0a36d85618f1226aad2d578c1630daf9bbcf047ed5d9a17bc2bcc28c20975",
+      "originalNormalizedSha256": "2f9b5e76b2ce439937783eea4357d6f7b5bde31be3bd485fda242efc437559b7",
+      "publicNormalizedSha256": "89d0a36d85618f1226aad2d578c1630daf9bbcf047ed5d9a17bc2bcc28c20975"
+    },
+    {
+      "path": "docs/evidence/daw-6/expiry/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "dfca3ca4f9e32b9f318ae7d3257fb38b8787f0042d39d829156baa174e2875e4",
+      "publicSha256": "da321cdaaabaf0803afc9c59b309ccd8f79bbf9c88d5dccccc02a07c8b151059",
+      "originalNormalizedSha256": "dfca3ca4f9e32b9f318ae7d3257fb38b8787f0042d39d829156baa174e2875e4",
+      "publicNormalizedSha256": "da321cdaaabaf0803afc9c59b309ccd8f79bbf9c88d5dccccc02a07c8b151059"
+    },
+    {
+      "path": "docs/evidence/daw-6/expiry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "5dc9d992ab572401d6d40f6adcc904ca6eb57252277d928549141d06cf30454e",
+      "publicSha256": "82a0530b4493b898d6eea6e38e00fbd9d9338c32dcbe28a51bf402c3ed623452",
+      "originalNormalizedSha256": "5dc9d992ab572401d6d40f6adcc904ca6eb57252277d928549141d06cf30454e",
+      "publicNormalizedSha256": "82a0530b4493b898d6eea6e38e00fbd9d9338c32dcbe28a51bf402c3ed623452"
+    },
+    {
+      "path": "docs/evidence/daw-6/fence/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "71521d6cb4f5ab63cd057d95764e6f947c136ecf35351a0f45fadc629f68b30d",
+      "publicSha256": "2bc1ec17e56522bff5e49ae7e7605098b317a46e1dfc5e92a55c723d7a3fe4a4",
+      "originalNormalizedSha256": "71521d6cb4f5ab63cd057d95764e6f947c136ecf35351a0f45fadc629f68b30d",
+      "publicNormalizedSha256": "2bc1ec17e56522bff5e49ae7e7605098b317a46e1dfc5e92a55c723d7a3fe4a4"
+    },
+    {
+      "path": "docs/evidence/daw-6/fence/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "8b56eb20b1ac78584e962f4a64fdd411c8353e31f37a517d5e6c8969c0e83211",
+      "publicSha256": "92e37f8719393de16a14b00995c80936a57126171140c43ee0aed614aab4879f",
+      "originalNormalizedSha256": "8b56eb20b1ac78584e962f4a64fdd411c8353e31f37a517d5e6c8969c0e83211",
+      "publicNormalizedSha256": "92e37f8719393de16a14b00995c80936a57126171140c43ee0aed614aab4879f"
+    },
+    {
+      "path": "docs/evidence/daw-6/fingerprint/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "7ece2b5293eef906a0d84331886565c71f572d4d5865de41cf7ca988f283814d",
+      "publicSha256": "4259a539e7f77c564673b5f589873512a13d84d2f8a17a74f1678c8bfa448dc5",
+      "originalNormalizedSha256": "7ece2b5293eef906a0d84331886565c71f572d4d5865de41cf7ca988f283814d",
+      "publicNormalizedSha256": "4259a539e7f77c564673b5f589873512a13d84d2f8a17a74f1678c8bfa448dc5"
+    },
+    {
+      "path": "docs/evidence/daw-6/fingerprint/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "20d89db92f9bc10402a48aef30424a0c8ae56664dba2dd5ad825e81a9fb7e37b",
+      "publicSha256": "a980c5c33c883bf5c50ee2b3158f7d8b670fb038a0dbf7ca548a4dd0d4b02628",
+      "originalNormalizedSha256": "20d89db92f9bc10402a48aef30424a0c8ae56664dba2dd5ad825e81a9fb7e37b",
+      "publicNormalizedSha256": "a980c5c33c883bf5c50ee2b3158f7d8b670fb038a0dbf7ca548a4dd0d4b02628"
+    },
+    {
+      "path": "docs/evidence/daw-6/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "d7d1e933375ac1617bc0144d05b99b534a80eef091eb9f5483a468b79f3d7491",
+      "publicSha256": "a03004124e6bf31545ac45320315fb479a5c36a952aedc2716aa1eebe632c088",
+      "originalNormalizedSha256": "d7d1e933375ac1617bc0144d05b99b534a80eef091eb9f5483a468b79f3d7491",
+      "publicNormalizedSha256": "a03004124e6bf31545ac45320315fb479a5c36a952aedc2716aa1eebe632c088"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-capacity/operations.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "e59fd0df8246933b72918efec3221c93a150b287637606483b9265739560d4b4",
+      "publicSha256": "9086fb5d9e4c00b0250ea478583241590485e325d61cc07e15d6d718b5931a97",
+      "originalNormalizedSha256": "e59fd0df8246933b72918efec3221c93a150b287637606483b9265739560d4b4",
+      "publicNormalizedSha256": "9086fb5d9e4c00b0250ea478583241590485e325d61cc07e15d6d718b5931a97"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-capacity/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "8e55f1f8d93dc0eac9790d8f2d1bd3083880b1dd00dfb576e2207cb3b4e6ab79",
+      "publicSha256": "4180c931931c32aac2a8b40822523da402ed4444b0e23482266ddc8ed110e8cd",
+      "originalNormalizedSha256": "8e55f1f8d93dc0eac9790d8f2d1bd3083880b1dd00dfb576e2207cb3b4e6ab79",
+      "publicNormalizedSha256": "4180c931931c32aac2a8b40822523da402ed4444b0e23482266ddc8ed110e8cd"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-outage/operations.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "e471f7b9603cb18ba20bfc2b6ce163d635c77b499efd9913650acd3fa4d47a24",
+      "publicSha256": "f0d890e7942824899f8560d32dd0a64516f75e959e845c98dd6bb67cd9d4b50a",
+      "originalNormalizedSha256": "e471f7b9603cb18ba20bfc2b6ce163d635c77b499efd9913650acd3fa4d47a24",
+      "publicNormalizedSha256": "f0d890e7942824899f8560d32dd0a64516f75e959e845c98dd6bb67cd9d4b50a"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-outage/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 16,
+      "originalSha256": "3bc881674a6948d3b191b13abeb7ceb2e50301623da90550dcc5cc67875f094b",
+      "publicSha256": "63fd7f5268c3d1237b5c89b8d276669d95c1b6632860b5d994811d4e339e532d",
+      "originalNormalizedSha256": "3bc881674a6948d3b191b13abeb7ceb2e50301623da90550dcc5cc67875f094b",
+      "publicNormalizedSha256": "63fd7f5268c3d1237b5c89b8d276669d95c1b6632860b5d994811d4e339e532d"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-readiness/operations.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "50fa563f11f1f5963da36e9fa23004030dcc9fcb0ec8f2a925ea3c8ba3324041",
+      "publicSha256": "4a62c1a9482431700340fc940b198a5521ca29e39b753312a0272c6db00cf6cd",
+      "originalNormalizedSha256": "50fa563f11f1f5963da36e9fa23004030dcc9fcb0ec8f2a925ea3c8ba3324041",
+      "publicNormalizedSha256": "4a62c1a9482431700340fc940b198a5521ca29e39b753312a0272c6db00cf6cd"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-readiness/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "8df302e4296be37edc8766ae2e979e6f926cf55770c67eebabd033d0241bf310",
+      "publicSha256": "8bc0f93b5242e647e1b68836bcdca9b231197f38a72fb716134f52c811e302f8",
+      "originalNormalizedSha256": "8df302e4296be37edc8766ae2e979e6f926cf55770c67eebabd033d0241bf310",
+      "publicNormalizedSha256": "8bc0f93b5242e647e1b68836bcdca9b231197f38a72fb716134f52c811e302f8"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-shutdown/operations.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "b31e451f7a2e033a7d1ca96b039d5babf5d64083970c1444fc01c482edebbcaf",
+      "publicSha256": "149cb89c00e11ccf28a687f5f2a49327a6801e75b3b2ccb210d4cebadc1f00c0",
+      "originalNormalizedSha256": "b31e451f7a2e033a7d1ca96b039d5babf5d64083970c1444fc01c482edebbcaf",
+      "publicNormalizedSha256": "149cb89c00e11ccf28a687f5f2a49327a6801e75b3b2ccb210d4cebadc1f00c0"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-shutdown/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 7,
+      "originalSha256": "7ee4c326aaab5858efb27907349a82d7f243b7a6de1da34a3e955b6f9536eb86",
+      "publicSha256": "f90f1fdec49a93b8d8763aae6f956c20cc5dbebbab1a96b8ab2c01712b3d2973",
+      "originalNormalizedSha256": "7ee4c326aaab5858efb27907349a82d7f243b7a6de1da34a3e955b6f9536eb86",
+      "publicNormalizedSha256": "f90f1fdec49a93b8d8763aae6f956c20cc5dbebbab1a96b8ab2c01712b3d2973"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-telemetry/operations.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "e41a2aa6f03a947e8fd3cedbe7aad624eeb5c909231f9a00a0edd1f81d2240a3",
+      "publicSha256": "c021ffcdad3462b95964433a90729a79b3ace796fafa3da37422fe76f256fbfb",
+      "originalNormalizedSha256": "e41a2aa6f03a947e8fd3cedbe7aad624eeb5c909231f9a00a0edd1f81d2240a3",
+      "publicNormalizedSha256": "c021ffcdad3462b95964433a90729a79b3ace796fafa3da37422fe76f256fbfb"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations-telemetry/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 6,
+      "originalSha256": "030eb566c9989c4acdb3f4cdd0084cb32456a781c5bc75b5ab043e7de73b9089",
+      "publicSha256": "504ca2e12f786d2fa50833045f23dcdb2ae7f11be19e75222d2c520989428b5e",
+      "originalNormalizedSha256": "030eb566c9989c4acdb3f4cdd0084cb32456a781c5bc75b5ab043e7de73b9089",
+      "publicNormalizedSha256": "504ca2e12f786d2fa50833045f23dcdb2ae7f11be19e75222d2c520989428b5e"
+    },
+    {
+      "path": "docs/evidence/daw-6/operations.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "bd0b0ef722d814646b4a31b24051f29e83a077098d6358cf7cf99db5a29228ae",
+      "publicSha256": "0c3c45122b6f4fb9d4526d36fe4b85933a2d56c0e571aaa572608463072667f0",
+      "originalNormalizedSha256": "bd0b0ef722d814646b4a31b24051f29e83a077098d6358cf7cf99db5a29228ae",
+      "publicNormalizedSha256": "0c3c45122b6f4fb9d4526d36fe4b85933a2d56c0e571aaa572608463072667f0"
+    },
+    {
+      "path": "docs/evidence/daw-6/recovery/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "f83b103eea1ff37494fced529105e126ab8cab1bc92c5645934c9ff9939e6a55",
+      "publicSha256": "6775ae84c2bfd146b041280d3ef8154eaed0a2a4d0aedad6ec69e10639c6c15f",
+      "originalNormalizedSha256": "f83b103eea1ff37494fced529105e126ab8cab1bc92c5645934c9ff9939e6a55",
+      "publicNormalizedSha256": "6775ae84c2bfd146b041280d3ef8154eaed0a2a4d0aedad6ec69e10639c6c15f"
+    },
+    {
+      "path": "docs/evidence/daw-6/recovery/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 38,
+      "originalSha256": "02eabe3b31dcc62661e8ffd6f83a8578b0d2df0e203c3560653b1772719bbaac",
+      "publicSha256": "0c7023616e4c73b17ce34af7bb9af76cf1da31cb007e1bf3fcdc6743fdba77d6",
+      "originalNormalizedSha256": "02eabe3b31dcc62661e8ffd6f83a8578b0d2df0e203c3560653b1772719bbaac",
+      "publicNormalizedSha256": "0c7023616e4c73b17ce34af7bb9af76cf1da31cb007e1bf3fcdc6743fdba77d6"
+    },
+    {
+      "path": "docs/evidence/daw-6/retry-limit/execution.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "4e3954cd264cfb5f211cdbbb432dd99127816a2633b44daac76df40d8333cd7d",
+      "publicSha256": "97d914b2a54c198ed5af0bc4f4929ff14cd7c850a6bb07b3c59bb1813a6eb0cf",
+      "originalNormalizedSha256": "4e3954cd264cfb5f211cdbbb432dd99127816a2633b44daac76df40d8333cd7d",
+      "publicNormalizedSha256": "97d914b2a54c198ed5af0bc4f4929ff14cd7c850a6bb07b3c59bb1813a6eb0cf"
+    },
+    {
+      "path": "docs/evidence/daw-6/retry-limit/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 11,
+      "originalSha256": "645065aef5dad83639270e34522260335d1b04a438a79ce955850512d7815eac",
+      "publicSha256": "5245352b8bcedaa941cd6031bb89e2ed8b6abe837f6358f459a0a803ceb9c993",
+      "originalNormalizedSha256": "645065aef5dad83639270e34522260335d1b04a438a79ce955850512d7815eac",
+      "publicNormalizedSha256": "5245352b8bcedaa941cd6031bb89e2ed8b6abe837f6358f459a0a803ceb9c993"
+    },
+    {
+      "path": "docs/evidence/daw-6/status/integration.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "d9f486fc1e51883841ce5e61548f0ca7d4dc472cc93c43ef29b0adf435aa8627",
+      "publicSha256": "9432c70446e8544802559b2c9ac5df1678313b259ab4461084d1594b78ef69be",
+      "originalNormalizedSha256": "d9f486fc1e51883841ce5e61548f0ca7d4dc472cc93c43ef29b0adf435aa8627",
+      "publicNormalizedSha256": "9432c70446e8544802559b2c9ac5df1678313b259ab4461084d1594b78ef69be"
+    },
+    {
+      "path": "docs/evidence/daw-6/status/tests.log",
+      "presentation": "path-redacted",
+      "pathOccurrences": 16,
+      "originalSha256": "36836bc3195aa35b8300a5d0611e677adcb8aa5a0d760f17400f3ed1e9e838a0",
+      "publicSha256": "10da6e2d3551f952244d470429a797d318671d2dab7d1e8fa50704f73722deb7",
+      "originalNormalizedSha256": "36836bc3195aa35b8300a5d0611e677adcb8aa5a0d760f17400f3ed1e9e838a0",
+      "publicNormalizedSha256": "10da6e2d3551f952244d470429a797d318671d2dab7d1e8fa50704f73722deb7"
+    },
+    {
+      "path": "docs/evidence/daw-6/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "b535e1a5497ece14ad0568e1e8e4a37d85d42383a3ea50bc82b7024156030957",
+      "publicSha256": "8aa67ee683af22534c692922f83fae072f9a7ae3980f1cd1ca19bd6e8033079d",
+      "originalNormalizedSha256": "b535e1a5497ece14ad0568e1e8e4a37d85d42383a3ea50bc82b7024156030957",
+      "publicNormalizedSha256": "8aa67ee683af22534c692922f83fae072f9a7ae3980f1cd1ca19bd6e8033079d"
+    },
+    {
+      "path": "docs/evidence/security-2026-09-05/summary.json",
+      "presentation": "path-redacted",
+      "pathOccurrences": 1,
+      "originalSha256": "bba827ef7d99272df1d1a8965c426ee99bdf1e4e1385805cf98d926d3ad825dc",
+      "publicSha256": "f79d13a5c66d075331f7777ea67beb56c924e7d4ed49a61a8c1386b45761ddb5",
+      "originalNormalizedSha256": "bba827ef7d99272df1d1a8965c426ee99bdf1e4e1385805cf98d926d3ad825dc",
+      "publicNormalizedSha256": "f79d13a5c66d075331f7777ea67beb56c924e7d4ed49a61a8c1386b45761ddb5"
+    },
+    {
+      "path": "docs/security-2026-09-05.md",
+      "presentation": "path-redacted",
+      "pathOccurrences": 2,
+      "originalSha256": "5f40ffe4d43ba7d14e21ecafb34c0c9bb1b31e6e99fbd6552d0ebfa1d59ddbdd",
+      "publicSha256": "178eef4957451d577543bcc48d614fc04df83e617af7d39c819dcf2e5c85e19c",
+      "originalNormalizedSha256": "5f40ffe4d43ba7d14e21ecafb34c0c9bb1b31e6e99fbd6552d0ebfa1d59ddbdd",
+      "publicNormalizedSha256": "178eef4957451d577543bcc48d614fc04df83e617af7d39c819dcf2e5c85e19c"
+    }
+  ]
+}

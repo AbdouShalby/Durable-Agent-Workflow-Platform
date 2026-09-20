@@ -569,18 +569,18 @@ ok 13 - effect identity is logical and receipts bind service key request and res
       ---
       duration_ms: 12854.390837
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: 'timeout: independent simulator listening'
       code: 'ERR_TEST_FAILURE'
       stack: |-
-        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
-        async restart (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:71:28)
-        async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:210:13
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:89:17)
+        waitFor (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:17:11)
+        async restart (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:71:28)
+        async file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:210:13
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:89:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:208:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:208:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -617,16 +617,16 @@ ok 13 - effect identity is logical and receipts bind service key request and res
       ---
       duration_ms: 7200.419773
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: 'effect case cleanup/evidence failed'
       code: 'ERR_TEST_FAILURE'
       name: 'AggregateError'
       stack: |-
-        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:129:27)
+        TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:129:27)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:244:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:244:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -685,18 +685,18 @@ ok 13 - effect identity is logical and receipts bind service key request and res
       ---
       duration_ms: 16614.400484
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: 'timeout: independent simulator listening'
       code: 'ERR_TEST_FAILURE'
       stack: |-
-        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
-        async restart (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:71:28)
-        async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:317:17
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:89:17)
+        waitFor (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:17:11)
+        async restart (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:71:28)
+        async file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:317:17
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:89:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:309:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:309:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -705,16 +705,16 @@ ok 13 - effect identity is logical and receipts bind service key request and res
       ---
       duration_ms: 7368.875927
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: 'effect case cleanup/evidence failed'
       code: 'ERR_TEST_FAILURE'
       name: 'AggregateError'
       stack: |-
-        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:129:27)
+        TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:129:27)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:335:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:335:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -723,16 +723,16 @@ ok 13 - effect identity is logical and receipts bind service key request and res
       ---
       duration_ms: 7323.000852
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: 'effect case cleanup/evidence failed'
       code: 'ERR_TEST_FAILURE'
       name: 'AggregateError'
       stack: |-
-        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:129:27)
+        TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:129:27)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:347:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:347:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -757,17 +757,17 @@ ok 13 - effect identity is logical and receipts bind service key request and res
       ---
       duration_ms: 13391.238504
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: 'timeout: v2 API listening'
       code: 'ERR_TEST_FAILURE'
       stack: |-
-        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
-        async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:379:30
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:89:17)
+        waitFor (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:17:11)
+        async file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:379:30
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:89:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:375:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:375:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -776,7 +776,7 @@ not ok 14 - DAW-3 independent external effects and conservative reconciliation
   ---
   duration_ms: 151719.130673
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:14:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:14:1'
   failureType: 'subtestsFailed'
   error: '6 subtests failed'
   code: 'ERR_TEST_FAILURE'

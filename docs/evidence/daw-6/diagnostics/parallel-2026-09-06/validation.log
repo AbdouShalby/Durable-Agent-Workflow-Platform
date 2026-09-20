@@ -328,16 +328,16 @@ ok 11 - agent output cannot express approval cancellation policy or write capabi
       ---
       duration_ms: 7349.088561
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:43:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/approvals.test.js:43:17'
       failureType: 'testCodeFailure'
       error: 'approval case cleanup failed'
       code: 'ERR_TEST_FAILURE'
       name: 'AggregateError'
       stack: |-
-        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:127:27)
+        TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/approvals.test.js:127:27)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:43:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:223:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/approvals.test.js:43:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/approvals.test.js:223:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -518,7 +518,7 @@ not ok 12 - DAW-5 real PostgreSQL governed human control
   ---
   duration_ms: 192757.152617
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/approvals.test.js:18:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/approvals.test.js:18:1'
   failureType: 'subtestsFailed'
   error: '1 subtest failed'
   code: 'ERR_TEST_FAILURE'
@@ -613,16 +613,16 @@ ok 13 - effect identity is logical and receipts bind service key request and res
       ---
       duration_ms: 7304.511674
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: 'effect case cleanup/evidence failed'
       code: 'ERR_TEST_FAILURE'
       name: 'AggregateError'
       stack: |-
-        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:124:27)
+        TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:124:27)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:238:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:238:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -739,7 +739,7 @@ not ok 14 - DAW-3 independent external effects and conservative reconciliation
   ---
   duration_ms: 132168.80438
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:14:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:14:1'
   failureType: 'subtestsFailed'
   error: '1 subtest failed'
   code: 'ERR_TEST_FAILURE'

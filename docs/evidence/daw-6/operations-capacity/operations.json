@@ -1,7 +1,7 @@
 {
   "node": "v24.20.0",
   "pgBin": "/usr/lib/postgresql/18/bin",
-  "cluster": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-wW4w3s",
+  "cluster": "REDACTED_LOCAL_ROOT_021/daw1-pg-wW4w3s",
   "cases": {
     "HTTP handler capacity rejects overflow without exceeding the database pool": {
       "processes": [

@@ -2,8 +2,8 @@
   "node": "v24.20.0",
   "pgBin": "/usr/lib/postgresql/18/bin",
   "independentClusters": [
-    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-gtkKBv",
-    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-plx9qx"
+    "REDACTED_LOCAL_ROOT_021/daw1-pg-gtkKBv",
+    "REDACTED_LOCAL_ROOT_021/daw1-pg-plx9qx"
   ],
   "cases": {
     "high policy durably waits without attempts or external writes": {

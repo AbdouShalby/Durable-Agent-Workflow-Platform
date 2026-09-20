@@ -285,8 +285,8 @@
     }
   },
   "independentClusters": [
-    "/var/tmp/daw3-validation-cNt2VWXn/daw1-pg-oEKYYm",
-    "/var/tmp/daw3-validation-cNt2VWXn/daw1-pg-gkk7l2"
+    "REDACTED_LOCAL_ROOT_019/daw1-pg-oEKYYm",
+    "REDACTED_LOCAL_ROOT_019/daw1-pg-gkk7l2"
   ],
   "postgres": [
     {

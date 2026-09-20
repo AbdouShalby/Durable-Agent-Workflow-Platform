@@ -13,7 +13,7 @@ not ok 2 - DAW-2 real PostgreSQL execution, process contention and failure windo
   ---
   duration_ms: 11.999457
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:12:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:12:1'
   failureType: 'testCodeFailure'
   error: 'spawnSync /nonexistent/daw2-postgres/initdb ENOENT'
   code: 'ENOENT'
@@ -21,8 +21,8 @@ not ok 2 - DAW-2 real PostgreSQL execution, process contention and failure windo
     Object.spawnSync (node:internal/child_process:1160:20)
     spawnSync (node:child_process:928:24)
     execFileSync (node:child_process:971:15)
-    Lab.startPostgres (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:50:9)
-    async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:97:9)
+    Lab.startPostgres (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:50:9)
+    async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:97:9)
     async Test.run (node:internal/test_runner/test:1404:7)
     async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
   ...
@@ -31,7 +31,7 @@ not ok 3 - mandatory real PostgreSQL + independent HTTP processes; no infrastruc
   ---
   duration_ms: 10.415104
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:10:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:10:1'
   failureType: 'testCodeFailure'
   error: 'spawnSync /nonexistent/daw2-postgres/initdb ENOENT'
   code: 'ENOENT'
@@ -39,8 +39,8 @@ not ok 3 - mandatory real PostgreSQL + independent HTTP processes; no infrastruc
     Object.spawnSync (node:internal/child_process:1160:20)
     spawnSync (node:child_process:928:24)
     execFileSync (node:child_process:971:15)
-    Lab.startPostgres (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:50:9)
-    async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:15:9)
+    Lab.startPostgres (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:50:9)
+    async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:15:9)
     async Test.run (node:internal/test_runner/test:1404:7)
     async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
   ...

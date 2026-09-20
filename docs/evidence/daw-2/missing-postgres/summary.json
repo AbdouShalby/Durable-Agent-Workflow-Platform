@@ -68,7 +68,7 @@
     ]
   ],
   "failures": [
-    "AssertionError [ERR_ASSERTION]: command failed: --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js\n\n1 !== 0\n\n    at run (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/scripts/validate.mjs:31:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/scripts/validate.mjs:37:15"
+    "AssertionError [ERR_ASSERTION]: command failed: --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js\n\n1 !== 0\n\n    at run (file://REDACTED_REPOSITORY_ROOT/scripts/validate.mjs:31:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file://REDACTED_REPOSITORY_ROOT/scripts/validate.mjs:37:15"
   ],
   "completedAt": "2026-09-05T16:33:32.451Z",
   "transcriptSha256": "d52d3715a9817e16c8f76272464061c6075a1f4dfbaddec81445271ab59e3830"

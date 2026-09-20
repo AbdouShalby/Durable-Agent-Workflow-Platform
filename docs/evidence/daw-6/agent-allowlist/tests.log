@@ -10,13 +10,13 @@ not ok 2 - agent tool allowlist rejects unregistered and prototype names
   ---
   duration_ms: 0.624172
   type: 'test'
-  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent-unit.test.js:14:1'
+  location: 'REDACTED_LOCAL_ROOT_022/dist/tests/agent-unit.test.js:14:1'
   failureType: 'testCodeFailure'
   error: 'Missing expected exception (AgentPolicyError).'
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   stack: |-
-    TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/agent-unit.test.js:16:16)
+    TestContext.<anonymous> (file://REDACTED_LOCAL_ROOT_022/dist/tests/agent-unit.test.js:16:16)
     Test.runInAsyncScope (node:async_hooks:227:14)
     Test.run (node:internal/test_runner/test:1397:25)
     Test.processPendingSubtests (node:internal/test_runner/test:969:18)

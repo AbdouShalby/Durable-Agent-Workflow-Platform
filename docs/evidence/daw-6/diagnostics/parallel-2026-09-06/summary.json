@@ -76,7 +76,7 @@
     "platform": "linux",
     "os": "6.18.33.1-microsoft-standard-WSL2",
     "arch": "x64",
-    "temporaryRoot": "/var/tmp/daw5-validation-SWNbzDZM"
+    "temporaryRoot": "REDACTED_LOCAL_ROOT_021"
   },
   "commands": [
     [
@@ -115,7 +115,7 @@
     ]
   ],
   "failures": [
-    "AssertionError [ERR_ASSERTION]: command failed: --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js dist/tests/approval-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js dist/tests/approvals.test.js dist/tests/operations.test.js\n\n1 !== 0\n\n    at run (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/scripts/validate.mjs:32:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/scripts/validate.mjs:40:15"
+    "AssertionError [ERR_ASSERTION]: command failed: --test --test-reporter=tap dist/tests/unit.test.js dist/tests/execution-unit.test.js dist/tests/effect-unit.test.js dist/tests/agent-unit.test.js dist/tests/approval-unit.test.js dist/tests/integration.test.js dist/tests/execution.test.js dist/tests/effects.test.js dist/tests/agent.test.js dist/tests/approvals.test.js dist/tests/operations.test.js\n\n1 !== 0\n\n    at run (file://REDACTED_REPOSITORY_ROOT/scripts/validate.mjs:32:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file://REDACTED_REPOSITORY_ROOT/scripts/validate.mjs:40:15"
   ],
   "completedAt": "2026-09-06T01:53:27.225Z",
   "transcriptSha256": "fb3d8c954cb3f8625f16eae22f4de66c760f92a4b4363a051317a5ddebac31dc"

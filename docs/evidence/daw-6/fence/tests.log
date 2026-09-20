@@ -11,7 +11,7 @@ TAP version 13
       ---
       duration_ms: 1582.06644
       type: 'test'
-      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_LOCAL_ROOT_022/dist/tests/execution.test.js:36:17'
       failureType: 'testCodeFailure'
       error: |-
         Expected values to be strictly equal:
@@ -24,11 +24,11 @@ TAP version 13
       actual: true
       operator: 'strictEqual'
       stack: |-
-        file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/execution.test.js:170:24
-        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/execution.test.js:56:17)
+        file://REDACTED_LOCAL_ROOT_022/dist/tests/execution.test.js:170:24
+        async TestContext.<anonymous> (file://REDACTED_LOCAL_ROOT_022/dist/tests/execution.test.js:56:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/execution.test.js:36:9)
-        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/execution.test.js:135:9)
+        async runCase (file://REDACTED_LOCAL_ROOT_022/dist/tests/execution.test.js:36:9)
+        async TestContext.<anonymous> (file://REDACTED_LOCAL_ROOT_022/dist/tests/execution.test.js:135:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -103,7 +103,7 @@ not ok 1 - DAW-2 real PostgreSQL execution, process contention and failure windo
   ---
   duration_ms: 16046.455398
   type: 'test'
-  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/execution.test.js:12:1'
+  location: 'REDACTED_LOCAL_ROOT_022/dist/tests/execution.test.js:12:1'
   failureType: 'subtestsFailed'
   error: '1 subtest failed'
   code: 'ERR_TEST_FAILURE'

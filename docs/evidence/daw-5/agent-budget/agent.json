@@ -1,7 +1,7 @@
 {
   "node": "v24.20.0",
   "pgBin": "/usr/lib/postgresql/18/bin",
-  "postgresDirectory": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-f9RHv7",
+  "postgresDirectory": "REDACTED_LOCAL_ROOT_021/daw1-pg-f9RHv7",
   "cases": {
     "turn budget prevents another model decision after the accepted limit": {
       "state": "SUCCEEDED",

@@ -5,7 +5,7 @@ TAP version 13
       ---
       duration_ms: 4145.188819
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: |-
         The expression evaluated to a falsy value:
@@ -18,12 +18,12 @@ TAP version 13
       actual: false
       operator: '=='
       stack: |-
-        file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:160:20
+        file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:160:20
         process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:89:17)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:89:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:137:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:137:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -32,7 +32,7 @@ not ok 1 - DAW-3 independent external effects and conservative reconciliation
   ---
   duration_ms: 6054.665098
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/effects.test.js:14:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/effects.test.js:14:1'
   failureType: 'subtestsFailed'
   error: '1 subtest failed'
   code: 'ERR_TEST_FAILURE'

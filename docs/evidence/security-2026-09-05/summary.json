@@ -57,7 +57,7 @@
     "platform": "linux",
     "os": "6.18.33.1-microsoft-standard-WSL2",
     "arch": "x64",
-    "temporaryRoot": "/var/tmp/daw-security-nJK6txKu"
+    "temporaryRoot": "REDACTED_LOCAL_ROOT_018"
   },
   "commands": [
     [

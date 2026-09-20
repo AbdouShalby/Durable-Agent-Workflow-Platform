@@ -2,8 +2,8 @@
   "node": "v24.20.0",
   "pgBin": "/usr/lib/postgresql/18/bin",
   "independentClusters": [
-    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-pdbcje",
-    "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-T7CXYf"
+    "REDACTED_LOCAL_ROOT_021/daw1-pg-pdbcje",
+    "REDACTED_LOCAL_ROOT_021/daw1-pg-T7CXYf"
   ],
   "cases": {
     "operator and agent cannot grant approval at HTTP or engine boundary": {

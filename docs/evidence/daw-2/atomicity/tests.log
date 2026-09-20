@@ -35,7 +35,7 @@ TAP version 13
       ---
       duration_ms: 12.262534
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:106:21'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:106:21'
       failureType: 'testCodeFailure'
       error: |-
         Expected values to be strictly deep-equal:
@@ -63,10 +63,10 @@ TAP version 13
         events: 0
       operator: 'deepStrictEqual'
       stack: |-
-        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:111:28)
+        TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:111:28)
         process.processTicksAndRejections (node:internal/process/task_queues:104:5)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:106:13)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:106:13)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -75,7 +75,7 @@ TAP version 13
       ---
       duration_ms: 11.913999
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:106:21'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:106:21'
       failureType: 'testCodeFailure'
       error: |-
         Expected values to be strictly deep-equal:
@@ -103,10 +103,10 @@ TAP version 13
         events: 0
       operator: 'deepStrictEqual'
       stack: |-
-        TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:111:28)
+        TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:111:28)
         process.processTicksAndRejections (node:internal/process/task_queues:104:5)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:106:13)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:106:13)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -139,7 +139,7 @@ not ok 1 - mandatory real PostgreSQL + independent HTTP processes; no infrastruc
   ---
   duration_ms: 18553.317703
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/integration.test.js:10:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/integration.test.js:10:1'
   failureType: 'subtestsFailed'
   error: '2 subtests failed'
   code: 'ERR_TEST_FAILURE'

@@ -1,7 +1,7 @@
 {
   "node": "v24.20.0",
   "pgBin": "/usr/lib/postgresql/18/bin",
-  "cluster": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-Lhp6QO",
+  "cluster": "REDACTED_LOCAL_ROOT_021/daw1-pg-Lhp6QO",
   "cases": {
     "PostgreSQL outage rejects admission and recovers a real workers lost lease": {
       "processes": [
@@ -21,7 +21,7 @@
             "code": 1,
             "signal": null
           },
-          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"ed847b16-3497-45c8-8e69-baf8666e98c3\",\"pid\":5842}\n{\"event\":\"attempt_span\",\"trace_id\":\"38212b6feabb4296854976f4102c4997\",\"span_id\":\"bedab334f3846661\",\"run_id\":\"38212b6f-eabb-4296-8549-76f4102c4997\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\nnode:events:505\n    throw er; // Unhandled 'error' event\n    ^\n\nError: Connection terminated unexpectedly\n    at Connection.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:204:73)\n    at Connection.wrapper (node:events:639:12)\n    at Connection.emit (node:events:514:28)\n    at Socket.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/connection.js:64:12)\n    at Socket.emit (node:events:514:28)\n    at TCP.<anonymous> (node:net:362:12)\nEmitted 'error' event on Client instance at:\n    at Client._handleErrorEvent (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:422:10)\n    at Connection.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/client.js:222:16)\n    at Connection.wrapper (node:events:639:12)\n    at Connection.emit (node:events:514:28)\n    at Socket.<anonymous> (/var/tmp/daw6-native-bw2KkkYZ/node_modules/pg/lib/connection.js:64:12)\n    at Socket.emit (node:events:514:28)\n    at TCP.<anonymous> (node:net:362:12)\n\nNode.js v24.20.0\n"
+          "logs": "{\"event\":\"started\",\"role\":\"worker\",\"owner\":\"ed847b16-3497-45c8-8e69-baf8666e98c3\",\"pid\":5842}\n{\"event\":\"attempt_span\",\"trace_id\":\"38212b6feabb4296854976f4102c4997\",\"span_id\":\"bedab334f3846661\",\"run_id\":\"38212b6f-eabb-4296-8549-76f4102c4997\",\"step\":\"normalize-incident\",\"attempt\":1,\"fence\":1,\"phase\":\"start\"}\nnode:events:505\n    throw er; // Unhandled 'error' event\n    ^\n\nError: Connection terminated unexpectedly\n    at Connection.<anonymous> (REDACTED_LOCAL_ROOT_022/node_modules/pg/lib/client.js:204:73)\n    at Connection.wrapper (node:events:639:12)\n    at Connection.emit (node:events:514:28)\n    at Socket.<anonymous> (REDACTED_LOCAL_ROOT_022/node_modules/pg/lib/connection.js:64:12)\n    at Socket.emit (node:events:514:28)\n    at TCP.<anonymous> (node:net:362:12)\nEmitted 'error' event on Client instance at:\n    at Client._handleErrorEvent (REDACTED_LOCAL_ROOT_022/node_modules/pg/lib/client.js:422:10)\n    at Connection.<anonymous> (REDACTED_LOCAL_ROOT_022/node_modules/pg/lib/client.js:222:16)\n    at Connection.wrapper (node:events:639:12)\n    at Connection.emit (node:events:514:28)\n    at Socket.<anonymous> (REDACTED_LOCAL_ROOT_022/node_modules/pg/lib/connection.js:64:12)\n    at Socket.emit (node:events:514:28)\n    at TCP.<anonymous> (node:net:362:12)\n\nNode.js v24.20.0\n"
         },
         {
           "role": "scheduler",

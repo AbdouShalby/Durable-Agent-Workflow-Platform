@@ -9,7 +9,7 @@ TAP version 13
       ---
       duration_ms: 599.471813
       type: 'test'
-      location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:49:17'
+      location: 'REDACTED_LOCAL_ROOT_022/dist/tests/effects.test.js:49:17'
       failureType: 'testCodeFailure'
       error: |-
         The expression evaluated to a falsy value:
@@ -22,12 +22,12 @@ TAP version 13
       actual: false
       operator: '=='
       stack: |-
-        file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:166:20
+        file://REDACTED_LOCAL_ROOT_022/dist/tests/effects.test.js:166:20
         process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:89:17)
+        async TestContext.<anonymous> (file://REDACTED_LOCAL_ROOT_022/dist/tests/effects.test.js:89:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:49:9)
-        async TestContext.<anonymous> (file:///var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:143:9)
+        async runCase (file://REDACTED_LOCAL_ROOT_022/dist/tests/effects.test.js:49:9)
+        async TestContext.<anonymous> (file://REDACTED_LOCAL_ROOT_022/dist/tests/effects.test.js:143:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -36,7 +36,7 @@ not ok 1 - DAW-3 independent external effects and conservative reconciliation
   ---
   duration_ms: 2437.409386
   type: 'test'
-  location: '/var/tmp/daw6-native-bw2KkkYZ/dist/tests/effects.test.js:14:1'
+  location: 'REDACTED_LOCAL_ROOT_022/dist/tests/effects.test.js:14:1'
   failureType: 'subtestsFailed'
   error: '1 subtest failed'
   code: 'ERR_TEST_FAILURE'

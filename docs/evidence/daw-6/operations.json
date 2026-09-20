@@ -1,7 +1,7 @@
 {
   "node": "v24.20.0",
   "pgBin": "/usr/lib/postgresql/18/bin",
-  "cluster": "/var/tmp/daw5-validation-SWNbzDZM/daw1-pg-0STIca",
+  "cluster": "REDACTED_LOCAL_ROOT_021/daw1-pg-0STIca",
   "cases": {
     "readiness rejects unavailable database and mismatched schema while liveness stays alive": {
       "schemaMismatchRejected": true,

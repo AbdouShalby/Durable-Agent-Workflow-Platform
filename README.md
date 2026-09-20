@@ -1,5 +1,26 @@
 # Durable Agent Workflow Platform
 
+## Engineering Overview
+
+A production-inspired TypeScript/PostgreSQL lab for durable incident-triage workflows. It demonstrates transactional run creation, request idempotency and concurrent workers with atomic claims, leases and fencing. Bounded retries and conservative external-effect reconciliation handle uncertainty; durable human approvals bind authorization to the exact proposed action. Readiness checks, bounded shutdown and operational telemetry make failure and recovery observable.
+
+The evidence comes from real PostgreSQL and independent processes, with a simulated external service and deterministic agent tests. It does **not** establish production deployment, production traffic, throughput/SLOs or live LLM usage.
+
+## Evidence Index
+
+| Milestone | Engineering question | Strongest public evidence |
+| --- | --- | --- |
+| DAW-1 | Can concurrent requests create only one durable logical run? | [Admission races and atomic rollback](docs/evidence/daw-6/integration.json) / [original scope](docs/daw-1.md) |
+| DAW-2 | Can expired work recover without accepting stale-worker results? | [Execution, leases and fencing](docs/evidence/daw-6/execution.json) / [contract](docs/daw-2.md) |
+| DAW-3 | What happens when an external write may have succeeded? | [Independent effects and reconciliation](docs/evidence/daw-6/effects.json) / [contract](docs/daw-3.md) |
+| DAW-4 | Can a bounded agent resume accepted decisions safely? | [Agent checkpoints and budgets](docs/evidence/daw-6/agent.json) / [contract](docs/daw-4.md) |
+| DAW-5 | Can human authorization survive retries, expiry and cancellation races? | [Approval and cancellation witnesses](docs/evidence/daw-6/approvals.json) / [contract](docs/daw-5.md) |
+| DAW-6 | How do services behave during outage, shutdown and overload? | [Operational failure witnesses](docs/evidence/daw-6/operations.json) / [full validation summary](docs/evidence/daw-6/summary.json) / [runbook](docs/runbooks/operations.md) |
+
+The DAW-6 gate revalidates the earlier contracts; historical milestone records remain available. Public artifacts with redacted local paths are **presentations of preserved original evidence**, not byte-identical raw logs. See the [evidence publication rules and hash ledger](docs/publication/README.md) before checking historical artifact hashes. Source fingerprints, results, timings and incident chronology are unchanged.
+
+## Detailed Scope
+
 A production-inspired architecture lab. **DAW-6 adds readiness, bounded draining, operational signals and reproducible outage/recovery evidence.** Real worker/scheduler processes coordinate through PostgreSQL. V4 composes the existing bounded read-only agent with the existing keyed external-effect simulator; high-severity actions wait for a separately authenticated approver. No new write-capable agent tool or multi-agent runtime is implemented. The real model adapter has offline contract tests, not live-provider evidence.
 
 The foundation accepts a versioned incident-triage request, atomically persists its run, initial step states and creation event, and returns a durable run identity. Concurrent duplicate requests use PostgreSQL uniqueness as the authority, not an in-memory lock or a pre-check. This is showcase evidence, not production usage or exactly-once execution.

@@ -2,5 +2,5 @@
   "phase": "RUNNING",
   "testMutation": null,
   "cleanup": [],
-  "clusterDirectory": "/tmp/daw1-pg-tLmtcK"
+  "clusterDirectory": "REDACTED_LOCAL_ROOT_015"
 }

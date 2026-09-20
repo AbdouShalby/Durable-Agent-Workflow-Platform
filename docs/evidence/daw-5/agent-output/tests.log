@@ -4,7 +4,7 @@ not ok 1 - agent schema rejects malformed and policy-changing output
   ---
   duration_ms: 14.187702
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent-unit.test.js:8:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/agent-unit.test.js:8:1'
   failureType: 'testCodeFailure'
   error: |-
     The error is expected to be an instance of "AgentPolicyError". Received "TypeError"
@@ -15,7 +15,7 @@ not ok 1 - agent schema rejects malformed and policy-changing output
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   stack: |-
-    TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/agent-unit.test.js:11:16)
+    TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/agent-unit.test.js:11:16)
     Test.runInAsyncScope (node:async_hooks:227:14)
     Test.run (node:internal/test_runner/test:1397:25)
     Test.start (node:internal/test_runner/test:1257:17)

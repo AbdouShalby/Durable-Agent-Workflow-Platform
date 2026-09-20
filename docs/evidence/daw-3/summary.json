@@ -55,7 +55,7 @@
     "platform": "linux",
     "os": "6.18.33.1-microsoft-standard-WSL2",
     "arch": "x64",
-    "temporaryRoot": "/var/tmp/daw3-validation-cNt2VWXn"
+    "temporaryRoot": "REDACTED_LOCAL_ROOT_019"
   },
   "commands": [
     [

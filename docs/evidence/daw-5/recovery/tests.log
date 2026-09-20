@@ -11,17 +11,17 @@ TAP version 13
       ---
       duration_ms: 11779.803156
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:17'
       failureType: 'testCodeFailure'
       error: 'timeout: two concurrent recovery SQL sessions'
       code: 'ERR_TEST_FAILURE'
       stack: |-
-        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
-        async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:149:57
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:56:17)
+        waitFor (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:17:11)
+        async file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:149:57
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:56:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:135:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:135:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -36,7 +36,7 @@ TAP version 13
       ---
       duration_ms: 4062.712274
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:17'
       failureType: 'testCodeFailure'
       error: |-
         Expected values to be strictly equal:
@@ -49,11 +49,11 @@ TAP version 13
       actual: false
       operator: 'strictEqual'
       stack: |-
-        file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:212:20
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:56:17)
+        file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:212:20
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:56:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:205:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:205:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -62,7 +62,7 @@ TAP version 13
       ---
       duration_ms: 3769.285252
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:17'
       failureType: 'testCodeFailure'
       error: |-
         Expected values to be strictly equal:
@@ -75,11 +75,11 @@ TAP version 13
       actual: false
       operator: 'strictEqual'
       stack: |-
-        file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:241:28
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:56:17)
+        file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:241:28
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:56:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:231:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:231:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -88,7 +88,7 @@ TAP version 13
       ---
       duration_ms: 4020.968298
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:17'
       failureType: 'testCodeFailure'
       error: |-
         Expected values to be strictly equal:
@@ -101,11 +101,11 @@ TAP version 13
       actual: false
       operator: 'strictEqual'
       stack: |-
-        file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:261:24
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:56:17)
+        file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:261:24
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:56:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:253:9)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:253:9)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -114,14 +114,14 @@ TAP version 13
       ---
       duration_ms: 5888.038226
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:17'
       failureType: 'unhandledRejection'
       error: 'actor exited: '
       code: 'ERR_TEST_FAILURE'
       stack: |-
-        file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:27:31
-        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:12:30)
-        async Object.call (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:25:31)
+        file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:27:31
+        waitFor (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:12:30)
+        async Object.call (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:25:31)
       ...
     # Subtest: result downstream scheduling and events roll back together on database failure
     ok 8 - result downstream scheduling and events roll back together on database failure
@@ -140,17 +140,17 @@ TAP version 13
       ---
       duration_ms: 8708.088768
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:17'
       failureType: 'testCodeFailure'
       error: 'timeout: retry ready before deadline'
       code: 'ERR_TEST_FAILURE'
       stack: |-
-        waitFor (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/support/lab.js:17:11)
-        async file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:336:21
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:56:17)
+        waitFor (file://REDACTED_REPOSITORY_ROOT/dist/tests/support/lab.js:17:11)
+        async file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:336:21
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:56:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:330:13)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:330:13)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -159,7 +159,7 @@ TAP version 13
       ---
       duration_ms: 2771.005784
       type: 'test'
-      location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:17'
+      location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:17'
       failureType: 'testCodeFailure'
       error: |-
         Expected values to be strictly equal:
@@ -172,11 +172,11 @@ TAP version 13
       actual: false
       operator: 'strictEqual'
       stack: |-
-        file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:339:24
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:56:17)
+        file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:339:24
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:56:17)
         async Test.run (node:internal/test_runner/test:1404:7)
-        async runCase (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:36:9)
-        async TestContext.<anonymous> (file:///mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:330:13)
+        async runCase (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:36:9)
+        async TestContext.<anonymous> (file://REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:330:13)
         async Test.run (node:internal/test_runner/test:1404:7)
         async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
       ...
@@ -197,7 +197,7 @@ not ok 1 - DAW-2 real PostgreSQL execution, process contention and failure windo
   ---
   duration_ms: 56487.48608
   type: 'test'
-  location: '/mnt/e/Abdou/Projects/careergithubupgrades/durable-agent-workflow-platform/dist/tests/execution.test.js:12:1'
+  location: 'REDACTED_REPOSITORY_ROOT/dist/tests/execution.test.js:12:1'
   failureType: 'subtestsFailed'
   error: '7 subtests failed'
   code: 'ERR_TEST_FAILURE'
