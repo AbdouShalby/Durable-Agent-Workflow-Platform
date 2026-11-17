@@ -211,3 +211,7 @@ loopback-only environment. Stable service identity is a binding check, not a sec
 ## Layout
 
 `src/domain/` holds versioned definitions, fingerprints, receipt/agent/tool/approval rules and retry calculation; `src/application/` admission/execution/effect/agent checkpoint and approval/cancellation coordination; `src/agents/` isolated model adapters; `src/persistence/` PostgreSQL and migrations; `src/http.ts` the HTTP boundary; `src/entrypoints/` API/migration/worker/scheduler commands; `src/simulator/` the independently persisted HTTP effect service. `tests/` contains pure contracts, deterministic evaluations and real infrastructure scenarios; `tests/fixtures/` contains explicit test-only source mutations. `scripts/` drives reproducible validation. `docs/evidence/` retains selected reviewed output; routine artifacts, dependencies and compiled output stay ignored.
+
+## How this was built
+
+I defined the problem, the design and the acceptance criteria, and reviewed and verified the result. AI coding assistants (Claude Code, Codex, Cursor) did most of the implementation.
